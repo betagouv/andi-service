@@ -16,6 +16,6 @@ import { SurveyPageComponent } from './public/survey/survey-page/survey-page.com
     CoreModule
   ],
   providers: [],
-  bootstrap: [SurveyPageComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
