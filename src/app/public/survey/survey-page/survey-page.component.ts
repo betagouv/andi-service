@@ -8,15 +8,13 @@ import { stepItems } from '../../../../assets/datas/survey-step-items';
   styleUrls: ['./survey-page.component.scss']
 })
 export class SurveyPageComponent implements OnInit {
-
   questionSteps: QuestionStep[] = stepItems;
 
   currentQuestionStep: QuestionStep;
-  
-  constructor() { }
+
+  constructor() {}
 
   ngOnInit() {
     this.currentQuestionStep = this.questionSteps[4];
   }
-
 }
