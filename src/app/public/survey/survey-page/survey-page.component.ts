@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { QuestionStep, QuestionType } from 'src/models/question-step.model';
 
 @Component({
   selector: 'andi-survey-page',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveyPageComponent implements OnInit {
 
+  questionSteps = new QuestionStep('Test', 'Toto', QuestionType.REDIRECT, undefined);
+  
   constructor() { }
 
   ngOnInit() {
