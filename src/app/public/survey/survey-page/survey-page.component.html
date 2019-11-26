@@ -1,8 +1,3 @@
 <div class="container">
-  <andi-question-step
-    sentence="{{ currentQuestionStep.sentence }}"
-    description="{{ currentQuestionStep.description }}"
-    [type]="currentQuestionStep.type"
-    [proposals]="currentQuestionStep.proposals"
-  ></andi-question-step>
+  <andi-question-step [questionStep]="currentQuestionStep"></andi-question-step>
 </div>
