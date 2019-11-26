@@ -10,7 +10,6 @@ import { QuestionType } from 'src/models/question-step.model';
 export class QuestionStepComponent implements OnInit {
   @Input() sentence: string;
   @Input() description: string;
-  @Input() type: QuestionType;
   @Input() proposals: ResponseProposal[];
 
   constructor() {}

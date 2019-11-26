@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { QuestionStep, QuestionType } from 'src/models/question-step.model';
+import { stepItems } from '../../../../assets/datas/survey-step-items';
 
 @Component({
   selector: 'andi-survey-page',
@@ -8,11 +9,14 @@ import { QuestionStep, QuestionType } from 'src/models/question-step.model';
 })
 export class SurveyPageComponent implements OnInit {
 
-  questionSteps = new QuestionStep('Test', 'Toto', QuestionType.REDIRECT, undefined);
+  questionSteps: QuestionStep[] = stepItems;
+
+  currentQuestionStep: QuestionStep;
   
   constructor() { }
 
   ngOnInit() {
+    this.currentQuestionStep = this.questionSteps[0];
   }
 
 }

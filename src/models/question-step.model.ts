@@ -5,17 +5,20 @@ export class QuestionStep {
   description: string;
   type: QuestionType;
   proposals: ResponseProposal[];
+  url: string;
 
   constructor(
     sentence: string,
     description: string,
     type: QuestionType,
-    proposals: ResponseProposal[]
+    proposals: ResponseProposal[],
+    url: string
   ) {
     this.sentence = sentence;
     this.description = description;
     this.type = type;
     this.proposals = proposals;
+    this.url = url;
   }
 }
 
