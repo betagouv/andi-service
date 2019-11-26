@@ -14,5 +14,6 @@ export class QuestionStepComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 }

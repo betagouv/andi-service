@@ -36,10 +36,26 @@ const Q_STEP_3 = new QuestionStep(
 
 const Q_STEP_4 = new QuestionStep(
   'Quelle est votre adresse postale ?',
-  'Nos recherches vont porter sur la proximité d\'une pmsmp avec cette adresse',
+  'Nos recherches vont porter sur la proximité d\'une immersion avec cette adresse',
   QuestionType.CRITERIA,
   [new ResponseProposal('Adresse postale :')],
   ''
 );
 
-export const stepItems: QuestionStep[] = [Q_STEP_1, Q_STEP_2, Q_STEP_3, Q_STEP_4];
+const Q_STEP_5 = new QuestionStep(
+  'Quel(s) métier(s) vous interesserait pour une immersion ?',
+  '',
+  QuestionType.CRITERIA,
+  [new ResponseProposal('Métier choisi :')],
+  ''
+);
+
+const Q_STEP_6 = new QuestionStep(
+  'A quelle distance maximale de votre domicile pouriez-vous vous déplacer pour effectuer une immersion ?',
+  '',
+  QuestionType.CRITERIA,
+  [new ResponseProposal('Distance maximale :')],
+  ''
+);
+
+export const stepItems: QuestionStep[] = [Q_STEP_1, Q_STEP_2, Q_STEP_3, Q_STEP_4, Q_STEP_5, Q_STEP_6];
