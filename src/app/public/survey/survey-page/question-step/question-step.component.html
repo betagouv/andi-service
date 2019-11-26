@@ -4,45 +4,11 @@
     <h3>{{ description }}</h3>
 
     <div
-      *ngIf="type == 'redirect'"
       class="d-sm-flex justify-content-between align-items-center"
     >
-      <a
-        *ngFor="let proposal of proposals | keyvalue; let i = index"
-        href="#"
-        class="d-flex justify-content-between align-items-center btn btn-sq-lg btn-info"
-      >
-        {{ proposal.value.label }}
-      </a>
-    </div>
-
-    <div
-      *ngIf="type == 'criteria'"
-      class="d-sm-flex justify-content-between align-items-center"
-    >
-
-
-
-    
-    <form (ngSubmit)="updateCriteriasState(userForm.value)" #userForm="ngForm">
-        <label for="address">{{ proposals[0].label }}</label>
-        <input
-          type="text"
-          class="form-control form-control-lg"
-          id="address"
-          placeholder="ex: 10 Rue de Flandre, 75001"
-          name="address"
-          required
-          ngModel
-        />
-        <button type="submit" class="btn btn-primary">Suivant</button>
-      </form>
-
-
-
-
-
-
+      <div *ngFor="let proposal of proposals | keyvalue; let i = index">
+        <andi-proposal [proposal]="proposal.value" questionStepType="{{type}}"></andi-proposal>
+      </div>
     </div>
   </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ResponseProposal } from '../../../../../../models/response-proposal.model';
+import { QuestionType } from '../../../../../../models/question-step.model';
 
 @Component({
   selector: 'andi-proposal',
@@ -6,12 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./proposal.component.scss']
 })
 export class ProposalComponent implements OnInit {
+  @Input() proposal: ResponseProposal;
+  @Input() questionStepType: QuestionType;
 
-  @Input() label: string;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
