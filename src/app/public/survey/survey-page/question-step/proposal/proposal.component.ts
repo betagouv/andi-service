@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ResponseProposal } from '../../../../../../models/response-proposal.model';
 import { QuestionType } from '../../../../../../models/question-step.model';
+import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
 
 @Component({
   selector: 'andi-proposal',
@@ -11,12 +12,37 @@ export class ProposalComponent implements OnInit {
   @Input() proposal: ResponseProposal;
   @Input() questionStepType: QuestionType;
 
-  constructor() {}
+  index = 0;
+  lengthOfQuestionSteps = 0;
 
-  ngOnInit() {}
+  constructor(private surveyStepperSharedService: SurveyStepperSharedService) {}
+
+  ngOnInit() {
+    this.getValuesOfCurrentIndexAndLengthQuestionSteps();
+    console.log('>>> ',this.proposal.id);
+  }
+
+  getValuesOfCurrentIndexAndLengthQuestionSteps = () =>
+    ({
+      index: this.index,
+      lengthOfQuestionSteps: this.lengthOfQuestionSteps
+    } = this.surveyStepperSharedService)
 
   updateCriteriasState(addressInput) {
-    console.log(addressInput.jobs)
+    console.log(addressInput);
+  }
 
+  nextQuestion() {
+    if (this.index < this.lengthOfQuestionSteps - 1) {
+      this.surveyStepperSharedService.indexStepper.next(
+        ++this.surveyStepperSharedService.index
+      );
+      this.getValuesOfCurrentIndexAndLengthQuestionSteps();
+    }
+  }
+
+  finalQuestion() {
+    console.log('redirect To Récapitulatif');
+    // router
   }
 }

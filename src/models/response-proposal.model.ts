@@ -1,11 +1,7 @@
 export class ResponseProposal {
-  label: string;
-  placeholder: string;
-  id: string;
-
-  constructor(label: string, placeholder: string, id: string) {
-    this.label = label;
-    this.placeholder = placeholder;
-    this.id = id;
-  }
+  constructor(
+    public label: string,
+    public placeholder: string,
+    public id: string
+  ) {}
 }
