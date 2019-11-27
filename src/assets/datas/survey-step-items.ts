@@ -6,9 +6,9 @@ const Q_STEP_1 = new QuestionStep(
   'Voici une courte description',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Ah Oui ?'),
-    new ResponseProposal('Mais nan !'),
-    new ResponseProposal('Hmm Peut-être')
+    new ResponseProposal('Ah Oui ?', '', ''),
+    new ResponseProposal('Mais nan !', '', ''),
+    new ResponseProposal('Hmm Peut-être', '', '')
   ],
   'http://www.google.fr/'
 );
@@ -17,7 +17,7 @@ const Q_STEP_2 = new QuestionStep(
   'Ceci est la deuxieme question ?',
   'Voici une loooongue description',
   QuestionType.REDIRECT,
-  [new ResponseProposal('Black'), new ResponseProposal('White')],
+  [new ResponseProposal('Black', '', ''), new ResponseProposal('White', '', '')],
   'http://andi.beta.gouv.fr/'
 );
 
@@ -26,10 +26,10 @@ const Q_STEP_3 = new QuestionStep(
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Avec les chiens'),
-    new ResponseProposal('Pas toujours'),
-    new ResponseProposal('Les chats <3'),
-    new ResponseProposal('J\'ai faim...')
+    new ResponseProposal('Avec les chiens', '', ''),
+    new ResponseProposal('Pas toujours', '', ''),
+    new ResponseProposal('Les chats <3', '', ''),
+    new ResponseProposal('J\'ai faim...', '', '')
   ],
   'https://handicap.gouv.fr/'
 );
@@ -38,7 +38,7 @@ const Q_STEP_4 = new QuestionStep(
   'Quelle est votre adresse postale ?',
   'Nos recherches vont porter sur la proximité d\'une immersion avec cette adresse',
   QuestionType.CRITERIA,
-  [new ResponseProposal('Adresse postale :')],
+  [new ResponseProposal('Adresse postale :', 'exemple: 10 Rue de Paris, Clichy', 'address')],
   ''
 );
 
@@ -46,7 +46,7 @@ const Q_STEP_5 = new QuestionStep(
   'Quel(s) métier(s) vous interesserait pour une immersion ?',
   '',
   QuestionType.CRITERIA,
-  [new ResponseProposal('Métier choisi :')],
+  [new ResponseProposal('Métier choisi :', 'exemple: cariste', 'jobs')],
   ''
 );
 
@@ -54,7 +54,7 @@ const Q_STEP_6 = new QuestionStep(
   'A quelle distance maximale de votre domicile pouriez-vous vous déplacer pour effectuer une immersion ?',
   '',
   QuestionType.CRITERIA,
-  [new ResponseProposal('Distance maximale :')],
+  [new ResponseProposal('Distance maximale :', 'exemple: 3', 'range')],
   ''
 );
 

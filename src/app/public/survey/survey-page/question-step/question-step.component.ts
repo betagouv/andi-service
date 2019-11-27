@@ -15,7 +15,5 @@ export class QuestionStepComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.questionStep.sentence);
-    console.log(this.questionStep.proposals);
   }
 }

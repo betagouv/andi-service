@@ -14,13 +14,13 @@
     class="d-sm-flex justify-content-between align-items-center"
   >
     <form (ngSubmit)="updateCriteriasState(userForm.value)" #userForm="ngForm">
-      <label for="address">{{ proposal.label }}</label>
+      <label for="{{ proposal.id }}">{{ proposal.label }}</label>
       <input
         type="text"
         class="form-control form-control-lg"
-        id="address"
-        placeholder="ex: 10 Rue de Flandre, 75001"
-        name="address"
+        id="{{ proposal.id }}"
+        placeholder="{{ proposal.placeholder }}"
+        name="{{ proposal.id }}"
         required
         ngModel
       />

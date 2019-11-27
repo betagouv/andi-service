@@ -15,6 +15,6 @@ export class SurveyPageComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.currentQuestionStep = this.questionSteps[2];
+    this.currentQuestionStep = this.questionSteps[4];
   }
 }

@@ -14,4 +14,9 @@ export class ProposalComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  updateCriteriasState(addressInput) {
+    console.log(addressInput.jobs)
+
+  }
 }
