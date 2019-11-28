@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { PublicRoutingModule } from './public-routing.module';
 import { SurveyModule } from './survey/survey.module';
+import { SummaryModule } from './summary/summary.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -10,7 +12,8 @@ import { SurveyModule } from './survey/survey.module';
   imports: [
     CommonModule,
     PublicRoutingModule,
-    SurveyModule
+    SurveyModule,
+    SummaryModule
   ]
 })
 export class PublicModule { }
