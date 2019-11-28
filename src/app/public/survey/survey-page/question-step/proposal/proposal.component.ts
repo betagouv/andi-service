@@ -30,6 +30,7 @@ export class ProposalComponent implements OnInit {
 
   updateCriteriasState(addressInput) {
     console.log(addressInput);
+    this.nextQuestion();
   }
 
   nextQuestion() {

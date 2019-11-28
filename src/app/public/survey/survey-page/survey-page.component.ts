@@ -21,10 +21,10 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.subscriptions.push(this.getListSurvey(), this.loadQuestionStep());
+    this.subscriptions.push(this.getSteps(), this.loadQuestionStep());
   }
 
-  getListSurvey(): Subscription {
+  getSteps(): Subscription {
     return this.surveyStepperApiService
       .getListSurvey()
       .subscribe((questionSteps: any) => {
