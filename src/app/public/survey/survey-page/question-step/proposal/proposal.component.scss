@@ -1,4 +1,11 @@
 .btn-sq-lg {
-    width: 120px !important;
-    height: 120px !important;
-  }
+  width: 120px !important;
+  height: 120px !important;
+}
+
+.btn, a {
+  text-transform: none;
+  color: #FFF !important;
+  font-size: 20px;
+  cursor:pointer;
+}

@@ -19,7 +19,6 @@ export class ProposalComponent implements OnInit {
 
   ngOnInit() {
     this.getValuesOfCurrentIndexAndLengthQuestionSteps();
-    console.log('>>> ',this.proposal.id);
   }
 
   getValuesOfCurrentIndexAndLengthQuestionSteps = () =>
@@ -29,7 +28,6 @@ export class ProposalComponent implements OnInit {
     } = this.surveyStepperSharedService)
 
   updateCriteriasState(addressInput) {
-    console.log(addressInput);
     this.nextQuestion();
   }
 
