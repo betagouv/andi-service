@@ -1,7 +1,7 @@
 <div>
   <!-- REPONSE POUR QUESTION TYPE FILTRE -->
   <a
-  (click)="nextQuestion()"
+    (click)="nextQuestion()"
     *ngIf="questionStepType == 'redirect'"
     class="d-flex justify-content-between align-items-center btn btn-sq-lg btn-primary"
   >
@@ -24,8 +24,20 @@
         required
         [(ngModel)]="inputState"
       />
-      <button type="submit" class="btn btn-primary" *ngIf="index < lengthOfQuestionSteps - 1">Suivant</button>
-      <button type="submit" class="btn btn-primary" *ngIf="index == lengthOfQuestionSteps - 1">Récapitulatif</button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        *ngIf="index < lengthOfQuestionSteps - 1"
+      >
+        Suivant
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        *ngIf="index == lengthOfQuestionSteps - 1"
+      >
+        Récapitulatif
+      </button>
     </form>
   </div>
 </div>
