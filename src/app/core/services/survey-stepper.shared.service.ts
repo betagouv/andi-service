@@ -9,8 +9,6 @@ export class SurveyStepperSharedService {
   indexStepper = new Subject<number>();
   lengthOfQuestionSteps = 0;
 
-  // stateForm: StateForm = new StateForm('', '', '');
-
   stateForm: IHash = {};
 
   constructor() {}
@@ -19,7 +17,3 @@ export class SurveyStepperSharedService {
 export interface IHash {
   [indexer: string]: string;
 }
-
-/* class StateForm {
-  constructor(address: string, jobs: string, range: string) {}
-} */

@@ -10,7 +10,7 @@
         placeholder="exemple : 10 Rue de Flandre, 75001"
         name="adress"
         required
-        ngModel
+        [(ngModel)]="currentStateForm.address"
       />
       <label for="job">Métier souhaité</label>
       <input
@@ -19,7 +19,7 @@
         id="job"
         placeholder="exemple : cariste"
         name="job"
-        ngModel
+        [(ngModel)]="currentStateForm.jobs"
       />
       <label for="range">Distance maximale</label>
       <input
@@ -28,7 +28,7 @@
         id="range"
         placeholder="exemple : 3"
         name="range"
-        ngModel
+        [(ngModel)]="currentStateForm.range"
       />
       <button type="submit" class="btn btn-primary">Rechercher</button>
     </form>
