@@ -22,7 +22,7 @@
         placeholder="{{ proposal.placeholder }}"
         name="{{ proposal.id }}"
         required
-        ngModel
+        [(ngModel)]="inputState"
       />
       <button type="submit" class="btn btn-primary" *ngIf="index < lengthOfQuestionSteps - 1">Suivant</button>
       <button type="submit" class="btn btn-primary" *ngIf="index == lengthOfQuestionSteps - 1">Récapitulatif</button>
