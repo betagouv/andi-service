@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PmsmpService } from 'src/app/core/services/pmsmp.service';
 import { Address, ADDRESS_TYPE } from 'src/models/pmsmp-request';
-import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
+import { SurveyStepperSharedService, IHash } from 'src/app/core/services/survey-stepper.shared.service';
 
 @Component({
   selector: 'andi-summary',
@@ -9,7 +9,7 @@ import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper
   styleUrls: ['./summary.component.scss']
 })
 export class SummaryComponent implements OnInit {
-  currentStateForm = {};
+  currentStateForm: IHash = {};
 
   constructor(
     private pmsmpService: PmsmpService,
