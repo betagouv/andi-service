@@ -16,7 +16,6 @@ export class ProposalComponent implements OnInit {
   index = 0;
   lengthOfQuestionSteps = 0;
   inputState: string;
-  
 
   constructor(
     private surveyStepperSharedService: SurveyStepperSharedService,
@@ -25,14 +24,16 @@ export class ProposalComponent implements OnInit {
 
   ngOnInit() {
     this.getValuesOfCurrentIndexAndLengthQuestionSteps();
-    this.inputState =  Object.values(this.surveyStepperSharedService.stateForm)[this.proposal.id];
+    this.inputState = Object.values(this.surveyStepperSharedService.stateForm)[
+      this.proposal.id
+    ];
   }
 
   getValuesOfCurrentIndexAndLengthQuestionSteps = () =>
     ({
       index: this.index,
       lengthOfQuestionSteps: this.lengthOfQuestionSteps
-    } = this.surveyStepperSharedService);
+    } = this.surveyStepperSharedService)
 
   updateCriteriasState(addressInput) {
     this.surveyStepperSharedService.stateForm[
