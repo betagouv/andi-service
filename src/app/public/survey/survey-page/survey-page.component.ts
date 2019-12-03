@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './survey-page.component.html',
   styleUrls: ['./survey-page.component.scss']
 })
+
 export class SurveyPageComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
   questionSteps: QuestionStep[];
