@@ -12,8 +12,8 @@ import { Subscription } from 'rxjs';
 
 export class SurveyPageComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
-  questionSteps: QuestionStep[];
 
+  questionSteps: QuestionStep[];
   currentQuestionStep: QuestionStep;
 
   constructor(
@@ -22,10 +22,10 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.subscriptions.push(this.getSteps(), this.loadQuestionStep());
+    this.subscriptions.push(this.loadStepsList(), this.loadQuestionStep());
   }
 
-  getSteps(): Subscription {
+  loadStepsList(): Subscription {
     return this.surveyStepperApiService
       .getListSurvey()
       .subscribe((questionSteps: any) => {

@@ -24,5 +24,6 @@ export class QuestionStep {
 
 export enum QuestionType {
   REDIRECT = 'redirect',
-  CRITERIA = 'criteria'
+  CRITERIA = 'criteria',
+  DISCLAIMER = 'disclaimer'
 }
