@@ -9,5 +9,5 @@
   andi.beta.gouv.fr
 </h1>
 
-# andi-service
+# 🏗 andi-service
 Le Service d'ANDi, incluant les interfaces de pas-à-pas, de matching, de suivi et d'accompagnement. C'est l'interface essentielle du service numérique développé par ANDi.
