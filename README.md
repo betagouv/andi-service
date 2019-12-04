@@ -1,4 +1,4 @@
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/betagouv/andi-matching/graphs/commit-activity)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/betagouv/andi-matching-ui/graphs/commit-activity)
 [![Generic badge](https://img.shields.io/badge/ANDi-oui-green.svg)](https://shields.io/)
 <p align="center">
   <a href="https://andi.beta.gouv.fr">
