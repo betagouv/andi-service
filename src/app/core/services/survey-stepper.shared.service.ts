@@ -16,6 +16,12 @@ export class SurveyStepperSharedService {
     this.stepperCursor.next(aim);
     this.pathHistory.push(aim);
   }
+
+  public goToPrevStep() {
+    this.pathHistory.splice(-1, 1);
+    const lastStepId = this.pathHistory[this.pathHistory.length - 1];
+    this.stepperCursor.next(lastStepId);
+  }
 }
 
 export interface IHash {

@@ -9,18 +9,16 @@ import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper
 })
 export class NavigationStepComponent implements OnInit {
 
+
   constructor(
     private surveyStepperSharedService: SurveyStepperSharedService,
     private router: Router
   ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   previousQuestion() {
-/*       this.surveyStepperSharedService.indexStepper.next(
-        --this.surveyStepperSharedService.index
-      ); */
+    this.surveyStepperSharedService.goToPrevStep();
   }
 
   goToSearch() {
