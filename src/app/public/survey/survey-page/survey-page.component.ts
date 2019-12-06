@@ -32,7 +32,7 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
         .getListSurvey()
         .subscribe((questionSteps: any) => {
           this.questionSteps = questionSteps;
-          this.surveyStepperSharedService.stepperCursor.next('Q1');
+          this.surveyStepperSharedService.goToNextStep('Q1');
         })
     );
   }

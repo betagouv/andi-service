@@ -35,9 +35,7 @@ export class ProposalComponent implements OnInit {
 
   nextQuestion() {
     if (this.proposal.aim !== '') {
-      this.surveyStepperSharedService.stepperCursor.next(
-        this.proposal.aim
-      );
+      this.surveyStepperSharedService.goToNextStep(this.proposal.aim);
     } else {
       this.router.navigateByUrl('/summary');
     }
