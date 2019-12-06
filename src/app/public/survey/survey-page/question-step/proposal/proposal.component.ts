@@ -13,8 +13,6 @@ export class ProposalComponent implements OnInit {
   @Input() proposal: ResponseProposal;
   @Input() questionStepType: QuestionType;
 
-  index = 0;
-  lengthOfQuestionSteps = 0;
   inputState: string;
 
   constructor(
@@ -23,17 +21,10 @@ export class ProposalComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getValuesOfCurrentIndexAndLengthQuestionSteps();
     this.inputState = Object.values(this.surveyStepperSharedService.stateForm)[
       this.proposal.id
     ];
   }
-
-  getValuesOfCurrentIndexAndLengthQuestionSteps = () =>
-    ({
-      index: this.index,
-      lengthOfQuestionSteps: this.lengthOfQuestionSteps
-    } = this.surveyStepperSharedService)
 
   updateCriteriasState(addressInput) {
     this.surveyStepperSharedService.stateForm[
@@ -43,11 +34,10 @@ export class ProposalComponent implements OnInit {
   }
 
   nextQuestion() {
-    if (this.index < this.lengthOfQuestionSteps - 1) {
-      this.surveyStepperSharedService.indexStepper.next(
-        ++this.surveyStepperSharedService.index
+    if (this.proposal.aim !== '') {
+      this.surveyStepperSharedService.stepperCursor.next(
+        this.proposal.aim
       );
-      this.getValuesOfCurrentIndexAndLengthQuestionSteps();
     } else {
       this.router.navigateByUrl('/summary');
     }

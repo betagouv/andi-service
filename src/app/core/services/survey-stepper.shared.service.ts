@@ -5,9 +5,8 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class SurveyStepperSharedService {
-  index = 0;
-  indexStepper = new Subject<number>();
-  lengthOfQuestionSteps = 0;
+
+  stepperCursor: Subject<string> = new Subject();
 
   stateForm: IHash = {};
 

@@ -8,6 +8,15 @@
     {{ proposal.label }}
   </a>
 
+  <!-- REPONSE POUR QUESTION TYPE FILTRE -->
+  <a
+    (click)="nextQuestion()"
+    *ngIf="questionStepType == 'disclaimer'"
+    class="d-flex justify-content-between align-items-center btn btn-sq-lg btn-primary"
+  >
+    Continuer
+  </a>
+
   <!-- REPONSE POUR QUESTION TYPE CRITERE DE RECHERCHE -->
   <div
     *ngIf="questionStepType == 'criteria'"

@@ -8,7 +8,6 @@ import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper
   styleUrls: ['./navigation-step.component.scss']
 })
 export class NavigationStepComponent implements OnInit {
-  index: number;
 
   constructor(
     private surveyStepperSharedService: SurveyStepperSharedService,
@@ -16,15 +15,12 @@ export class NavigationStepComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.surveyStepperSharedService.indexStepper.subscribe((currentIndex) => {
-      this.index = currentIndex;
-    });
   }
 
   previousQuestion() {
-      this.surveyStepperSharedService.indexStepper.next(
+/*       this.surveyStepperSharedService.indexStepper.next(
         --this.surveyStepperSharedService.index
-      );
+      ); */
   }
 
   goToSearch() {
