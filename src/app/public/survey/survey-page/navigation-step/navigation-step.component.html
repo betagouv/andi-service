@@ -2,6 +2,7 @@
   <div class="container nav-wrapper">
     <div class="d-sm-flex justify-content-between align-items-center">
       <button 
+      *ngIf="enablePrev"
       (click)="previousQuestion()" 
       type="button" 
       class="btn btn-primary">Précédent</button>
