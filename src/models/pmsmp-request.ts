@@ -56,11 +56,11 @@ export class RomeCode {
 }
 
 export enum ADDRESS_TYPE {
-  string = "string",
-  geoapigouv = "geoapigouv"
+  string = 'string',
+  geoapigouv = 'geoapigouv'
 }
 
 export enum CRITERIA_TYPE {
-  distance = "distance",
-  rome_codes = "rome_codes"
+  distance = 'distance',
+  rome_codes = 'rome_codes'
 }
