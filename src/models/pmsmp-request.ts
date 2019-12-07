@@ -68,6 +68,12 @@ export class RomeCode {
   id: string;
   include: boolean;
   exclude: boolean;
+
+  constructor(id: string, include: boolean, exclude: boolean) {
+    this.id = id;
+    this.include = include;
+    this.exclude = exclude;
+  }
 }
 
 export enum ADDRESS_TYPE {
