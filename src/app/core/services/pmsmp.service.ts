@@ -47,26 +47,6 @@ export class PmsmpService {
       );
   }
 
-  getMetier(addressField: string, jobField: string, rangeField: string) {
-    const parameters = new HttpParams()
-      .set('q', jobField)
-      .set('_sid', this._session_id)
-      .set('_v', '1');
-    return this.http.get<RomeSuggestionResponse>(
-      'https://andi.beta.gouv.fr/api/rome_suggest',
-      {
-        params: parameters
-      }
-    );
-  }
-
-  getPmsmpList2(addressField: string, jobField: string, rangeField: string) {
-    return this.http.post<PmsmpResult>(
-      'https://andi.beta.gouv.fr/api/match',
-      this.computeRequestBody(addressField, jobField, rangeField)
-    );
-  }
-
   private computeRequestBody(
     addressField: string,
     jobField: string,
