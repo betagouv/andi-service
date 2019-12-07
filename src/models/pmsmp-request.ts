@@ -4,14 +4,14 @@ export class PmsmpRequest {
   _query_id: string;
   _session_id: string;
   address: Address;
-  criteria: Criteria[];
+  criteria: Criterion[];
 
   constructor(
     _timestamp: string,
     _query_id: string,
     _session_id: string,
     address: Address,
-    criteria: Criteria[]
+    criteria: Criterion[]
   ) {
     this._timestamp = _timestamp;
     this._query_id = _query_id;
@@ -34,33 +34,43 @@ export class Address {
   }
 }
 
-export class Criteria {
-  type: CRITERIA_TYPE.distance | CRITERIA_TYPE.rome_codes;
-  value: any; // optional
+export class Criterion {
   priority: number;
 
-  constructor(
-    type: CRITERIA_TYPE.distance | CRITERIA_TYPE.rome_codes,
-    value: number | RomeCode,
-    priority: number
-  ) {
-    this.type = type;
-    this.value = value;
+  constructor(priority: number) {
     this.priority = priority;
   }
 }
 
+export class CriterionDistance extends Criterion {
+  name = 'distance';
+  distance_km: string;
+
+  constructor(priority: number, distance_km: string) {
+    super(priority);
+    this.distance_km = distance_km;
+  }
+}
+
+export class CriterionCodeRomes extends Criterion {
+  name = 'rome_codes';
+  rome_list: RomeCode[];
+  exclude_naf: any[];
+
+  constructor(priority: number, rome_list: RomeCode[], exclude_naf: any[]) {
+    super(priority);
+    this.rome_list = rome_list;
+    this.exclude_naf = exclude_naf;
+  }
+}
+
 export class RomeCode {
-  code: string;
-  priority: number;
+  id: string;
+  include: boolean;
+  exclude: boolean;
 }
 
 export enum ADDRESS_TYPE {
   string = 'string',
   geoapigouv = 'geoapigouv'
-}
-
-export enum CRITERIA_TYPE {
-  distance = 'distance',
-  rome_codes = 'rome_codes'
 }

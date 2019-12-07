@@ -4,7 +4,7 @@ import * as moment from 'moment';
 import { UUID } from 'angular2-uuid';
 import { Subject } from 'rxjs';
 import { PmsmpResult } from 'src/models/pmsmp-result';
-import { PmsmpRequest, Criteria, Address } from 'src/models/pmsmp-request';
+import { PmsmpRequest, Criterion, Address } from 'src/models/pmsmp-request';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class PmsmpService {
 
   private computeRequestBody(
     address: Address,
-    criteria: Criteria[]
+    criteria: Criterion[]
   ) {
     return new PmsmpRequest(
       moment().toISOString(),
@@ -31,7 +31,7 @@ export class PmsmpService {
     );
   }
 
-  getPmsmpList(address: Address, criteria: Criteria[]) {
+  getPmsmpList(address: Address, criteria: Criterion[]) {
     return this.http.post<PmsmpResult>(
       'https://andi.beta.gouv.fr/api/match',
       this.computeRequestBody( address, criteria)
