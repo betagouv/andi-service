@@ -22,11 +22,9 @@ export class SummaryComponent implements OnInit {
 
   loadPmsmpList(userRequest) {
     this.pmsmpService
-    .getPmsmpList(userRequest.adress, userRequest.job, userRequest.range)
+    .getPmsmpList(userRequest.adress, userRequest.job, userRequest.range )
     .subscribe(pmsmpListFound => {
       this.pmsmpService.pmsmpResult.next(pmsmpListFound);
     });
   }
 }
-
-// .getPmsmpList(new Address(ADDRESS_TYPE.string, userRequest.adress), [])
