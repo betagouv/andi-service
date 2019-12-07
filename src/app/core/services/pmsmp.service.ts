@@ -1,12 +1,13 @@
 import { CriterionCodeRomes, RomeCode } from './../../../models/pmsmp-request';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import * as moment from 'moment';
 import { UUID } from 'angular2-uuid';
 import { Subject } from 'rxjs';
 import { PmsmpResult } from 'src/models/pmsmp-result';
 import { PmsmpRequest, Criterion, Address } from 'src/models/pmsmp-request';
 import { ADDRESS_TYPE, CriterionDistance } from '../../../models/pmsmp-request';
+import { RomeSuggestionResponse } from 'src/models/rome-suggestion-response';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,16 @@ export class PmsmpService {
 
   constructor(private http: HttpClient) {
     this.pmsmpResult = new Subject<PmsmpResult>();
+  }
+
+  getMetier(jobField: string) {
+    const parameters = new HttpParams()
+      .set('q', jobField)
+      .set('_sid', this._session_id)
+      .set('_v', '1');
+    return this.http.get<RomeSuggestionResponse>('https://andi.beta.gouv.fr/api/rome_suggest', {
+      params: parameters
+    });
   }
 
   getPmsmpList(addressField: string, jobField: string, rangeField: string) {
