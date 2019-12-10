@@ -1,36 +1,80 @@
 <h3>Récapitulatif de vos informations de recherche :</h3>
 
 <div class="form-container">
-    <form (ngSubmit)="loadPmsmpList(userForm.value)" #userForm="ngForm">
-      <label for="adress">Adresse postale</label>
-      <input
-        type="text"
-        class="form-control form-control-lg"
-        id="adress"
-        placeholder="exemple : 10 Rue de Flandre, 75001"
-        name="adress"
-        required
-        [(ngModel)]="currentStateForm.address"
-      />
-      <label for="job">Métier souhaité</label>
-      <input
-        type="text"
-        class="form-control form-control-lg"
-        id="job"
-        placeholder="exemple : cariste"
-        name="job"
-        [(ngModel)]="currentStateForm.jobs"
-      />
-      <label for="range">Distance maximale</label>
-      <input
-        type="text"
-        class="form-control form-control-lg"
-        id="range"
-        placeholder="exemple : 3"
-        name="range"
-        [(ngModel)]="currentStateForm.range"
-      />
-      <button type="submit" class="btn btn-primary">Rechercher</button>
-    </form>
-  </div>
-  
+  <form (ngSubmit)="loadPmsmpList(userForm.value)" #userForm="ngForm">
+
+
+
+<!--     <label for="adress">Adresse postale</label>
+    <input
+      type="text"
+      class="form-control form-control-lg"
+      id="adress"
+      placeholder="exemple : 10 Rue de Flandre, 75001"
+      name="adress"
+      required
+      [(ngModel)]="currentStateForm.address"
+    /> -->
+
+
+    <div>
+        <mat-form-field>
+          <label for="adress">Adresse postale</label>
+          <input
+            id="adress"
+            matInput
+            placeholder="exemple : 10 Rue de Flandre, 75001"
+            [matAutocomplete]="auto"
+            [formControl]="addressCtrl"
+          />
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <ng-container >
+              <mat-option *ngFor="let adrSuggest of adrSuggestions" [value]="adrSuggest.properties.label">
+                <span
+                  >{{ adrSuggest.properties.label }}</span
+                >
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </mat-form-field>
+      
+        <br />
+      
+        <ng-container *ngIf="errorMsg; else elseTemplate">
+          {{ errorMsg }}
+        </ng-container>
+        <ng-template #elseTemplate>
+        </ng-template>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+    <label for="job">Métier souhaité</label>
+    <input
+      type="text"
+      class="form-control form-control-lg"
+      id="job"
+      placeholder="exemple : cariste"
+      name="job"
+      [(ngModel)]="currentStateForm.jobs"
+    />
+    <label for="range">Distance maximale</label>
+    <input
+      type="text"
+      class="form-control form-control-lg"
+      id="range"
+      placeholder="exemple : 3"
+      name="range"
+      [(ngModel)]="currentStateForm.range"
+    />
+    <button type="submit" class="btn btn-primary">Rechercher</button>
+  </form>
+</div>

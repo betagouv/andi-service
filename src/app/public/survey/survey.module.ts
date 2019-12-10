@@ -12,7 +12,7 @@ import { SurveyPageComponent } from './survey-page/survey-page.component';
   declarations: [SurveyPageComponent, QuestionStepComponent, ProposalComponent, NavigationStepComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class SurveyModule { }
