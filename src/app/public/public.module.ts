@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgModule } from '@angular/core';
 import { PublicRoutingModule } from './public-routing.module';
-import { SurveyModule } from './survey/survey.module';
 import { SummaryModule } from './summary/summary.module';
-import { FormsModule } from '@angular/forms';
+import { SurveyModule } from './survey/survey.module';
+
 
 
 @NgModule({
