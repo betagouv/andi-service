@@ -27,7 +27,7 @@
             [matAutocomplete]="auto"
             [formControl]="addressCtrl"
           />
-          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-autocomplete #auto="matAutocomplete" >
             <ng-container >
               <mat-option *ngFor="let adrSuggest of adrSuggestions" [value]="adrSuggest.properties.label">
                 <span

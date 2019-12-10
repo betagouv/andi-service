@@ -3,9 +3,13 @@
   height: 120px !important;
 }
 
-.btn, a {
+.btn,
+a {
   text-transform: none;
-  color: #FFF !important;
+  color: #fff !important;
   font-size: 20px;
-  cursor:pointer;
+  font-weight: bold;
+  cursor: pointer;
+
+  margin-bottom: 20px;;
 }
