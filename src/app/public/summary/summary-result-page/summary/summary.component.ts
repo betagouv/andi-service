@@ -68,7 +68,7 @@ export class SummaryComponent implements OnInit {
 
   loadPmsmpList(userRequest) {
     this.pmsmpService
-      .getPmsmpList(userRequest.adress, userRequest.job, userRequest.range)
+      .getPmsmpList(this.addressCtrl.value, userRequest.job, userRequest.range)
       .subscribe(pmsmpListFound => {
         this.pmsmpService.pmsmpResult.next(pmsmpListFound);
       });
