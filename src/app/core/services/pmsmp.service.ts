@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { UUID } from 'angular2-uuid';
 import * as moment from 'moment';
 import { Subject } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { Address, PmsmpRequest } from 'src/models/pmsmp-request';
 import { PmsmpResult } from 'src/models/pmsmp-result';
 import { RomeSuggestionResponse } from 'src/models/rome-suggestion-response';
@@ -34,7 +34,7 @@ export class PmsmpService {
         }
       )
       .pipe(
-        mergeMap(suggestions => {
+        switchMap(suggestions => {
           return this.http.post<PmsmpResult>(
             'https://andi.beta.gouv.fr/api/match',
             this.computeRequestBody(
