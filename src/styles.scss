@@ -2,5 +2,21 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/bootswatch/dist/materia/bootswatch";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Disable underline */
+.mat-form-field-underline {
+  display: none;
+}
+.mat-form-field-wrapper {
+  padding: 0px !important;
+}
+.mat-form-field input{
+color: #000;}

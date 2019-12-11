@@ -1,9 +1,13 @@
 input {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+  height: 40px;
 
-    background-color: #fff;
-    border-radius: 4px;
-    opacity: 0.8;
-    &.form-control-lg {
-    }
+  background-color: #fff;
+  border-radius: 4px;
+  opacity: 0.8;
 }
+
+/* Disable short field */
+.mat-form-field {
+    display: inherit;
+  }
