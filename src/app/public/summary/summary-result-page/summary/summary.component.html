@@ -23,7 +23,6 @@
           <input
             id="adress"
             matInput
-            placeholder="exemple : 10 Rue de Flandre, 75001"
             [matAutocomplete]="auto"
             [formControl]="addressCtrl"
           />
@@ -37,8 +36,6 @@
             </ng-container>
           </mat-autocomplete>
         </mat-form-field>
-      
-        <br />
       
         <ng-container *ngIf="errorMsg; else elseTemplate">
           {{ errorMsg }}
@@ -62,19 +59,20 @@
       type="text"
       class="form-control form-control-lg"
       id="job"
-      placeholder="exemple : cariste"
       name="job"
       [(ngModel)]="currentStateForm.jobs"
-    />
-    <label for="range">Distance maximale</label>
-    <input
+      />
+      <label for="range">Distance maximale</label>
+      <input
       type="text"
       class="form-control form-control-lg"
       id="range"
-      placeholder="exemple : 3"
       name="range"
       [(ngModel)]="currentStateForm.range"
-    />
-    <button type="submit" class="btn btn-primary">Rechercher</button>
-  </form>
-</div>
+      />
+      <button type="submit" class="btn btn-primary">Rechercher</button>
+    </form>
+  </div>
+  
+<!--   placeholder="exemple : cariste"
+  placeholder="exemple : 3" -->
