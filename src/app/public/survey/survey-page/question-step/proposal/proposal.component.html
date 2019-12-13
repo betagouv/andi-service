@@ -1,9 +1,9 @@
-<div>
+<div class="proposal-wrapper">
   <!-- REPONSE POUR QUESTION TYPE FILTRE -->
   <a
     (click)="nextQuestion()"
     *ngIf="questionStepType == 'redirect'"
-    class="d-flex justify-content-between align-items-center btn btn-sq-lg btn-primary"
+    class="proposal-btn"
   >
     {{ proposal.label }}
   </a>

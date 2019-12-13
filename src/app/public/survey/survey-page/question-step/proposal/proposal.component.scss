@@ -1,17 +1,24 @@
-.btn-sq-lg {
-  width: 120px !important;
-  height: 120px !important;
-}
 
-.btn,
-a {
+.proposal-btn {
+  min-width: 100px;
+  min-height: 50px;
+  border: 2px solid #024ca1;
+  border-radius: 7px;
+  padding: 3px;
   text-transform: none;
-  color: #fff !important;
+  text-align: center;
+  color: #000;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
 
-  margin-bottom: 20px;;
+  margin-bottom: 20px;
+  // margin-right: 20px;
+}
+
+.proposal-btn:not(:last-child) {
+  margin-right: 20px;
+
 }
 
 .form-control {
