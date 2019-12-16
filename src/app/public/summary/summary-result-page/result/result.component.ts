@@ -10,12 +10,13 @@ import { PmsmpResult } from 'src/models/pmsmp-result';
 export class ResultComponent implements OnInit {
   pmsmpResult: PmsmpResult;
 
-  constructor(private pmsmpService: PmsmpService) { }
+  constructor(
+    private pmsmpService: PmsmpService
+  ) {}
 
   ngOnInit() {
-    this.pmsmpService.pmsmpResult.subscribe((res) => {
+    this.pmsmpService.pmsmpResult.subscribe(res => {
       this.pmsmpResult = res;
     });
   }
-
 }

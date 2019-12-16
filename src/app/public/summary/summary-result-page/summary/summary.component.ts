@@ -8,6 +8,7 @@ import {
   SurveyStepperSharedService
 } from 'src/app/core/services/survey-stepper.shared.service';
 import { AddressSuggestionResponse } from 'src/models/address-suggestion-response';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'andi-summary',
@@ -23,6 +24,7 @@ export class SummaryComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
+    private loader: NgxUiLoaderService,
     private pmsmpService: PmsmpService,
     private surveyStepperSharedService: SurveyStepperSharedService
   ) {}
@@ -67,10 +69,12 @@ export class SummaryComponent implements OnInit {
   }
 
   loadPmsmpList(userRequest) {
+    this.loader.start();
     this.pmsmpService
       .getPmsmpList(this.addressCtrl.value, userRequest.job, userRequest.range)
       .subscribe(pmsmpListFound => {
         this.pmsmpService.pmsmpResult.next(pmsmpListFound);
+        this.loader.stop();
       });
   }
 }

@@ -6,6 +6,7 @@ import { ResultComponent } from './summary-result-page/result/result.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 
@@ -16,7 +17,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    NgxUiLoaderModule
   ]
 })
 export class SummaryModule { }

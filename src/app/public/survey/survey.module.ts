@@ -5,6 +5,7 @@ import { NavigationStepComponent } from './survey-page/navigation-step/navigatio
 import { ProposalComponent } from './survey-page/question-step/proposal/proposal.component';
 import { QuestionStepComponent } from './survey-page/question-step/question-step.component';
 import { SurveyPageComponent } from './survey-page/survey-page.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 
@@ -13,6 +14,7 @@ import { SurveyPageComponent } from './survey-page/survey-page.component';
   imports: [
     CommonModule,
     FormsModule,
+    NgxUiLoaderModule
   ]
 })
 export class SurveyModule { }
