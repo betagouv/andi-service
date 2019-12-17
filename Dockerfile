@@ -1,4 +1,4 @@
-FROM node:12.13-buster-slim
+FROM node:12.13-buster-slim as build
 
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
@@ -16,5 +16,12 @@ COPY *.json /app/
 COPY *.js /app/
 
 
-ENTRYPOINT ["/bin/bash"]
-ENTRYPOINT ["ng", "serve"]
+# ENTRYPOINT ["/bin/bash"]
+RUN ng build --output-path=dist
+
+### PROD ###
+FROM nginx:1.16.0-alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+# run nginx
+CMD ["nginx", "-g", "daemon off;"]

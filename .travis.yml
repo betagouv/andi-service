@@ -22,11 +22,16 @@ jobs:
     name: Build docker service
     script:
     - echo "Building commit $TRAVIS_COMMIT"
+    - 'docker build -t andi_service ./'
+    - docker images
+    - docer tag andi_service $DOCKER_USER/service:$TRAVIS_COMMIT
+    - docker push $DOCKER_USER/service:$TRAVIS_COMMIT
   - stage: deploy
     name: Deploy docker service
     if: branch = master AND type = push AND fork = false
     script:
     - echo "Deploying commit $TRAVIS_COMMIT"
+    - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker pull berzemus/service:$TRAVIS_COMMIT && sleep 5 || :"
 addons:
   ssh_known_hosts: andi.beta.gouv.fr
 before_install:
@@ -34,5 +39,3 @@ before_install:
   -in misc/deploy_ed25519.enc -out ./deploy_ed25519 -d
 - chmod 600 deploy_ed25519
 - echo "$DOCKER_PW" | docker login -u "$DOCKER_USER" --password-stdin
-- pip install pipenv
-- pip install tox
