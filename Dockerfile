@@ -1,24 +1,20 @@
-FROM python:3.7-slim-buster
+FROM node:12.13-buster-slim
 
-RUN pip install pipenv
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
 
-ARG PG_DSN="postgress://user:pass@localhost:5432/db"
-ARG HOST="localhost"
-ARG PORT=9000
-ENV PG_DSN=$PG_DSN
-ENV HOST=$HOST
-ENV PORT=$PORT
+# install and cache app dependencies
+COPY package.json /app/package.json
+RUN npm install
+RUN npm install -g @angular/cli
 
-COPY Pipfile* /
-RUN apt-get update && apt-get upgrade -y && \
-    apt-get install build-essential -y
-RUN pipenv install --system --deploy
+# RUN npm run build
 
-COPY matching/ /matching
-COPY webservice/ /webservice
-COPY Makefile /
+COPY src /app/src
+COPY e2e /app/e2e
+COPY *.json /app/
+COPY *.js /app/
 
-WORKDIR /
 
-ENTRYPOINT ["make", "serve"]
-# ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["ng", "serve"]
