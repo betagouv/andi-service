@@ -16,6 +16,7 @@ import { CriterionCodeRomes, RomeCode } from './../../../models/pmsmp-request';
 export class PmsmpService {
   _session_id: string;
   pmsmpResult: Subject<PmsmpResult>;
+  errorResult: Subject<string> = new Subject();
 
   constructor(private http: HttpClient) {
     this.pmsmpResult = new Subject<PmsmpResult>();
@@ -35,11 +36,18 @@ export class PmsmpService {
       )
       .pipe(
         switchMap(suggestions => {
+          let sugg: string;
+          if (suggestions && suggestions.data && suggestions.data[0]) {
+            sugg = suggestions.data[0].id;
+          } else {
+            sugg = jobField;
+          }
+
           return this.http.post<PmsmpResult>(
             'https://andi.beta.gouv.fr/api/match',
             this.computeRequestBody(
               addressField,
-              suggestions.data[0].id,
+              sugg,
               rangeField
             )
           );

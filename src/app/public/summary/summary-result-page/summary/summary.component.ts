@@ -38,7 +38,7 @@ export class SummaryComponent implements OnInit {
   enableAutocomplete() {
     this.addressCtrl.valueChanges
       .pipe(
-        debounceTime(500),
+        debounceTime(400),
         tap(() => {
           this.errorMsg = '';
           this.adrSuggestions = [];
@@ -74,6 +74,11 @@ export class SummaryComponent implements OnInit {
       .getPmsmpList(this.addressCtrl.value, userRequest.job, userRequest.range)
       .subscribe(pmsmpListFound => {
         this.pmsmpService.pmsmpResult.next(pmsmpListFound);
+        this.loader.stop();
+      },
+      (err) => {
+        console.log('Subscribe error GetPmsmpList : ', err);
+        this.pmsmpService.errorResult.next('Subscribe error GetPmsmpList');
         this.loader.stop();
       });
   }

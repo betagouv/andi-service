@@ -1,4 +1,8 @@
-<div class="table-responsive">
+<div *ngIf="hasErrorResult">
+<h3>Erreur : Une erreur est survenue. Veuilllez réessayer ultérieurement.</h3>
+</div>
+
+<div *ngIf="!hasErrorResult" class="table-responsive">
   <table *ngIf="pmsmpResult" class="table table-striped table-hover">
     <thead>
       <tr>
