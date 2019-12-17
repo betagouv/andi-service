@@ -7,11 +7,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { ResultItemComponent } from './summary-result-page/result/result-item/result-item.component';
 
 
 
 @NgModule({
-  declarations: [SummaryResultPageComponent, SummaryComponent, ResultComponent],
+  declarations: [SummaryResultPageComponent, SummaryComponent, ResultComponent, ResultItemComponent],
   imports: [
     CommonModule,
     FormsModule,
