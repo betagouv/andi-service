@@ -19,8 +19,8 @@ export class SummaryComponent implements OnInit {
   currentStateForm: IHash = {};
 
   addressCtrl = new FormControl();
-  adrSuggestions: any;
-  errorMsg: string;
+  adrSuggestions = [];
+  errorMsg = '';
 
   constructor(
     private http: HttpClient,
@@ -36,27 +36,8 @@ export class SummaryComponent implements OnInit {
   }
 
   enableAutocomplete() {
-    this.addressCtrl.valueChanges
-      .pipe(
-        debounceTime(400),
-        tap(() => {
-          this.errorMsg = '';
-          this.adrSuggestions = [];
-        }),
-        switchMap(saisie => {
-          const parameters = new HttpParams()
-            .set('q', saisie !== '' ? saisie : ' ')
-            .set('limit', '5')
-            .set('type', 'housenumber')
-            .set('autocomplete', '1');
-          return this.http.get<AddressSuggestionResponse>(
-            'https://api-adresse.data.gouv.fr/search',
-            {
-              params: parameters
-            }
-          );
-        })
-      )
+    this.pmsmpService
+      .enableAutocompleteAddress(this.addressCtrl)
       .subscribe((suggestions: any) => {
         if (suggestions !== undefined && suggestions.features.length === 0) {
           this.errorMsg = 'Aucune addresse trouvée !';
@@ -72,14 +53,16 @@ export class SummaryComponent implements OnInit {
     this.loader.start();
     this.pmsmpService
       .getPmsmpList(this.addressCtrl.value, userRequest.job, userRequest.range)
-      .subscribe(pmsmpListFound => {
-        this.pmsmpService.pmsmpResult.next(pmsmpListFound);
-        this.loader.stop();
-      },
-      (err) => {
-        console.log('Subscribe error GetPmsmpList : ', err);
-        this.pmsmpService.errorResult.next('Subscribe error GetPmsmpList');
-        this.loader.stop();
-      });
+      .subscribe(
+        pmsmpListFound => {
+          this.pmsmpService.pmsmpResult.next(pmsmpListFound);
+          this.loader.stop();
+        },
+        err => {
+          console.log('Subscribe error GetPmsmpList : ', err);
+          this.pmsmpService.errorResult.next('Subscribe error GetPmsmpList');
+          this.loader.stop();
+        }
+      );
   }
 }

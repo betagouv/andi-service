@@ -3,12 +3,14 @@ import { Injectable } from '@angular/core';
 import { UUID } from 'angular2-uuid';
 import * as moment from 'moment';
 import { Subject } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, debounceTime, tap } from 'rxjs/operators';
 import { Address, PmsmpRequest } from 'src/models/pmsmp-request';
 import { PmsmpResult } from 'src/models/pmsmp-result';
 import { RomeSuggestionResponse } from 'src/models/rome-suggestion-response';
 import { ADDRESS_TYPE, CriterionDistance } from '../../../models/pmsmp-request';
 import { CriterionCodeRomes, RomeCode } from './../../../models/pmsmp-request';
+import { FormControl } from '@angular/forms';
+import { AddressSuggestionResponse } from 'src/models/address-suggestion-response';
 
 @Injectable({
   providedIn: 'root'
@@ -70,5 +72,25 @@ export class PmsmpService {
         new CriterionCodeRomes(5, [new RomeCode(jobField, true, false)], [])
       ]
     );
+  }
+
+  enableAutocompleteAddress(frmCtrl: FormControl) {
+    return frmCtrl.valueChanges
+      .pipe(
+        debounceTime(400),
+        switchMap(saisie => {
+          const parameters = new HttpParams()
+            .set('q', saisie !== '' ? saisie : ' ')
+            .set('limit', '5')
+            .set('type', 'housenumber')
+            .set('autocomplete', '1');
+          return this.http.get<AddressSuggestionResponse>(
+            'https://api-adresse.data.gouv.fr/search',
+            {
+              params: parameters
+            }
+          );
+        })
+      );
   }
 }
