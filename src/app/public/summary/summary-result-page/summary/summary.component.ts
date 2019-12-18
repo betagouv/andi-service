@@ -52,6 +52,7 @@ export class SummaryComponent implements OnInit {
       .subscribe(
         pmsmpListFound => {
           this.pmsmpService.pmsmpResult.next(pmsmpListFound);
+          this.pmsmpService.errorResult.next('');
           this.loader.stop();
         },
         err => {

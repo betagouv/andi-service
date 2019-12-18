@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UUID } from 'angular2-uuid';
 import * as moment from 'moment';
-import { Subject } from 'rxjs';
+import { Subject, BehaviorSubject } from 'rxjs';
 import { switchMap, debounceTime, tap, timeout } from 'rxjs/operators';
 import { Address, PmsmpRequest } from 'src/models/pmsmp-request';
 import { PmsmpResult } from 'src/models/pmsmp-result';
@@ -18,7 +18,7 @@ import { AddressSuggestionResponse } from 'src/models/address-suggestion-respons
 export class PmsmpService {
   _session_id: string;
   pmsmpResult: Subject<PmsmpResult>;
-  errorResult: Subject<string> = new Subject();
+  errorResult: BehaviorSubject<string> = new BehaviorSubject('');
 
   constructor(private http: HttpClient) {
     this.pmsmpResult = new Subject<PmsmpResult>();

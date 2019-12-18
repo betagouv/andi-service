@@ -3,7 +3,7 @@
 </div>
 
 <div *ngIf="!hasErrorResult" class="table-responsive">
-  <table *ngIf="pmsmpResult" class="table table-striped table-hover">
+  <table *ngIf="pmsmpDatas" class="table table-striped table-hover">
     <thead>
       <tr>
         <th scope="col">Nom de l'entreprise</th>
@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let pmsmp of pmsmpResult.data">
+      <tr *ngFor="let pmsmp of pmsmpDatas">
         <th scope="row">{{ pmsmp.name }}</th>
         <th scope="row">{{ pmsmp.activity }}</th>
         <td>{{ pmsmp.distance }} km</td>
