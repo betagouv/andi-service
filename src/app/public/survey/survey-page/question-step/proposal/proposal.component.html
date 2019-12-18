@@ -1,12 +1,21 @@
-<div>
+<div class="proposal-wrapper">
   <!-- REPONSE POUR QUESTION TYPE FILTRE -->
-  <a
+  <button
     (click)="nextQuestion()"
     *ngIf="questionStepType == 'redirect'"
-    class="d-flex justify-content-between align-items-center btn btn-sq-lg btn-primary"
+    class="proposal-btn btn"
   >
     {{ proposal.label }}
-  </a>
+  </button>
+
+  <!-- REPONSE POUR QUESTION TYPE FILTRE -->
+  <button
+    (click)="nextQuestion()"
+    *ngIf="questionStepType == 'disclaimer'"
+    class="proposal-btn btn d-flex justify-content-between align-items-center"
+  >
+    Continuer
+</button>
 
   <!-- REPONSE POUR QUESTION TYPE CRITERE DE RECHERCHE -->
   <div
@@ -27,14 +36,14 @@
       <button
         type="submit"
         class="btn btn-primary"
-        *ngIf="index < lengthOfQuestionSteps - 1"
+        *ngIf="proposal.aim != ''"
       >
         Suivant
       </button>
       <button
         type="submit"
         class="btn btn-primary"
-        *ngIf="index == lengthOfQuestionSteps - 1"
+        *ngIf="proposal.aim == ''"
       >
         Récapitulatif
       </button>

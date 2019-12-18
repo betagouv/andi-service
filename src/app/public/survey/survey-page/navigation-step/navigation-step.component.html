@@ -1,7 +1,11 @@
 <div class="container nav-comp">
   <div class="container nav-wrapper">
     <div class="d-sm-flex justify-content-between align-items-center">
-      <button *ngIf="index != 0 && index != null" (click)="previousQuestion()" type="button" class="btn btn-primary">Précédent</button>
+      <button 
+      *ngIf="enablePrev"
+      (click)="previousQuestion()" 
+      type="button" 
+      class="btn btn-primary">Précédent</button>
       <button (click)="goToSearch()" type="button" class="btn btn-warning">
         Passer
       </button>
