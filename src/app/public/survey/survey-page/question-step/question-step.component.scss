@@ -1,3 +1,16 @@
+.q-step-comp {
+  border-top: 4px solid #003b80;
+  background-color: #fff;
+  padding: 15px;
+  min-height: 375px;
+
+  /* Ombre portée */
+  -webkit-box-shadow: 3px 3px 5px -1px rgba(133, 130, 133, 1);
+  -moz-box-shadow: 3px 3px 5px -1px rgba(133, 130, 133, 1);
+  box-shadow: 3px 3px 5px -1px rgba(133, 130, 133, 1);
+
+}
+
 .btn-sq-lg {
   width: 120px !important;
   height: 120px !important;
@@ -5,4 +18,8 @@
 
 .question-wrapper {
   max-width: 600px;
+}
+
+.proposals-wrapper {
+  min-height: 300px;
 }

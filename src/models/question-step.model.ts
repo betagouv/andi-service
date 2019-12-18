@@ -1,28 +1,17 @@
 import { ResponseProposal } from './response-proposal.model';
 
 export class QuestionStep {
-  sentence: string;
-  description: string;
-  type: QuestionType;
-  proposals: ResponseProposal[];
-  url: string;
-
   constructor(
-    sentence: string,
-    description: string,
-    type: QuestionType,
-    proposals: ResponseProposal[],
-    url: string
-  ) {
-    this.sentence = sentence;
-    this.description = description;
-    this.type = type;
-    this.proposals = proposals;
-    this.url = url;
-  }
+    public sentence: string,
+    public description: string,
+    public type: QuestionType,
+    public proposals: ResponseProposal[],
+    public url: string
+  ) {}
 }
 
 export enum QuestionType {
   REDIRECT = 'redirect',
-  CRITERIA = 'criteria'
+  CRITERIA = 'criteria',
+  DISCLAIMER = 'disclaimer'
 }

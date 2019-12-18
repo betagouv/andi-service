@@ -5,13 +5,23 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class SurveyStepperSharedService {
-  index = 0;
-  indexStepper = new Subject<number>();
-  lengthOfQuestionSteps = 0;
+  stepperCursor: Subject<string> = new Subject();
+  pathHistory: string[] = [];
 
   stateForm: IHash = {};
 
   constructor() {}
+
+  public goToNextStep(aim: string) {
+    this.stepperCursor.next(aim);
+    this.pathHistory.push(aim);
+  }
+
+  public goToPrevStep() {
+    this.pathHistory.splice(-1, 1);
+    const lastStepId = this.pathHistory[this.pathHistory.length - 1];
+    this.stepperCursor.next(lastStepId);
+  }
 }
 
 export interface IHash {

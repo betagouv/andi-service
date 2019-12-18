@@ -1,6 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ResponseProposal } from 'src/models/response-proposal.model';
-import { QuestionType } from 'src/models/question-step.model';
+import { Component, Input, OnInit } from '@angular/core';
 import { QuestionStep } from '../../../../../models/question-step.model';
 
 @Component({

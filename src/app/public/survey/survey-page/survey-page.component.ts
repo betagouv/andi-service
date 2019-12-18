@@ -3,17 +3,17 @@ import { QuestionStep } from 'src/models/question-step.model';
 import { SurveyStepperSharedService } from '../../../core/services/survey-stepper.shared.service';
 import { SurveyStepperApiService } from '../../../core/services/survey-stepper.api.service';
 import { Subscription } from 'rxjs';
+import { startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'andi-survey-page',
   templateUrl: './survey-page.component.html',
   styleUrls: ['./survey-page.component.scss']
 })
-
 export class SurveyPageComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
-  questionSteps: QuestionStep[];
 
+  questionSteps: QuestionStep[];
   currentQuestionStep: QuestionStep;
 
   constructor(
@@ -22,24 +22,25 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.subscriptions.push(this.getSteps(), this.loadQuestionStep());
+    this.loadStepsList();
+    this.loadQuestionStep();
   }
 
-  getSteps(): Subscription {
-    return this.surveyStepperApiService
-      .getListSurvey()
-      .subscribe((questionSteps: any) => {
-        this.questionSteps = questionSteps;
-        this.currentQuestionStep = this.questionSteps[0];
-        this.surveyStepperSharedService.lengthOfQuestionSteps =
-          questionSteps.length;
-      });
+  loadStepsList(): void {
+    this.subscriptions.push(
+      this.surveyStepperApiService
+        .getListSurvey()
+        .subscribe((questionSteps: any) => {
+          this.questionSteps = questionSteps;
+          this.surveyStepperSharedService.goToNextStep('Q1');
+        })
+    );
   }
-  loadQuestionStep(): Subscription {
-    return this.surveyStepperSharedService.indexStepper.subscribe(
-      (index: number) => {
-        this.currentQuestionStep = this.questionSteps[index];
-      }
+  loadQuestionStep(): void {
+    this.subscriptions.push(
+      this.surveyStepperSharedService.stepperCursor.pipe(startWith('Q1')).subscribe(stepId => {
+        this.currentQuestionStep = this.questionSteps[stepId];
+      })
     );
   }
 
