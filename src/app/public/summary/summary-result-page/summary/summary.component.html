@@ -4,9 +4,11 @@
 
 <div class="form-container">
   <form (ngSubmit)="loadPmsmpList(userForm.value)" #userForm="ngForm">
+
+    <!-- CHAMP ADRESSE -->
     <div>
       <mat-form-field>
-        <label for="adress">Adresse postale</label>
+        <label for="adress">Adresse postale :</label>
         <input
           id="adress"
           matInput
@@ -31,7 +33,8 @@
       <ng-template #elseTemplate> </ng-template>
     </div>
 
-    <label for="job">Métier souhaité</label>
+    <!-- CHAMP METIER -->
+    <label for="job">Métier souhaité :</label>
     <input
       type="text"
       class="form-control form-control-lg"
@@ -39,7 +42,9 @@
       name="job"
       [(ngModel)]="currentStateForm.jobs"
     />
-    <label for="range">Distance maximale</label>
+
+    <!-- CHAMP DISTANCE -->
+    <label for="range">Distance maximale :</label>
     <input
       type="text"
       class="form-control form-control-lg"

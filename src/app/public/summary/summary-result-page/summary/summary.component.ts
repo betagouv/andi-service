@@ -1,14 +1,11 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { debounceTime, switchMap, tap } from 'rxjs/operators';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { PmsmpService } from 'src/app/core/services/pmsmp.service';
 import {
   IHash,
   SurveyStepperSharedService
 } from 'src/app/core/services/survey-stepper.shared.service';
-import { AddressSuggestionResponse } from 'src/models/address-suggestion-response';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'andi-summary',
@@ -23,7 +20,6 @@ export class SummaryComponent implements OnInit {
   errorMsg = '';
 
   constructor(
-    private http: HttpClient,
     private loader: NgxUiLoaderService,
     private pmsmpService: PmsmpService,
     private surveyStepperSharedService: SurveyStepperSharedService
