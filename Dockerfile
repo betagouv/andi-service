@@ -17,7 +17,7 @@ COPY *.js /app/
 
 
 # ENTRYPOINT ["/bin/bash"]
-RUN ng build --output-path=dist
+RUN ng build --output-path=dist --base-href /service/ --deploy-url /service/assets/
 
 ### PROD ###
 FROM nginx:1.16.0-alpine
