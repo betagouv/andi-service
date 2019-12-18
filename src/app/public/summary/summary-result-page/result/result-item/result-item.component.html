@@ -1,7 +1,14 @@
 <div class="result-item">
-  <h3>{{ jobName }}</h3>
-  <h4>{{ pmsmpItem.name }}</h4>
-  <h5>{{ pmsmpItem.address }}</h5>
-  <h5>{{ pmsmpItem.activity }}</h5>
-  <h3>{{ pmsmpItem.distance }} km</h3>
+  <div class="result-header">
+    <h3>{{ jobName }}</h3>
+    <h3>{{ pmsmpItem.distance }} km</h3>
+  </div>
+  <div class="result-body">
+    <h4 class="corpName">{{ pmsmpItem.name }}</h4>
+    <h5>{{ pmsmpItem.activity }}</h5>
+  </div>
+  <div class="result-footer">
+    <h5>{{ pmsmpItem.address }}</h5>
+    <button class=" more-info btn">En savoir plus +</button>
+  </div>
 </div>
