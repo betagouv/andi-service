@@ -19,7 +19,7 @@ export class ResultComponent implements OnInit {
     });
 
     this.pmsmpService.pmsmpResult.subscribe((res: PmsmpResult) => {
-      this.pmsmpDatas = res.data;
+      this.pmsmpDatas = res.data.slice(0, 10);
     });
   }
 }
