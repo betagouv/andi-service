@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Data } from 'src/models/pmsmp-result';
 
 @Component({
   selector: 'andi-result-item',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result-item.component.scss']
 })
 export class ResultItemComponent implements OnInit {
+
+  @Input() pmsmpItem: Data;
 
   constructor() { }
 
