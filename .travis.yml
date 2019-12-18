@@ -1,0 +1,47 @@
+language: node_js
+node_js:
+    - 12.14
+services: "docker"
+stages:
+- test
+- build
+- deploy
+git:
+  submodules: false
+cache:
+  directories:
+  - public
+notifications:
+  slack: andi-startup:4EvkZ1UZEV4LwZXzvXhDGP8u
+jobs:
+  include:
+  - stage: test
+    name: Test ANDi Service component
+    script:
+    - echo "Testing commit $TRAVIS_COMMIT"
+  - stage: build
+    name: Build docker service
+    script:
+    - echo "Building commit $TRAVIS_COMMIT"
+    - 'docker build -t andi_service ./'
+    - docker images
+    - docker tag andi_service $DOCKER_USER/service:$TRAVIS_COMMIT
+    - docker push $DOCKER_USER/service:$TRAVIS_COMMIT
+  - stage: deploy
+    name: Deploy docker service
+    if: branch = master AND type = push AND fork = false
+    script:
+    - echo "Deploying commit $TRAVIS_COMMIT"
+    - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker pull berzemus/service:$TRAVIS_COMMIT && sleep 5 || :"
+    - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker stop service && sleep 4 || :"
+    - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker run -d --rm -p 8090:$PORT
+        -e PORT=$PORT
+        -e HOST=$HOST
+        --name service berzemus/service$TRAVIS_COMMIT"
+addons:
+  ssh_known_hosts: andi.beta.gouv.fr
+before_install:
+- openssl aes-256-cbc -K $encrypted_e48d419a01f0_key -iv $encrypted_e48d419a01f0_iv
+  -in misc/deploy_ed25519.enc -out ./deploy_ed25519 -d
+- chmod 600 deploy_ed25519
+- echo "$DOCKER_PW" | docker login -u "$DOCKER_USER" --password-stdin
