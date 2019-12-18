@@ -21,7 +21,9 @@ RUN ng build --output-path=dist
 
 ### PROD ###
 FROM nginx:1.16.0-alpine
+ARG PORT=80
+
 COPY --from=build /app/dist /usr/share/nginx/html
-EXPOSE 80
+EXPOSE $PORT
 # run nginx
 CMD ["nginx", "-g", "daemon off;"]

@@ -1,12 +1,11 @@
-language: nodejs
-services: "-docker"
+language: node_js
+services: "docker"
 stages:
 - test
 - build
 - deploy
 git:
   submodules: false
-sudo: false
 cache:
   directories:
   - public
@@ -32,6 +31,11 @@ jobs:
     script:
     - echo "Deploying commit $TRAVIS_COMMIT"
     - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker pull berzemus/service:$TRAVIS_COMMIT && sleep 5 || :"
+    - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker stop service && sleep 4 || :"
+    - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker run -d --rm -p 8090:$PORT
+        -e PORT=$PORT
+        -e HOST=$HOST
+        --name service berzemus/service$TRAVIS_COMMIT"
 addons:
   ssh_known_hosts: andi.beta.gouv.fr
 before_install:
