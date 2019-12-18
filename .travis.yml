@@ -25,7 +25,7 @@ jobs:
     - echo "Building commit $TRAVIS_COMMIT"
     - 'docker build -t andi_service ./'
     - docker images
-    - docer tag andi_service $DOCKER_USER/service:$TRAVIS_COMMIT
+    - docker tag andi_service $DOCKER_USER/service:$TRAVIS_COMMIT
     - docker push $DOCKER_USER/service:$TRAVIS_COMMIT
   - stage: deploy
     name: Deploy docker service
