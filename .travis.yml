@@ -29,7 +29,8 @@ jobs:
     - docker push $DOCKER_USER/service:$TRAVIS_COMMIT
   - stage: deploy
     name: Deploy docker service
-    if: branch = master AND type = push AND fork = false
+    # FIXME: uncomment following line to only deploy on master branch
+    # if: branch = master AND type = push AND fork = false
     script:
     - echo "Deploying commit $TRAVIS_COMMIT"
     - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker pull $DOCKER_USER/service:$TRAVIS_COMMIT && sleep 5"
