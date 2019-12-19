@@ -2,6 +2,7 @@ FROM node:12.13-buster-slim as build
 
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
+ARG BASE_HREF=/
 
 # install and cache app dependencies
 COPY package.json /app/package.json
@@ -15,10 +16,7 @@ COPY e2e /app/e2e
 COPY *.json /app/
 COPY *.js /app/
 
-
-# ENTRYPOINT ["/bin/bash"]
-# deploy-url not respected at the moment
-RUN ng build --output-path=dist --base-href /service/ --deploy-url /service/
+RUN ng build --output-path=dist --prod --base-href $BASE_HREF --deploy-url $BASE_HREF
 # RUN ng build --output-path=dist --base-href /service/
 
 ### PROD ###
@@ -26,6 +24,12 @@ FROM nginx:1.16.0-alpine
 ARG PORT=80
 
 COPY --from=build /app/dist /usr/share/nginx/html
-EXPOSE $PORT
+
+# Set config, test it
+COPY misc/nginx.conf /etc/nginx/
+RUN nginx -t
+RUN nginx -T
+
 # run nginx
+EXPOSE $PORT
 CMD ["nginx", "-g", "daemon off;"]

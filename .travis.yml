@@ -38,6 +38,7 @@ jobs:
     - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker run -d --rm -p 8060:$PORT
         -e PORT=$PORT
         -e HOST=$HOST
+        -e BASE_HREF=$BASE_HREF
         --name service $DOCKER_USER/service:$TRAVIS_COMMIT"
 addons:
   ssh_known_hosts: andi.beta.gouv.fr
