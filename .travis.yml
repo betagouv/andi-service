@@ -23,7 +23,10 @@ jobs:
     name: Build docker service
     script:
     - echo "Building commit $TRAVIS_COMMIT"
-    - 'docker build -t andi_service ./'
+    - 'docker build 
+        --build-arg PORT=$PORT
+        --build-arg BASE_HREF=$BASE_HREF
+        -t andi_service ./'
     - docker images
     - docker tag andi_service $DOCKER_USER/service:$TRAVIS_COMMIT
     - docker push $DOCKER_USER/service:$TRAVIS_COMMIT
@@ -36,9 +39,6 @@ jobs:
     - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker pull $DOCKER_USER/service:$TRAVIS_COMMIT && sleep 5"
     - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker stop service && sleep 4 || :"
     - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker run -d --rm -p 8060:$PORT
-        -e PORT=$PORT
-        -e HOST=$HOST
-        -e BASE_HREF=$BASE_HREF
         --name service $DOCKER_USER/service:$TRAVIS_COMMIT"
 addons:
   ssh_known_hosts: andi.beta.gouv.fr
