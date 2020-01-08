@@ -8,14 +8,14 @@
     {{ proposal.label }}
   </button>
 
-  <!-- REPONSE POUR QUESTION TYPE FILTRE -->
+  <!-- REPONSE POUR QUESTION TYPE DISCLAIMER -->
   <button
     (click)="nextQuestion()"
     *ngIf="questionStepType == 'disclaimer'"
     class="proposal-btn btn d-flex justify-content-between align-items-center"
   >
     Continuer
-</button>
+  </button>
 
   <!-- REPONSE POUR QUESTION TYPE CRITERE DE RECHERCHE -->
   <div
@@ -23,8 +23,39 @@
     class="d-sm-flex justify-content-between align-items-center"
   >
     <form (ngSubmit)="updateCriteriasState(userForm.value)" #userForm="ngForm">
-      <label for="{{ proposal.id }}">{{ proposal.label }}</label>
+
+      <!-- CHAMP ADRESSE -->
+      <div *ngIf="proposal.id == 'address'">
+        <mat-form-field>
+          <label for="adress">{{ proposal.label }}</label>
+          <input
+            id="adress"
+            matInput
+            [matAutocomplete]="auto"
+            [formControl]="addressCtrl"
+          />
+          <mat-autocomplete #auto="matAutocomplete">
+            <ng-container>
+              <mat-option
+                *ngFor="let adrSuggest of adrSuggestions"
+                [value]="adrSuggest.properties.label"
+              >
+                <span>{{ adrSuggest.properties.label }}</span>
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <ng-container *ngIf="errorMsg; else elseTemplate">
+          {{ errorMsg }}
+        </ng-container>
+        <ng-template #elseTemplate> </ng-template>
+      </div>
+
+
+      <label *ngIf="proposal.id != 'address'" for="{{ proposal.id }}">{{ proposal.label }}</label>
       <input
+        *ngIf="proposal.id != 'address'"
         type="text"
         class="form-control form-control-lg"
         id="{{ proposal.id }}"
@@ -33,18 +64,10 @@
         required
         [(ngModel)]="inputState"
       />
-      <button
-        type="submit"
-        class="btn btn-primary"
-        *ngIf="proposal.aim != ''"
-      >
+      <button type="submit" class="btn btn-primary" *ngIf="proposal.aim != ''">
         Suivant
       </button>
-      <button
-        type="submit"
-        class="btn btn-primary"
-        *ngIf="proposal.aim == ''"
-      >
+      <button type="submit" class="btn btn-primary" *ngIf="proposal.aim == ''">
         Récapitulatif
       </button>
     </form>

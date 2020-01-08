@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavigationStepComponent } from './survey-page/navigation-step/navigation-step.component';
 import { ProposalComponent } from './survey-page/question-step/proposal/proposal.component';
 import { QuestionStepComponent } from './survey-page/question-step/question-step.component';
 import { SurveyPageComponent } from './survey-page/survey-page.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 
@@ -14,6 +16,9 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
   imports: [
     CommonModule,
     FormsModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
     NgxUiLoaderModule
   ]
 })
