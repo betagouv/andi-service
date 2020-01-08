@@ -2,14 +2,29 @@
   <h3>Erreur : Une erreur est survenue. Veuilllez réessayer ultérieurement.</h3>
 </div>
 
-<div *ngIf="!hasErrorResult && pmsmpDatas.length == 0">
+<div *ngIf="hasErrorResult && pmsmpDatas.length == 0">
   <h3>Aucun résultat n'a été trouvé.</h3>
 </div>
 
 <div *ngIf="!hasErrorResult && pmsmpDatas.length > 0" class="result-item-wrapper">
   <andi-result-item
-    *ngFor="let pmsmp of pmsmpDatas"
+    *ngFor="let pmsmp of pmsmpDatas | slice:0:3"
     [pmsmpItem]="pmsmp"
     [jobName]="jobSuggestion"
   ></andi-result-item>
 </div>
+
+<div *ngIf="!hasErrorResult && pmsmpDatas.length > 0" class="wrap-collabsible">
+  <input id="collapsible" class="toggle" type="checkbox">
+  <label for="collapsible" class="lbl-toggle">Afficher plus de résultats</label>
+  <div class="collapsible-content">
+    <div class="content-inner">
+      <andi-result-item
+      *ngFor="let pmsmp of pmsmpDatas | slice:3"
+      [pmsmpItem]="pmsmp"
+      [jobName]="jobSuggestion"
+    ></andi-result-item>
+    </div>
+  </div>
+</div>
+
