@@ -17,7 +17,7 @@ import { AddressSuggestionResponse } from 'src/models/address-suggestion-respons
 })
 export class PmsmpService {
   _session_id: string;
-  jopSuggestion: string;
+  jobSuggestion: string;
   pmsmpResult: Subject<PmsmpResult>;
   errorResult: BehaviorSubject<string> = new BehaviorSubject('');
 
@@ -39,15 +39,15 @@ export class PmsmpService {
       )
       .pipe(
         switchMap(suggestions => {
-          const topSuggestion =
+          const romeSuggestion =
             suggestions && suggestions.data && suggestions.data[0]
               ? suggestions.data[0].id
               : jobField;
-          this.jopSuggestion = suggestions.data[0].value;
+          this.jobSuggestion = suggestions.data[0].value;
 
           return this.http.post<PmsmpResult>(
             'https://andi.beta.gouv.fr/api/match',
-            this.computeRequestBody(addressField, topSuggestion, rangeField)
+            this.computeRequestBody(addressField, romeSuggestion, rangeField)
           );
         }),
         timeout(10000)

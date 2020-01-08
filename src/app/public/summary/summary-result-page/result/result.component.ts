@@ -21,7 +21,7 @@ export class ResultComponent implements OnInit {
 
     this.pmsmpService.pmsmpResult.subscribe((res: PmsmpResult) => {
       this.pmsmpDatas = res.data.slice(0, 10);
-      this.jobSuggestion = this.pmsmpService.jopSuggestion;
+      this.jobSuggestion = this.pmsmpService.jobSuggestion;
     });
   }
 }

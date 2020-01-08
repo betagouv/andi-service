@@ -2,7 +2,11 @@
   <h3>Erreur : Une erreur est survenue. Veuilllez réessayer ultérieurement.</h3>
 </div>
 
-<div *ngIf="pmsmpDatas && !hasErrorResult" class="result-item-wrapper">
+<div *ngIf="!hasErrorResult && pmsmpDatas.length == 0">
+  <h3>Aucun résultat n'a été trouvé.</h3>
+</div>
+
+<div *ngIf="!hasErrorResult && pmsmpDatas.length > 0" class="result-item-wrapper">
   <andi-result-item
     *ngFor="let pmsmp of pmsmpDatas"
     [pmsmpItem]="pmsmp"
