@@ -9,6 +9,7 @@ import { PmsmpResult, Data } from 'src/models/pmsmp-result';
 })
 export class ResultComponent implements OnInit {
   pmsmpDatas: Data[] = [];
+  jobSuggestion = '';
   hasErrorResult = false;
 
   constructor(private pmsmpService: PmsmpService) {}
@@ -20,6 +21,7 @@ export class ResultComponent implements OnInit {
 
     this.pmsmpService.pmsmpResult.subscribe((res: PmsmpResult) => {
       this.pmsmpDatas = res.data.slice(0, 10);
+      this.jobSuggestion = this.pmsmpService.jobSuggestion;
     });
   }
 }

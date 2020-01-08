@@ -17,6 +17,7 @@ import { AddressSuggestionResponse } from 'src/models/address-suggestion-respons
 })
 export class PmsmpService {
   _session_id: string;
+  jobSuggestion: string;
   pmsmpResult: Subject<PmsmpResult>;
   errorResult: BehaviorSubject<string> = new BehaviorSubject('');
 
@@ -38,20 +39,15 @@ export class PmsmpService {
       )
       .pipe(
         switchMap(suggestions => {
-          let sugg: string;
-          if (suggestions && suggestions.data && suggestions.data[0]) {
-            sugg = suggestions.data[0].id;
-          } else {
-            sugg = jobField;
-          }
+          const romeSuggestion =
+            suggestions && suggestions.data && suggestions.data[0]
+              ? suggestions.data[0].id
+              : jobField;
+          this.jobSuggestion = suggestions.data[0].value;
 
           return this.http.post<PmsmpResult>(
             'https://andi.beta.gouv.fr/api/match',
-            this.computeRequestBody(
-              addressField,
-              sugg,
-              rangeField
-            )
+            this.computeRequestBody(addressField, romeSuggestion, rangeField)
           );
         }),
         timeout(10000)
@@ -76,22 +72,21 @@ export class PmsmpService {
   }
 
   enableAutocompleteAddress(frmCtrl: FormControl) {
-    return frmCtrl.valueChanges
-      .pipe(
-        debounceTime(400),
-        switchMap(saisie => {
-          const parameters = new HttpParams()
-            .set('q', saisie !== '' ? saisie : ' ')
-            .set('limit', '5')
-            .set('type', 'housenumber')
-            .set('autocomplete', '1');
-          return this.http.get<AddressSuggestionResponse>(
-            'https://api-adresse.data.gouv.fr/search',
-            {
-              params: parameters
-            }
-          );
-        })
-      );
+    return frmCtrl.valueChanges.pipe(
+      debounceTime(400),
+      switchMap(saisie => {
+        const parameters = new HttpParams()
+          .set('q', saisie !== '' ? saisie : ' ')
+          .set('limit', '5')
+          .set('type', 'housenumber')
+          .set('autocomplete', '1');
+        return this.http.get<AddressSuggestionResponse>(
+          'https://api-adresse.data.gouv.fr/search',
+          {
+            params: parameters
+          }
+        );
+      })
+    );
   }
 }

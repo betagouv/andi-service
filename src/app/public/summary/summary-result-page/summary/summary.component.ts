@@ -56,7 +56,6 @@ export class SummaryComponent implements OnInit {
           this.loader.stop();
         },
         err => {
-          console.log('Subscribe error GetPmsmpList : ', err);
           this.pmsmpService.errorResult.next('Subscribe error GetPmsmpList');
           this.loader.stop();
         }
