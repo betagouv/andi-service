@@ -3,7 +3,7 @@
     <h1>{{ questionStep.sentence }}</h1>
     <h3>{{ questionStep.description }}</h3>
 
-    <div class="proposals-wrapper d-sm-flex justify-content-between align-items-center">
+    <div class="proposals-wrapper">
       <div
         *ngFor="
           let proposal of questionStep.proposals | keyvalue;
