@@ -12,10 +12,10 @@
         <input
           id="adress"
           matInput
-          [matAutocomplete]="auto"
+          [matAutocomplete]="adrAuto"
           [formControl]="addressCtrl"
         />
-        <mat-autocomplete #auto="matAutocomplete">
+        <mat-autocomplete #adrAuto="matAutocomplete">
           <ng-container>
             <mat-option
               *ngFor="let adrSuggest of adrSuggestions"
@@ -34,14 +34,42 @@
     </div>
 
     <!-- CHAMP METIER -->
-    <label for="job">Métier souhaité :</label>
+    <div>
+      <mat-form-field>
+        <label for="job">Métier souhaité :</label>
+        <input
+          id="job"
+          matInput
+          [matAutocomplete]="jobAuto"
+          [formControl]="jobCtrl"
+        />
+        <mat-autocomplete #jobAuto="matAutocomplete">
+          <ng-container>
+            <mat-option
+              *ngFor="let jobSuggest of jobSuggestions"
+              [value]="jobSuggest.value"
+            >
+              <span>{{ jobSuggest.value }}</span>
+            </mat-option>
+          </ng-container>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <ng-container *ngIf="errorMsg; else elseTemplate">
+        {{ errorMsg }}
+      </ng-container>
+      <ng-template #elseTemplate> </ng-template>
+    </div>
+
+    <!-- CHAMP METIER OLD -->
+    <!-- <label for="job">Métier souhaité :</label>
     <input
       type="text"
       class="criterion-field form-control form-control-lg"
       id="job"
       name="job"
       [(ngModel)]="currentStateForm.jobs"
-    />
+    /> -->
 
     <!-- CHAMP DISTANCE -->
     <label for="range">Distance maximale (km) :</label>

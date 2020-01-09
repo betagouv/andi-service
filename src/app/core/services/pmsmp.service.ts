@@ -73,7 +73,7 @@ export class PmsmpService {
 
   enableAutocompleteAddress(frmCtrl: FormControl) {
     return frmCtrl.valueChanges.pipe(
-      debounceTime(400),
+      debounceTime(300),
       switchMap(saisie => {
         const parameters = new HttpParams()
           .set('q', saisie !== '' ? saisie : ' ')
@@ -82,6 +82,24 @@ export class PmsmpService {
           .set('autocomplete', '1');
         return this.http.get<AddressSuggestionResponse>(
           'https://api-adresse.data.gouv.fr/search',
+          {
+            params: parameters
+          }
+        );
+      })
+    );
+  }
+
+  enableAutocompleteJob(frmCtrl: FormControl) {
+    return frmCtrl.valueChanges.pipe(
+      debounceTime(300),
+      switchMap(saisie => {
+        const parameters = new HttpParams()
+          .set('q', saisie !== '' ? saisie : '   ')
+          .set('_sid', this._session_id)
+          .set('_v', '1');
+        return this.http.get<RomeSuggestionResponse>(
+          'https://andi.beta.gouv.fr/api/rome_suggest',
           {
             params: parameters
           }

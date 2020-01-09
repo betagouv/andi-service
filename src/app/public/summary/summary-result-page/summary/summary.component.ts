@@ -16,7 +16,9 @@ export class SummaryComponent implements OnInit {
   currentStateForm: IHash = {};
 
   addressCtrl = new FormControl();
+  jobCtrl = new FormControl();
   adrSuggestions = [];
+  jobSuggestions = [];
   errorMsg = '';
 
   constructor(
@@ -28,15 +30,17 @@ export class SummaryComponent implements OnInit {
   ngOnInit() {
     this.currentStateForm = this.surveyStepperSharedService.stateForm;
     this.addressCtrl.setValue(this.currentStateForm.address);
-    this.enableAutocomplete();
+    this.jobCtrl.setValue(this.currentStateForm.job);
+    this.enableAutocompleteAddress();
+    this.enableAutocompleteJob();
   }
 
-  enableAutocomplete() {
+  enableAutocompleteAddress() {
     this.pmsmpService
       .enableAutocompleteAddress(this.addressCtrl)
       .subscribe((suggestions: any) => {
-        if (suggestions !== undefined && suggestions.features.length === 0) {
-          this.errorMsg = 'Aucune addresse trouvée !';
+        if (suggestions !== undefined && suggestions.features && suggestions.features.length === 0) {
+          this.errorMsg = 'Aucun résultat ne correspond à votre saisie !';
           this.adrSuggestions = [];
         } else {
           this.errorMsg = '';
@@ -44,11 +48,24 @@ export class SummaryComponent implements OnInit {
         }
       });
   }
+  enableAutocompleteJob() {
+    this.pmsmpService
+      .enableAutocompleteJob(this.jobCtrl)
+      .subscribe((suggestions: any) => {
+        if (suggestions !== undefined && suggestions.data && suggestions.data.length === 0) {
+          this.errorMsg = 'Aucun résultat ne correspond à votre saisie !';
+          this.jobSuggestions = [];
+        } else {
+          this.errorMsg = '';
+          this.jobSuggestions = suggestions.data;
+        }
+      });
+  }
 
   loadPmsmpList(userRequest) {
     this.loader.start();
     this.pmsmpService
-      .getPmsmpList(this.addressCtrl.value, userRequest.job, userRequest.range)
+      .getPmsmpList(this.addressCtrl.value, this.jobCtrl.value, userRequest.range)
       .subscribe(
         pmsmpListFound => {
           this.pmsmpService.pmsmpResult.next(pmsmpListFound);
