@@ -30,6 +30,7 @@ export class CriterionComponent implements OnInit {
       this.proposal.id
     ];
 
+    this.formCtrl.setValue(this.surveyStepperSharedService.stateForm.address);
     this.enableAutocomplete();
   }
 
