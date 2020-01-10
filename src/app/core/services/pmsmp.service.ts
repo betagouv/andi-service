@@ -95,7 +95,7 @@ export class PmsmpService {
       debounceTime(300),
       switchMap(saisie => {
         const parameters = new HttpParams()
-          .set('q', saisie !== '' ? saisie : '   ')
+          .set('q', saisie.length > 2 ? saisie : 'aaa')
           .set('_sid', this._session_id)
           .set('_v', '1');
         return this.http.get<RomeSuggestionResponse>(

@@ -8,11 +8,12 @@ import { SurveyPageComponent } from './survey-page/survey-page.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { CriterionComponent } from './survey-page/question-step/criterion/criterion.component';
 
 
 
 @NgModule({
-  declarations: [SurveyPageComponent, QuestionStepComponent, ProposalComponent, NavigationStepComponent],
+  declarations: [SurveyPageComponent, QuestionStepComponent, ProposalComponent, NavigationStepComponent, CriterionComponent],
   imports: [
     CommonModule,
     FormsModule,

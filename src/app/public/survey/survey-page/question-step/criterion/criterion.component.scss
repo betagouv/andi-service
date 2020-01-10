@@ -1,0 +1,47 @@
+.proposal-btn {
+    min-width: 130px;
+    min-height: 100px;
+    border: 2px solid #024ca1;
+    border-radius: 7px;
+    padding: 3px;
+    text-transform: none;
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  
+    margin-bottom: 20px;
+    margin-right: 20px;
+  }
+  
+  .form-control {
+    display: initial;
+  }
+  
+  /* Disable short field */
+  .mat-form-field {
+    display: inherit;
+  }
+  
+  label,
+  button {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  input {
+    border: 2px solid blue;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    height: 40px;
+  
+    background-color: #fff;
+    border-radius: 4px;
+    opacity: 0.8;
+    &[type="text"]:focus {
+      background-color: #ffffff;
+      opacity: 0.8;
+    }
+  }
+  

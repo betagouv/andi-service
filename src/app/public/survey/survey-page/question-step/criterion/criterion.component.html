@@ -1,0 +1,53 @@
+<!-- REPONSE POUR QUESTION TYPE CRITERE DE RECHERCHE -->
+<div>
+  <form (ngSubmit)="updateCriteriasState(userForm.value)" #userForm="ngForm">
+    <!-- CHAMP ADRESSE -->
+    <div *ngIf="proposal.id == 'address'">
+      <mat-form-field>
+        <label for="adress">{{ proposal.label }}</label>
+        <input
+          id="adress"
+          name="{{ proposal.id }}"
+          matInput
+          [matAutocomplete]="auto"
+          [formControl]="addressCtrl"
+        />
+        <mat-autocomplete #auto="matAutocomplete">
+          <ng-container>
+            <mat-option
+              *ngFor="let adrSuggest of adrSuggestions"
+              [value]="adrSuggest.properties.label"
+            >
+              <span>{{ adrSuggest.properties.label }}</span>
+            </mat-option>
+          </ng-container>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <ng-container *ngIf="errorMsg; else elseTemplate">
+        {{ errorMsg }}
+      </ng-container>
+      <ng-template #elseTemplate> </ng-template>
+    </div>
+
+    <label *ngIf="proposal.id != 'address'" for="{{ proposal.id }}">{{
+      proposal.label
+    }}</label>
+    <input
+      *ngIf="proposal.id != 'address'"
+      type="text"
+      class="form-control form-control-lg"
+      id="{{ proposal.id }}"
+      placeholder="{{ proposal.placeholder }}"
+      name="{{ proposal.id }}"
+      required
+      [(ngModel)]="inputState"
+    />
+    <button type="submit" class="btn btn-primary" *ngIf="proposal.aim != ''">
+      Suivant
+    </button>
+    <button type="submit" class="btn btn-primary" *ngIf="proposal.aim == ''">
+      Récapitulatif
+    </button>
+  </form>
+</div>

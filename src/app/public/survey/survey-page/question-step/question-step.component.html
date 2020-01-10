@@ -11,9 +11,15 @@
         "
       >
         <andi-proposal
+          *ngIf="questionStep.type != 'criteria'"
           [proposal]="proposal.value"
           questionStepType="{{ questionStep.type }}"
         ></andi-proposal>
+
+        <andi-criterion
+          *ngIf="questionStep.type == 'criteria'"
+          [proposal]="proposal.value"
+        ></andi-criterion>
       </div>
     </div>
   </div>

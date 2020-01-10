@@ -30,7 +30,7 @@ export class SummaryComponent implements OnInit {
   ngOnInit() {
     this.currentStateForm = this.surveyStepperSharedService.stateForm;
     this.addressCtrl.setValue(this.currentStateForm.address);
-    this.jobCtrl.setValue(this.currentStateForm.job);
+    this.jobCtrl.setValue(this.currentStateForm.jobs);
     this.enableAutocompleteAddress();
     this.enableAutocompleteJob();
   }
