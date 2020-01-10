@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ResponseProposal } from 'src/models/response-proposal.model';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
-import { PmsmpService } from 'src/app/core/services/pmsmp.service';
 import { Router } from '@angular/router';
+import { PmsmpService } from 'src/app/core/services/pmsmp.service';
+import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
+import { ResponseProposal } from 'src/models/response-proposal.model';
 
 @Component({
   selector: 'andi-criterion',
@@ -13,8 +13,8 @@ import { Router } from '@angular/router';
 export class CriterionComponent implements OnInit {
   @Input() proposal: ResponseProposal;
 
-  addressCtrl = new FormControl();
-  adrSuggestions = [];
+  formCtrl = new FormControl();
+  suggestionsResult = [];
   errorMsg = '';
 
   inputState: string;
@@ -35,19 +35,26 @@ export class CriterionComponent implements OnInit {
 
   enableAutocomplete() {
     this.pmsmpService
-      .enableAutocompleteAddress(this.addressCtrl)
+      .enableAutocompleteAddress(this.formCtrl)
       .subscribe((suggestions: any) => {
         if (suggestions !== undefined && suggestions.features.length === 0) {
           this.errorMsg = 'Aucune addresse trouvée !';
-          this.adrSuggestions = [];
+          this.suggestionsResult = [];
         } else {
           this.errorMsg = '';
-          this.adrSuggestions = suggestions.features;
+          this.suggestionsResult = suggestions.features;
         }
       });
   }
 
   updateCriteriasState(saisieInput) {
+    this.surveyStepperSharedService.stateForm[
+      this.proposal.id
+    ] = this.formCtrl.value;
+    this.nextQuestion();
+  }
+
+  updateCriteriasStateOLD(saisieInput) {
     this.surveyStepperSharedService.stateForm[
       Object.keys(saisieInput)[0]
     ] = Object.values(saisieInput)[0] as string;

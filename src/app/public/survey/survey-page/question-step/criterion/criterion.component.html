@@ -7,15 +7,14 @@
         <label for="adress">{{ proposal.label }}</label>
         <input
           id="adress"
-          name="{{ proposal.id }}"
           matInput
           [matAutocomplete]="auto"
-          [formControl]="addressCtrl"
+          [formControl]="formCtrl"
         />
         <mat-autocomplete #auto="matAutocomplete">
           <ng-container>
             <mat-option
-              *ngFor="let adrSuggest of adrSuggestions"
+              *ngFor="let adrSuggest of suggestionsResult"
               [value]="adrSuggest.properties.label"
             >
               <span>{{ adrSuggest.properties.label }}</span>
