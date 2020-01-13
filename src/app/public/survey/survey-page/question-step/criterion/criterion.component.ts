@@ -34,7 +34,6 @@ export class CriterionComponent implements OnInit, OnDestroy {
     ];
 
     console.log('PROPO ID >>> ', this.proposal.id);
-    console.log('OBS >>> ', this.autocompletion$);
 
     this.formCtrl.setValue(this.surveyStepperSharedService.stateForm.address);
     this.enableAutocomplete();

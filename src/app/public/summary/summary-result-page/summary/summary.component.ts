@@ -39,6 +39,7 @@ export class SummaryComponent implements OnInit {
     this.pmsmpService
       .enableAutocompleteAddress(this.addressCtrl)
       .subscribe((suggestions: any) => {
+        console.log('SUGGGESTION >>> ', suggestions)
         if (suggestions !== undefined && suggestions.features && suggestions.features.length === 0) {
           this.errorMsg = 'Aucun résultat ne correspond à votre saisie !';
           this.adrSuggestions = [];
