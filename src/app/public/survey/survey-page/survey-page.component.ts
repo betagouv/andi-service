@@ -1,9 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { QuestionStep } from 'src/models/question-step.model';
-import { SurveyStepperSharedService } from '../../../core/services/survey-stepper.shared.service';
-import { SurveyStepperApiService } from '../../../core/services/survey-stepper.api.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { startWith } from 'rxjs/operators';
+import { QuestionStep } from 'src/models/question-step.model';
+import { SurveyStepperApiService } from '../../../core/services/survey-stepper.api.service';
+import { SurveyStepperSharedService } from '../../../core/services/survey-stepper.shared.service';
 
 @Component({
   selector: 'andi-survey-page',
@@ -38,9 +38,11 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
   }
   loadQuestionStep(): void {
     this.subscriptions.push(
-      this.surveyStepperSharedService.stepperCursor.pipe(startWith('Q1')).subscribe(stepId => {
-        this.currentQuestionStep = this.questionSteps[stepId];
-      })
+      this.surveyStepperSharedService.stepperCursor
+        .pipe(startWith('Q1'))
+        .subscribe(stepId => {
+          this.currentQuestionStep = this.questionSteps[stepId];
+        })
     );
   }
 

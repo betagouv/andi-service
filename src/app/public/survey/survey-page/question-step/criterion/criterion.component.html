@@ -1,8 +1,8 @@
 <!-- REPONSE POUR QUESTION TYPE CRITERE DE RECHERCHE -->
 <div>
   <form (ngSubmit)="updateCriteriasState(userForm.value)" #userForm="ngForm">
-    <!-- CHAMP ADRESSE -->
-    <div *ngIf="proposal.id == 'address'">
+    <!-- CHAMP AUTO COMPLETE -->
+    <div *ngIf="proposal.id != 'range'">
       <mat-form-field>
         <label for="adress">{{ proposal.label }}</label>
         <input
@@ -29,11 +29,14 @@
       <ng-template #elseTemplate> </ng-template>
     </div>
 
-    <label *ngIf="proposal.id != 'address'" for="{{ proposal.id }}">{{
+
+
+
+    <label *ngIf="proposal.id == 'range'" for="{{ proposal.id }}">{{
       proposal.label
     }}</label>
     <input
-      *ngIf="proposal.id != 'address'"
+      *ngIf="proposal.id == 'range'"
       type="text"
       class="form-control form-control-lg"
       id="{{ proposal.id }}"

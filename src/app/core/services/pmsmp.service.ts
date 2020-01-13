@@ -1,22 +1,22 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { UUID } from 'angular2-uuid';
 import * as moment from 'moment';
-import { Subject, BehaviorSubject } from 'rxjs';
-import { switchMap, debounceTime, tap, timeout } from 'rxjs/operators';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { debounceTime, switchMap, timeout } from 'rxjs/operators';
+import { AddressSuggestionResponse } from 'src/models/address-suggestion-response';
 import { Address, PmsmpRequest } from 'src/models/pmsmp-request';
 import { PmsmpResult } from 'src/models/pmsmp-result';
 import { RomeSuggestionResponse } from 'src/models/rome-suggestion-response';
 import { ADDRESS_TYPE, CriterionDistance } from '../../../models/pmsmp-request';
 import { CriterionCodeRomes, RomeCode } from './../../../models/pmsmp-request';
-import { FormControl } from '@angular/forms';
-import { AddressSuggestionResponse } from 'src/models/address-suggestion-response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PmsmpService {
-  _session_id: string;
+  _session_id: string = UUID.UUID();
   jobSuggestion: string;
   pmsmpResult: Subject<PmsmpResult>;
   errorResult: BehaviorSubject<string> = new BehaviorSubject('');
