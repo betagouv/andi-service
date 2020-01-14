@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { PmsmpService } from 'src/app/core/services/pmsmp.service';
+import { FeatureCollection } from '../../../../../models/address-suggestion-response';
 import {
   IHash,
   SurveyStepperSharedService
@@ -38,8 +39,7 @@ export class SummaryComponent implements OnInit {
   enableAutocompleteAddress() {
     this.pmsmpService
       .enableAutocompleteAddress(this.addressCtrl)
-      .subscribe((suggestions: any) => {
-        console.log('SUGGGESTION >>> ', suggestions)
+      .subscribe((suggestions: FeatureCollection) => {
         if (suggestions !== undefined && suggestions.features && suggestions.features.length === 0) {
           this.errorMsg = 'Aucun résultat ne correspond à votre saisie !';
           this.adrSuggestions = [];

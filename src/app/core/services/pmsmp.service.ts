@@ -11,6 +11,7 @@ import { PmsmpResult } from 'src/models/pmsmp-result';
 import { RomeSuggestionResponse } from 'src/models/rome-suggestion-response';
 import { ADDRESS_TYPE, CriterionDistance } from '../../../models/pmsmp-request';
 import { CriterionCodeRomes, RomeCode } from './../../../models/pmsmp-request';
+import { FeatureCollection } from '../../../models/address-suggestion-response';
 
 @Injectable({
   providedIn: 'root'
@@ -80,7 +81,7 @@ export class PmsmpService {
           .set('limit', '5')
           .set('type', 'housenumber')
           .set('autocomplete', '1');
-        return this.http.get<AddressSuggestionResponse>(
+        return this.http.get<FeatureCollection>(
           'https://api-adresse.data.gouv.fr/search',
           {
             params: parameters

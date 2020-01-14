@@ -14,10 +14,10 @@
         <mat-autocomplete #auto="matAutocomplete">
           <ng-container>
             <mat-option
-              *ngFor="let adrSuggest of suggestionsResult"
-              [value]="adrSuggest.properties.label"
+              *ngFor="let suggest of suggestionsResult"
+              [value]="suggest"
             >
-              <span>{{ adrSuggest.properties.label }}</span>
+              <span>{{ suggest }}</span>
             </mat-option>
           </ng-container>
         </mat-autocomplete>
