@@ -1,6 +1,7 @@
 @import "../node_modules/bootswatch/dist/materia/variables";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/bootswatch/dist/materia/bootswatch";
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
 
 html,
 body {
@@ -8,8 +9,9 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #ebeff3;
+  font-family: Dosis, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  background-color: #EBEFF3;
 }
 
 /* Disable underline */
