@@ -4,12 +4,13 @@ import { ResponseProposal } from '../../models/response-proposal.model';
 /* QUESTIONS FILTRE */
 
 const Q1 = new QuestionStep(
-  'Avez-vous un emploi aujourd\'hui ?',
+  'Quelle est votre situation professionelle actuelle ?',
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Oui', '', '', 'Q2'),
-    new ResponseProposal('Non', '', '', 'Q2')
+    new ResponseProposal('Je suis en poste (salarié / fonction publique)', '', '', 'Q2'),
+    new ResponseProposal('Je suis à la recherche d’un emploi', '', '', 'Q2'),
+    new ResponseProposal('Je suis en étudiant en formation', '', '', 'Q2')
   ],
   ''
 );

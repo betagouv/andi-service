@@ -1,18 +1,23 @@
 .proposal-btn {
-  min-width: 130px;
-  min-height: 100px;
-  border: 2px solid #024ca1;
-  border-radius: 7px;
-  padding: 3px;
+  background-color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+  min-height: 60px;
+  width: 100%;
+  /* Ombre portée */
+  -webkit-box-shadow: 3px 3px 5px -1px rgba(133, 130, 133, 1);
+  -moz-box-shadow: 3px 3px 5px -1px rgba(133, 130, 133, 1);
+  box-shadow: 3px 3px 5px -1px rgba(133, 130, 133, 1);
+
   text-transform: none;
   text-align: center;
   color: #000;
-  font-size: 20px;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
   cursor: pointer;
-
+  text-align: left;
   margin-bottom: 20px;
-  margin-right: 20px;
 }
 
 .form-control {
