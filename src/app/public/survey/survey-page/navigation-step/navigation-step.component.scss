@@ -1,6 +1,16 @@
-.nav-comp {
-  margin-top: 20px;
+.bouton {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  cursor: pointer;
 }
-.nav-wrapper {
-  max-width: 600px;
+
+.nav-comp {
+  margin-left: 65px;
+  margin-bottom: 30px;
+}
+
+.skip-comp {
+  width: 100%;
+  text-align: center;
 }
