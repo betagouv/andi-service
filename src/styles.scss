@@ -1,18 +1,24 @@
 @import "../node_modules/bootswatch/dist/materia/variables";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/bootswatch/dist/materia/bootswatch";
-@import url("https://fonts.googleapis.com/css?family=Dosis&display=swap");
+@import 'assets/scss/modules/_fonts.scss';
+
+// primary font
+$primary_font: 'Dosis';
+// font-weight
+$regular:500;
+$bold:700;
 
 html {
   height: 100%;
 }
 body {
+  font-family: $primary_font;
+  font-weight: $regular;
   min-height: 100%;
   padding: 0;
   margin: 0;
   position: relative;
-  font-family: Dosis, "Helvetica Neue", sans-serif;
-  font-weight: bold;
   background-color: #ebeff3;
 }
 
