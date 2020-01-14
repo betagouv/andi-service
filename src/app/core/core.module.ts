@@ -9,9 +9,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
     PublicModule,
@@ -23,7 +24,7 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
     MatAutocompleteModule,
     NgxUiLoaderModule
   ],
-  exports: [HeaderComponent]
+  exports: [HeaderComponent, FooterComponent]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

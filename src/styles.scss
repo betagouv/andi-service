@@ -1,17 +1,25 @@
 @import "../node_modules/bootswatch/dist/materia/variables";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/bootswatch/dist/materia/bootswatch";
-@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Dosis&display=swap");
 
-html,
-body {
+html {
   height: 100%;
 }
 body {
+  min-height: 100%;
+  padding: 0;
   margin: 0;
+  position: relative;
   font-family: Dosis, "Helvetica Neue", sans-serif;
   font-weight: bold;
-  background-color: #EBEFF3;
+  background-color: #ebeff3;
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: 100px;
 }
 
 label {
@@ -25,5 +33,6 @@ label {
 .mat-form-field-wrapper {
   padding: 0px !important;
 }
-.mat-form-field input{
-color: #000;}
+.mat-form-field input {
+  color: #000;
+}
