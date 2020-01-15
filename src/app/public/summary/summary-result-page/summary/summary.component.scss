@@ -9,15 +9,40 @@ button {
   font-weight: bold;
 }
 
-input {
-padding-left: 10px;
-margin-bottom: 20px;
-height: 40px;
+.bouton {
+  width: 170px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #006BE6;
+  padding: 3px;
+  border-radius: 2px;
+  -webkit-appearance: inherit;
 
-background-color: #fff;
-border-radius: 4px;
-opacity: 0.8;
-  &[type=text]:focus{
+    /* Ombre portée */
+    -webkit-box-shadow: 2px 2px 5px -1px rgba(133, 130, 133, 1);
+    -moz-box-shadow: 2px 2px 5px -1px rgba(133, 130, 133, 1);
+    box-shadow: 2px 2px 5px -1px rgba(133, 130, 133, 1);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+    &:hover {
+      box-shadow: 0 3px 6px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+    }
+}
+
+input {
+  border: 1px solid black;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  height: 40px;
+
+  background-color: #fff;
+  border-radius: 4px;
+  opacity: 0.8;
+  &[type="text"]:focus {
     background-color: #ffffff;
     opacity: 0.8;
   }

@@ -1,4 +1,4 @@
-.theme-gradient {
+theme-gradient {
   padding: 10px;
   background-image: -webkit-gradient(
     linear,
@@ -9,4 +9,19 @@
   );
   background-image: linear-gradient(to left, #0053b3, #003b80);
   color: #fff;
+}
+
+.summary-title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.06em;
+}
+
+.theme-gradient {
+  background-color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
