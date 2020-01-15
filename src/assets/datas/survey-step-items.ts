@@ -60,7 +60,7 @@ const D2 = new QuestionStep(
 
 const D3 = new QuestionStep(
   'Vous êtes actuellement travailleur en ESAT',
-  'Les immersions professionnelles pour les travailleurs d’ESAT sont très compliquées a cause de Nicole Brejou. N’hésitez pas à lui écrire un mail bien senti à : nicole.brejou@la-super-copine-de-gaelle.com',
+  'Les immersions professionnelles pour les travailleurs d’ESAT sont très compliquées',
   QuestionType.DISCLAIMER,
   [new ResponseProposal('', '', '', 'Q3')],
   ''
