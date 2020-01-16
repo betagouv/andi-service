@@ -12,7 +12,7 @@ import { SurveyStepperSharedService } from '../../../core/services/survey-steppe
 })
 export class SurveyPageComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
-
+  isIeOrEdge = /msie\s|trident\/|edge\//i.test(window.navigator.userAgent);
   questionSteps: QuestionStep[];
   currentQuestionStep: QuestionStep;
 

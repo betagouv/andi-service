@@ -1,4 +1,12 @@
 <div class="container">
+  <div
+    *ngIf="isIeOrEdge"
+    class="alert alert-primary nav-diclaimer"
+    role="alert"
+  >
+    Pour une expérience de navigation optimale, nous vous conseillons de vous
+    tourner vers tel que Chrome ou Firefox. Merci.
+  </div>
   <andi-question-step [questionStep]="currentQuestionStep"></andi-question-step>
   <andi-navigation-step></andi-navigation-step>
 </div>
