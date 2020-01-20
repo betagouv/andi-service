@@ -9,11 +9,17 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { CriterionComponent } from './survey-page/question-step/criterion/criterion.component';
-
-
+import { SomeHelpComponent } from '../../core/components/some-help/some-help.component';
 
 @NgModule({
-  declarations: [SurveyPageComponent, QuestionStepComponent, ProposalComponent, NavigationStepComponent, CriterionComponent],
+  declarations: [
+    SurveyPageComponent,
+    QuestionStepComponent,
+    ProposalComponent,
+    NavigationStepComponent,
+    CriterionComponent,
+    SomeHelpComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -23,4 +29,4 @@ import { CriterionComponent } from './survey-page/question-step/criterion/criter
     NgxUiLoaderModule
   ]
 })
-export class SurveyModule { }
+export class SurveyModule {}

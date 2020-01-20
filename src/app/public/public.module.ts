@@ -6,8 +6,7 @@ import { SurveyModule } from './survey/survey.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-
-
+import { SomeHelpComponent } from '../core/components/some-help/some-help.component';
 
 @NgModule({
   declarations: [],
@@ -19,6 +18,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     ReactiveFormsModule,
     MatInputModule,
     MatAutocompleteModule
-  ]
+  ],
+  exports: []
 })
-export class PublicModule { }
+export class PublicModule {}

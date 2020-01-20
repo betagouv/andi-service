@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { FooterComponent } from './components/footer/footer.component';
+import { SomeHelpComponent } from './components/some-help/some-help.component';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
