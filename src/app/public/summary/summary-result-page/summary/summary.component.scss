@@ -11,7 +11,7 @@ button {
 
 .bouton {
   width: 170px;
-  height: 40px;
+  min-height: 40px;
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
@@ -37,7 +37,7 @@ input {
   border: 1px solid black;
   padding-left: 10px;
   margin-bottom: 20px;
-  height: 40px;
+  min-height: 40px;
 
   background-color: #fff;
   border-radius: 4px;

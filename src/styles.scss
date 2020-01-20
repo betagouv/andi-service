@@ -42,3 +42,11 @@ label {
 .mat-form-field input {
   color: #000;
 }
+
+.mat-form-field-infix {
+  & input {
+    height: initial;
+    min-height: 40px;
+    font-size: initial;
+  }
+}
