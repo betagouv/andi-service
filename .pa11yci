@@ -1,0 +1,9 @@
+{
+	"defaults": {
+		"timeout": 1000
+	},
+	"urls": [
+		"http://localhost:4200/survey",
+		"http://localhost:4200/summary"
+	]
+}
