@@ -23,7 +23,7 @@ jobs:
   - name: Pa11y testin (accessibility)
     script:
     - echo "Testing commit $TRAVIS_COMMIT"
-     - npm run ng serve & sleep 10; npm run test-pa11y
+     - npm run ng serve & sleep 60; npm run test-pa11y
   - stage: build
     name: Build docker service
     script:
