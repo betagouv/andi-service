@@ -20,10 +20,13 @@ jobs:
     script:
     - echo "Testing commit $TRAVIS_COMMIT"
     - npm run ng lint
-  - name: Pa11y testin (accessibility)
+  - name: testing ng
+    script:
+    - npm run ng serve
+  - name: Pa11y testing (accessibility)
     script:
     - echo "Testing commit $TRAVIS_COMMIT"
-     - npm run ng serve & sleep 60; npm run test-pa11y
+    - npm run ng serve & sleep 60; npm run test-pa11y
   - stage: build
     name: Build docker service
     script:
