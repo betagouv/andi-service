@@ -3,8 +3,8 @@
 		"timeout": 1000
 	},
 	"urls": [
-		"http://localhost:4200",
-		"http://localhost:4200/survey",
-		"http://localhost:4200/summary"
+		"http://127.0.0.1:4200/",
+		"http://127.0.0.1:4200/survey",
+		"http://127.0.0.1:4200/summary"
 	]
 }
