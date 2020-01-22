@@ -7,13 +7,4 @@
   >
     {{ proposal.label }}
   </button>
-
-  <!-- REPONSE POUR QUESTION TYPE DISCLAIMER -->
-  <button
-    (click)="nextQuestion()"
-    *ngIf="questionStepType == 'disclaimer'"
-    class="proposal-btn btn d-flex justify-content-between align-items-center"
-  >
-    Continuer
-  </button>
 </div>

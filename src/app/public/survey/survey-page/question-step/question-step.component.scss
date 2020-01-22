@@ -18,8 +18,50 @@
     color: #26353f;
     letter-spacing: 0.06em;
   }
-  
+
   & h3 {
     font-size: 22px;
+  }
+}
+
+.overview-comp {
+  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 20px;
+  background-color: #ffffff;
+
+  & .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  & .description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 139.8%;
+  }
+
+  & .info {
+    margin-left: 25px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 139.8%;
+    letter-spacing: 0.01em;
+  }
+
+  & .link {
+    cursor: pointer;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 139.8%;
+    letter-spacing: 0.01em;
+    text-decoration-line: underline;
+    color: #006be6;
   }
 }
