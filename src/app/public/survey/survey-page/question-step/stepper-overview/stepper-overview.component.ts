@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ResponseProposal } from 'src/models/response-proposal.model';
-import { QuestionType } from 'src/models/question-step.model';
+import { Component, Input, OnInit } from '@angular/core';
 import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
+import { QuestionType } from 'src/models/question-step.model';
+import { ResponseProposal } from 'src/models/response-proposal.model';
 
 @Component({
   selector: 'andi-stepper-overview',
@@ -12,9 +12,11 @@ export class StepperOverviewComponent implements OnInit {
   @Input() proposal: ResponseProposal;
   @Input() questionStepType: QuestionType;
 
-  constructor(private surveyStepperSharedService: SurveyStepperSharedService) { }
+  constructor(private surveyStepperSharedService: SurveyStepperSharedService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  nextQuestion() {
     this.surveyStepperSharedService.goToNextStep(this.proposal.aim);
   }
 }

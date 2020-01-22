@@ -4,38 +4,34 @@ import { ResponseProposal } from '../../models/response-proposal.model';
 /* QUESTIONS FILTRE */
 
 const Q1 = new QuestionStep(
-  'Quelle est votre situation professionelle actuelle ?',
+  'Quelle est votre situation actuelle ?',
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Je suis en poste (salarié / fonction publique)', '', '', 'Q2'),
     new ResponseProposal('Je suis à la recherche d’un emploi', '', '', 'Q2'),
-    new ResponseProposal('Je suis en étudiant en formation', '', '', 'Q2')
+    new ResponseProposal('Je suis en poste', '', '', 'Q2')
   ],
   ''
 );
 
 const Q2 = new QuestionStep(
-  'Quelle est votre situation ?',
+  'Êtes-vous actuellement en arret maladie de longue durée ?',
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Salarié du secteur privé', '', '', 'Q3'),
-    new ResponseProposal('Employé du secteur public', '', '', 'Q3'),
-    new ResponseProposal('Travailleur en ESAT / EA', '', '', 'Q3')
+    new ResponseProposal('Oui', '', '', 'Q3'),
+    new ResponseProposal('Non', '', '', 'Q3')
   ],
   ''
 );
 
 const Q3 = new QuestionStep(
-  'Quelle est votre situation ?',
+  'Avez-vous la reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Salarié d\'une structure de SIAE', '', '', 'D1'),
-    new ResponseProposal('Travailleur indépendant', '', '', 'D1'),
-    new ResponseProposal('En arrêt maladie', '', '', 'D1'),
-    new ResponseProposal('Je ne trouve pas ma situation', '', '', 'D1')
+    new ResponseProposal('Oui', '', '', 'D1'),
+    new ResponseProposal('Non', '', '', 'D1')
   ],
   ''
 );

@@ -5,13 +5,12 @@ import { UUID } from 'angular2-uuid';
 import * as moment from 'moment';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { debounceTime, switchMap, timeout } from 'rxjs/operators';
-import { AddressSuggestionResponse } from 'src/models/address-suggestion-response';
 import { Address, PmsmpRequest } from 'src/models/pmsmp-request';
 import { PmsmpResult } from 'src/models/pmsmp-result';
 import { RomeSuggestionResponse } from 'src/models/rome-suggestion-response';
+import { FeatureCollection } from '../../../models/address-suggestion-response';
 import { ADDRESS_TYPE, CriterionDistance } from '../../../models/pmsmp-request';
 import { CriterionCodeRomes, RomeCode } from './../../../models/pmsmp-request';
-import { FeatureCollection } from '../../../models/address-suggestion-response';
 
 @Injectable({
   providedIn: 'root'

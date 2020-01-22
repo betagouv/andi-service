@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PmsmpService } from 'src/app/core/services/pmsmp.service';
 
 @Component({
   selector: 'andi-summary-result-page',
@@ -7,7 +6,7 @@ import { PmsmpService } from 'src/app/core/services/pmsmp.service';
   styleUrls: ['./summary-result-page.component.scss']
 })
 export class SummaryResultPageComponent implements OnInit {
-  constructor(private pmsmpService: PmsmpService) {}
+  constructor() {}
 
   ngOnInit() {}
 }
