@@ -9,7 +9,7 @@ export class SurveyStepperSharedService {
   pathHistory: string[] = [];
 
   stateForm: IHash = {};
-  stateStepper: IHash = {};
+  stateStepper: string[] = [];
 
   constructor() {}
 
@@ -19,6 +19,7 @@ export class SurveyStepperSharedService {
   }
   
   public goToPrevStep() {
+    this.stateStepper.splice(-1, 1);
     this.pathHistory.splice(-1, 1);
     const lastStepId = this.pathHistory[this.pathHistory.length - 1];
     this.stepperCursor.next(lastStepId);
