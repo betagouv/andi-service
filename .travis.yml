@@ -19,6 +19,11 @@ jobs:
     name: Test ANDi Service component
     script:
     - echo "Testing commit $TRAVIS_COMMIT"
+    - npm run ng lint
+  - name: Pa11y testing (accessibility)
+    script:
+    - echo "Testing commit $TRAVIS_COMMIT"
+    - npm run ng serve & sleep 30; npm run test-pa11y
   - stage: build
     name: Build docker service
     script:
@@ -35,12 +40,13 @@ jobs:
     if: branch = master AND type = push AND fork = false
     script:
     - echo "Deploying commit $TRAVIS_COMMIT"
-    - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker pull $DOCKER_USER/service:$TRAVIS_COMMIT && sleep 5"
-    - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker stop service && sleep 4 || :"
-    - ssh -i deploy_ed25519 travis@andi.beta.gouv.fr "docker run -d --rm -p 8060:$PORT
+    - ssh -i deploy_ed25519 travis@$HOST "docker pull $DOCKER_USER/service:$TRAVIS_COMMIT && sleep 5"
+    - ssh -i deploy_ed25519 travis@$HOST "docker stop service && sleep 4 || :"
+    - ssh -i deploy_ed25519 travis@$HOST "docker run -d --rm -p 8060:$PORT
         --name service $DOCKER_USER/service:$TRAVIS_COMMIT"
 addons:
-  ssh_known_hosts: andi.beta.gouv.fr
+  ssh_known_hosts:
+    - andi.beta.gouv.fr
 before_install:
 - openssl aes-256-cbc -K $encrypted_e48d419a01f0_key -iv $encrypted_e48d419a01f0_iv
   -in misc/deploy_ed25519.enc -out ./deploy_ed25519 -d
