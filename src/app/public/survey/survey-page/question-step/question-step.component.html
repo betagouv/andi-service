@@ -1,8 +1,5 @@
 <div class="q-step-comp container">
-  <div
-    *ngIf="questionStep.type != 'disclaimer'"
-    class="container question-wrapper"
-  >
+  <div *ngIf="questionStep.type != 'disclaimer'" class="container question-wrapper">
     <h1>{{ questionStep.sentence }}</h1>
     <h3>{{ questionStep.description }}</h3>
 
@@ -26,38 +23,7 @@
       </div>
     </div>
   </div>
-
-  <div *ngIf="questionStep.type == 'disclaimer'" class="">
-    <h1>Félicitation ! Encore quelques démarches avant l’immersion</h1>
-    <div class="overview-comp">
-      <h1 class="title">Démarches administratives</h1>
-      <p class="description">
-        Dès lors que vous avez trouvé votre entreprise pour réaliser votre
-        immersion professionnelle, vous pouvez engager les démarches
-        administratives afin d’acter officiellement votre immersion.
-      </p>
-      <p class="info">
-        Si vous avez besoin d’aide pour le remplir votre conseiller en évolution
-        professionnelle est là pour vous
-        <span (click)="goToSearch()" class="link">
-          Accédez à notre outil de recherche d’entreprise
-        </span>
-      </p>
-    </div>
-
-    <div class="proposals-wrapper">
-      <div
-        *ngFor="
-          let proposal of questionStep.proposals | keyvalue;
-          let i = index
-        "
-      >
-        <andi-stepper-overview
-          *ngIf="questionStep.type == 'disclaimer'"
-          [proposal]="proposal.value"
-          questionStepType="{{ questionStep.type }}"
-        ></andi-stepper-overview>
-      </div>
-    </div>
-  </div>
 </div>
+<andi-stepper-overview
+  *ngIf="questionStep.type == 'disclaimer'"
+></andi-stepper-overview>

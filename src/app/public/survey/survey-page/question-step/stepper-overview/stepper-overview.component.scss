@@ -1,58 +1,99 @@
 .proposal-btn {
-    background-color: #fff;
-    padding-left: 25px;
-    padding-right: 25px;
-    min-height: 60px;
-    width: 100%;
-    /* Ombre portée */
-    -webkit-box-shadow: 3px 3px 5px -1px rgba(133, 130, 133, 1);
-    -moz-box-shadow: 3px 3px 5px -1px rgba(133, 130, 133, 1);
-    box-shadow: 3px 3px 5px -1px rgba(133, 130, 133, 1);
-  
-    text-transform: none;
-    text-align: center;
-    color: #000;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    cursor: pointer;
-    text-align: left;
-    margin-bottom: 20px;
-  
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  
-    &:hover {
-      box-shadow: 0 7px 14px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    }
+  background-color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+  min-height: 60px;
+  width: 100%;
+  /* Ombre portée */
+  -webkit-box-shadow: 3px 3px 5px -1px rgba(133, 130, 133, 1);
+  -moz-box-shadow: 3px 3px 5px -1px rgba(133, 130, 133, 1);
+  box-shadow: 3px 3px 5px -1px rgba(133, 130, 133, 1);
+
+  text-transform: none;
+  text-align: center;
+  color: #000;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: 20px;
+
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &:hover {
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
-  
-  .form-control {
-    display: initial;
-  }
-  
-  /* Disable short field */
-  .mat-form-field {
-    display: inherit;
-  }
-  
-  label,
-  button {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  input {
-    border: 2px solid blue;
-    padding-left: 10px;
-    margin-bottom: 20px;
-    min-height: 40px;
-  
-    background-color: #fff;
-    border-radius: 4px;
+}
+
+.form-control {
+  display: initial;
+}
+
+/* Disable short field */
+.mat-form-field {
+  display: inherit;
+}
+
+label,
+button {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input {
+  border: 2px solid blue;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  min-height: 40px;
+
+  background-color: #fff;
+  border-radius: 4px;
+  opacity: 0.8;
+  &[type="text"]:focus {
+    background-color: #ffffff;
     opacity: 0.8;
-    &[type="text"]:focus {
-      background-color: #ffffff;
-      opacity: 0.8;
-    }
   }
-  
+}
+
+.overview-comp {
+  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 20px;
+  background-color: #ffffff;
+
+  & .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  & .description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 139.8%;
+  }
+
+  & .info {
+    margin-left: 25px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 139.8%;
+    letter-spacing: 0.01em;
+  }
+
+  & .link {
+    cursor: pointer;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 139.8%;
+    letter-spacing: 0.01em;
+    text-decoration-line: underline;
+    color: #006be6;
+  }
+}

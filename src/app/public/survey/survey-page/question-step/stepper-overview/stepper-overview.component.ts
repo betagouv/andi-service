@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
-import { QuestionType } from 'src/models/question-step.model';
-import { ResponseProposal } from 'src/models/response-proposal.model';
+import { Diagnostic } from 'src/models/diagnostic.model';
+import { jobSearch } from '../../../../../../assets/datas/job-search-diagnostic';
 
 @Component({
   selector: 'andi-stepper-overview',
@@ -9,14 +10,28 @@ import { ResponseProposal } from 'src/models/response-proposal.model';
   styleUrls: ['./stepper-overview.component.scss']
 })
 export class StepperOverviewComponent implements OnInit {
-  @Input() proposal: ResponseProposal;
-  @Input() questionStepType: QuestionType;
+  diagContent: Diagnostic;
 
-  constructor(private surveyStepperSharedService: SurveyStepperSharedService) {}
+  constructor(
+    private surveyStepperSharedService: SurveyStepperSharedService,
+    private router: Router
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loadDiagnosticDatas();
+  }
+
+  private loadDiagnosticDatas() {
+    if (this.surveyStepperSharedService.stateStepper.includes('job_search')) {
+      this.diagContent = jobSearch;
+    }
+  }
 
   nextQuestion() {
-    this.surveyStepperSharedService.goToNextStep(this.proposal.aim);
+    this.surveyStepperSharedService.goToNextStep('C1');
+  }
+
+  goToSearch() {
+    this.router.navigateByUrl('/summary');
   }
 }
