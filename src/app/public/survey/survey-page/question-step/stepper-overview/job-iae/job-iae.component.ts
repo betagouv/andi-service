@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['../diagnostic.scss']
 })
 export class JobIaeComponent implements OnInit {
+  @Input() isSick: boolean;
+  @Input() isRqth: boolean;
   constructor(private router: Router) {}
 
   ngOnInit() {}

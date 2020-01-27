@@ -38,6 +38,17 @@
         ou si vous souhaitez être discret, vous pouvez faire une immersion
         durant vos congés.
       </p>
+
+      <p *ngIf="isSick" class="info">
+        <span class="bold">A noter :</span> si vous êtes en arrêt maladie, vous
+        devez avoir également l’accord de votre médecin traitant et de la
+        Cellule de Prévention de la Désinsertion Professionnelle (CPDP) de votre
+        département.
+        <br />
+        <br />
+        Attention, les délais pour compléter le dossier à transmettre à la CPDP
+        peuvent être longs (entre 4 et 6 semaines).
+      </p>
     </li>
 
     <li>
@@ -73,24 +84,56 @@
         semaines pour faire signer et valider votre convention.
       </p>
 
-      <!-- RQTH -->
+      <p *ngIf="isRqth" class="info">
+        <span class="bold">A noter :</span> Si vous avez une RQTH, vous pouvez
+        bénéficier d’aides pour financer l’aménagement de votre poste de travail
+        ou votre transport. Vous pouvez faire la demande auprès de l’Agefiph
+        avant de commencer l’immersion.
+      </p>
     </li>
   </ol>
 
   <h1 class="title">Qui peut me renseigner ?</h1>
 
   <div class="description macro">
-    <p class="bold">
+    <span class="bold">
       Votre conseiller en évolution professionnelle ou votre conseiller Apec si
-      vous êtes cadre.
-    </p>
+      vous êtes cadre. </span
+    ><br />
     Il vous accompagne dans votre projet d’évolution professionnelle et vous
     aide dans vos démarches administratives. Son rôle est de vous conseiller et
     de vous informer.
+    <br />
+    <br />
 
-    <p class="bold">Votre employeur.</p>
+    <span class="bold">Votre employeur.</span><br />
     Si vous l’informez de votre projet, il pourra vous autoriser à faire votre
     immersion pendant votre temps de travail. Il devra alors signer la
     convention d’immersion.
+    <br />
+    <br />
+
+    <div *ngIf="isSick">
+      <span class="bold">Votre médecin traitant</span><br />
+      Il estime si vous êtes en capacité de faire une immersion et vous délivre
+      un certificat.
+      <br />
+      <br />
+
+      <span class="bold"
+        >La Cellule de Prévention de Désinsertion Professionnelle (CPDP) de
+        votre département</span
+      ><br />
+      Elle prend en compte l’avis de votre médecin traitant, les conditions de
+      l’immersion et votre projet professionnel pour donner son autorisation.
+      <br />
+      <br />
+
+      Vous pouvez la contacter par téléphone au 36 46 (CNAM), sur www.ameli.fr
+      si vous relevez de la Sécurité sociale ou sur www.msa.fr si vous relevez
+      de la MSA.
+      <br />
+      <br />
+    </div>
   </div>
 </div>

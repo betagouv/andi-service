@@ -57,7 +57,12 @@
         semaines pour faire signer et valider votre convention.
       </p>
 
-      <!-- RQTH -->
+      <p *ngIf="isRqth" class="info">
+        <span class="bold">A noter :</span> Si vous avez une RQTH, vous pouvez
+        bénéficier d’aides pour financer l’aménagement de votre poste de travail
+        ou votre transport. Vous pouvez faire la demande auprès de l’Agefiph
+        avant de commencer l’immersion.
+      </p>
     </li>
   </ol>
 
@@ -68,10 +73,20 @@
     Il vous accompagne dans votre projet d’évolution professionnelle et vous
     aide dans vos démarches administratives. Son rôle est de vous conseiller et
     de vous informer.
-<br />
-<br />
+    <br />
+    <br />
+
     <span class="bold">Votre employeur</span><br />
     Il vous aide à construire la suite de votre parcours professionnel. Il devra
     aussi signer la convention d’immersion.
+    <br />
+    <br />
+
+    <div *ngIf="isRqth">
+      <span class="bold">L’Agefiph</span><br />
+      L’Agefiph peut vous aider à obtenir une aide au transport ou à
+      l’aménagement de votre poste de travail. Contactez la au 0800 11 10 09 ou
+      connectez-vous sur le site
+    </div>
   </div>
 </div>
