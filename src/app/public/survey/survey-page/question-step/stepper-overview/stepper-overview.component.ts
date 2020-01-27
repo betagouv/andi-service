@@ -25,13 +25,20 @@ export class StepperOverviewComponent implements OnInit {
   }
 
   private loadDiagnosticDatas() {
-    this.isJobSearch = this.surveyStepperSharedService.stateStepper.includes('job_search');
-    this.isJobPrivate = this.surveyStepperSharedService.stateStepper.includes('prive');
-    this.isJobEsat = this.surveyStepperSharedService.stateStepper.includes('esat');
-    this.isJobIae = this.surveyStepperSharedService.stateStepper.includes('iae');
+    this.isJobSearch = this.surveyStepperSharedService.stateStepper.includes(
+      'job_search'
+    );
+    this.isJobPrivate = this.surveyStepperSharedService.stateStepper.includes(
+      'prive'
+    );
+    this.isJobEsat = this.surveyStepperSharedService.stateStepper.includes(
+      'esat'
+    );
+    this.isJobIae = this.surveyStepperSharedService.stateStepper.includes(
+      'iae'
+    );
     this.isSick = this.surveyStepperSharedService.stateStepper.includes('sick');
-    this.isRqth= this.surveyStepperSharedService.stateStepper.includes('rqth');
-
+    this.isRqth = this.surveyStepperSharedService.stateStepper.includes('rqth');
   }
 
   nextQuestion() {

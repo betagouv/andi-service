@@ -1,5 +1,6 @@
 <div class="proposal-wrapper">
   <andi-job-search *ngIf="isJobSearch"></andi-job-search>
+  <andi-job-private *ngIf="isJobPrivate"></andi-job-private>
   <button
     (click)="nextQuestion()"
     class="proposal-btn btn d-flex justify-content-between align-items-center"
