@@ -13,6 +13,7 @@ import { SomeHelpComponent } from '../../core/components/some-help/some-help.com
 import { StepperOverviewComponent } from './survey-page/question-step/stepper-overview/stepper-overview.component';
 import { JobSearchComponent } from './survey-page/question-step/stepper-overview/job-search/job-search.component';
 import { JobPrivateComponent } from './survey-page/question-step/stepper-overview/job-private/job-private.component';
+import { JobEsatComponent } from './survey-page/question-step/stepper-overview/job-esat/job-esat.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { JobPrivateComponent } from './survey-page/question-step/stepper-overvie
     SomeHelpComponent,
     StepperOverviewComponent,
     JobSearchComponent,
-    JobPrivateComponent
+    JobPrivateComponent,
+    JobEsatComponent
   ],
   imports: [
     CommonModule,
