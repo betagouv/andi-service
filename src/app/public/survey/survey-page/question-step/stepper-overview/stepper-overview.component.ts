@@ -10,6 +10,7 @@ import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper
 export class StepperOverviewComponent implements OnInit {
   isJobSearch = false;
   isJobPrivate = false;
+  isJobPublic = false;
   isJobEsat = false;
   isJobIae = false;
   isSick = false;
@@ -30,6 +31,9 @@ export class StepperOverviewComponent implements OnInit {
     );
     this.isJobPrivate = this.surveyStepperSharedService.stateStepper.includes(
       'prive'
+    );
+    this.isJobPublic = this.surveyStepperSharedService.stateStepper.includes(
+      'publique'
     );
     this.isJobEsat = this.surveyStepperSharedService.stateStepper.includes(
       'esat'

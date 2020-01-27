@@ -69,23 +69,23 @@ const Q2B = new QuestionStep(
 /* EN POSTE PRIVE */
 
 const Q3B = new QuestionStep(
-  'Êtes-vous actuellement en arret maladie de longue durée ?',
+  'Êtes-vous en arrêt maladie ?',
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Oui', '', 'sick', 'Q4B'),
-    new ResponseProposal('Non', '', 'sane', 'Q4B')
+    new ResponseProposal('Oui, je suis en arrêt maladie', '', 'sick', 'Q4B'),
+    new ResponseProposal('Non, je ne suis pas en arrêt maladie', '', 'sane', 'Q4B')
   ],
   ''
 );
 
 const Q4B = new QuestionStep(
-  'Avez-vous la reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
+  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Oui', '', 'rqth', 'F_JOB_PRIVATE'),
-    new ResponseProposal('Non', '', 'not_rqth', 'F_JOB_PRIVATE')
+    new ResponseProposal('Oui, j’ai une RQTH', '', 'rqth', 'F_JOB_PRIVATE'),
+    new ResponseProposal('Non, je n’ai pas de RQTH', '', 'not_rqth', 'F_JOB_PRIVATE')
   ],
   ''
 );
@@ -93,23 +93,23 @@ const Q4B = new QuestionStep(
 /* EN POSTE PUBLIQUE */
 
 const Q3E = new QuestionStep(
-  'Êtes-vous actuellement en arret maladie de longue durée ?',
+  'Êtes-vous en arrêt maladie ?',
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Oui', '', 'sick', 'Q4E'),
-    new ResponseProposal('Non', '', 'sane', 'Q4E')
+    new ResponseProposal('Oui, je suis en arrêt maladie', '', 'sick', 'Q4E'),
+    new ResponseProposal('Non, je ne suis pas en arrêt maladie', '', 'sane', 'Q4E')
   ],
   ''
 );
 
 const Q4E = new QuestionStep(
-  'Avez-vous la reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
+  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Oui', '', 'rqth', 'F_JOB_PUBLIC'),
-    new ResponseProposal('Non', '', 'not_rqth', 'F_JOB_PUBLIC')
+    new ResponseProposal('Oui, j’ai une RQTH', '', 'rqth', 'F_JOB_PUBLIC'),
+    new ResponseProposal('Non, je n’ai pas de RQTH', '', 'not_rqth', 'F_JOB_PUBLIC')
   ],
   ''
 );
@@ -121,12 +121,12 @@ const Q4E = new QuestionStep(
 /* EN POSTE CONTRAT AIDE OU IAE*/
 
 const Q4D = new QuestionStep(
-  'Avez-vous la reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
+  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Oui', '', 'rqth', 'F_JOB_IAE'),
-    new ResponseProposal('Non', '', 'not_rqth', 'F_JOB_IAE')
+    new ResponseProposal('Oui, j’ai une RQTH', '', 'rqth', 'F_JOB_IAE'),
+    new ResponseProposal('Non, je n’ai pas de RQTH', '', 'not_rqth', 'F_JOB_IAE')
   ],
   ''
 );
