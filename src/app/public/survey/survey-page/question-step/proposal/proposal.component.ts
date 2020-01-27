@@ -18,7 +18,6 @@ export class ProposalComponent implements OnInit {
 
   nextQuestion() {
     this.surveyStepperSharedService.stateStepper.push(this.proposal.id);
-    console.log('>>>>> ', this.surveyStepperSharedService.stateStepper);
     this.surveyStepperSharedService.goToNextStep(this.proposal.aim);
   }
 }

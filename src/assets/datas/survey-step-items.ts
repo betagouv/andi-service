@@ -60,8 +60,8 @@ const Q2B = new QuestionStep(
   QuestionType.REDIRECT,
   [
     new ResponseProposal('Secteur privé', '', 'prive', 'Q3B'),
-    new ResponseProposal('Travailleur en ESAT / AE', '', 'esat', 'Q3C'),
-    new ResponseProposal('Travailleur en en contrat aidé / IAE', '', 'iae', 'Q3D')
+    new ResponseProposal('Travailleur en ESAT / AE', '', 'esat', 'F_JOB_ESAT'),
+    new ResponseProposal('Travailleur en en contrat aidé / IAE', '', 'iae', 'Q4D')
   ],
   ''
 );
@@ -93,40 +93,8 @@ const Q4B = new QuestionStep(
 
 /* EN POSTE ESAT*/
 
-const Q3C = new QuestionStep(
-  'Êtes-vous actuellement en arret maladie de longue durée ?',
-  '',
-  QuestionType.REDIRECT,
-  [
-    new ResponseProposal('Oui', '', 'sick', 'Q4C'),
-    new ResponseProposal('Non', '', 'sane', 'Q4C')
-  ],
-  ''
-);
-
-const Q4C = new QuestionStep(
-  'Avez-vous la reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
-  '',
-  QuestionType.REDIRECT,
-  [
-    new ResponseProposal('Oui', '', 'rqth', 'F_JOB_ESAT'),
-    new ResponseProposal('Non', '', 'not_rqth', 'F_JOB_ESAT')
-  ],
-  ''
-);
 
 /* EN POSTE CONTRAT AIDE OU IAE*/
-
-const Q3D = new QuestionStep(
-  'Êtes-vous actuellement en arret maladie de longue durée ?',
-  '',
-  QuestionType.REDIRECT,
-  [
-    new ResponseProposal('Oui', '', 'sick', 'Q4D'),
-    new ResponseProposal('Non', '', 'sane', 'Q4D')
-  ],
-  ''
-);
 
 const Q4D = new QuestionStep(
   'Avez-vous la reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
@@ -224,9 +192,6 @@ stepItems['Q4A'] = Q4A;
 stepItems['Q2B'] = Q2B;
 stepItems['Q3B'] = Q3B;
 stepItems['Q4B'] = Q4B;
-stepItems['Q3C'] = Q3C;
-stepItems['Q4C'] = Q4C;
-stepItems['Q3D'] = Q3D;
 stepItems['Q4D'] = Q4D;
 stepItems['F_JOB_SEARCH'] = F_JOB_SEARCH;
 stepItems['F_JOB_PRIVATE'] = F_JOB_PRIVATE;
