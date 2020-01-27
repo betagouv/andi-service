@@ -14,6 +14,7 @@ import { StepperOverviewComponent } from './survey-page/question-step/stepper-ov
 import { JobSearchComponent } from './survey-page/question-step/stepper-overview/job-search/job-search.component';
 import { JobPrivateComponent } from './survey-page/question-step/stepper-overview/job-private/job-private.component';
 import { JobEsatComponent } from './survey-page/question-step/stepper-overview/job-esat/job-esat.component';
+import { JobIaeComponent } from './survey-page/question-step/stepper-overview/job-iae/job-iae.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { JobEsatComponent } from './survey-page/question-step/stepper-overview/j
     StepperOverviewComponent,
     JobSearchComponent,
     JobPrivateComponent,
-    JobEsatComponent
+    JobEsatComponent,
+    JobIaeComponent
   ],
   imports: [
     CommonModule,
