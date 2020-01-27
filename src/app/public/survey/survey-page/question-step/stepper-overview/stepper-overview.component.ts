@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
-import { Diagnostic } from 'src/models/diagnostic.model';
-import { jobSearch } from '../../../../../../assets/datas/job-search-diagnostic';
 
 @Component({
   selector: 'andi-stepper-overview',
@@ -10,7 +8,12 @@ import { jobSearch } from '../../../../../../assets/datas/job-search-diagnostic'
   styleUrls: ['./stepper-overview.component.scss']
 })
 export class StepperOverviewComponent implements OnInit {
-  diagContent: Diagnostic;
+  isJobSearch = false;
+  isJobPrivate = false;
+  isJobEsat = false;
+  isJobIae = false;
+  isSick = false;
+  isRqth = false;
 
   constructor(
     private surveyStepperSharedService: SurveyStepperSharedService,
@@ -22,9 +25,13 @@ export class StepperOverviewComponent implements OnInit {
   }
 
   private loadDiagnosticDatas() {
-    if (this.surveyStepperSharedService.stateStepper.includes('job_search')) {
-      this.diagContent = jobSearch;
-    }
+    this.isJobSearch = this.surveyStepperSharedService.stateStepper.includes('job_search');
+    this.isJobPrivate = this.surveyStepperSharedService.stateStepper.includes('prive');
+    this.isJobEsat = this.surveyStepperSharedService.stateStepper.includes('esat');
+    this.isJobIae = this.surveyStepperSharedService.stateStepper.includes('iae');
+    this.isSick = this.surveyStepperSharedService.stateStepper.includes('sick');
+    this.isRqth= this.surveyStepperSharedService.stateStepper.includes('rqth');
+
   }
 
   nextQuestion() {

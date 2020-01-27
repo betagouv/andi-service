@@ -11,6 +11,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { CriterionComponent } from './survey-page/question-step/criterion/criterion.component';
 import { SomeHelpComponent } from '../../core/components/some-help/some-help.component';
 import { StepperOverviewComponent } from './survey-page/question-step/stepper-overview/stepper-overview.component';
+import { JobSearchComponent } from './survey-page/question-step/stepper-overview/job-search/job-search.component';
+import { JobPrivateComponent } from './survey-page/question-step/stepper-overview/job-private/job-private.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { StepperOverviewComponent } from './survey-page/question-step/stepper-ov
     NavigationStepComponent,
     CriterionComponent,
     SomeHelpComponent,
-    StepperOverviewComponent
+    StepperOverviewComponent,
+    JobSearchComponent,
+    JobPrivateComponent
   ],
   imports: [
     CommonModule,
