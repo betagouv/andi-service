@@ -11,6 +11,7 @@ import { RomeSuggestionResponse } from 'src/models/rome-suggestion-response';
 import { FeatureCollection } from '../../../models/address-suggestion-response';
 import { ADDRESS_TYPE, CriterionDistance } from '../../../models/pmsmp-request';
 import { CriterionCodeRomes, RomeCode } from './../../../models/pmsmp-request';
+import { SurveyStepperSharedService } from './survey-stepper.shared.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,10 @@ export class PmsmpService {
   pmsmpResult: Subject<PmsmpResult>;
   errorResult: BehaviorSubject<string> = new BehaviorSubject('');
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private surveyStepperSharedService: SurveyStepperSharedService
+  ) {
     this.pmsmpResult = new Subject<PmsmpResult>();
   }
 
@@ -52,6 +56,17 @@ export class PmsmpService {
         }),
         timeout(10000)
       );
+  }
+
+  isStateFormComplete(): boolean {
+    return (
+      this.surveyStepperSharedService.stateForm.address !== undefined &&
+      this.surveyStepperSharedService.stateForm.address.length > 0 &&
+      this.surveyStepperSharedService.stateForm.jobs !== undefined &&
+      this.surveyStepperSharedService.stateForm.jobs.length > 0 &&
+      this.surveyStepperSharedService.stateForm.range !== undefined &&
+      this.surveyStepperSharedService.stateForm.range.length > 0
+    );
   }
 
   private computeRequestBody(
