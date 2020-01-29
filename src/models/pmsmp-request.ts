@@ -1,5 +1,5 @@
+/* tslint:disable:variable-name */
 export class PmsmpRequest {
-  /* tslint:disable:variable-name */
   readonly _v: number = 1;
   _timestamp: string;
   _query_id: string;
@@ -20,7 +20,6 @@ export class PmsmpRequest {
     this.address = address;
     this.criteria = criteria;
   }
-  /* tslint:enable */
 }
 
 export class Address {
@@ -46,23 +45,23 @@ export class Criterion {
 
 export class CriterionDistance extends Criterion {
   name = 'distance';
-  distanceKM: string;
+  distance_km: string;
 
-  constructor(priority: number, distanceKM: string) {
+  constructor(priority: number, distance_km: string) {
     super(priority);
-    this.distanceKM = distanceKM;
+    this.distance_km = distance_km;
   }
 }
 
 export class CriterionCodeRomes extends Criterion {
   name = 'rome_codes';
-  romeList: RomeCode[];
-  excludeNaf: any[];
+  rome_list: RomeCode[];
+  exclude_naf: any[];
 
-  constructor(priority: number, romeList: RomeCode[], excludeNaf: any[]) {
+  constructor(priority: number, rome_list: RomeCode[], exclude_naf: any[]) {
     super(priority);
-    this.romeList = romeList;
-    this.excludeNaf = excludeNaf;
+    this.rome_list = rome_list;
+    this.exclude_naf = exclude_naf;
   }
 }
 
