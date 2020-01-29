@@ -17,6 +17,7 @@ import { SurveyStepperSharedService } from './survey-stepper.shared.service';
   providedIn: 'root'
 })
 export class PmsmpService {
+  // tslint:disable-next-line
   _session_id: string = UUID.UUID();
   jobSuggestion: string;
   pmsmpResult: Subject<PmsmpResult>;
@@ -90,10 +91,24 @@ export class PmsmpService {
     return frmCtrl.valueChanges.pipe(
       debounceTime(300),
       switchMap(saisie => {
+        const getType = () => {
+            // Différencier le type selon le nombre de mots saisis (très perfectible)
+            const words = saisie.trim().split(' ').filter(String).length;
+            const numbers = saisie.replace(/[^0-9 ]/g, '').replace(/\s+/g, ' ').trim().split(' ').filter(String).length;
+            switch (true) {
+                case words === 1 && numbers === 0:
+                    return 'municipality';
+                case words > 1 && numbers === 0:
+                    return 'street';
+                default:
+                    return 'housenumber';
+
+            }
+        };
         const parameters = new HttpParams()
           .set('q', saisie !== '' ? saisie : ' ')
           .set('limit', '5')
-          .set('type', 'housenumber')
+          .set('type', getType())
           .set('autocomplete', '1');
         return this.http.get<FeatureCollection>(
           'https://api-adresse.data.gouv.fr/search',

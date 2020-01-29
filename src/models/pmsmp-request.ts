@@ -1,3 +1,4 @@
+/* tslint:disable:variable-name */
 export class PmsmpRequest {
   readonly _v: number = 1;
   _timestamp: string;

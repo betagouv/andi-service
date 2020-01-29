@@ -39,7 +39,7 @@ button {
     }
 }
 
-input {
+input, #range, #adress, #job {
   border: 1px solid black;
   padding-left: 10px;
   margin-bottom: 20px;
@@ -48,6 +48,10 @@ input {
   background-color: #fff;
   border-radius: 4px;
   opacity: 0.8;
+
+  color:#000;
+  font-family:roboto;
+
   &[type="text"]:focus {
     background-color: #ffffff;
     opacity: 0.8;

@@ -217,6 +217,7 @@ const C3 = new QuestionStep(
 
 export const stepItems: StepsHash = {};
 
+/* tslint:disable:no-string-literal*/
 stepItems['Q1'] = Q1;
 stepItems['Q2A'] = Q2A;
 stepItems['Q3A'] = Q3A;

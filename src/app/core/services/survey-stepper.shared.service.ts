@@ -17,7 +17,7 @@ export class SurveyStepperSharedService {
     this.stepperCursor.next(aim);
     this.pathHistory.push(aim);
   }
-  
+
   public goToPrevStep() {
     this.stateStepper.splice(-1, 1);
     this.pathHistory.splice(-1, 1);
