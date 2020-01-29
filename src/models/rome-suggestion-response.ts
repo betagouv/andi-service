@@ -1,4 +1,5 @@
 export class RomeSuggestionResponse {
+  /* tslint:disable:variable-name */
   readonly _v: number = 1;
   _timestamp: string;
   _query_id: string;
@@ -16,6 +17,7 @@ export class RomeSuggestionResponse {
     this._session_id = options._session_id;
     this.data = options.data;
   }
+  /* tslint:enable */
 }
 
 export class RomeSuggestion {

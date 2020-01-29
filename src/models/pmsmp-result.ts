@@ -1,4 +1,5 @@
 export class PmsmpResult {
+  /* tslint:disable:variable-name */
   readonly _v: number = 1;
   _timestamp: string;
   _query_id: string;
@@ -19,6 +20,7 @@ export class PmsmpResult {
     this._trace = options._trace;
     this.data = options.data;
   }
+  /* tslint:enable */
 }
 
 export class Data {
