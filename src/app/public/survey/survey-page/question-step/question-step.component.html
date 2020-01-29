@@ -1,7 +1,7 @@
 <div class="q-step-comp container">
   <div *ngIf="questionStep.type != 'disclaimer'" class="container question-wrapper">
-    <h1>{{ questionStep.sentence }}</h1>
-    <h3>{{ questionStep.description }}</h3>
+    <h1 *ngIf="questionStep.sentence != ''">{{ questionStep.sentence }}</h1>
+    <h3 *ngIf="questionStep.description != ''">{{ questionStep.description }}</h3>
 
     <div class="proposals-wrapper">
       <div
