@@ -9,17 +9,17 @@ export class SurveyStepperSharedService {
   pathHistory: string[] = [];
 
   stateForm: IHash = {};
+  stateStepper: string[] = [];
 
   constructor() {}
 
   public goToNextStep(aim: string) {
-    console.log('APRES >>> ', this.stateForm)
     this.stepperCursor.next(aim);
     this.pathHistory.push(aim);
   }
   
   public goToPrevStep() {
-    console.log('AVANT >>> ', this.stateForm)
+    this.stateStepper.splice(-1, 1);
     this.pathHistory.splice(-1, 1);
     const lastStepId = this.pathHistory[this.pathHistory.length - 1];
     this.stepperCursor.next(lastStepId);

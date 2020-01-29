@@ -17,6 +17,7 @@ export class ProposalComponent implements OnInit {
   ngOnInit() {}
 
   nextQuestion() {
+    this.surveyStepperSharedService.stateStepper.push(this.proposal.id);
     this.surveyStepperSharedService.goToNextStep(this.proposal.aim);
   }
 }

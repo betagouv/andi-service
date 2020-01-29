@@ -1,16 +1,14 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PublicModule } from '../public/public.module';
-import { ProtectedModule } from '../protected/protected.module';
-import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
-
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { ProtectedModule } from '../protected/protected.module';
+import { PublicModule } from '../public/public.module';
 import { FooterComponent } from './components/footer/footer.component';
-import { SomeHelpComponent } from './components/some-help/some-help.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],

@@ -3,100 +3,177 @@ import { ResponseProposal } from '../../models/response-proposal.model';
 
 /* QUESTIONS FILTRE */
 
+
+/* DEMANDEUR D'EMPLOI */
 const Q1 = new QuestionStep(
-  'Quelle est votre situation professionelle actuelle ?',
+  'Quelle est votre situation professionnelle aujourd’hui ?',
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Je suis en poste (salarié / fonction publique)', '', '', 'Q2'),
-    new ResponseProposal('Je suis à la recherche d’un emploi', '', '', 'Q2'),
-    new ResponseProposal('Je suis en étudiant en formation', '', '', 'Q2')
+    new ResponseProposal('J’ai un travail', '', 'job_owner', 'Q2B'),
+    new ResponseProposal('Je suis à la recherche d’un emploi', '', 'job_search', 'Q2A')
   ],
   ''
 );
 
-const Q2 = new QuestionStep(
-  'Quelle est votre situation ?',
+const Q2A = new QuestionStep(
+  'Êtes-vous accompagné par l’une de ces structures ?',
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Salarié du secteur privé', '', '', 'D1'),
-    new ResponseProposal('Employé du secteur public', '', '', 'D2'),
-    new ResponseProposal('Travailleur en ESAT / EA', '', '', 'D3')
+    new ResponseProposal('Pôle Emploi', '', 'pole_emploi', 'Q3A'),
+    new ResponseProposal('Cap Emploi', '', 'cap_emploi', 'Q3A'),
+    new ResponseProposal('Mission locale', '', 'mission_locale', 'Q3A'),
+    new ResponseProposal('Autres structures (CRP, SAVS, SAMSAH, SEA, Assistance sociale)', '', 'other', 'Q3A')
   ],
   ''
 );
 
-const Q3 = new QuestionStep(
-  'Quelle est votre situation ?',
+const Q3A = new QuestionStep(
+  'Êtes-vous en arrêt maladie ?',
   '',
   QuestionType.REDIRECT,
   [
-    new ResponseProposal('Salarié d\'une structure de SIAE', '', '', 'D4'),
-    new ResponseProposal('Travailleur indépendant', '', '', 'D5'),
-    new ResponseProposal('En arrêt maladie', '', '', 'D6'),
-    new ResponseProposal('Je ne trouve pas ma situation', '', '', 'D7')
+    new ResponseProposal('Oui, je suis en arrêt maladie', '', 'sick', 'Q4A'),
+    new ResponseProposal('Non, je ne suis pas en arrêt maladie', '', 'sane', 'Q4A')
   ],
   ''
 );
+
+const Q4A = new QuestionStep(
+  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
+  '',
+  QuestionType.REDIRECT,
+  [
+    new ResponseProposal('Oui, j’ai une RQTH', '', 'rqth', 'F_JOB_SEARCH'),
+    new ResponseProposal('Non, je n’ai pas de RQTH', '', 'not_rqth', 'F_JOB_SEARCH')
+  ],
+  ''
+);
+
+/* EN POSTE */
+
+const Q2B = new QuestionStep(
+  'Où travaillez-vous ?',
+  '',
+  QuestionType.REDIRECT,
+  [
+    new ResponseProposal('Secteur privé', '', 'prive', 'Q3B'),
+    new ResponseProposal('Fonction publique', '', 'publique', 'Q3E'),
+    new ResponseProposal('Travailleur en ESAT / EA', '', 'esat', 'F_JOB_ESAT'),
+    new ResponseProposal('Travailleur en contrat aidé / IAE', '', 'iae', 'Q4D')
+  ],
+  ''
+);
+
+/* EN POSTE PRIVE */
+
+const Q3B = new QuestionStep(
+  'Êtes-vous en arrêt maladie ?',
+  '',
+  QuestionType.REDIRECT,
+  [
+    new ResponseProposal('Oui, je suis en arrêt maladie', '', 'sick', 'Q4B'),
+    new ResponseProposal('Non, je ne suis pas en arrêt maladie', '', 'sane', 'Q4B')
+  ],
+  ''
+);
+
+const Q4B = new QuestionStep(
+  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
+  '',
+  QuestionType.REDIRECT,
+  [
+    new ResponseProposal('Oui, j’ai une RQTH', '', 'rqth', 'F_JOB_PRIVATE'),
+    new ResponseProposal('Non, je n’ai pas de RQTH', '', 'not_rqth', 'F_JOB_PRIVATE')
+  ],
+  ''
+);
+
+/* EN POSTE PUBLIQUE */
+
+const Q3E = new QuestionStep(
+  'Êtes-vous en arrêt maladie ?',
+  '',
+  QuestionType.REDIRECT,
+  [
+    new ResponseProposal('Oui, je suis en arrêt maladie', '', 'sick', 'Q4E'),
+    new ResponseProposal('Non, je ne suis pas en arrêt maladie', '', 'sane', 'Q4E')
+  ],
+  ''
+);
+
+const Q4E = new QuestionStep(
+  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
+  '',
+  QuestionType.REDIRECT,
+  [
+    new ResponseProposal('Oui, j’ai une RQTH', '', 'rqth', 'F_JOB_PUBLIC'),
+    new ResponseProposal('Non, je n’ai pas de RQTH', '', 'not_rqth', 'F_JOB_PUBLIC')
+  ],
+  ''
+);
+
+
+/* EN POSTE ESAT*/
+
+
+/* EN POSTE CONTRAT AIDE OU IAE*/
+
+const Q4D = new QuestionStep(
+  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
+  '',
+  QuestionType.REDIRECT,
+  [
+    new ResponseProposal('Oui, j’ai une RQTH', '', 'rqth', 'F_JOB_IAE'),
+    new ResponseProposal('Non, je n’ai pas de RQTH', '', 'not_rqth', 'F_JOB_IAE')
+  ],
+  ''
+);
+
 
 /* MESSAGE D'AVERTISSEMENT / INFORMATIF */
 
-const D1 = new QuestionStep(
-  'Vous êtes actuellement salarié dans le privé',
-  'Pour faire une immersion dans une autre entreprise, vous devez demander l’autorisation préalable à votre employeur qui verra avec vous les conditions dans lesquelles vous pouvez l’effectuer.',
-  QuestionType.DISCLAIMER,
-  [new ResponseProposal('', '', '', 'Q3')],
-  ''
-);
-
-const D2 = new QuestionStep(
-  'Vous êtes actuellement employé dans le public',
-  'Pour faire une immersion dans une autre entreprise, vous devez demander l’autorisation préalable à votre employeur qui verra avec vous les conditions dans lesquelles vous pouvez l’effectuer.Les immersions professionnelles ne sont pas possibles dans le secteur public. D’autres type de découverte métier sont par contre possibles. Rapprochez vous de votre service RH.',
-  QuestionType.DISCLAIMER,
-  [new ResponseProposal('', '', '', 'Q3')],
-  ''
-);
-
-const D3 = new QuestionStep(
-  'Vous êtes actuellement travailleur en ESAT',
-  'Les immersions professionnelles pour les travailleurs d’ESAT sont très compliquées',
-  QuestionType.DISCLAIMER,
-  [new ResponseProposal('', '', '', 'Q3')],
-  ''
-);
-
-const D4 = new QuestionStep(
-  'Vous êtes actuellement salarié dans le SIAE',
-  'Je ne sais pas comment ca se passe. Faire un lien vers Itou ?',
+const F_JOB_SEARCH = new QuestionStep(
+  'Vous êtes actuellement en recherche d\'emploi',
+  'Texte spécifique au demandeurs d\'emploi...',
   QuestionType.DISCLAIMER,
   [new ResponseProposal('', '', '', 'C1')],
   ''
 );
 
-const D5 = new QuestionStep(
-  'Vous êtes actuellement indépendant',
-  'Je ne sais pas comment ca se passe. bla bla bla bla lorem ipsum',
+const F_JOB_PRIVATE = new QuestionStep(
+  'Vous êtes actuellement salarié dans le secteur privé',
+  'Texte spécifique aux salariés dans le secteur privé',
   QuestionType.DISCLAIMER,
   [new ResponseProposal('', '', '', 'C1')],
   ''
 );
 
-const D6 = new QuestionStep(
-  'Vous êtes actuellement en arrêt maladie',
-  'Faire une immersion professionnelle en arrêt maladie peut être un processus compliqué. Il faut saisir la CPDP, blabla, d’autres formes d’immersion sont possibles comme l’essai encadré.',
+const F_JOB_PUBLIC = new QuestionStep(
+  'Vous êtes actuellement salarié dans le secteur publique',
+  'Texte spécifique aux salariés dans le secteur publique',
   QuestionType.DISCLAIMER,
   [new ResponseProposal('', '', '', 'C1')],
   ''
 );
 
-const D7 = new QuestionStep(
-  'Vous ne trouvez pas votre situation',
-  'Je ne sais pas mais il faut dire quelque chose, et suggerer de se rapprocher d’une structure quelconque',
+const F_JOB_ESAT = new QuestionStep(
+  'Vous êtes actuellement travailleur ESAT / AE',
+  'Texte spécifique aux travailleurs ESAT / AE',
   QuestionType.DISCLAIMER,
   [new ResponseProposal('', '', '', 'C1')],
   ''
 );
+
+const F_JOB_IAE = new QuestionStep(
+  'Vous êtes actuellement travailleur en contrat aidé / IAE',
+  'Texte spécifique aux travailleurs en contrat aidé / IAE',
+  QuestionType.DISCLAIMER,
+  [new ResponseProposal('', '', '', 'C1')],
+  ''
+);
+
 
 /* CRITERES DE RECHERCHE */
 
@@ -141,15 +218,20 @@ const C3 = new QuestionStep(
 export const stepItems: StepsHash = {};
 
 stepItems['Q1'] = Q1;
-stepItems['Q2'] = Q2;
-stepItems['Q3'] = Q3;
-stepItems['D1'] = D1;
-stepItems['D2'] = D2;
-stepItems['D3'] = D3;
-stepItems['D4'] = D4;
-stepItems['D5'] = D5;
-stepItems['D6'] = D6;
-stepItems['D7'] = D7;
+stepItems['Q2A'] = Q2A;
+stepItems['Q3A'] = Q3A;
+stepItems['Q4A'] = Q4A;
+stepItems['Q2B'] = Q2B;
+stepItems['Q3B'] = Q3B;
+stepItems['Q3E'] = Q3E;
+stepItems['Q4E'] = Q4E;
+stepItems['Q4B'] = Q4B;
+stepItems['Q4D'] = Q4D;
+stepItems['F_JOB_SEARCH'] = F_JOB_SEARCH;
+stepItems['F_JOB_PRIVATE'] = F_JOB_PRIVATE;
+stepItems['F_JOB_PUBLIC'] = F_JOB_PUBLIC;
+stepItems['F_JOB_ESAT'] = F_JOB_ESAT;
+stepItems['F_JOB_IAE'] = F_JOB_IAE;
 stepItems['C1'] = C1;
 stepItems['C2'] = C2;
 stepItems['C3'] = C3;

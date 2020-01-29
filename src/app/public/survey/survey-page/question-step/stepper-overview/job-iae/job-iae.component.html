@@ -1,0 +1,92 @@
+<div class="overview-comp">
+  <h1 class="comp-title">
+    <span class="bold">Vous pouvez faire une immersion !</span> Pour cela, vous
+    avez quelques démarches à faire.
+  </h1>
+  <p class="description">
+    Vous souhaitez découvrir un nouveau métier ou secteur d’activité ? Vous
+    pouvez faire une immersion professionnelle dans une autre entreprise pour
+    vérifier que ce métier ou ce secteur vous correspond.
+  </p>
+
+  <h1 class="title">Quelles sont les démarches ?</h1>
+
+  <ol class="demarche-steps">
+    <li>
+      <span class="bold">Contactez l’accompagnant</span> qui vous suit pour
+      l’informer de votre souhait d’immersion. Informez également votre
+      employeur de votre projet.
+      <p class="info">
+        <span class="bold">Pourquoi informer votre employeur ?</span><br />
+        Votre immersion se déroulera pendant votre temps de travail, dans le
+        cadre de votre contrat. Elle permettra de préparer la suite de votre
+        parcours professionnel.
+      </p>
+    </li>
+
+    <li>
+      <span class="bold">Contactez les entreprises</span> prêtes à vous faire
+      découvrir leurs métiers
+      <div class="info">
+        <span class="bold">Comment chercher une immersion ?</span><br />
+        ANDi référence les entreprises proches de chez vous qui correspondent à
+        votre projet professionnel. Trouvez-les grâce à notre moteur de
+        recherche et nos conseils !
+
+        <p (click)="goToSearch()" class="link">
+          Chercher une immersion
+        </p>
+      </div>
+    </li>
+
+    <li>
+      <span class="bold">Faites signer votre convention</span>
+      <div class="info">
+        <span class="bold">Quelle est cette convention ?</span><br />
+        Pour débuter votre immersion, vous devez faire signer votre convention
+        par l’employeur qui vous accueillera, par l’organisme qui vous
+        accompagne et par vous-même.
+
+        <p (click)="goToSearch()" class="link">
+          Accéder à l’ensemble de la démarche
+        </p>
+      </div>
+
+      <p class="info">
+        <span class="bold">Délais indicatifs :</span> Prévoyez environ 2
+        semaines pour faire signer et valider votre convention.
+      </p>
+
+      <p *ngIf="isRqth" class="info">
+        <span class="bold">A noter :</span> Si vous avez une RQTH, vous pouvez
+        bénéficier d’aides pour financer l’aménagement de votre poste de travail
+        ou votre transport. Vous pouvez faire la demande auprès de l’Agefiph
+        avant de commencer l’immersion.
+      </p>
+    </li>
+  </ol>
+
+  <h1 class="title">Qui peut me renseigner ?</h1>
+
+  <div class="description macro">
+    <span class="bold">Votre accompagnant</span><br />
+    Il vous accompagne dans votre projet d’évolution professionnelle et vous
+    aide dans vos démarches administratives. Son rôle est de vous conseiller et
+    de vous informer.
+    <br />
+    <br />
+
+    <span class="bold">Votre employeur</span><br />
+    Il vous aide à construire la suite de votre parcours professionnel. Il devra
+    aussi signer la convention d’immersion.
+    <br />
+    <br />
+
+    <div *ngIf="isRqth">
+      <span class="bold">L’Agefiph</span><br />
+      L’Agefiph peut vous aider à obtenir une aide au transport ou à
+      l’aménagement de votre poste de travail. Contactez la au 0800 11 10 09 ou
+      connectez-vous sur le site
+    </div>
+  </div>
+</div>

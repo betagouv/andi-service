@@ -1,5 +1,5 @@
 <div class="q-step-comp container">
-  <div class="container question-wrapper">
+  <div *ngIf="questionStep.type != 'disclaimer'" class="container question-wrapper">
     <h1>{{ questionStep.sentence }}</h1>
     <h3>{{ questionStep.description }}</h3>
 
@@ -11,7 +11,7 @@
         "
       >
         <andi-proposal
-          *ngIf="questionStep.type != 'criteria'"
+          *ngIf="questionStep.type == 'redirect'"
           [proposal]="proposal.value"
           questionStepType="{{ questionStep.type }}"
         ></andi-proposal>
@@ -24,3 +24,6 @@
     </div>
   </div>
 </div>
+<andi-stepper-overview
+  *ngIf="questionStep.type == 'disclaimer'"
+></andi-stepper-overview>

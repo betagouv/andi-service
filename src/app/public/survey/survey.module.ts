@@ -10,6 +10,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { CriterionComponent } from './survey-page/question-step/criterion/criterion.component';
 import { SomeHelpComponent } from '../../core/components/some-help/some-help.component';
+import { StepperOverviewComponent } from './survey-page/question-step/stepper-overview/stepper-overview.component';
+import { JobSearchComponent } from './survey-page/question-step/stepper-overview/job-search/job-search.component';
+import { JobPrivateComponent } from './survey-page/question-step/stepper-overview/job-private/job-private.component';
+import { JobEsatComponent } from './survey-page/question-step/stepper-overview/job-esat/job-esat.component';
+import { JobIaeComponent } from './survey-page/question-step/stepper-overview/job-iae/job-iae.component';
+import { JobPublicComponent } from './survey-page/question-step/stepper-overview/job-public/job-public.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,13 @@ import { SomeHelpComponent } from '../../core/components/some-help/some-help.com
     ProposalComponent,
     NavigationStepComponent,
     CriterionComponent,
-    SomeHelpComponent
+    SomeHelpComponent,
+    StepperOverviewComponent,
+    JobSearchComponent,
+    JobPrivateComponent,
+    JobEsatComponent,
+    JobIaeComponent,
+    JobPublicComponent
   ],
   imports: [
     CommonModule,
