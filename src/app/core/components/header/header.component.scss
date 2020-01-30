@@ -6,8 +6,9 @@
   margin-bottom: 100px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   background-color: #ffffff;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 img {
@@ -17,6 +18,28 @@ img {
 .website-title {
   font-size: 48px;
   margin-left: 20px;
-
   font-family: Evolventa, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 45px;
+  min-width: 200px;
+  max-width: 200px;
+  margin-top: 0px;
+  background-color: #0053b3;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.image_contact {
+
+}
+
+.button_contact {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+
 }
