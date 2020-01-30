@@ -40,6 +40,10 @@
     }
   }
   & .result-body {
+    & i {
+      font-size: 20px;
+    }
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -50,6 +54,16 @@
     }
   }
   & .result-footer {
+    & i {
+      font-size: 18px;
+      margin-right: 3px;
+    }
+    & .icon {
+      width: 12px;
+      height: 16px;
+      margin-right: 3px;
+    }
+
     & .more-info {
       min-height: 40px;
       padding: 5px;
@@ -63,14 +77,25 @@
       text-align: center;
       letter-spacing: 0.01em;
 
-      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
       &:hover {
-        box-shadow: 0 2px 4px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
       }
     }
 
     & .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 40px;
+
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 25px;
+      letter-spacing: 0.01em;
     }
   }
 }
