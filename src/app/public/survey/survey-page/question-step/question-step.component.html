@@ -1,9 +1,9 @@
-<div class="q-step-comp container">
+<nav class="q-step-comp container">
   <div *ngIf="questionStep.type != 'disclaimer'" class="container question-wrapper">
-    <h1 *ngIf="questionStep.sentence != ''">{{ questionStep.sentence }}</h1>
+    <h1 id="question-title" *ngIf="questionStep.sentence != ''">{{ questionStep.sentence }}</h1>
     <h3 *ngIf="questionStep.description != ''">{{ questionStep.description }}</h3>
 
-    <div class="proposals-wrapper">
+    <div class="proposals-wrapper" role="listbox" aria-labelledby="questi-title">
       <div
         *ngFor="
           let proposal of questionStep.proposals | keyvalue;
@@ -11,19 +11,21 @@
         "
       >
         <andi-proposal
+          role="listitem"
           *ngIf="questionStep.type == 'redirect'"
           [proposal]="proposal.value"
           questionStepType="{{ questionStep.type }}"
         ></andi-proposal>
 
         <andi-criterion
+          role="listitem"
           *ngIf="questionStep.type == 'criteria'"
           [proposal]="proposal.value"
         ></andi-criterion>
       </div>
     </div>
   </div>
-</div>
-<andi-stepper-overview
+</nav>
+<andi-stepper-overview role="region"
   *ngIf="questionStep.type == 'disclaimer'"
 ></andi-stepper-overview>
