@@ -1,4 +1,4 @@
-<div class="container" aria-live="polite">
+<div class="container">
   <div
     *ngIf="isIeOrEdge"
     class="alert alert-primary nav-diclaimer"
@@ -7,7 +7,7 @@
     Pour une expérience de navigation optimale, nous vous conseillons de vous
     tourner vers un navigateur tel que Chrome ou Firefox. Merci.
   </div>
-  <andi-question-step [questionStep]="currentQuestionStep"></andi-question-step>
+  <andi-question-step aria-live="polite" [questionStep]="currentQuestionStep"></andi-question-step>
   <andi-navigation-step></andi-navigation-step>
   <andi-some-help></andi-some-help>
 </div>

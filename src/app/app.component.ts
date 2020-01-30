@@ -15,17 +15,18 @@ export class AppComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private titleService: Title
   ) {}
+  /* tslint:disable:no-string-literal */
   ngOnInit() {
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
         map(() => this.activatedRoute),
         map((route) => {
-          while (route.firstChild) route = route.firstChild;
+          while (route.firstChild) { route = route.firstChild; }
           return route;
         }),
         filter((route) => route.outlet === 'primary'),
-        mergeMap((route) => {console.log(route.data); return route.data})
+        mergeMap((route) => route.data)
       )
       .subscribe((event) => this.titleService.setTitle(event['title']));
   }

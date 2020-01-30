@@ -1,24 +1,22 @@
 <nav class="q-step-comp container">
-  <div *ngIf="questionStep.type != 'disclaimer'" class="container question-wrapper">
+  <div *ngIf="questionStep.type != 'disclaimer'" class="container question-wrapper" role="region">
     <h1 id="question-title" *ngIf="questionStep.sentence != ''">{{ questionStep.sentence }}</h1>
     <h3 *ngIf="questionStep.description != ''">{{ questionStep.description }}</h3>
 
-    <div class="proposals-wrapper" role="listbox" aria-labelledby="questi-title">
+    <div class="proposals-wrapper">
       <div
         *ngFor="
           let proposal of questionStep.proposals | keyvalue;
           let i = index
         "
       >
-        <andi-proposal
-          role="listitem"
+        <andi-proposal aria-describedby="question-title"
           *ngIf="questionStep.type == 'redirect'"
           [proposal]="proposal.value"
           questionStepType="{{ questionStep.type }}"
         ></andi-proposal>
 
-        <andi-criterion
-          role="listitem"
+        <andi-criterion aria-describedby="question-title"
           *ngIf="questionStep.type == 'criteria'"
           [proposal]="proposal.value"
         ></andi-criterion>
