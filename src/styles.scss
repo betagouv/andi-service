@@ -1,13 +1,13 @@
 @import "../node_modules/bootswatch/dist/materia/variables";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/bootswatch/dist/materia/bootswatch";
-@import 'assets/scss/modules/_fonts.scss';
+@import "assets/scss/modules/_fonts.scss";
 
 // primary font
-$primary_font: 'Raleway';
+$primary_font: "Raleway";
 // font-weight
-$regular:500;
-$bold:700;
+$regular: 500;
+$bold: 700;
 
 html {
   height: 100%;
@@ -49,4 +49,31 @@ label {
     min-height: 40px;
     font-size: initial;
   }
+}
+
+/* Material icons */
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
 }
