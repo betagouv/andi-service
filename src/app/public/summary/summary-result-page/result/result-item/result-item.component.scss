@@ -1,6 +1,6 @@
 .result-item {
   background: #f2f2f2;
-  border: 1px solid #C9D3DF;
+  border: 1px solid #c9d3df;
   margin-bottom: 20px;
   padding: 15px;
 
@@ -15,7 +15,7 @@
   & .separator {
     height: 2px;
     width: 100%;
-    background: #C9D3DF;
+    background: #c9d3df;
     margin-bottom: 15px;
   }
 
@@ -51,15 +51,26 @@
   }
   & .result-footer {
     & .more-info {
-      background: #006BE6;
-      border: 1px solid #cbc8c8;
+      min-height: 40px;
+      padding: 5px;
+      background: #006be6;
+      border: 1px solid #0104b1;
       color: #ffffff;
+      font-style: normal;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 16px;
+      line-height: 25px;
+      text-align: center;
+      letter-spacing: 0.01em;
+
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+      &:hover {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+      }
     }
 
     & .contacts {
-
     }
   }
 }
