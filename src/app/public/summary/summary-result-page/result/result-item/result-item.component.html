@@ -1,14 +1,33 @@
 <div class="result-item">
   <div class="result-header">
-    <h3>{{ pmsmpItem.name }}</h3>
-    <h3>{{ pmsmpItem.distance }} km</h3>
+    <h3 class="name">{{ pmsmpItem.name }}</h3>
+    <h3 class="activity">{{ pmsmpItem.activity }}</h3>
   </div>
+
   <div class="result-body">
-    <h4 class="corpName">{{ jobName }}</h4>
-    <h5>{{ pmsmpItem.activity }}</h5>
+    <h4 class="corp-name">
+      <i class="material-icons">near_me</i> {{ pmsmpItem.distance }} kilometre
+      de votre adresse
+    </h4>
+    <h5>[Nombre de salariés]</h5>
   </div>
+
+  <div class="separator"></div>
+
   <div class="result-footer">
-    <h5>{{ pmsmpItem.address }}</h5>
-    <button class=" more-info btn">En savoir plus +</button>
+    <button *ngIf="!contact" (click)="switchContactBtn()" class="more-info btn">
+      <i class="material-icons"> local_post_office</i> Afficher les coordonnées
+    </button>
+
+    <div *ngIf="contact" class="contacts">
+      <img
+        class="fit-picture"
+        src="../../../../../../assets/icons/map_position.svg"
+        alt="Icone position géographique"
+      /><span>{{ pmsmpItem.address }}</span> <i class="material-icons">phone</i
+      ><span>+33 (0)0 00 00 00 00</span>
+      <i class="material-icons">local_post_office</i><span>mail@mail.fr</span>
+      <i class="material-icons">tv</i><span>Site internet</span>
+    </div>
   </div>
 </div>

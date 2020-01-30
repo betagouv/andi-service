@@ -1,33 +1,61 @@
 .result-item {
-  background: #ffffff;
+  background: #f2f2f2;
+  border: 1px solid #C9D3DF;
   margin-bottom: 20px;
   padding: 15px;
 
-  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  // box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  // -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  // -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+
+  & .separator {
+    height: 2px;
+    width: 100%;
+    background: #C9D3DF;
+    margin-bottom: 15px;
+  }
 
   & .result-header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    & .name {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0.01em;
+    }
+    & .activity {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.01em;
+    }
   }
   & .result-body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
 
-    & .corpName {
+    & .corp-name {
       margin-right: 30px;
     }
   }
   & .result-footer {
     & .more-info {
-      background: #4D6AB5;
-      border: 1px solid #CBC8C8;
+      background: #006BE6;
+      border: 1px solid #cbc8c8;
       color: #ffffff;
       font-weight: bold;
       font-size: 14px;
+    }
+
+    & .contacts {
+
     }
   }
 }
