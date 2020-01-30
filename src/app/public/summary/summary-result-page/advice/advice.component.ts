@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdviceComponent implements OnInit {
 
+  showAdvice = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleAdvice() {
+    this.showAdvice = !this.showAdvice;
   }
 
 }
