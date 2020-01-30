@@ -1,6 +1,27 @@
+.advice-toggle {
+
+  cursor: pointer;
+  background: #FFFFFF;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  & .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+
+    & i {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+}
+
 .advice-comp {
   background: #ffffff;
-  padding-top: 20px;
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 25px;

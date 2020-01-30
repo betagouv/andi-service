@@ -1,5 +1,8 @@
-<div class="advice-comp">
+<div (click)="toggleAdvice()" class="advice-toggle">
   <h1 class="title"><i class="material-icons">forum</i>Les conseils d'ANDi</h1>
+</div>
+
+<div *ngIf="showAdvice" class="advice-comp">
   <div class="content">
     <span class="subtitle">Comment contacter un employeur ?</span>
     <div class="sub-content-list">
