@@ -9,8 +9,6 @@ import { Data } from 'src/models/pmsmp-result';
 export class ResultItemComponent implements OnInit {
 
   @Input() pmsmpItem: Data;
-  @Input() jobName: string;
-
   contact = false;
 
   constructor() { }

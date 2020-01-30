@@ -18,7 +18,6 @@ import { SurveyStepperSharedService } from './survey-stepper.shared.service';
 })
 export class PmsmpService {
   _session_id: string = UUID.UUID();
-  jobSuggestion: string;
   pmsmpResult: Subject<PmsmpResult>;
   errorResult: BehaviorSubject<string> = new BehaviorSubject('');
 
@@ -47,7 +46,6 @@ export class PmsmpService {
             suggestions && suggestions.data && suggestions.data[0]
               ? suggestions.data[0].id
               : jobField;
-          this.jobSuggestion = suggestions.data[0].value;
 
           return this.http.post<PmsmpResult>(
             'https://andi.beta.gouv.fr/api/match',
