@@ -6,7 +6,12 @@
 
   <div class="result-body">
     <h4 class="corp-name">
-      <i class="material-icons">near_me</i> {{ pmsmpItem.distance }} kilometre
+      <i class="material-icons">near_me</i>
+      <span class="bold"
+        >{{ pmsmpItem.distance }} kilomètre<span *ngIf="pmsmpItem.distance >= 2"
+          >s</span
+        >
+      </span>
       de votre adresse
     </h4>
     <h5>[Nombre de salariés]</h5>
