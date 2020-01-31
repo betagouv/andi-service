@@ -8,14 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class AdviceComponent implements OnInit {
 
   showAdvice = false;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   toggleAdvice() {
     this.showAdvice = !this.showAdvice;
   }
-
 }

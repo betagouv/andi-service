@@ -1,5 +1,11 @@
 <div (click)="toggleAdvice()" class="advice-toggle">
   <h1 class="title"><i class="material-icons">forum</i>Les conseils d'ANDi</h1>
+  <i *ngIf="!showAdvice" class="material-icons">
+    keyboard_arrow_down
+  </i>
+  <i *ngIf="showAdvice" class="material-icons">
+    keyboard_arrow_up
+  </i>
 </div>
 
 <div *ngIf="showAdvice" class="advice-comp">
