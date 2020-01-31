@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PmsmpService } from 'src/app/core/services/pmsmp.service';
-import { PmsmpResult, Data } from 'src/models/pmsmp-result';
+import { Data, PmsmpResult } from 'src/models/pmsmp-result';
 
 @Component({
   selector: 'andi-result',
@@ -9,8 +9,9 @@ import { PmsmpResult, Data } from 'src/models/pmsmp-result';
 })
 export class ResultComponent implements OnInit {
   pmsmpDatas: Data[] = [];
-  jobSuggestion = '';
   hasErrorResult = false;
+  notFound = false;
+  showMoreResultsBtn = true;
 
   constructor(private pmsmpService: PmsmpService) {}
 
@@ -20,8 +21,12 @@ export class ResultComponent implements OnInit {
     });
 
     this.pmsmpService.pmsmpResult.subscribe((res: PmsmpResult) => {
+      this.notFound = res.data.length === 0;
       this.pmsmpDatas = res.data.slice(0, 15);
-      this.jobSuggestion = this.pmsmpService.jobSuggestion;
     });
+  }
+
+  toggleButton() {
+    this.showMoreResultsBtn = !this.showMoreResultsBtn;
   }
 }
