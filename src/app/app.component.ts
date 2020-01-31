@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'andi-service';
 
   constructor(private meta: Meta) {
-    const metaTag = this.meta.getTag('name=andi_id')
+    const metaTag = this.meta.getTag('name=andi_id');
     if (metaTag) {
         globals.setSessionId(metaTag.content);
     }

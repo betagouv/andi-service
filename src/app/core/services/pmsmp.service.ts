@@ -18,8 +18,8 @@ import * as globals from '../../globals';
   providedIn: 'root'
 })
 export class PmsmpService {
+  // _session_id: string = UUID.UUID();
   // tslint:disable-next-line
-  //_session_id: string = UUID.UUID();
   _session_id: string = globals.SessionId;
   pmsmpResult: Subject<PmsmpResult>;
   errorResult: BehaviorSubject<string> = new BehaviorSubject('');
