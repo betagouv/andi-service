@@ -60,7 +60,7 @@ const Q2B = new QuestionStep(
   [
     new ResponseProposal('Secteur privé', '', 'prive', 'Q3B'),
     new ResponseProposal('Fonction publique', '', 'publique', 'Q3E'),
-    new ResponseProposal('Travailleur d\'ESAT ou suivi en emploi accompagné', '', 'esat', 'F_JOB_ESAT'),
+    new ResponseProposal('Travailleur en ESAT/EA ou suivi en emploi accompagné', '', 'esat', 'F_JOB_ESAT'),
     new ResponseProposal('Travailleur en contrat aidé / IAE', '', 'iae', 'Q4D')
   ],
   ''
