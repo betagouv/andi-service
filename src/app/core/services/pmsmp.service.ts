@@ -12,13 +12,15 @@ import { FeatureCollection } from '../../../models/address-suggestion-response';
 import { ADDRESS_TYPE, CriterionDistance } from '../../../models/pmsmp-request';
 import { CriterionCodeRomes, RomeCode } from './../../../models/pmsmp-request';
 import { SurveyStepperSharedService } from './survey-stepper.shared.service';
+import * as globals from '../../globals';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PmsmpService {
   // tslint:disable-next-line
-  _session_id: string = UUID.UUID();
+  //_session_id: string = UUID.UUID();
+  _session_id: string = globals.SessionId;
   pmsmpResult: Subject<PmsmpResult>;
   errorResult: BehaviorSubject<string> = new BehaviorSubject('');
 

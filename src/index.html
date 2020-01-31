@@ -5,6 +5,7 @@
   <title>AndiService</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="andi_id" content="anonymous">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,16 +21,14 @@
           return 'ANONYMOUS';
       }
     }
+    // generate session id
     var SESSION_ID = uuidv4();
 
-    var _paq = window._paq || [];
-    _paq.push(['setCustomVariable',
-                    1,
-                    "SessionId",
-                    SESSION_ID,
-                    "visit"
-                ]);
+    // add to meta
+    document.querySelector('meta[name="andi_id"]').setAttribute("content", SESSION_ID);
 
+    var _paq = window._paq || [];
+    _paq.push(['setCustomVariable', 1, "SessionId", SESSION_ID, "visit" ]);
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(["disableCookies"]);
     _paq.push(['trackPageView']);
