@@ -1,4 +1,6 @@
 .advice-toggle {
+  display: flex;
+  justify-content: space-between;
 
   cursor: pointer;
   background: #FFFFFF;
@@ -7,6 +9,7 @@
   padding-right: 30px;
   padding-bottom: 20px;
   & .title {
+    display: inline;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
