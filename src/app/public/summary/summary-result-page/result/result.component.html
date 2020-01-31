@@ -1,26 +1,33 @@
 <div *ngIf="hasErrorResult">
-  <h3>Erreur : Une erreur est survenue. Veuilllez réessayer ultérieurement.</h3>
+  <h3 class="results-error">Erreur : Une erreur est survenue. Veuilllez réessayer ultérieurement.</h3>
 </div>
 
 <div *ngIf="!hasErrorResult && notFound">
-  <h3>Aucun résultat n'a été trouvé.</h3>
+  <h3 class="results-error">Aucun résultat n'a été trouvé.</h3>
 </div>
 
-<h1 *ngIf="!hasErrorResult && pmsmpDatas.length > 0" class="result-title">
-  Résultats de votre recherche
-</h1>
-
-<div
-  *ngIf="!hasErrorResult && pmsmpDatas.length > 0"
-  class="result-item-wrapper"
->
-  <div>
-    <h3 class="result-subtitle">
+<div id="resultWrapper" role="listbox" *ngIf="!hasErrorResult && pmsmpDatas.length > 0" class="result-item-wrapper">
+  <h3 class="result-title">Résultats de votre recherche</h3>
+      <h3 class="result-subtitle">
       <i class="material-icons">business_center</i>Les entreprises proches de
       chez vous
     </h3>
-    <andi-result-item
-      *ngFor="let pmsmp of pmsmpDatas | slice: 0:3"
+  <andi-result-item
+    role="listitem"
+    *ngFor="let pmsmp of pmsmpDatas | slice:0:3"
+    [pmsmpItem]="pmsmp"
+    [jobName]="jobSuggestion"
+  ></andi-result-item>
+</div>
+
+<div *ngIf="!hasErrorResult && pmsmpDatas.length > 3" class="wrap-collabsible" role="listbox">
+  <input id="collapsible" class="toggle" type="checkbox">
+  <label for="collapsible" class="lbl-toggle">Afficher plus de résultats</label>
+  <div class="collapsible-content">
+    <div class="content-inner">
+      <andi-result-item
+       role="listitem"
+      *ngFor="let pmsmp of pmsmpDatas | slice:3"
       [pmsmpItem]="pmsmp"
     ></andi-result-item>
   </div>
