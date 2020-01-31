@@ -57,7 +57,7 @@ export class CriterionComponent implements OnInit, OnDestroy {
               suggestions.features.length === 0
             ) {
               this.suggestionsResult = [];
-              this.errorMsg = 'Aucune addresse trouvée !';
+              this.errorMsg = 'Aucune addresse trouvée';
             } else {
               suggestions.features.forEach(feature => {
                 this.suggestionsResult.push(feature.properties.label);
@@ -73,7 +73,7 @@ export class CriterionComponent implements OnInit, OnDestroy {
           .subscribe((suggestions: RomeSuggestionResponse) => {
             if (suggestions !== undefined && suggestions.data.length === 0) {
               this.suggestionsResult = [];
-              this.errorMsg = 'Aucune addresse trouvée !';
+              this.errorMsg = 'Aucun métier correspondant trouvé';
             } else {
               suggestions.data.forEach(data => {
                 this.suggestionsResult.push(data.label);

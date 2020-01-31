@@ -4,8 +4,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { SummaryResultPageComponent } from './summary/summary-result-page/summary-result-page.component';
 
 const routes: Routes = [
-  { path: 'survey', component: SurveyPageComponent },
-  { path: 'summary', component: SummaryResultPageComponent }
+  {
+    path: 'survey',
+    component: SurveyPageComponent,
+    data: {title: 'ANDi - Questionnaire'}
+  },
+  {
+    path: 'summary',
+    component: SummaryResultPageComponent,
+    data: {title: 'ANDi - Recherche Immersion'}
+  }
 ];
 
 @NgModule({

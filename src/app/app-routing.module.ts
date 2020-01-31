@@ -3,8 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { SummaryResultPageComponent } from './public/summary/summary-result-page/summary-result-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/survey', pathMatch: 'full' },
-  { path: 'summary', component: SummaryResultPageComponent }
+  {
+    path: '',
+    redirectTo: '/survey',
+    pathMatch: 'full'
+  },
+  {
+    path: 'summary',
+    component: SummaryResultPageComponent,
+    data: {title: 'ANDi - Recherche Immersion'}
+  }
 ];
 
 @NgModule({
