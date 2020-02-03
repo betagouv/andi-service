@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,5 +15,9 @@ export class JobIaeComponent implements OnInit {
 
   goToSearch() {
     this.router.navigateByUrl('/summary');
+  }
+
+  goAgefiph() {
+    this.router.navigateByUrl('www.agefiph.fr');
   }
 }
