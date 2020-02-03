@@ -54,7 +54,7 @@ button {
     }
 }
 
-input {
+input, #range, #adress, #job {
   border: 1px solid #8393a7;
   box-sizing: border-box;
   border-radius: 2px;
@@ -64,6 +64,10 @@ input {
 
   background-color: #fff;
   opacity: 0.8;
+
+  color:#000;
+  font-family:roboto;
+
   &[type="text"]:focus {
     background-color: #ffffff;
     opacity: 0.8;

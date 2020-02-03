@@ -1,13 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>AndiService</title>
+  <title>ANDi - Service</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="andi_id" content="anonymous">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Matomo -->
+  <script type="text/javascript">
+    // Basic SessionID Generator 
+    function uuidv4() {
+      try {
+          return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+            (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+          );
+      } catch {
+          return 'ANONYMOUS';
+      }
+    }
+    // generate session id
+    var SESSION_ID = uuidv4();
+
+    // add to meta
+    document.querySelector('meta[name="andi_id"]').setAttribute("content", SESSION_ID);
+
+    var _paq = window._paq || [];
+    _paq.push(['setCustomVariable', 1, "SessionId", SESSION_ID, "visit" ]);
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(["disableCookies"]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//stats.data.gouv.fr/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '94']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
+
 </head>
 <body>
   <andi-root role="main"></andi-root>

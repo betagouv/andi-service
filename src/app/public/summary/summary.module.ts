@@ -8,11 +8,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ResultItemComponent } from './summary-result-page/result/result-item/result-item.component';
+import { AdviceComponent } from './summary-result-page/advice/advice.component';
 
 
 
 @NgModule({
-  declarations: [SummaryResultPageComponent, SummaryComponent, ResultComponent, ResultItemComponent],
+  declarations: [SummaryResultPageComponent, SummaryComponent, ResultComponent, ResultItemComponent, AdviceComponent],
   imports: [
     CommonModule,
     FormsModule,
