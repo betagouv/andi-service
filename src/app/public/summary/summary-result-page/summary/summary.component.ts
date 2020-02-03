@@ -29,10 +29,7 @@ export class SummaryComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.currentStateForm.address = '20 avenue de Segur Paris';
-    this.currentStateForm.jobs = 'Boulangerie';
-    this.currentStateForm.range = '2';
-    // this.currentStateForm = this.surveyStepperSharedService.stateForm;
+    this.currentStateForm = this.surveyStepperSharedService.stateForm;
     this.searchOnInit();
     this.addressCtrl.setValue(this.currentStateForm.address);
     this.jobCtrl.setValue(this.currentStateForm.jobs);

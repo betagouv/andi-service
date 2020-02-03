@@ -16,4 +16,8 @@ export class JobSearchComponent implements OnInit {
   goToSearch() {
     this.router.navigateByUrl('/summary');
   }
+
+  goAgefiph() {
+    this.router.navigateByUrl('www.agefiph.fr/');
+  }
 }
