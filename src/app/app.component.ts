@@ -14,7 +14,7 @@ import * as globals from './globals';
 
 export class AppComponent implements OnInit {
   title = 'andi-service';
-  
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
