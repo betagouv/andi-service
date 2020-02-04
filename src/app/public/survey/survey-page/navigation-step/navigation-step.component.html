@@ -1,7 +1,10 @@
 <div class="nav-comp">
-    <a (click)="previousQuestion()"
+    <a
+    (click)="previousQuestion()"
     *ngIf="enablePrev"
-    class="bouton previous-btn">
+    [routerLink]="['/']"
+    class="bouton previous-btn"
+    >
       &lt; Retour
     </a>
 
