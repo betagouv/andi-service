@@ -21,7 +21,7 @@ body {
   position: relative;
   background-color: #ebeff3;
 }
-
+andi
 body::after {
   content: "";
   display: block;
@@ -76,4 +76,16 @@ label {
 
   /* Support for IE. */
   font-feature-settings: "liga";
+}
+
+/* Focus & active states */
+a:active, a:focus,
+a.bouton:active, a.bouton:focus,
+button:active, button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+.bouton:active, .bouton:focus,
+.btn:active, .btn:focus {
+  /* background-color: #006be6!important; */
+  outline: #006be6 solid 3px;
 }
