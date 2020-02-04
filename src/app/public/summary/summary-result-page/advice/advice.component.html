@@ -1,9 +1,9 @@
 <div (click)="toggleAdvice()" class="advice-toggle">
-  <h1 class="title"><i class="material-icons">forum</i>Les conseils d'ANDi</h1>
-  <i *ngIf="!showAdvice" class="material-icons">
+  <h1 class="title"><i class="material-icons" aria-hidden="true">forum</i>Les conseils d'ANDi</h1>
+  <i *ngIf="!showAdvice" class="material-icons" aria-hidden="true">
     keyboard_arrow_down
   </i>
-  <i *ngIf="showAdvice" class="material-icons">
+  <i *ngIf="showAdvice" class="material-icons" aria-hidden="true">
     keyboard_arrow_up
   </i>
 </div>

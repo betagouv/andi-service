@@ -108,9 +108,9 @@ export class SummaryComponent implements OnInit {
           this.loader.stop();
           this.pmsmpService.pmsmpResult.next(pmsmpListFound);
           this.pmsmpService.errorResult.next('');
-            if (document.activeElement instanceof HTMLElement) {
-                document.activeElement.blur();
-            }
+          if (document.activeElement instanceof HTMLElement) {
+              document.activeElement.blur();
+          }
         },
         err => {
           this.loader.stop();

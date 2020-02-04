@@ -6,7 +6,7 @@
 
   <div class="result-body">
     <h4 class="corp-name">
-      <i class="material-icons">near_me</i>
+      <i class="material-icons" aria-hidden="true">near_me</i>
       <span class="bold"
         >{{ pmsmpItem.distance }} kilomètre<span *ngIf="pmsmpItem.distance >= 2"
           >s</span
@@ -21,7 +21,7 @@
 
   <div class="result-footer">
     <button *ngIf="!contact" (click)="switchContactBtn()" class="more-info">
-      <i class="material-icons"> local_post_office</i> Afficher les coordonnées
+      <i class="material-icons" aria-hidden="true"> local_post_office</i> Afficher les coordonnées
     </button>
 
     <div *ngIf="contact" class="contacts">
@@ -30,11 +30,12 @@
           class="icon"
           src="../../../../../../assets/icons/map_position.svg"
           alt="Icone position géographique"
+          aria-hidden="true"
         />{{ pmsmpItem.address }}</span
       >
-      <span><i class="material-icons">phone</i>+33 (0)0 00 00 00 00</span>
-      <span><i class="material-icons">local_post_office</i>mail@mail.fr</span>
-      <span><i class="material-icons">tv</i>Site internet</span>
+      <span><i class="material-icons" aria-hidden="true">phone</i>+33 (0)0 00 00 00 00</span>
+      <span><i class="material-icons" aria-hidden="true">local_post_office</i>mail@mail.fr</span>
+      <span><i class="material-icons" aria-hidden="true">tv</i>Site internet</span>
     </div>
   </div>
 </div>
