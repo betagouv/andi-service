@@ -1,22 +1,65 @@
 .site-header {
   width: 100%;
-  min-height: 75px;
+  min-height: 100px;
   margin-right: 0px;
   margin-left: 0px;
   margin-bottom: 100px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   background-color: #ffffff;
-}
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-img {
-  height: 65px;
-}
+  & .container_logo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 
-.website-title {
-  font-size: 48px;
-  margin-left: 20px;
+    & .andi_logo {
+      & img {
+        height: 65px;
+      }
+    }
 
-  font-family: Evolventa, "Helvetica Neue", sans-serif;
+    & .website-title {
+      font-size: 48px;
+      font-family: Evolventa, "Helvetica Neue", sans-serif;
+    }
+  }
+
+  & .block_aide {
+    margin-right: 100px;
+
+    & .aide {
+      display: flex;
+      align-items: center;
+      background-color: #0053b3;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: unset;
+      border-radius: 40px;
+      padding-right: 50px;
+      padding-left: 30px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+      & .souligne {
+        text-decoration: underline;
+      }
+
+      &:hover {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+      }
+
+      &::before {
+        content: url(../../../../assets/images/msg-exchange.svg);
+        display: flex;
+        position: relative;
+        box-sizing: border-box;
+        width: 35px;
+        margin-right: 10px;
+      }
+    }
+  }
 }
