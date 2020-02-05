@@ -2,11 +2,14 @@ export class TrackingRequest {
   constructor(
     public timestamp: string,
     public order: number,
+    // tslint:disable-next-line: variable-name
     public session_id: string,
     public page: string,
     public action: StepContext,
     public meta: any,
+    // tslint:disable-next-line: variable-name
     public client_context = {},
+    // tslint:disable-next-line: variable-name
     public server_context = {}
   ) {}
 }
