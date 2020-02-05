@@ -26,6 +26,7 @@ export class PmsmpResult {
 export class Data {
   id: string;
   name: string;
+  phonenumber;
   address: string;
   departement: string;
   city: string;
@@ -41,6 +42,7 @@ export class Data {
   constructor(options: {
     id: string;
     name: string;
+    phonenumber;
     address: string;
     departement: string;
     city: string;
@@ -55,6 +57,7 @@ export class Data {
   }) {
     this.id = options.id;
     this.name = options.name;
+    this.phonenumber = options.phonenumber;
     this.address = options.address;
     this.departement = options.departement;
     this.city = options.city;
