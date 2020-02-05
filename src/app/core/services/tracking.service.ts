@@ -17,10 +17,12 @@ export class TrackingService {
 
   constructor(private http: HttpClient) {}
 
-  track(page: string, action: StepContext, meta: string) {
+  track(page: string, action: StepContext, meta: object={}) {
+    console.log(page, action, meta);
+    const smeta = JSON.stringify(meta);
     return this.http.post(
       'https://andi.beta.gouv.fr/api/track',
-      this.computeRequestBody(page, action, meta)
+      this.computeRequestBody(page, action, smeta)
     );
   }
 

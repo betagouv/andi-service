@@ -7,6 +7,8 @@ import {
   SurveyStepperSharedService
 } from 'src/app/core/services/survey-stepper.shared.service';
 import { FeatureCollection } from '../../../../../models/address-suggestion-response';
+import { TrackingService } from 'src/app/core/services/tracking.service';
+import { StepContext } from 'src/models/tracking-request.model';
 
 @Component({
   selector: 'andi-summary',
@@ -25,7 +27,8 @@ export class SummaryComponent implements OnInit {
   constructor(
     private loader: NgxUiLoaderService,
     private pmsmpService: PmsmpService,
-    private surveyStepperSharedService: SurveyStepperSharedService
+    private surveyStepperSharedService: SurveyStepperSharedService,
+    private trackingService: TrackingService
   ) {}
 
   ngOnInit() {
@@ -96,6 +99,15 @@ export class SummaryComponent implements OnInit {
   }
 
   loadPmsmpList(userRequest) {
+    this.trackingService.track(
+        'matching',
+        StepContext.MATCHING_SEARCH,
+        {
+            'addresse': this.addressCtrl.value,
+            'metier': this.jobCtrl.value,
+            'distance': userRequest.range
+        }
+    );
     this.loader.start();
     this.pmsmpService
       .getPmsmpList(
@@ -111,10 +123,24 @@ export class SummaryComponent implements OnInit {
           if (document.activeElement instanceof HTMLElement) {
               document.activeElement.blur();
           }
+        this.trackingService.track(
+            'matching',
+            StepContext.MATCHING_SEARCH,
+            {}
+        );
         },
         err => {
           this.loader.stop();
           this.pmsmpService.errorResult.next('Subscribe error GetPmsmpList');
+          this.trackingService.track(
+              'matching',
+              StepContext.MATCHING_ERROR,
+              {
+                  'addresse': this.addressCtrl.value,
+                  'metier': this.jobCtrl.value,
+                  'distance': userRequest.range
+              }
+          );
         }
       );
   }
