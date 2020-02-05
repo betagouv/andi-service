@@ -11,11 +11,12 @@ import { ResultItemComponent } from './summary-result-page/result/result-item/re
 import { AdviceComponent } from './summary-result-page/advice/advice.component';
 import { RouterModule } from '@angular/router';
 import { routes } from '../../app-routing.module';
+import { PhonenumberPipe } from '../../shared/phonenumber.pipe';
 
 
 
 @NgModule({
-  declarations: [SummaryResultPageComponent, SummaryComponent, ResultComponent, ResultItemComponent, AdviceComponent],
+  declarations: [SummaryResultPageComponent, SummaryComponent, ResultComponent, ResultItemComponent, AdviceComponent, PhonenumberPipe],
   imports: [
     CommonModule,
     FormsModule,

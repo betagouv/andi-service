@@ -18,11 +18,11 @@ export class ResultItemComponent implements OnInit {
   }
 
   searchEngine() {
-    this.router.navigateByUrl('www.google.fr/search?q=' + this.pmsmpItem.name + this.pmsmpItem.address);
+    this.router.navigateByUrl('http://www.google.fr/search?q=' + this.pmsmpItem.name + this.pmsmpItem.address);
   }
 
   redirectCompanyInfo() {
-    this.router.navigateByUrl('entreprise.data.gouv.fr/etablissement/' + this.pmsmpItem.siret);
+    this.router.navigateByUrl('http://entreprise.data.gouv.fr/etablissement/' + this.pmsmpItem.siret);
   }
 
   switchContactBtn() {
