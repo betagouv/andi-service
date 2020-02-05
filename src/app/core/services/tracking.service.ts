@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { TrackingResponse } from 'src/models/tracking-response.model';
 import { HttpClient } from '@angular/common/http';
-import {
-  TrackingRequest,
-  StepContext
-} from 'src/models/tracking-request.model';
+import { MatomoTracker } from 'ngx-matomo';
+import { TrackingRequest, StepContext } from 'src/models/tracking-request.model';
 import * as moment from 'moment';
 
 import * as globals from '../../globals';
@@ -15,9 +13,15 @@ import * as globals from '../../globals';
 export class TrackingService {
   order = 0;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private matomoTracker: MatomoTracker
+    ) {}
 
   track(page: string, action: StepContext, meta: string) {
+    // matomo tracker event example
+    // this.matomoTracker.trackEvent('category', 'action', 'name', someVal);
+
     return this.http.post(
       'https://andi.beta.gouv.fr/api/track',
       this.computeRequestBody(page, action, meta)
