@@ -33,9 +33,9 @@
         votre projet professionnel. Trouvez-les grâce à notre moteur de
         recherche et nos conseils !
 
-        <p (click)="goToSearch()" class="link">
+        <a (click)="goToSearch()" [routerLink]="['/']" routerLinkActive="router-link-active" class="link">
           Chercher une immersion
-        </p>
+        </a>
       </div>
     </li>
 
@@ -47,9 +47,9 @@
         par l’employeur qui vous accueillera, par l’organisme qui vous
         accompagne et par vous-même.
 
-        <p (click)="goToSearch()" class="link">
+        <!-- <p (click)="goToSearch()" class="link">
           Accéder à l’ensemble de la démarche
-        </p>
+        </p> -->
       </div>
 
       <p class="info">

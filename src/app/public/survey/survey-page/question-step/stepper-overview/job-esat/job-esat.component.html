@@ -36,10 +36,15 @@
         Votre accompagnant ou votre moniteur d’atelier peut vous aider à
         chercher une entreprise, grâce à notre moteur de recherche et à nos
         conseils.
+        <br />
+        <br />
 
-        <p (click)="goToSearch()" class="link">
+        <a (click)="goToSearch()" [routerLink]="['/']" routerLinkActive="router-link-active" class="link">
           Chercher une immersion en milieu ordinaire
-        </p>
+        </a>
+        <br />
+        <br />
+
       </div>
     </li>
 

@@ -44,10 +44,15 @@
         ANDi référence les entreprises proches de chez vous qui correspondent à
         votre projet professionnel. Trouvez-les grâce à notre moteur de
         recherche et nos conseils !
-
-        <p (click)="goToSearch()" class="link">
+        <br />
+        <br />
+        
+        <a (click)="goToSearch()" [routerLink]="['/']" routerLinkActive="router-link-active" class="link">
           Chercher une immersion
-        </p>
+        </a>
+        <br />
+        <br />
+
       </div>
     </li>
 
@@ -59,9 +64,9 @@
         par l’employeur qui vous accueillera, par l’organisme qui vous
         accompagne et par vous-même.
 
-        <p (click)="goToSearch()" class="link">
+        <!-- <p (click)="goToSearch()" class="link">
           Accéder à l’ensemble de la démarche
-        </p>
+        </p> -->
       </div>
 
       <p class="info">
