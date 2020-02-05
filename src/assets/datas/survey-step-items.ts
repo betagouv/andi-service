@@ -3,7 +3,6 @@ import { ResponseProposal } from '../../models/response-proposal.model';
 
 /* QUESTIONS FILTRE */
 
-
 /* DEMANDEUR D'EMPLOI */
 const Q1 = new QuestionStep(
   'Quelle est votre situation professionnelle aujourd’hui ?',
@@ -11,7 +10,12 @@ const Q1 = new QuestionStep(
   QuestionType.REDIRECT,
   [
     new ResponseProposal('J’ai un travail', '', 'job_owner', 'Q2B'),
-    new ResponseProposal('Je suis à la recherche d’un emploi', '', 'job_search', 'Q2A')
+    new ResponseProposal(
+      'Je suis à la recherche d’un emploi',
+      '',
+      'job_search',
+      'Q2A'
+    )
   ],
   ''
 );
@@ -24,7 +28,12 @@ const Q2A = new QuestionStep(
     new ResponseProposal('Pôle Emploi', '', 'pole_emploi', 'Q3A'),
     new ResponseProposal('Cap Emploi', '', 'cap_emploi', 'Q3A'),
     new ResponseProposal('Mission locale', '', 'mission_locale', 'Q3A'),
-    new ResponseProposal('Autres structures (CRP, SAVS, SAMSAH, SEA, Assistance sociale)', '', 'other', 'Q3A')
+    new ResponseProposal(
+      'Autres structures (CRP, SAVS, SAMSAH, SEA, Assistance sociale)',
+      '',
+      'other',
+      'Q3A'
+    )
   ],
   ''
 );
@@ -35,7 +44,12 @@ const Q3A = new QuestionStep(
   QuestionType.REDIRECT,
   [
     new ResponseProposal('Oui, je suis en arrêt maladie', '', 'sick', 'Q4A'),
-    new ResponseProposal('Non, je ne suis pas en arrêt maladie', '', 'sane', 'Q4A')
+    new ResponseProposal(
+      'Non, je ne suis pas en arrêt maladie',
+      '',
+      'sane',
+      'Q4A'
+    )
   ],
   ''
 );
@@ -46,7 +60,12 @@ const Q4A = new QuestionStep(
   QuestionType.REDIRECT,
   [
     new ResponseProposal('Oui, j’ai une RQTH', '', 'rqth', 'F_JOB_SEARCH'),
-    new ResponseProposal('Non, je n’ai pas de RQTH', '', 'not_rqth', 'F_JOB_SEARCH')
+    new ResponseProposal(
+      'Non, je n’ai pas de RQTH',
+      '',
+      'not_rqth',
+      'F_JOB_SEARCH'
+    )
   ],
   ''
 );
@@ -60,7 +79,12 @@ const Q2B = new QuestionStep(
   [
     new ResponseProposal('Secteur privé', '', 'prive', 'Q3B'),
     new ResponseProposal('Fonction publique', '', 'publique', 'Q3E'),
-    new ResponseProposal('Travailleur en ESAT/EA ou suivi en emploi accompagné', '', 'esat', 'F_JOB_ESAT'),
+    new ResponseProposal(
+      'Travailleur en ESAT/EA ou suivi en emploi accompagné',
+      '',
+      'esat',
+      'F_JOB_ESAT'
+    ),
     new ResponseProposal('Travailleur en contrat aidé / IAE', '', 'iae', 'Q4D')
   ],
   ''
@@ -74,7 +98,12 @@ const Q3B = new QuestionStep(
   QuestionType.REDIRECT,
   [
     new ResponseProposal('Oui, je suis en arrêt maladie', '', 'sick', 'Q4B'),
-    new ResponseProposal('Non, je ne suis pas en arrêt maladie', '', 'sane', 'Q4B')
+    new ResponseProposal(
+      'Non, je ne suis pas en arrêt maladie',
+      '',
+      'sane',
+      'Q4B'
+    )
   ],
   ''
 );
@@ -85,7 +114,12 @@ const Q4B = new QuestionStep(
   QuestionType.REDIRECT,
   [
     new ResponseProposal('Oui, j’ai une RQTH', '', 'rqth', 'F_JOB_PRIVATE'),
-    new ResponseProposal('Non, je n’ai pas de RQTH', '', 'not_rqth', 'F_JOB_PRIVATE')
+    new ResponseProposal(
+      'Non, je n’ai pas de RQTH',
+      '',
+      'not_rqth',
+      'F_JOB_PRIVATE'
+    )
   ],
   ''
 );
@@ -98,7 +132,12 @@ const Q3E = new QuestionStep(
   QuestionType.REDIRECT,
   [
     new ResponseProposal('Oui, je suis en arrêt maladie', '', 'sick', 'Q4E'),
-    new ResponseProposal('Non, je ne suis pas en arrêt maladie', '', 'sane', 'Q4E')
+    new ResponseProposal(
+      'Non, je ne suis pas en arrêt maladie',
+      '',
+      'sane',
+      'Q4E'
+    )
   ],
   ''
 );
@@ -109,14 +148,17 @@ const Q4E = new QuestionStep(
   QuestionType.REDIRECT,
   [
     new ResponseProposal('Oui, j’ai une RQTH', '', 'rqth', 'F_JOB_PUBLIC'),
-    new ResponseProposal('Non, je n’ai pas de RQTH', '', 'not_rqth', 'F_JOB_PUBLIC')
+    new ResponseProposal(
+      'Non, je n’ai pas de RQTH',
+      '',
+      'not_rqth',
+      'F_JOB_PUBLIC'
+    )
   ],
   ''
 );
 
-
 /* EN POSTE ESAT*/
-
 
 /* EN POSTE CONTRAT AIDE OU IAE*/
 
@@ -126,11 +168,15 @@ const Q4D = new QuestionStep(
   QuestionType.REDIRECT,
   [
     new ResponseProposal('Oui, j’ai une RQTH', '', 'rqth', 'F_JOB_IAE'),
-    new ResponseProposal('Non, je n’ai pas de RQTH', '', 'not_rqth', 'F_JOB_IAE')
+    new ResponseProposal(
+      'Non, je n’ai pas de RQTH',
+      '',
+      'not_rqth',
+      'F_JOB_IAE'
+    )
   ],
   ''
 );
-
 
 /* MESSAGE D'AVERTISSEMENT / INFORMATIF */
 
@@ -174,33 +220,25 @@ const F_JOB_IAE = new QuestionStep(
   ''
 );
 
-
 /* CRITERES DE RECHERCHE */
 
 const C1 = new QuestionStep(
-  'Quelle est votre adresse postale ?',
-  'Nos recherches vont porter sur la proximité d\'une immersion avec cette adresse',
+  'Je cherche une immersion en tant que :',
+  '',
   QuestionType.CRITERIA,
-  [
-    new ResponseProposal(
-      'Adresse postale :',
-      'exemple: 10 Rue de Paris, Clichy',
-      'address',
-      'C2'
-    )
-  ],
+  [new ResponseProposal('', 'exemple: cariste', 'jobs', 'C2')],
   ''
 );
 
 const C2 = new QuestionStep(
-  'Quel(s) métier(s) vous interesserait pour une immersion ?',
-  '',
+  'Proche de chez moi :',
+  'Nos recherches vont porter sur la proximité d\'une immersion avec cette adresse',
   QuestionType.CRITERIA,
   [
     new ResponseProposal(
-      'Métier choisi :',
-      'exemple: cariste',
-      'jobs',
+      '',
+      'exemple: 10 Rue de Paris, Clichy',
+      'address',
       'C3'
     )
   ],
@@ -208,10 +246,10 @@ const C2 = new QuestionStep(
 );
 
 const C3 = new QuestionStep(
-  'A quelle distance maximale de votre domicile pouriez-vous vous déplacer pour effectuer une immersion ?',
-  '',
+  'À une distance maximale de mon domicile de :',
+  '(distance en kilomètre)',
   QuestionType.CRITERIA,
-  [new ResponseProposal('Distance maximale :', 'exemple: 3', 'range', '')],
+  [new ResponseProposal('', '', 'range', '')],
   ''
 );
 
