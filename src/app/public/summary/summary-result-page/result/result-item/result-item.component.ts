@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Data } from 'src/models/pmsmp-result';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'andi-result-item',
@@ -11,9 +12,17 @@ export class ResultItemComponent implements OnInit {
   @Input() pmsmpItem: Data;
   contact = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  searchEngine() {
+    this.router.navigateByUrl('www.google.fr/search?q=' + this.pmsmpItem.name + this.pmsmpItem.address);
+  }
+
+  redirectCompanyInfo() {
+    this.router.navigateByUrl('entreprise.data.gouv.fr/etablissement/' + this.pmsmpItem.siret);
   }
 
   switchContactBtn() {
