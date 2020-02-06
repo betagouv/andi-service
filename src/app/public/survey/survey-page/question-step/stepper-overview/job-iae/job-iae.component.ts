@@ -18,6 +18,6 @@ export class JobIaeComponent implements OnInit {
   }
 
   goAgefiph() {
-    this.router.navigateByUrl('www.agefiph.fr');
+    window.open('https://www.agefiph.fr/', '_blank');
   }
 }

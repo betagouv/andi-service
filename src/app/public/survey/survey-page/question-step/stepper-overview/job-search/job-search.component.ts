@@ -18,6 +18,6 @@ export class JobSearchComponent implements OnInit {
   }
 
   goAgefiph() {
-    this.router.navigateByUrl('www.agefiph.fr/');
+    window.open('https://www.agefiph.fr/', '_blank');
   }
 }

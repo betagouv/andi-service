@@ -1,13 +1,33 @@
 <div class="proposal-wrapper">
-  <andi-job-search *ngIf="isJobSearch" [isSick]="isSick" [isRqth]="isRqth"></andi-job-search>
-  <andi-job-private *ngIf="isJobPrivate" [isSick]="isSick" [isRqth]="isRqth"></andi-job-private>
-  <andi-job-public *ngIf="isJobPublic" [isSick]="isSick" [isRqth]="isRqth"></andi-job-public>
-  <andi-job-esat *ngIf="isJobEsat" [isSick]="isSick" [isRqth]="isRqth"></andi-job-esat>
-  <andi-job-iae *ngIf="isJobIae" [isSick]="isSick" [isRqth]="isRqth"></andi-job-iae>
-  <button
+  <andi-job-search
+    *ngIf="isJobSearch"
+    [isSick]="isSick"
+    [isRqth]="isRqth"
+  ></andi-job-search>
+  <andi-job-private
+    *ngIf="isJobPrivate"
+    [isSick]="isSick"
+    [isRqth]="isRqth"
+  ></andi-job-private>
+  <andi-job-public
+    *ngIf="isJobPublic"
+    [isSick]="isSick"
+    [isRqth]="isRqth"
+  ></andi-job-public>
+  <andi-job-esat
+    *ngIf="isJobEsat"
+    [isSick]="isSick"
+    [isRqth]="isRqth"
+  ></andi-job-esat>
+  <andi-job-iae
+    *ngIf="isJobIae"
+    [isSick]="isSick"
+    [isRqth]="isRqth"
+  ></andi-job-iae>
+  <a
     (click)="nextQuestion()"
-    class="proposal-btn btn d-flex justify-content-between align-items-center"
+    class="proposal-btn btn"
   >
     Rechercher une immersion
-  </button>
+  </a>
 </div>
