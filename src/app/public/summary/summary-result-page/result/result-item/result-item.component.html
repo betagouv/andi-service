@@ -35,8 +35,8 @@
         />{{ pmsmpItem.address }}</span
       >
       <span *ngIf="pmsmpItem.phonenumber"
-        ><i class="material-icons" aria-hidden="true">phone</i
-        >{{ pmsmpItem.phonenumber | phonenumber }}</span
+        ><a href="tel:{{pmsmpItem.phonenumber}}"><i class="material-icons" aria-hidden="true">phone</i
+        >{{ pmsmpItem.phonenumber | phonenumber }}</a></span
       >
       <span
         ><a (click)="searchEngine()" routerLink='/summary'
