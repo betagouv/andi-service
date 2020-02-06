@@ -20,8 +20,6 @@ jobs:
     script:
     - echo "Testing commit $TRAVIS_COMMIT"
     - npm run ng lint
-    - echo "Testing prod build ability"
-    - npm run ng build --output-path=dist --prod
   - name: Pa11y testing (accessibility)
     script:
     - echo "Testing commit $TRAVIS_COMMIT"
