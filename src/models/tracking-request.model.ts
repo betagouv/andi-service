@@ -1,5 +1,7 @@
 export class TrackingRequest {
   constructor(
+    // tslint:disable-next-line: variable-name
+    public _v: number,
     public timestamp: string,
     public order: number,
     // tslint:disable-next-line: variable-name

@@ -20,14 +20,15 @@ export class TrackingService {
   track(page: string, action: StepContext, meta: object={}) {
     console.log(page, action, meta);
     const smeta = JSON.stringify(meta);
-    return this.http.post(
+    this.http.post(
       'https://andi.beta.gouv.fr/api/track',
       this.computeRequestBody(page, action, smeta)
-    );
+    ).subscribe();
   }
 
   private computeRequestBody(page: string, action: StepContext, meta: string) {
     return new TrackingRequest(
+      1,
       moment().toISOString(),
       (this.order += 1),
       globals.SessionId,
