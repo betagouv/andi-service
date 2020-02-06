@@ -224,7 +224,7 @@ const F_JOB_IAE = new QuestionStep(
 
 const C1 = new QuestionStep(
   'Je cherche une immersion en tant que\u00A0:',
-  '',
+  'Exemples: vente, poissonnier, magasinier, ...',
   QuestionType.CRITERIA,
   [new ResponseProposal('', 'exemple: cariste', 'jobs', 'C2')],
   ''
