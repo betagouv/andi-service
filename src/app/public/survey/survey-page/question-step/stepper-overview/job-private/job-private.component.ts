@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +17,15 @@ export class JobPrivateComponent implements OnInit {
     this.router.navigateByUrl('/summary');
   }
 
+  downloadHelpCep() {
+    window.open('assets/datas/aide-cep.pdf', '_blank');
+  }
+
+  downloadHelpRqth() {
+    window.open('assets/datas/aide-rqth.pdf', '_blank');
+  }
+
   goAgefiph() {
-    this.router.navigateByUrl('https://www.agefiph.fr/');
+    window.open('https://www.agefiph.fr/', '_blank');
   }
 }

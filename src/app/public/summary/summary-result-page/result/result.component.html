@@ -38,11 +38,11 @@
     class="result-item-collapse"
     role="listbox"
   >
-    <span
+    <a [routerLink]="['/summary']" 
       *ngIf="showMoreResultsBtn"
       (click)="toggleButton()"
       class="more-result-btn"
-      >Afficher plus de résultats</span
+      >Afficher plus de résultats</a
     >
     <div *ngIf="!showMoreResultsBtn" class="collapsible-content">
       <div class="content-inner">

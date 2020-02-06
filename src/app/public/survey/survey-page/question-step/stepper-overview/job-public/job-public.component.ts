@@ -17,7 +17,11 @@ export class JobPublicComponent implements OnInit {
     this.router.navigateByUrl('/summary');
   }
 
+  downloadHelpRqth() {
+    window.open('assets/datas/aide-rqth.pdf', '_blank');
+  }
+
   goAgefiph() {
-    this.router.navigateByUrl('https://www.agefiph.fr/');
+    window.open('https://www.agefiph.fr/', '_blank');
   }
 }

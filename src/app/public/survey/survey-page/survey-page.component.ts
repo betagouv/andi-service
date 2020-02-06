@@ -22,8 +22,14 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.resetStates();
     this.loadStepsList();
     this.loadQuestionStep();
+  }
+  resetStates() {
+    this.surveyStepperSharedService.stateForm = {};
+    this.surveyStepperSharedService.pathHistory = [];
+    this.surveyStepperSharedService.stateStepper = [];
   }
 
   loadStepsList(): void {
