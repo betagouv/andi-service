@@ -5,7 +5,7 @@ import { ResponseProposal } from '../../models/response-proposal.model';
 
 /* DEMANDEUR D'EMPLOI */
 const Q1 = new QuestionStep(
-  'Quelle est votre situation professionnelle aujourd’hui ?',
+  'Quelle est votre situation professionnelle aujourd’hui\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -21,7 +21,7 @@ const Q1 = new QuestionStep(
 );
 
 const Q2A = new QuestionStep(
-  'Êtes-vous accompagné par l’une de ces structures ?',
+  'Êtes-vous accompagné par l’une de ces structures\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -39,7 +39,7 @@ const Q2A = new QuestionStep(
 );
 
 const Q3A = new QuestionStep(
-  'Êtes-vous en arrêt maladie ?',
+  'Êtes-vous en arrêt maladie\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -55,7 +55,7 @@ const Q3A = new QuestionStep(
 );
 
 const Q4A = new QuestionStep(
-  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
+  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH)\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -73,7 +73,7 @@ const Q4A = new QuestionStep(
 /* EN POSTE */
 
 const Q2B = new QuestionStep(
-  'Où travaillez-vous ?',
+  'Où travaillez-vous\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -93,7 +93,7 @@ const Q2B = new QuestionStep(
 /* EN POSTE PRIVE */
 
 const Q3B = new QuestionStep(
-  'Êtes-vous en arrêt maladie ?',
+  'Êtes-vous en arrêt maladie\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -109,7 +109,7 @@ const Q3B = new QuestionStep(
 );
 
 const Q4B = new QuestionStep(
-  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
+  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH)\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -127,7 +127,7 @@ const Q4B = new QuestionStep(
 /* EN POSTE PUBLIQUE */
 
 const Q3E = new QuestionStep(
-  'Êtes-vous en arrêt maladie ?',
+  'Êtes-vous en arrêt maladie\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -143,7 +143,7 @@ const Q3E = new QuestionStep(
 );
 
 const Q4E = new QuestionStep(
-  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
+  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH)\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -163,7 +163,7 @@ const Q4E = new QuestionStep(
 /* EN POSTE CONTRAT AIDE OU IAE*/
 
 const Q4D = new QuestionStep(
-  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH) ?',
+  'Avez-vous une reconnaissance de la qualité de travailleur handicapé (RQTH)\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -223,7 +223,7 @@ const F_JOB_IAE = new QuestionStep(
 /* CRITERES DE RECHERCHE */
 
 const C1 = new QuestionStep(
-  'Je cherche une immersion en tant que :',
+  'Je cherche une immersion en tant que\u00A0:',
   '',
   QuestionType.CRITERIA,
   [new ResponseProposal('', 'exemple: cariste', 'jobs', 'C2')],
@@ -231,7 +231,7 @@ const C1 = new QuestionStep(
 );
 
 const C2 = new QuestionStep(
-  'Proche de chez moi :',
+  'Proche de chez moi\u00A0:',
   'Nos recherches vont porter sur la proximité d\'une immersion avec cette adresse',
   QuestionType.CRITERIA,
   [
@@ -246,7 +246,7 @@ const C2 = new QuestionStep(
 );
 
 const C3 = new QuestionStep(
-  'À une distance maximale de mon domicile de :',
+  'À une distance maximale de mon domicile de\u00A0:',
   '(distance en kilomètre)',
   QuestionType.CRITERIA,
   [new ResponseProposal('', '', 'range', '')],
