@@ -12,7 +12,8 @@ export const routes: Routes = [
     path: 'summary',
     component: SummaryResultPageComponent,
     data: {title: 'ANDi - Recherche Immersion'}
-  }
+  },
+  { path: '**', redirectTo: '/survey' }
 ];
 
 @NgModule({

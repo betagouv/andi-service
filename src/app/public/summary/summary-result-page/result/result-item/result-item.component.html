@@ -35,16 +35,19 @@
         />{{ pmsmpItem.address }}</span
       >
       <span *ngIf="pmsmpItem.phonenumber"
-        ><i class="material-icons" aria-hidden="true">phone</i>{{pmsmpItem.phonenumber | phonenumber}}</span
+        ><i class="material-icons" aria-hidden="true">phone</i
+        >{{ pmsmpItem.phonenumber | phonenumber }}</span
       >
       <span
-        ><a (click)="searchEngine()" [routerLink]="['/']" routerLinkActive="router-link-active"
+        ><a (click)="searchEngine()" routerLink='/summary'
           ><i class="material-icons" aria-hidden="true">local_post_office</i
           >Recherche Google</a
         ></span
       >
       <span
-        ><a (click)="redirectCompanyInfo()"><i class="material-icons" aria-hidden="true">tv</i>Raison sociale</a></span
+        ><a (click)="redirectCompanyInfo()" routerLink='/summary'
+          ><i class="material-icons" aria-hidden="true">tv</i>Raison sociale</a
+        ></span
       >
     </div>
   </div>
