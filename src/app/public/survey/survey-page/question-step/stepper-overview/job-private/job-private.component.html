@@ -29,9 +29,9 @@
         et du métier que vous voulez essayer. Posez-lui toutes les questions que
         vous voulez.
       </p>
-      <p (click)="goToSearch()" class="link">
+      <a (click)="goToSearch()"  [routerLink]="['/']" class="link">
         Trouver un conseiller en évolution professionnelle
-      </p>
+      </a>
       <p class="info">
         A noter : Si vous voulez faire une immersion pendant votre temps de
         travail, vous devez avoir l’accord de votre employeur. En cas de refus
@@ -60,9 +60,9 @@
         votre projet professionnel. Trouvez-les grâce à notre moteur de
         recherche et nos conseils !
 
-        <p (click)="goToSearch()" class="link">
+        <a (click)="goToSearch()"  [routerLink]="['/']" class="link">
           Chercher une immersion
-        </p>
+        </a>
       </div>
     </li>
 
@@ -74,9 +74,9 @@
         par l’employeur qui vous accueillera, par l’organisme qui vous
         accompagne et par vous-même.
 
-        <p (click)="goToSearch()" class="link">
+        <a (click)="goToSearch()"  [routerLink]="['/']" class="link">
           Accéder à l’ensemble de la démarche
-        </p>
+        </a>
       </div>
 
       <p class="info">
@@ -143,7 +143,7 @@
       <span class="bold">L’Agefiph</span><br />
       L’Agefiph peut vous aider à obtenir une aide au transport ou à
       l’aménagement de votre poste de travail. Contactez la au 0800 11 10 09 ou
-      connectez-vous sur le <a (click)="goAgefiph()">site</a><br />
+      connectez-vous sur le <a (click)="goAgefiph()" [routerLink]="['/']">site</a><br />
       Tout savoir sur les aides auxquelles vous avez droit :
       <a
         href="../../../../../../../assets/datas/aide-rqth.pdf"

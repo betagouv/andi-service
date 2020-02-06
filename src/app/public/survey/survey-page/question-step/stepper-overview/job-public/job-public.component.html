@@ -61,9 +61,9 @@
         votre projet professionnel. Trouvez-les grâce à notre moteur de
         recherche et nos conseils !
 
-        <p (click)="goToSearch()" class="link">
+        <a [routerLink] = "['/']" (click)="goToSearch()" class="link">
           Chercher une immersion
-        </p>
+        </a>
       </div>
     </li>
 
@@ -75,7 +75,7 @@
         ou les documents relatifs à la PPR par votre employeur actuel, par
         l’employeur qui vous accueillera et par vous-même.
 
-        <p (click)="goToSearch()" class="link">
+        <p (click)="goToSearch()"  [routerLink]="['/']" class="link">
           Accéder à l’ensemble de la démarche
         </p>
       </div>
@@ -130,7 +130,7 @@
       <span class="bold">L’Agefiph</span><br />
       L’Agefiph peut vous aider à obtenir une aide au transport ou à
       l’aménagement de votre poste de travail. Contactez la au 0800 11 10 09 ou
-      connectez-vous sur le <a (click)="goAgefiph()">site</a><br />
+      connectez-vous sur le <a (click)="goAgefiph()" [routerLink]="['/']">site</a><br />
       Tout savoir sur les aides auxquelles vous avez droit :
       <a
         href="../../../../../../../assets/datas/aide-rqth.pdf"
