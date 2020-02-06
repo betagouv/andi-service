@@ -247,7 +247,7 @@ const C2 = new QuestionStep(
 
 const C3 = new QuestionStep(
   'À une distance maximale de mon domicile de\u00A0:',
-  '(distance en kilomètre)',
+  'Distance en kilomètre(s)',
   QuestionType.CRITERIA,
   [new ResponseProposal('', '', 'range', '')],
   ''
