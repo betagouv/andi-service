@@ -1,7 +1,9 @@
 <div (click)="toggleAdvice()" class="advice-toggle">
-  <h1 class="title">
-    <i class="material-icons" aria-hidden="true">forum</i>Les conseils d'ANDi
-  </h1>
+  <a [routerLink]="['/summary']">
+    <h1 class="title">
+      <i class="material-icons" aria-hidden="true">forum</i>Les conseils d'ANDi
+    </h1>
+  </a>
   <i *ngIf="!showAdvice" class="material-icons" aria-hidden="true">
     keyboard_arrow_down
   </i>
