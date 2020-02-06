@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'phonenumber'
 })
 export class PhonenumberPipe implements PipeTransform {
-  transform(val: string, args) {
+  transform(val: string) {
     return (
       val.slice(0, 2) +
       ' ' +
