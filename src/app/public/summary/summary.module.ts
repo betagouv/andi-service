@@ -9,18 +9,22 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ResultItemComponent } from './summary-result-page/result/result-item/result-item.component';
 import { AdviceComponent } from './summary-result-page/advice/advice.component';
+import { RouterModule } from '@angular/router';
+import { routes } from '../../app-routing.module';
+import { PhonenumberPipe } from '../../shared/phonenumber.pipe';
 
 
 
 @NgModule({
-  declarations: [SummaryResultPageComponent, SummaryComponent, ResultComponent, ResultItemComponent, AdviceComponent],
+  declarations: [SummaryResultPageComponent, SummaryComponent, ResultComponent, ResultItemComponent, AdviceComponent, PhonenumberPipe],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
     MatAutocompleteModule,
-    NgxUiLoaderModule
+    NgxUiLoaderModule,
+    RouterModule.forRoot(routes)
   ]
 })
 export class SummaryModule { }
