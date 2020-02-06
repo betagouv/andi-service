@@ -1,7 +1,16 @@
 <nav class="q-step-comp container">
-  <div *ngIf="questionStep.type != 'disclaimer'" class="container question-wrapper" role="region">
-    <h1 id="question-title" *ngIf="questionStep.sentence != ''">{{ questionStep.sentence }}</h1>
-    <h3 *ngIf="questionStep.description != ''">{{ questionStep.description }}</h3>
+  <div
+    *ngIf="questionStep.type != 'disclaimer'"
+    class="container question-wrapper"
+    role="region"
+  >
+    <h1 id="question-title" *ngIf="questionStep.sentence != ''">
+      {{ questionStep.sentence }}
+      <span *ngIf="questionStep.proposals[0].id == 'address'">(adresse postale)</span>
+    </h1>
+    <h3 *ngIf="questionStep.description != ''">
+      {{ questionStep.description }}
+    </h3>
 
     <div class="proposals-wrapper">
       <div
@@ -10,13 +19,15 @@
           let i = index
         "
       >
-        <andi-proposal aria-describedby="question-title"
+        <andi-proposal
+          aria-describedby="question-title"
           *ngIf="questionStep.type == 'redirect'"
           [proposal]="proposal.value"
           questionStepType="{{ questionStep.type }}"
         ></andi-proposal>
 
-        <andi-criterion aria-describedby="question-title"
+        <andi-criterion
+          aria-describedby="question-title"
           *ngIf="questionStep.type == 'criteria'"
           [proposal]="proposal.value"
         ></andi-criterion>
@@ -24,6 +35,7 @@
     </div>
   </div>
 </nav>
-<andi-stepper-overview role="region"
+<andi-stepper-overview
+  role="region"
   *ngIf="questionStep.type == 'disclaimer'"
 ></andi-stepper-overview>

@@ -29,6 +29,8 @@
     "bootswatch": "^4.4.1",
     "express": "^4.17.1",
     "moment": "^2.24.0",
+    "ngx-hotjar": "0.0.5",
+    "ngx-matomo": "^0.1.4",
     "ngx-ui-loader": "^8.0.0",
     "path": "^0.12.7",
     "rxjs": "~6.4.0",

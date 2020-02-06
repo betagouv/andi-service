@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
+import { MatomoTracker, MatomoInjector } from 'ngx-matomo';
 import * as globals from './globals';
 
 @Component({
@@ -16,12 +17,16 @@ export class AppComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
-    private meta: Meta
+    private meta: Meta,
+    private matomoInjector: MatomoInjector,
+    private matomoTracker: MatomoTracker
   ) {
     const metaTag = this.meta.getTag('name=andi_id');
     if (metaTag) {
       globals.setSessionId(metaTag.content);
     }
+    this.matomoTracker.setUserId(globals.SessionId);
+    this.matomoInjector.init('http://stats.data.gouv.fr/', 94);
   }
   /* tslint:disable:no-string-literal */
   ngOnInit() {

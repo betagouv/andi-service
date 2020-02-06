@@ -9,6 +9,8 @@ import { ProtectedModule } from '../protected/protected.module';
 import { PublicModule } from '../public/public.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { RouterModule } from '@angular/router';
+import { routes } from '../app-routing.module';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
@@ -21,7 +23,8 @@ import { HeaderComponent } from './components/header/header.component';
     ReactiveFormsModule,
     MatInputModule,
     MatAutocompleteModule,
-    NgxUiLoaderModule
+    NgxUiLoaderModule,
+    RouterModule.forRoot(routes)
   ],
   exports: [HeaderComponent, FooterComponent]
 })

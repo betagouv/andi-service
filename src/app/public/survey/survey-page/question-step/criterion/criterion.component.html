@@ -4,7 +4,7 @@
     <!-- CHAMP AUTO COMPLETE -->
     <div *ngIf="proposal.id != 'range'">
       <mat-form-field>
-        <label for="adress">{{ proposal.label }}</label>
+        <label *ngIf="proposal.label != undefined" for="adress">{{ proposal.label }}</label>
         <input
           id="adress"
           matInput

@@ -16,6 +16,8 @@ import { JobPrivateComponent } from './survey-page/question-step/stepper-overvie
 import { JobEsatComponent } from './survey-page/question-step/stepper-overview/job-esat/job-esat.component';
 import { JobIaeComponent } from './survey-page/question-step/stepper-overview/job-iae/job-iae.component';
 import { JobPublicComponent } from './survey-page/question-step/stepper-overview/job-public/job-public.component';
+import { AppRoutingModule, routes } from '../../app-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { JobPublicComponent } from './survey-page/question-step/stepper-overview
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    NgxUiLoaderModule
+    NgxUiLoaderModule,
+    RouterModule.forRoot(routes)
   ]
 })
 export class SurveyModule {}

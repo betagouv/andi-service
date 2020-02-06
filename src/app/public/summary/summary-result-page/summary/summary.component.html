@@ -1,40 +1,13 @@
-<ngx-ui-loader text="Recherche en cours... En fonction du périmètre de votre recherche, celle-ci peut nécessiter un certain temps de traitement..."></ngx-ui-loader>
+<ngx-ui-loader
+  text="Recherche en cours... En fonction du périmètre de votre recherche, celle-ci peut nécessiter un certain temps de traitement..."
+></ngx-ui-loader>
 
 <div class="form-container">
   <form (ngSubmit)="loadPmsmpList(userForm.value)" #userForm="ngForm">
-
-    <!-- CHAMP ADRESSE -->
-    <div>
-      <mat-form-field>
-        <label for="adress">Adresse postale :</label>
-        <input
-          id="adress"
-          matInput
-          [matAutocomplete]="adrAuto"
-          [formControl]="addressCtrl"
-        />
-        <mat-autocomplete #adrAuto="matAutocomplete">
-          <ng-container>
-            <mat-option
-              *ngFor="let adrSuggest of adrSuggestions"
-              [value]="adrSuggest.properties.label"
-            >
-              <span>{{ adrSuggest.properties.label }}</span>
-            </mat-option>
-          </ng-container>
-        </mat-autocomplete>
-      </mat-form-field>
-
-      <ng-container *ngIf="errorMsg; else elseTemplate">
-        {{ errorMsg }}
-      </ng-container>
-      <ng-template #elseTemplate> </ng-template>
-    </div>
-
     <!-- CHAMP METIER -->
     <div>
       <mat-form-field>
-        <label for="job">Métier souhaité :</label>
+        <label for="job">Je cherche une immersion en tant que :</label>
         <input
           id="job"
           matInput
@@ -59,8 +32,36 @@
       <ng-template #elseTemplate> </ng-template>
     </div>
 
+    <!-- CHAMP ADRESSE -->
+    <div>
+      <mat-form-field>
+        <label for="adress">Proche de chez moi (adresse postale) :</label>
+        <input
+          id="adress"
+          matInput
+          [matAutocomplete]="adrAuto"
+          [formControl]="addressCtrl"
+        />
+        <mat-autocomplete #adrAuto="matAutocomplete">
+          <ng-container>
+            <mat-option
+              *ngFor="let adrSuggest of adrSuggestions"
+              [value]="adrSuggest.properties.label"
+            >
+              <span>{{ adrSuggest.properties.label }}</span>
+            </mat-option>
+          </ng-container>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <ng-container *ngIf="errorMsg; else elseTemplate">
+        {{ errorMsg }}
+      </ng-container>
+      <ng-template #elseTemplate> </ng-template>
+    </div>
+
     <!-- CHAMP DISTANCE -->
-    <label for="range">Distance maximale (km) :</label>
+    <label for="range">À une distance maximale de mon domicile de (distance en kilomètre) :</label>
     <input
       type="text"
       class="criterion-field form-control form-control-lg"
@@ -68,6 +69,8 @@
       name="range"
       [(ngModel)]="currentStateForm.range"
     />
-    <button type="submit" class="bouton" aria-controls="andi-result">Rechercher</button>
+    <button type="submit" class="bouton" aria-controls="andi-result">
+      Rechercher
+    </button>
   </form>
 </div>

@@ -6,7 +6,10 @@
 
 <div *ngIf="!hasErrorResult && notFound">
   <h3 class="results-error">Aucun résultat n'a été trouvé.</h3>
-  <p>Nous vous conseillons d'élargir la zone de recherche en indiquant une distance supérieure</p>
+  <p>
+    Nous vous conseillons d'élargir la zone de recherche en indiquant une
+    distance supérieure
+  </p>
 </div>
 
 <h2 *ngIf="!hasErrorResult && pmsmpDatas.length > 0" class="result-title">
@@ -20,7 +23,7 @@
     class="result-item-wrapper"
   >
     <h3 class="result-subtitle">
-      <i class="material-icons">business_center</i>Les entreprises proches de
+      <i class="material-icons" aria-hidden="true">business_center</i>Les entreprises proches de
       chez vous
     </h3>
     <andi-result-item
