@@ -12,6 +12,10 @@ export class AdviceComponent implements OnInit {
 
   ngOnInit() {}
 
+  openCerfa() {
+    window.open('../../../../../assets/datas/convention-cerfa.pdf', '_blank');
+  }
+
   toggleAdvice() {
     this.showAdvice = !this.showAdvice;
   }
