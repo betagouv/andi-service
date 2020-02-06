@@ -73,7 +73,7 @@
         </a>
         <br />
         <br />
-        
+
       </div>
     </li>
 
@@ -116,7 +116,7 @@
     Il vous accompagne dans votre projet d’évolution professionnelle et vous
     aide dans vos démarches administratives. Son rôle est de vous conseiller et
     de vous informer.<br />
-    <a href="../../../../../../../assets/datas/aide-cep.pdf" class="link">Accédez aux coordonnées de votre conseiller en évolution professionnelle</a>
+    <a [routerLink]="['/']" (click)="downloadHelpCep()" href="assets/datas/aide-cep.pdf" class="link">Accédez aux coordonnées de votre conseiller en évolution professionnelle</a>
     <br />
     <br />
 
@@ -156,8 +156,7 @@
       l’aménagement de votre poste de travail. Contactez la au 0800 11 10 09 ou
       connectez-vous sur le <a (click)="goAgefiph()" [routerLink]="['/']">site</a><br />
       Tout savoir sur les aides auxquelles vous avez droit :
-      <a
-        href="../../../../../../../assets/datas/aide-rqth.pdf"
+      <a [routerLink]="['/']" (click)="downloadHelpRqth()"
         class="bold link"
         >A quelles aides ai-je droit dans le cadre de mon immersion ?</a
       >

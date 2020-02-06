@@ -17,6 +17,14 @@ export class JobPrivateComponent implements OnInit {
     this.router.navigateByUrl('/summary');
   }
 
+  downloadHelpCep(){
+    window.open('assets/datas/aide-cep.pdf', '_blank');
+  }
+
+  downloadHelpRqth() {
+    window.open('assets/datas/aide-rqth.pdf', '_blank');
+  }
+
   goAgefiph() {
     window.open('https://www.agefiph.fr/', '_blank');
   }
