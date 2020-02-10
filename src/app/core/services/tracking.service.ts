@@ -19,7 +19,10 @@ export class TrackingService {
     private matomoTracker: MatomoTracker
     ) {}
 
-  track(page: string, action: StepContext, meta: object= {}) {
+  track(page: string, action: StepContext, meta: any= {}) {
+    // quick hardcode discriminating values in meta
+    meta.descriptor = 'mvp';
+    meta.dev = isDevMode();
 
     // matomo tracker event example
     // this.matomoTracker.trackEvent('category', 'action', 'name', someVal);

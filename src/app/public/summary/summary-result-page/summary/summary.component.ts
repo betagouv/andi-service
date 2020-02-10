@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { PmsmpService } from 'src/app/core/services/pmsmp.service';
@@ -15,7 +15,7 @@ import { StepContext } from 'src/models/tracking-request.model';
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.scss']
 })
-export class SummaryComponent implements OnInit, OnDestroy {
+export class SummaryComponent implements OnInit {
   currentStateForm: IHash = {};
 
   addressCtrl = new FormControl();
@@ -38,12 +38,8 @@ export class SummaryComponent implements OnInit, OnDestroy {
     this.jobCtrl.setValue(this.currentStateForm.jobs);
     this.enableAutocompleteAddress();
     this.enableAutocompleteJob();
-    this.trackingService.track('questionnaire-matching', StepContext.ARRIVAL);
   }
 
-  ngOnDestroy() {
-    this.trackingService.track('questionnaire-matching', StepContext.DEPART, {reason: 'unload'});
-  }
 
   private searchOnInit() {
     if (this.pmsmpService.isStateFormComplete()) {

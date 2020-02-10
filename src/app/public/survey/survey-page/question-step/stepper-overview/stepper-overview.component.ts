@@ -63,7 +63,6 @@ export class StepperOverviewComponent implements OnInit {
 
   nextQuestion() {
     this.trackingService.track('pasapas', StepContext.TO_MATCHING);
-    this.trackingService.track('pasapas', StepContext.DEPART);
     this.surveyStepperSharedService.goToNextStep('C1');
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, HostListener } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 import { QuestionStep } from 'src/models/question-step.model';
@@ -31,6 +31,15 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
     this.loadStepsList();
     this.loadQuestionStep();
   }
+
+  @HostListener('window:beforeunload')
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(
+      subscription => subscription && subscription.unsubscribe()
+    );
+    this.trackingService.track(this.currentSection, StepContext.DEPART, {reason: 'destroy'});
+  }
+
   resetStates() {
     this.surveyStepperSharedService.stateForm = {};
     this.surveyStepperSharedService.pathHistory = [];
@@ -69,12 +78,6 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
           this.currentQuestionStep = questionStep;
           this.currentQuestionStepId = stepId;
         })
-    );
-  }
-
-  ngOnDestroy(): void {
-    this.subscriptions.forEach(
-      subscription => subscription && subscription.unsubscribe()
     );
   }
 }
