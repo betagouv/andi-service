@@ -28,8 +28,9 @@
     </h3>
     <andi-result-item
       role="listitem"
-      *ngFor="let pmsmp of pmsmpDatas | slice: 0:3"
+      *ngFor="let pmsmp of pmsmpDatas | slice: 0:3; index as i"
       [pmsmpItem]="pmsmp"
+      [pmsmpOrder]="i + 1"
     ></andi-result-item>
   </div>
 
@@ -48,8 +49,9 @@
       <div class="content-inner">
         <andi-result-item
           role="listitem"
-          *ngFor="let pmsmp of pmsmpDatas | slice: 3"
+          *ngFor="let pmsmp of pmsmpDatas | slice: 3; index as i"
           [pmsmpItem]="pmsmp"
+          [pmsmpOrder]="i + 4"
         >
         </andi-result-item>
       </div>

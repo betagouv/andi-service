@@ -30,13 +30,13 @@ export class StepperOverviewComponent implements OnInit {
         'pasapas',
         StepContext.BILAN,
         {
-          'job_search': this.isJobSearch,
-          'prive': this.isJobPrivate,
-          'publique': this.isJobPublic,
-          'esat': this.isJobEsat,
-          'iae': this.isJobIae,
-          'maladie': this.isSick,
-          'rqth': this.isRqth
+          job_search: this.isJobSearch,
+          prive: this.isJobPrivate,
+          publique: this.isJobPublic,
+          esat: this.isJobEsat,
+          iae: this.isJobIae,
+          maladie: this.isSick,
+          rqth: this.isRqth
         }
     );
   }
@@ -64,7 +64,6 @@ export class StepperOverviewComponent implements OnInit {
   nextQuestion() {
     this.trackingService.track('pasapas', StepContext.TO_MATCHING);
     this.trackingService.track('pasapas', StepContext.DEPART);
-    this.trackingService.track('questionnaire-matching', StepContext.ARRIVAL);
     this.surveyStepperSharedService.goToNextStep('C1');
   }
 

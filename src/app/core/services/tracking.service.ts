@@ -3,6 +3,7 @@ import { TrackingResponse } from 'src/models/tracking-response.model';
 import { HttpClient } from '@angular/common/http';
 import { MatomoTracker } from 'ngx-matomo';
 import { TrackingRequest, StepContext } from 'src/models/tracking-request.model';
+import { isDevMode } from '@angular/core';
 import * as moment from 'moment';
 
 import * as globals from '../../globals';
@@ -18,13 +19,15 @@ export class TrackingService {
     private matomoTracker: MatomoTracker
     ) {}
 
-  track(page: string, action: StepContext, meta: object={}) {
+  track(page: string, action: StepContext, meta: object= {}) {
 
     // matomo tracker event example
     // this.matomoTracker.trackEvent('category', 'action', 'name', someVal);
 
     const smeta = JSON.stringify(meta);
-    console.log(page, action, smeta);
+    if (isDevMode()) {
+      console.log(page, action, smeta);
+    }
 
     this.http.post(
       'https://andi.beta.gouv.fr/api/track',

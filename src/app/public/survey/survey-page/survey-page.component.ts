@@ -18,7 +18,7 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
   questionSteps: QuestionStep[];
   currentQuestionStep: QuestionStep;
   currentQuestionStepId: string;
-  currentSection: string = 'pasapas';
+  currentSection: 'pasapas';
 
   constructor(
     private surveyStepperSharedService: SurveyStepperSharedService,
@@ -53,18 +53,18 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
         .pipe(startWith('Q1'))
         .subscribe(stepId => {
           // ensure correct questionaire section in user tracking
-          let prevSection = this.currentSection
-          this.currentSection = stepId.substr(0,1) == 'C' ? 'questionnaire-matching' : 'pasapas';
+          const prevSection = this.currentSection;
+          this.currentSection = stepId.substr(0, 1) === 'C' ? 'questionnaire-matching' : 'pasapas';
           const questionStep = this.questionSteps[stepId];
           // question events tracking
-          if (this.currentQuestionStep && prevSection == this.currentSection) {
+          if (this.currentQuestionStep && prevSection === this.currentSection) {
             this.trackingService.track(
                 this.currentSection,
                 StepContext.QUESTION_DEPARTURE,
-                {'question': this.currentQuestionStep.slug, 'id': this.currentQuestionStepId}
+                {question: this.currentQuestionStep.slug, id: this.currentQuestionStepId}
             );
           }
-          this.trackingService.track(this.currentSection, StepContext.QUESTION_ARRIVAL, {'question': questionStep.slug, 'id': stepId});
+          this.trackingService.track(this.currentSection, StepContext.QUESTION_ARRIVAL, {question: questionStep.slug, id: stepId});
 
           this.currentQuestionStep = questionStep;
           this.currentQuestionStepId = stepId;

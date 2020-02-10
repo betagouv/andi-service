@@ -28,7 +28,7 @@ export class SummaryComponent implements OnInit {
     private loader: NgxUiLoaderService,
     private pmsmpService: PmsmpService,
     private surveyStepperSharedService: SurveyStepperSharedService,
-    private trackingService: TrackingService
+    private trackingService: TrackingService,
   ) {}
 
   ngOnInit() {
@@ -38,10 +38,20 @@ export class SummaryComponent implements OnInit {
     this.jobCtrl.setValue(this.currentStateForm.jobs);
     this.enableAutocompleteAddress();
     this.enableAutocompleteJob();
+    this.trackingService.track('questionnaire-matching', StepContext.ARRIVAL);
   }
 
   private searchOnInit() {
     if (this.pmsmpService.isStateFormComplete()) {
+      this.trackingService.track(
+          'matching',
+          StepContext.MATCHING_SEARCH,
+          {
+              addresse: this.currentStateForm.address,
+              metier: this.currentStateForm.jobs,
+              distance: this.currentStateForm.range
+          }
+      );
       this.loader.start();
       this.pmsmpService
         .getPmsmpList(
@@ -56,7 +66,9 @@ export class SummaryComponent implements OnInit {
             this.loader.stop();
           },
           err => {
-            this.pmsmpService.errorResult.next('Subscribe error GetPmsmpList');
+            const errorMsg = 'Subscribe error GetPmsmpList';
+            this.pmsmpService.errorResult.next(errorMsg);
+            this.trackingService.track('matching', StepContext.MATCHING_ERROR, {msg: errorMsg});
             this.loader.stop();
           }
         );
@@ -73,6 +85,7 @@ export class SummaryComponent implements OnInit {
           suggestions.features.length === 0
         ) {
           this.errorMsg = 'Aucun résultat ne correspond à votre saisie !';
+          this.trackingService.track('matching', StepContext.MATCHING_ERROR, {msg: this.errorMsg});
           this.adrSuggestions = [];
         } else {
           this.errorMsg = '';
@@ -90,6 +103,7 @@ export class SummaryComponent implements OnInit {
           suggestions.data.length === 0
         ) {
           this.errorMsg = 'Aucun résultat ne correspond à votre saisie !';
+          this.trackingService.track('matching', StepContext.MATCHING_ERROR, {msg: this.errorMsg});
           this.jobSuggestions = [];
         } else {
           this.errorMsg = '';
@@ -103,9 +117,9 @@ export class SummaryComponent implements OnInit {
         'matching',
         StepContext.MATCHING_SEARCH,
         {
-            'addresse': this.addressCtrl.value,
-            'metier': this.jobCtrl.value,
-            'distance': userRequest.range
+            addresse: this.addressCtrl.value,
+            metier: this.jobCtrl.value,
+            distance: userRequest.range
         }
     );
     this.loader.start();
@@ -123,24 +137,12 @@ export class SummaryComponent implements OnInit {
           if (document.activeElement instanceof HTMLElement) {
               document.activeElement.blur();
           }
-        this.trackingService.track(
-            'matching',
-            StepContext.MATCHING_SEARCH,
-            {}
-        );
         },
         err => {
           this.loader.stop();
-          this.pmsmpService.errorResult.next('Subscribe error GetPmsmpList');
-          this.trackingService.track(
-              'matching',
-              StepContext.MATCHING_ERROR,
-              {
-                  'addresse': this.addressCtrl.value,
-                  'metier': this.jobCtrl.value,
-                  'distance': userRequest.range
-              }
-          );
+          const errorMsg = 'Subscribe error GetPmsmpList';
+          this.pmsmpService.errorResult.next(errorMsg);
+          this.trackingService.track('matching', StepContext.MATCHING_ERROR, {msg: errorMsg});
         }
       );
   }

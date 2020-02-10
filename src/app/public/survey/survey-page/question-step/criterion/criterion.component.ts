@@ -61,7 +61,7 @@ export class CriterionComponent implements OnInit, OnDestroy {
             ) {
               this.suggestionsResult = [];
               this.errorMsg = 'Aucune addresse trouvée';
-              this.trackingService.track('questionaire-matching', StepContext.MATCHING_ERROR, {'msg': this.errorMsg});
+              this.trackingService.track('questionaire-matching', StepContext.MATCHING_ERROR, {msg: this.errorMsg});
             } else {
               this.suggestionsResult = [];
               suggestions.features.forEach(feature => {
@@ -79,7 +79,7 @@ export class CriterionComponent implements OnInit, OnDestroy {
             if (suggestions !== undefined && suggestions.data.length === 0) {
               this.suggestionsResult = [];
               this.errorMsg = 'Aucun métier correspondant trouvé';
-              this.trackingService.track('questionnaire-matching', StepContext.MATCHING_ERROR, {'msg': this.errorMsg});
+              this.trackingService.track('questionnaire-matching', StepContext.MATCHING_ERROR, {msg: this.errorMsg});
             } else {
               this.suggestionsResult = [];
               suggestions.data.forEach(data => {
@@ -93,22 +93,22 @@ export class CriterionComponent implements OnInit, OnDestroy {
   }
 
   updateCriteriasState(saisieInput) {
-    let result_value;
+    let resultValue;
     if (this.proposal.id === 'range') {
-      result_value = Object.values(saisieInput)[0] as string;
+      resultValue = Object.values(saisieInput)[0] as string;
       this.surveyStepperSharedService.stateForm[
         Object.keys(saisieInput)[0]
-      ] =  result_value;
+      ] =  resultValue;
     } else {
-      result_value = this.formCtrl.value;
+      resultValue = this.formCtrl.value;
       this.surveyStepperSharedService.stateForm[
         this.proposal.id
-      ] =  result_value;
+      ] =  resultValue;
     }
     this.trackingService.track(
         'questionnaire-matching',
         StepContext.QUESTION_RESPONSE,
-        {'question_id': this.proposal.id, 'question_response': result_value}
+        {question_id: this.proposal.id, question_response: resultValue}
     );
     this.nextQuestion();
   }
