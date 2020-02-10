@@ -239,9 +239,9 @@ const F_JOB_IAE = new QuestionStep(
 
 const C1 = new QuestionStep(
   'Je cherche une immersion en tant que\u00A0:',
-  'Exemples: vente, poissonnier, magasinier, ...',
+  '',
   QuestionType.CRITERIA,
-  [new ResponseProposal('', 'exemple: cariste', 'jobs', 'C2')],
+  [new ResponseProposal('', 'Exemples: vente, poissonnier, magasinier', 'jobs', 'C2')],
   '',
   'critere_metier'
 );
@@ -253,7 +253,7 @@ const C2 = new QuestionStep(
   [
     new ResponseProposal(
       '',
-      'exemple: 10 Rue de Paris, Clichy',
+      'Exemple : 17 Avenue Pierre Mendès-France, 75013 Paris',
       'address',
       'C3'
     )
@@ -266,7 +266,7 @@ const C3 = new QuestionStep(
   'À une distance maximale de mon domicile de\u00A0:',
   'Distance en kilomètre(s)',
   QuestionType.CRITERIA,
-  [new ResponseProposal('', '', 'range', '')],
+  [new ResponseProposal('', 'Exemple : 3', 'range', '')],
   '',
   'critere_distance'
 );

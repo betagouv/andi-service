@@ -51,6 +51,25 @@ label {
   }
 }
 
+/* Auto suggestion style */
+.mat-autocomplete-panel {
+  background: #FFFFFF !important;
+}
+.mat-option {
+  color: #000000;
+
+  &:hover {
+    background: #F2F2F2 !important;
+    color: rgb(15, 15, 190) !important;
+  }
+
+  &.mat-active {
+    background: #F2F2F2 !important;
+    color: rgb(15, 15, 190) !important;
+  }
+}
+
+
 /* Material icons */
 .material-icons {
   font-family: "Material Icons";

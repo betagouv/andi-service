@@ -3,25 +3,25 @@
   <form (ngSubmit)="updateCriteriasState(userForm.value)" #userForm="ngForm">
     <!-- CHAMP AUTO COMPLETE -->
     <div *ngIf="proposal.id != 'range'">
-      <mat-form-field>
-        <label *ngIf="proposal.label != undefined" for="adress">{{ proposal.label }}</label>
-        <input
-          id="adress"
-          matInput
-          [matAutocomplete]="auto"
-          [formControl]="formCtrl"
-        />
-        <mat-autocomplete #auto="matAutocomplete">
-          <ng-container>
-            <mat-option
-              *ngFor="let suggest of suggestionsResult"
-              [value]="suggest"
-            >
-              <span>{{ suggest }}</span>
-            </mat-option>
-          </ng-container>
-        </mat-autocomplete>
-      </mat-form-field>
+      <label *ngIf="proposal.label != undefined" for="adress">{{
+        proposal.label
+      }}</label>
+      <input
+        id="adress"
+        placeholder="{{ proposal.placeholder }}"
+        [matAutocomplete]="auto"
+        [formControl]="formCtrl"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <ng-container>
+          <mat-option
+            *ngFor="let suggest of suggestionsResult"
+            [value]="suggest"
+          >
+            <span>{{ suggest }}</span>
+          </mat-option>
+        </ng-container>
+      </mat-autocomplete>
 
       <ng-container *ngIf="errorMsg; else elseTemplate">
         {{ errorMsg }}
@@ -29,16 +29,13 @@
       <ng-template #elseTemplate> </ng-template>
     </div>
 
-
-
-
     <label *ngIf="proposal.id == 'range'" for="{{ proposal.id }}">{{
       proposal.label
     }}</label>
     <input
       *ngIf="proposal.id == 'range'"
       type="text"
-      class="form-control form-control-lg"
+      class=""
       id="{{ proposal.id }}"
       placeholder="{{ proposal.placeholder }}"
       name="{{ proposal.id }}"

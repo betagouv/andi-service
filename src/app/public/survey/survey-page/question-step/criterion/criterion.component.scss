@@ -55,12 +55,15 @@ button {
 }
 
 input, #range, #adress, #job {
+  width: 100%;
   border: 1px solid #8393a7;
   box-sizing: border-box;
   border-radius: 2px;
   padding-left: 10px;
+  padding-bottom: 1px;
+  padding-top: 1px;
   margin-bottom: 20px;
-  min-height: 40px;
+  min-height: 50px;
 
   background-color: #fff;
   opacity: 0.8;
