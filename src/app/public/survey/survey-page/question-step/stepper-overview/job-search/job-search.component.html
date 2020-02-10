@@ -44,10 +44,15 @@
         ANDi référence les entreprises proches de chez vous qui correspondent à
         votre projet professionnel. Trouvez-les grâce à notre moteur de
         recherche et nos conseils !
+        <br />
+        <br />
 
-        <p (click)="goToSearch()" class="link">
+        <a (click)="goToSearch()" class="link" [routerLink]="['/']">
           Chercher une immersion
-        </p>
+        </a>
+        <br />
+        <br />
+
       </div>
     </li>
 
@@ -59,9 +64,9 @@
         par l’employeur qui vous accueillera, par l’organisme qui vous
         accompagne et par vous-même.
 
-        <p (click)="goToSearch()" class="link">
+       <!-- <a (click)="goToSearch()" class="link" [routerLink]="['/']">
           Accéder à l’ensemble de la démarche
-        </p>
+        </a> -->
       </div>
 
       <p class="info">
@@ -120,10 +125,9 @@
       <span class="bold">L’Agefiph</span><br />
       L’Agefiph peut vous aider à obtenir une aide au transport ou à
       l’aménagement de votre poste de travail. Contactez la au 0800 11 10 09 ou
-      connectez-vous sur le <a (click)="goAgefiph()">site</a><br />
+      connectez-vous sur le <a (click)="goAgefiph()" [routerLink]="['/']">site</a><br />
       Tout savoir sur les aides auxquelles vous avez droit :
-      <a
-        href="../../../../../../../assets/datas/aide-rqth.pdf"
+      <a [routerLink]="['/']" (click)="downloadHelpRqth()"
         class="bold link"
         >A quelles aides ai-je droit dans le cadre de mon immersion ?</a
       >

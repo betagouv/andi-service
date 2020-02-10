@@ -14,14 +14,15 @@
       </span>
       de votre adresse
     </h4>
-    <h5>{{pmsmpItem.size}} salariés</h5>
+    <h5>{{ pmsmpItem.size }} salariés</h5>
   </div>
 
   <div class="separator"></div>
 
   <div class="result-footer">
     <button *ngIf="!contact" (click)="switchContactBtn()" class="more-info">
-      <i class="material-icons" aria-hidden="true"> local_post_office</i> Afficher les coordonnées
+      <i class="material-icons" aria-hidden="true"> local_post_office</i>
+      Afficher les coordonnées
     </button>
 
     <div *ngIf="contact" class="contacts">
@@ -33,9 +34,21 @@
           aria-hidden="true"
         />{{ pmsmpItem.address }}</span
       >
-      <span><i class="material-icons" aria-hidden="true">phone</i>+33 (0)0 00 00 00 00</span>
-      <span><i class="material-icons" aria-hidden="true">local_post_office</i>mail@mail.fr</span>
-      <span><i class="material-icons" aria-hidden="true">tv</i>Site internet</span>
+      <span *ngIf="pmsmpItem.phonenumber"
+        ><a href="tel:{{pmsmpItem.phonenumber}}"><i class="material-icons" aria-hidden="true">phone</i
+        >{{ pmsmpItem.phonenumber | phonenumber }}</a></span
+      >
+      <span
+        ><a (click)="searchEngine()" routerLink='/summary'
+          ><i class="material-icons" aria-hidden="true">local_post_office</i
+          >Recherche Google</a
+        ></span
+      >
+      <span
+        ><a (click)="redirectCompanyInfo()" routerLink='/summary'
+          ><i class="material-icons" aria-hidden="true">tv</i>Raison sociale</a
+        ></span
+      >
     </div>
   </div>
 </div>

@@ -59,6 +59,7 @@ export class CriterionComponent implements OnInit, OnDestroy {
               this.suggestionsResult = [];
               this.errorMsg = 'Aucune addresse trouvée';
             } else {
+              this.suggestionsResult = [];
               suggestions.features.forEach(feature => {
                 this.suggestionsResult.push(feature.properties.label);
               });
@@ -75,6 +76,7 @@ export class CriterionComponent implements OnInit, OnDestroy {
               this.suggestionsResult = [];
               this.errorMsg = 'Aucun métier correspondant trouvé';
             } else {
+              this.suggestionsResult = [];
               suggestions.data.forEach(data => {
                 this.suggestionsResult.push(data.label);
               });
