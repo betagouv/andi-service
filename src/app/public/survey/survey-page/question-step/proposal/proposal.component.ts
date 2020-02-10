@@ -12,6 +12,7 @@ import { StepContext } from 'src/models/tracking-request.model';
 export class ProposalComponent implements OnInit {
   @Input() proposal: ResponseProposal;
   @Input() questionStepType: QuestionType;
+  @Input() questionStepId: string;
 
   constructor(
     private surveyStepperSharedService: SurveyStepperSharedService,
@@ -21,7 +22,7 @@ export class ProposalComponent implements OnInit {
   ngOnInit() {}
 
   nextQuestion() {
-    this.trackingService.track('pasapas', StepContext.QUESTION_DEPARTURE, {'id': this.proposal.id});
+    this.trackingService.track('pasapas', StepContext.QUESTION_RESPONSE, {'question_id': this.questionStepId, 'response_id': this.proposal.id});
     this.surveyStepperSharedService.stateStepper.push(this.proposal.id);
     this.surveyStepperSharedService.goToNextStep(this.proposal.aim);
   }

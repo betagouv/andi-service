@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
+import { TrackingService } from 'src/app/core/services/tracking.service';
+import { StepContext } from 'src/models/tracking-request.model';
 
 @Component({
   selector: 'andi-stepper-overview',
@@ -18,11 +20,25 @@ export class StepperOverviewComponent implements OnInit {
 
   constructor(
     private surveyStepperSharedService: SurveyStepperSharedService,
-    private router: Router
+    private router: Router,
+    private trackingService: TrackingService,
   ) {}
 
   ngOnInit() {
     this.loadDiagnosticDatas();
+    this.trackingService.track(
+        'pasapas',
+        StepContext.BILAN,
+        {
+          'job_search': this.isJobSearch,
+          'prive': this.isJobPrivate,
+          'publique': this.isJobPublic,
+          'esat': this.isJobEsat,
+          'iae': this.isJobIae,
+          'maladie': this.isSick,
+          'rqth': this.isRqth
+        }
+    );
   }
 
   private loadDiagnosticDatas() {
@@ -46,6 +62,7 @@ export class StepperOverviewComponent implements OnInit {
   }
 
   nextQuestion() {
+    this.trackingService.track('pasapas', StepContext.TO_MATCHING);
     this.surveyStepperSharedService.goToNextStep('C1');
   }
 

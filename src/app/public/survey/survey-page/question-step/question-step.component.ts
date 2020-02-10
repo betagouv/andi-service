@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TrackingService } from 'src/app/core/services/tracking.service';
 import { QuestionStep } from '../../../../../models/question-step.model';
+import { TrackingService } from 'src/app/core/services/tracking.service';
 import { StepContext } from 'src/models/tracking-request.model';
 
 @Component({
@@ -11,10 +11,11 @@ import { StepContext } from 'src/models/tracking-request.model';
 })
 export class QuestionStepComponent implements OnInit {
   @Input() questionStep: QuestionStep;
+  @Input() questionStepId: string;
 
   constructor(
     private router: Router,
-    private trackingService: TrackingService
+    private trackingService: TrackingService,
     ) {}
 
   ngOnInit() {

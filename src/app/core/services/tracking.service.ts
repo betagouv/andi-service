@@ -18,14 +18,14 @@ export class TrackingService {
     private matomoTracker: MatomoTracker
     ) {}
 
-<<<<<<< HEAD
   track(page: string, action: StepContext, meta: object={}) {
-    console.log(page, action, meta);
 
     // matomo tracker event example
     // this.matomoTracker.trackEvent('category', 'action', 'name', someVal);
 
     const smeta = JSON.stringify(meta);
+    console.log(page, action, smeta);
+
     this.http.post(
       'https://andi.beta.gouv.fr/api/track',
       this.computeRequestBody(page, action, smeta)
