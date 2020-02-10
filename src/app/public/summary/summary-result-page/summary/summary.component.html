@@ -5,7 +5,7 @@
 <div class="form-container">
   <form (ngSubmit)="loadPmsmpList(userForm.value)" #userForm="ngForm">
     <!-- CHAMP METIER -->
-    <div>
+    <!-- <div>
       <mat-form-field>
         <label for="job">Je cherche une immersion en tant que :</label>
         <input
@@ -30,15 +30,40 @@
         {{ errorMsg }}
       </ng-container>
       <ng-template #elseTemplate> </ng-template>
+    </div> -->
+
+
+    <!-- CHAMP METIER -->
+    <div>
+        <label for="job">Je cherche une immersion en tant que :</label>
+        <input
+          id="job"
+          class="criterion-field form-control form-control-lg"
+          placeholder="Exemples: vente, poissonnier, magasinier"
+          [matAutocomplete]="jobAuto"
+          [formControl]="jobCtrl"
+        />
+        <mat-autocomplete #jobAuto="matAutocomplete">
+          <ng-container >
+            <mat-option
+              *ngFor="let jobSuggest of jobSuggestions"
+              [value]="jobSuggest.value"
+            >
+              <span>{{ jobSuggest.value }}</span>
+            </mat-option>
+          </ng-container>
+        </mat-autocomplete>
+
     </div>
 
+    
     <!-- CHAMP ADRESSE -->
     <div>
-      <mat-form-field>
         <label for="adress">Proche de chez moi (adresse postale) :</label>
         <input
           id="adress"
-          matInput
+          class="criterion-field form-control form-control-lg"
+          placeholder="Exemple : 17 Avenue Pierre Mendès-France, 75013 Paris"
           [matAutocomplete]="adrAuto"
           [formControl]="addressCtrl"
         />
@@ -52,7 +77,6 @@
             </mat-option>
           </ng-container>
         </mat-autocomplete>
-      </mat-form-field>
 
       <ng-container *ngIf="errorMsg; else elseTemplate">
         {{ errorMsg }}
@@ -65,6 +89,7 @@
     <input
       type="text"
       class="criterion-field form-control form-control-lg"
+      placeholder="Exemple : 3"
       id="range"
       name="range"
       [(ngModel)]="currentStateForm.range"

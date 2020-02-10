@@ -18,7 +18,6 @@
 
 <div class="result-comp">
   <div
-    role="listbox"
     *ngIf="!hasErrorResult && pmsmpDatas.length > 0"
     class="result-item-wrapper"
   >
@@ -36,7 +35,6 @@
   <div
     *ngIf="!hasErrorResult && pmsmpDatas.length > 3"
     class="result-item-collapse"
-    role="listbox"
   >
     <a [routerLink]="['/summary']" 
       *ngIf="showMoreResultsBtn"

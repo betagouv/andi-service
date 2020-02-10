@@ -51,6 +51,14 @@ label {
   }
 }
 
+/* Auto suggestion style */
+.mat-autocomplete-panel {
+  background: #FFFFFF !important;
+}
+.mat-option {
+  color: #000000;
+}
+
 /* Material icons */
 .material-icons {
   font-family: "Material Icons";
