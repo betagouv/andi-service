@@ -6,7 +6,8 @@ export class QuestionStep {
     public description: string,
     public type: QuestionType,
     public proposals: ResponseProposal[],
-    public url: string
+    public url: string,
+    public slug: string
   ) {}
 }
 

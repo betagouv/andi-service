@@ -1,5 +1,7 @@
 export class TrackingRequest {
   constructor(
+    // tslint:disable-next-line: variable-name
+    public _v: number,
     public timestamp: string,
     public order: number,
     // tslint:disable-next-line: variable-name
@@ -26,6 +28,7 @@ export enum StepContext {
   QUESTION_RESPONSE = 'question_response',
   MATCHING_SEARCH = 'matching_search',
   MATCHING_RESULTS = 'matching_results',
+  MATCHING_ERROR = 'matching_error',
   MORE_RESULTS = 'more_results',
   RESULT_CLICK = 'result_click',
   GUIDANCE_CLICK = 'guidance_click'

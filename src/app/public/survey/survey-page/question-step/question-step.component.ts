@@ -9,10 +9,14 @@ import { QuestionStep } from '../../../../../models/question-step.model';
 })
 export class QuestionStepComponent implements OnInit {
   @Input() questionStep: QuestionStep;
+  @Input() questionStepId: string;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   goToSearch() {
     this.router.navigateByUrl('/summary');

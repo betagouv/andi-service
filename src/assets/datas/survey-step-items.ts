@@ -17,7 +17,8 @@ const Q1 = new QuestionStep(
       'Q2A'
     )
   ],
-  ''
+  '',
+  'situation_professionnelle'
 );
 
 const Q2A = new QuestionStep(
@@ -35,7 +36,8 @@ const Q2A = new QuestionStep(
       'Q3A'
     )
   ],
-  ''
+  '',
+  'accompagnement_structure'
 );
 
 const Q3A = new QuestionStep(
@@ -51,7 +53,8 @@ const Q3A = new QuestionStep(
       'Q4A'
     )
   ],
-  ''
+  '',
+  'arret_maladie'
 );
 
 const Q4A = new QuestionStep(
@@ -67,7 +70,8 @@ const Q4A = new QuestionStep(
       'F_JOB_SEARCH'
     )
   ],
-  ''
+  '',
+  'reconnaissance_rqth'
 );
 
 /* EN POSTE */
@@ -87,7 +91,8 @@ const Q2B = new QuestionStep(
     ),
     new ResponseProposal('Travailleur en contrat aidé / IAE', '', 'iae', 'Q4D')
   ],
-  ''
+  '',
+  'ou_travaillez_vous'
 );
 
 /* EN POSTE PRIVE */
@@ -105,7 +110,8 @@ const Q3B = new QuestionStep(
       'Q4B'
     )
   ],
-  ''
+  '',
+  'arret_maladie'
 );
 
 const Q4B = new QuestionStep(
@@ -121,7 +127,8 @@ const Q4B = new QuestionStep(
       'F_JOB_PRIVATE'
     )
   ],
-  ''
+  '',
+  'reconnaissance_rqth'
 );
 
 /* EN POSTE PUBLIQUE */
@@ -139,7 +146,8 @@ const Q3E = new QuestionStep(
       'Q4E'
     )
   ],
-  ''
+  '',
+  'arret_maladie'
 );
 
 const Q4E = new QuestionStep(
@@ -155,7 +163,8 @@ const Q4E = new QuestionStep(
       'F_JOB_PUBLIC'
     )
   ],
-  ''
+  '',
+  'reconnaissance_rqth'
 );
 
 /* EN POSTE ESAT*/
@@ -175,7 +184,8 @@ const Q4D = new QuestionStep(
       'F_JOB_IAE'
     )
   ],
-  ''
+  '',
+  'reconnaissance_rqth'
 );
 
 /* MESSAGE D'AVERTISSEMENT / INFORMATIF */
@@ -185,7 +195,8 @@ const F_JOB_SEARCH = new QuestionStep(
   'Texte spécifique au demandeurs d\'emploi...',
   QuestionType.DISCLAIMER,
   [new ResponseProposal('', '', '', 'C1')],
-  ''
+  '',
+  'en_recherche_demploi'
 );
 
 const F_JOB_PRIVATE = new QuestionStep(
@@ -193,7 +204,8 @@ const F_JOB_PRIVATE = new QuestionStep(
   'Texte spécifique aux salariés dans le secteur privé',
   QuestionType.DISCLAIMER,
   [new ResponseProposal('', '', '', 'C1')],
-  ''
+  '',
+  'salarie_prive'
 );
 
 const F_JOB_PUBLIC = new QuestionStep(
@@ -201,7 +213,8 @@ const F_JOB_PUBLIC = new QuestionStep(
   'Texte spécifique aux salariés dans le secteur publique',
   QuestionType.DISCLAIMER,
   [new ResponseProposal('', '', '', 'C1')],
-  ''
+  '',
+  'salarie_public'
 );
 
 const F_JOB_ESAT = new QuestionStep(
@@ -209,7 +222,8 @@ const F_JOB_ESAT = new QuestionStep(
   'Texte spécifique aux travailleurs ESAT / AE',
   QuestionType.DISCLAIMER,
   [new ResponseProposal('', '', '', 'C1')],
-  ''
+  '',
+  'travailleur_esat'
 );
 
 const F_JOB_IAE = new QuestionStep(
@@ -217,7 +231,8 @@ const F_JOB_IAE = new QuestionStep(
   'Texte spécifique aux travailleurs en contrat aidé / IAE',
   QuestionType.DISCLAIMER,
   [new ResponseProposal('', '', '', 'C1')],
-  ''
+  '',
+  'travailleur_contrat_aide'
 );
 
 /* CRITERES DE RECHERCHE */
@@ -227,7 +242,8 @@ const C1 = new QuestionStep(
   '',
   QuestionType.CRITERIA,
   [new ResponseProposal('', 'Exemples: vente, poissonnier, magasinier', 'jobs', 'C2')],
-  ''
+  '',
+  'critere_metier'
 );
 
 const C2 = new QuestionStep(
@@ -242,7 +258,8 @@ const C2 = new QuestionStep(
       'C3'
     )
   ],
-  ''
+  '',
+  'critere_addresse'
 );
 
 const C3 = new QuestionStep(
@@ -250,7 +267,8 @@ const C3 = new QuestionStep(
   'Distance en kilomètre(s)',
   QuestionType.CRITERIA,
   [new ResponseProposal('', 'Exemple : 3', 'range', '')],
-  ''
+  '',
+  'critere_distance'
 );
 
 export const stepItems: StepsHash = {};
