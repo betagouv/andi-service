@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
-import { TrackingService } from 'src/app/core/services/tracking.service';
 import { QuestionType } from '../../../../../../models/question-step.model';
 import { ResponseProposal } from '../../../../../../models/response-proposal.model';
+import { TrackingService } from 'src/app/core/services/tracking.service';
 import { StepContext } from 'src/models/tracking-request.model';
 @Component({
   selector: 'andi-proposal',
@@ -16,7 +16,7 @@ export class ProposalComponent implements OnInit {
 
   constructor(
     private surveyStepperSharedService: SurveyStepperSharedService,
-    private trackingService: TrackingService
+    private trackingService: TrackingService,
     ) {}
 
   ngOnInit() {}

@@ -7,6 +7,8 @@ import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper
 import { ResponseProposal } from 'src/models/response-proposal.model';
 import { RomeSuggestionResponse } from 'src/models/rome-suggestion-response';
 import { FeatureCollection } from '../../../../../../models/address-suggestion-response';
+import { TrackingService } from 'src/app/core/services/tracking.service';
+import { StepContext } from 'src/models/tracking-request.model';
 
 @Component({
   selector: 'andi-criterion',
@@ -26,7 +28,8 @@ export class CriterionComponent implements OnInit, OnDestroy {
   constructor(
     private surveyStepperSharedService: SurveyStepperSharedService,
     private pmsmpService: PmsmpService,
-    private router: Router
+    private router: Router,
+    private trackingService: TrackingService,
   ) {}
 
   ngOnInit() {
@@ -58,6 +61,7 @@ export class CriterionComponent implements OnInit, OnDestroy {
             ) {
               this.suggestionsResult = [];
               this.errorMsg = 'Aucune addresse trouvée';
+              this.trackingService.track('questionaire-matching', StepContext.MATCHING_ERROR, {'msg': this.errorMsg});
             } else {
               this.suggestionsResult = [];
               suggestions.features.forEach(feature => {
@@ -75,6 +79,7 @@ export class CriterionComponent implements OnInit, OnDestroy {
             if (suggestions !== undefined && suggestions.data.length === 0) {
               this.suggestionsResult = [];
               this.errorMsg = 'Aucun métier correspondant trouvé';
+              this.trackingService.track('questionnaire-matching', StepContext.MATCHING_ERROR, {'msg': this.errorMsg});
             } else {
               this.suggestionsResult = [];
               suggestions.data.forEach(data => {
@@ -88,16 +93,23 @@ export class CriterionComponent implements OnInit, OnDestroy {
   }
 
   updateCriteriasState(saisieInput) {
+    let result_value;
     if (this.proposal.id === 'range') {
+      result_value = Object.values(saisieInput)[0] as string;
       this.surveyStepperSharedService.stateForm[
         Object.keys(saisieInput)[0]
-      ] = Object.values(saisieInput)[0] as string;
-      this.nextQuestion();
+      ] =  result_value;
     } else {
+      result_value = this.formCtrl.value;
       this.surveyStepperSharedService.stateForm[
         this.proposal.id
-      ] = this.formCtrl.value;
+      ] =  result_value;
     }
+    this.trackingService.track(
+        'questionnaire-matching',
+        StepContext.QUESTION_RESPONSE,
+        {'question_id': this.proposal.id, 'question_response': result_value}
+    );
     this.nextQuestion();
   }
 
@@ -105,6 +117,7 @@ export class CriterionComponent implements OnInit, OnDestroy {
     if (this.proposal.aim !== '') {
       this.surveyStepperSharedService.goToNextStep(this.proposal.aim);
     } else {
+      this.trackingService.track('questionaire-matching', StepContext.DEPART);
       this.router.navigateByUrl('/summary');
     }
   }
