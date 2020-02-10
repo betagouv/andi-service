@@ -18,7 +18,7 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
   questionSteps: QuestionStep[];
   currentQuestionStep: QuestionStep;
   currentQuestionStepId: string;
-  currentSection: 'pasapas';
+  currentSection = 'pasapas';
 
   constructor(
     private surveyStepperSharedService: SurveyStepperSharedService,
