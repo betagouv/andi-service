@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuestionStep } from '../../../../../models/question-step.model';
-import { TrackingService } from 'src/app/core/services/tracking.service';
-import { StepContext } from 'src/models/tracking-request.model';
 
 @Component({
   selector: 'andi-question-step',
@@ -15,11 +13,9 @@ export class QuestionStepComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private trackingService: TrackingService,
     ) {}
 
   ngOnInit() {
-    this.trackingService.track('pasapas', StepContext.ARRIVAL);
   }
 
   goToSearch() {

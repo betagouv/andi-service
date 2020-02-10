@@ -27,6 +27,7 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.trackingService.track(this.currentSection, StepContext.ARRIVAL);
     this.resetStates();
     this.loadStepsList();
     this.loadQuestionStep();
