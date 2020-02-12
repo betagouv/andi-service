@@ -4,34 +4,6 @@
 
 <div class="form-container">
   <form (ngSubmit)="loadPmsmpList(userForm.value)" #userForm="ngForm">
-    <!-- CHAMP METIER -->
-    <!-- <div>
-      <mat-form-field>
-        <label for="job">Je cherche une immersion en tant que :</label>
-        <input
-          id="job"
-          matInput
-          [matAutocomplete]="jobAuto"
-          [formControl]="jobCtrl"
-        />
-        <mat-autocomplete #jobAuto="matAutocomplete">
-          <ng-container>
-            <mat-option
-              *ngFor="let jobSuggest of jobSuggestions"
-              [value]="jobSuggest.value"
-            >
-              <span>{{ jobSuggest.value }}</span>
-            </mat-option>
-          </ng-container>
-        </mat-autocomplete>
-      </mat-form-field>
-
-      <ng-container *ngIf="errorMsg; else elseTemplate">
-        {{ errorMsg }}
-      </ng-container>
-      <ng-template #elseTemplate> </ng-template>
-    </div> -->
-
 
     <!-- CHAMP METIER -->
     <div>
