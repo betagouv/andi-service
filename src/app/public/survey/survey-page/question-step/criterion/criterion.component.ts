@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PmsmpService } from 'src/app/core/services/pmsmp.service';
-import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
+import { SurveyStepperSharedService, IHash } from 'src/app/core/services/survey-stepper.shared.service';
 import { ResponseProposal } from 'src/models/response-proposal.model';
 import { RomeSuggestionResponse } from 'src/models/rome-suggestion-response';
 import { FeatureCollection } from '../../../../../../models/address-suggestion-response';
@@ -18,6 +18,7 @@ import { StepContext } from 'src/models/tracking-request.model';
 export class CriterionComponent implements OnInit, OnDestroy {
   @Input() proposal: ResponseProposal;
 
+  currentStateForm: IHash = {};
   subs: Subscription[] = [];
   formCtrl = new FormControl();
   suggestionsResult = [];
@@ -38,15 +39,8 @@ export class CriterionComponent implements OnInit, OnDestroy {
   }
 
   private loadInputState() {
-    if (this.proposal.id === 'address') {
-      this.formCtrl.setValue(this.surveyStepperSharedService.stateForm.address);
-    } else if (this.proposal.id === 'jobs') {
-      this.formCtrl.setValue(this.surveyStepperSharedService.stateForm.jobs);
-    } else if (this.proposal.id === 'range') {
-      this.inputState = Object.values(
-        this.surveyStepperSharedService.stateForm
-      )[this.proposal.id];
-    }
+    this.currentStateForm = this.surveyStepperSharedService.stateForm;
+    this.formCtrl.setValue(this.surveyStepperSharedService.stateForm[this.proposal.id]);
   }
 
   enableAutocomplete() {

@@ -7,12 +7,10 @@ const routes: Routes = [
   {
     path: 'survey',
     component: SurveyPageComponent,
-    data: {title: 'ANDi - Questionnaire'}
   },
   {
     path: 'summary',
     component: SummaryResultPageComponent,
-    data: {title: 'ANDi - Recherche Immersion'}
   }
 ];
 
