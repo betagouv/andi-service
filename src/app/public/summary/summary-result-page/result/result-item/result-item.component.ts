@@ -25,12 +25,12 @@ export class ResultItemComponent implements OnInit {
 
   searchEngine() {
     this.trackingService.track('matching', StepContext.RESULT_CLICK, {link: 'google', siret: this.pmsmpItem.siret, order: this.pmsmpOrder});
-    window.open('http://www.google.fr/search?q=' + this.pmsmpItem.name + ' ' + this.pmsmpItem.address, '_blank');
+    window.open('https://www.google.fr/search?q=' + this.pmsmpItem.name + ' ' + this.pmsmpItem.address, '_blank');
   }
 
   redirectCompanyInfo() {
     this.trackingService.track('matching', StepContext.RESULT_CLICK, {link: 'datagouv', siret: this.pmsmpItem.siret, order: this.pmsmpOrder});
-    window.open('http://entreprise.data.gouv.fr/etablissement/' + this.pmsmpItem.siret, '_blank');
+    window.open('https://entreprise.data.gouv.fr/etablissement/' + this.pmsmpItem.siret, '_blank');
   }
 
   switchContactBtn() {
