@@ -6,6 +6,7 @@ import { SurveyStepperApiService } from '../../../core/services/survey-stepper.a
 import { SurveyStepperSharedService } from '../../../core/services/survey-stepper.shared.service';
 import { TrackingService } from 'src/app/core/services/tracking.service';
 import { StepContext } from 'src/models/tracking-request.model';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'andi-survey-page',
@@ -21,6 +22,7 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
   currentSection = 'pasapas';
 
   constructor(
+    private route: ActivatedRoute,
     private surveyStepperSharedService: SurveyStepperSharedService,
     private surveyStepperApiService: SurveyStepperApiService,
     private trackingService: TrackingService
@@ -51,17 +53,26 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.surveyStepperApiService
         .getListSurvey()
-        .subscribe((questionSteps: any) => {
+        .subscribe((questionSteps: QuestionStep[]) => {
           this.questionSteps = questionSteps;
-          this.surveyStepperSharedService.goToNextStep('Q1');
+
+          this.route.paramMap.subscribe((params: ParamMap) => {
+            console.log('>>>>>> ',params.get('stepId'))
+            const stepId = params.get('stepId');
+            if (stepId == null) {
+              this.surveyStepperSharedService.goToNextStep('Q1');
+            }
+          });
         })
     );
   }
+
   loadQuestionStep(): void {
     this.subscriptions.push(
-      this.surveyStepperSharedService.stepperCursor
-        .pipe(startWith('Q1'))
-        .subscribe(stepId => {
+      this.route.paramMap
+        .subscribe((params: ParamMap) => {
+          const stepId = params.get('stepId');
+
           // ensure correct questionaire section in user tracking
           const prevSection = this.currentSection;
           this.currentSection = stepId.substr(0, 1) === 'C' ? 'questionnaire-matching' : 'pasapas';

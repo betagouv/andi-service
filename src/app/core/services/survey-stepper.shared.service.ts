@@ -1,20 +1,20 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SurveyStepperSharedService {
-  stepperCursor: Subject<string> = new Subject();
   pathHistory: string[] = [];
 
   stateForm: IHash = {};
   stateStepper: string[] = [];
 
-  constructor() {}
+  constructor(private route: Router) {}
 
   public goToNextStep(aim: string) {
-    this.stepperCursor.next(aim);
+    this.route.navigate(['/survey', aim]);
     this.pathHistory.push(aim);
   }
 
@@ -22,7 +22,7 @@ export class SurveyStepperSharedService {
     this.stateStepper.splice(-1, 1);
     this.pathHistory.splice(-1, 1);
     const lastStepId = this.pathHistory[this.pathHistory.length - 1];
-    this.stepperCursor.next(lastStepId);
+    this.route.navigate(['/survey', lastStepId]);
   }
 }
 

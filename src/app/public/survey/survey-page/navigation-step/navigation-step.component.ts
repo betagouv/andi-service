@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
 
 @Component({
@@ -12,11 +12,14 @@ export class NavigationStepComponent implements OnInit {
 
   constructor(
     private surveyStepperSharedService: SurveyStepperSharedService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.surveyStepperSharedService.stepperCursor.subscribe(stepId => {
+
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      const stepId = params.get('stepId');
       this.enablePrev = stepId === 'Q1' ? false : true;
     });
   }
