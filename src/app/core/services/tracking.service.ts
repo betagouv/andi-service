@@ -38,7 +38,7 @@ export class TrackingService {
     ).subscribe();
   }
 
-  private computeRequestBody(page: string, action: StepContext, meta: string) {
+  private computeRequestBody(page: string, action: StepContext, meta: any) {
     return new TrackingRequest(
       1,
       moment().toISOString(),
