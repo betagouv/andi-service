@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
       globals.setSessionId(metaTag.content);
     }
     this.matomoTracker.setUserId(globals.SessionId);
-    this.matomoInjector.init('http://stats.data.gouv.fr/', 94);
+    this.matomoInjector.init('//stats.data.gouv.fr/', 94);
   }
   /* tslint:disable:no-string-literal */
   ngOnInit() {
