@@ -12,6 +12,7 @@ export const routes: Routes = [
   {
     path: 'survey/:stepId',
     component: SurveyPageComponent,
+    data: {title: 'ANDi - Questionnaire'}
   },
   {
     path: 'summary',
