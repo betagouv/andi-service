@@ -41,8 +41,14 @@ export class AppComponent implements OnInit {
           return route;
         }),
         filter(route => route.outlet === 'primary'),
-        mergeMap(route => route.data)
+        mergeMap(route => {
+            const newpage =  route.snapshot['_routerState'].url;
+            this.matomoTracker.trackPageView(newpage);
+            return route.data;
+        })
       )
-      .subscribe(event => this.titleService.setTitle(event['title']));
+      .subscribe((event) => {
+        this.titleService.setTitle(event['title']);
+      });
   }
 }
