@@ -55,7 +55,7 @@ export class CriterionComponent implements OnInit, OnDestroy {
             ) {
               this.suggestionsResult = [];
               this.errorMsg = 'Aucune addresse trouvée';
-              this.trackingService.track('questionaire-matching', StepContext.MATCHING_ERROR, {msg: this.errorMsg});
+              this.trackingService.track('questionnaire-matching', StepContext.MATCHING_ERROR, {msg: this.errorMsg});
             } else {
               this.suggestionsResult = [];
               suggestions.features.forEach(feature => {
@@ -111,7 +111,7 @@ export class CriterionComponent implements OnInit, OnDestroy {
     if (this.proposal.aim !== '') {
       this.surveyStepperSharedService.goToNextStep(this.proposal.aim);
     } else {
-      this.trackingService.track('questionaire-matching', StepContext.DEPART);
+      this.trackingService.track('questionnaire-matching', StepContext.DEPART);
       this.router.navigateByUrl('/summary');
     }
   }
