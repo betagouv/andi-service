@@ -28,7 +28,7 @@ export class ResultComponent implements OnInit {
 
     this.pmsmpService.pmsmpResult.subscribe((res: PmsmpResult) => {
       this.queryId = res._query_id;
-      this.trackingService.track( 'matching', StepContext.MATCHING_SEARCH, {results: res.data.length, query_id: this.queryId});
+      this.trackingService.track( 'matching', StepContext.MATCHING_RESULTS, {results: res.data.length, query_id: this.queryId});
       this.notFound = res.data.length === 0;
       this.pmsmpDatas = res.data.slice(0, 15);
     });
