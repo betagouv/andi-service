@@ -1,18 +1,16 @@
 <div class="nav-comp">
-    <a
+  <a
     (click)="previousQuestion()"
     *ngIf="enablePrev"
     [routerLink]="['/']"
     class="bouton previous-btn"
-    >
-      &lt; Retour
-    </a>
+  >
+    <span aria-hidden="true">< </span>Retour à l'étape précédente
+  </a>
+</div>
 
-  </div>
-  
-  <div *ngIf="false" class="skip-comp">
-    <a (click)="goToSearch()"
-    class="bouton skip-btn">
-      Passer le questionnaire
-    </a>
+<div *ngIf="false" class="skip-comp">
+  <a (click)="goToSearch()" class="bouton skip-btn">
+    Passer le questionnaire
+  </a>
 </div>
