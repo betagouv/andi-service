@@ -21,8 +21,12 @@
           return 'ANONYMOUS';
       }
     }
-    // generate session id
-    var SESSION_ID = uuidv4();
+
+    // get / generate session id
+    // no validation required at this point:
+    // - backend won't accept invalid uuid either way, 
+    // - users trying to disrupt the tracker with invalid sid's are of no interest at this point
+    var SESSION_ID = (new URL(document.location)).searchParams.get('sid') || uuidv4();
 
     // add to meta
     document.querySelector('meta[name="andi_id"]').setAttribute("content", SESSION_ID);
