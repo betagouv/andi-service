@@ -34,7 +34,8 @@ const Q2A = new QuestionStep(
       '',
       'other',
       'Q3A'
-    )
+    ),
+    new ResponseProposal('Je ne suis pas accompagné', '', 'not_helped', 'Q3A')
   ],
   '',
   'accompagnement_structure'
