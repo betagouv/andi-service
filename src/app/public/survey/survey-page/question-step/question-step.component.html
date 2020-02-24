@@ -3,7 +3,7 @@
   <p id="title-page" tabindex="-1" class="sr-only">Etape {{ indexStepper }} - Questionnaire immersion</p>
 
   <div
-    *ngIf="questionStep.type != 'disclaimer'"
+    *ngIf="questionStep != undefined && questionStep.type != 'disclaimer'"
     class="container question-wrapper"
     role="region"
   >
@@ -41,5 +41,5 @@
 </nav>
 <andi-stepper-overview
   role="region"
-  *ngIf="questionStep.type == 'disclaimer'"
+  *ngIf="questionStep != undefined && questionStep.type == 'disclaimer'"
 ></andi-stepper-overview>

@@ -15,7 +15,8 @@ const Q1 = new QuestionStep(
       '',
       'job_search',
       'Q2A'
-    )
+    ),
+    new ResponseProposal('Je suis en formation', '', 'formation', 'F_FORMATION')
   ],
   '',
   'situation_professionnelle'
@@ -42,7 +43,7 @@ const Q2A = new QuestionStep(
 );
 
 const Q3A = new QuestionStep(
-  'Êtes-vous en arrêt maladie\u00A0?',
+  'Êtes-vous en arrêt maladie depuis plus de 3 mois\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -99,7 +100,7 @@ const Q2B = new QuestionStep(
 /* EN POSTE PRIVE */
 
 const Q3B = new QuestionStep(
-  'Êtes-vous en arrêt maladie\u00A0?',
+  'Êtes-vous en arrêt maladie depuis plus de 3 mois\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -135,7 +136,7 @@ const Q4B = new QuestionStep(
 /* EN POSTE PUBLIQUE */
 
 const Q3E = new QuestionStep(
-  'Êtes-vous en arrêt maladie\u00A0?',
+  'Êtes-vous en arrêt maladie depuis plus de 3 mois\u00A0?',
   '',
   QuestionType.REDIRECT,
   [
@@ -236,6 +237,15 @@ const F_JOB_IAE = new QuestionStep(
   'travailleur_contrat_aide'
 );
 
+const F_FORMATION = new QuestionStep(
+  'Vous êtes actuellement en formation',
+  'Texte spécifique en formation',
+  QuestionType.DISCLAIMER,
+  [new ResponseProposal('', '', '', 'C1')],
+  '',
+  'en_formation'
+);
+
 /* CRITERES DE RECHERCHE */
 
 const C1 = new QuestionStep(
@@ -290,6 +300,7 @@ stepItems['F_JOB_PRIVATE'] = F_JOB_PRIVATE;
 stepItems['F_JOB_PUBLIC'] = F_JOB_PUBLIC;
 stepItems['F_JOB_ESAT'] = F_JOB_ESAT;
 stepItems['F_JOB_IAE'] = F_JOB_IAE;
+stepItems['F_FORMATION'] = F_FORMATION;
 stepItems['C1'] = C1;
 stepItems['C2'] = C2;
 stepItems['C3'] = C3;

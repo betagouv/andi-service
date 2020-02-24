@@ -4,26 +4,37 @@
     [isSick]="isSick"
     [isRqth]="isRqth"
   ></andi-job-search>
+
   <andi-job-private
     *ngIf="isJobPrivate"
     [isSick]="isSick"
     [isRqth]="isRqth"
   ></andi-job-private>
+
   <andi-job-public
     *ngIf="isJobPublic"
     [isSick]="isSick"
     [isRqth]="isRqth"
   ></andi-job-public>
+
   <andi-job-esat
     *ngIf="isJobEsat"
     [isSick]="isSick"
     [isRqth]="isRqth"
   ></andi-job-esat>
+
   <andi-job-iae
     *ngIf="isJobIae"
     [isSick]="isSick"
     [isRqth]="isRqth"
   ></andi-job-iae>
+
+  <andi-formation
+    *ngIf="isFormation"
+    [isSick]="isSick"
+    [isRqth]="isRqth"
+  ></andi-formation>
+
   <a [routerLink]="['/']" 
     (click)="nextQuestion()"
     class="proposal-btn btn"

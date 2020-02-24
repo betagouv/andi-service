@@ -15,6 +15,7 @@ export class StepperOverviewComponent implements OnInit {
   isJobPublic = false;
   isJobEsat = false;
   isJobIae = false;
+  isFormation = false;
   isSick = false;
   isRqth = false;
 
@@ -35,6 +36,7 @@ export class StepperOverviewComponent implements OnInit {
           publique: this.isJobPublic,
           esat: this.isJobEsat,
           iae: this.isJobIae,
+          formation: this.isFormation,
           maladie: this.isSick,
           rqth: this.isRqth
         }
@@ -56,6 +58,9 @@ export class StepperOverviewComponent implements OnInit {
     );
     this.isJobIae = this.surveyStepperSharedService.stateStepper.includes(
       'iae'
+    );
+    this.isFormation = this.surveyStepperSharedService.stateStepper.includes(
+      'formation'
     );
     this.isSick = this.surveyStepperSharedService.stateStepper.includes('sick');
     this.isRqth = this.surveyStepperSharedService.stateStepper.includes('rqth');
