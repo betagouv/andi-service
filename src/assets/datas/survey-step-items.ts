@@ -10,12 +10,7 @@ const Q1 = new QuestionStep(
   QuestionType.REDIRECT,
   [
     new ResponseProposal('J’ai un travail', '', 'job_owner', 'Q2B'),
-    new ResponseProposal(
-      'Je suis à la recherche d’un emploi',
-      '',
-      'job_search',
-      'Q2A'
-    ),
+    new ResponseProposal('Je suis demandeur d\'emploi', '', 'job_search', 'Q2A'),
     new ResponseProposal('Je suis en formation', '', 'formation', 'F_FORMATION')
   ],
   '',
@@ -69,6 +64,12 @@ const Q4A = new QuestionStep(
       'Non, je n’ai pas de RQTH',
       '',
       'not_rqth',
+      'F_JOB_SEARCH'
+    ),
+    new ResponseProposal(
+      'Mon dossier est en cours de traitement',
+      '',
+      'rqth_pending',
       'F_JOB_SEARCH'
     )
   ],
@@ -127,6 +128,12 @@ const Q4B = new QuestionStep(
       '',
       'not_rqth',
       'F_JOB_PRIVATE'
+    ),
+    new ResponseProposal(
+      'Mon dossier est en cours de traitement',
+      '',
+      'rqth_pending',
+      'F_JOB_PRIVATE'
     )
   ],
   '',
@@ -163,6 +170,12 @@ const Q4E = new QuestionStep(
       '',
       'not_rqth',
       'F_JOB_PUBLIC'
+    ),
+    new ResponseProposal(
+      'Mon dossier est en cours de traitement',
+      '',
+      'rqth_pending',
+      'F_JOB_PUBLIC'
     )
   ],
   '',
@@ -183,6 +196,12 @@ const Q4D = new QuestionStep(
       'Non, je n’ai pas de RQTH',
       '',
       'not_rqth',
+      'F_JOB_IAE'
+    ),
+    new ResponseProposal(
+      'Mon dossier est en cours de traitement',
+      '',
+      'rqth_pending',
       'F_JOB_IAE'
     )
   ],
@@ -252,7 +271,14 @@ const C1 = new QuestionStep(
   'Je cherche une immersion en tant que\u00A0:',
   '',
   QuestionType.CRITERIA,
-  [new ResponseProposal('', 'Exemples: vente, poissonnier, magasinier', 'jobs', 'C2')],
+  [
+    new ResponseProposal(
+      '',
+      'Exemples: vente, poissonnier, magasinier',
+      'jobs',
+      'C2'
+    )
+  ],
   '',
   'critere_metier'
 );
