@@ -19,6 +19,8 @@ import { JobPublicComponent } from './survey-page/question-step/stepper-overview
 import { JobSearchComponent } from './survey-page/question-step/stepper-overview/job-search/job-search.component';
 import { StepperOverviewComponent } from './survey-page/question-step/stepper-overview/stepper-overview.component';
 import { SurveyPageComponent } from './survey-page/survey-page.component';
+import { SickInfoComponent } from './survey-page/question-step/stepper-overview/sick-info/sick-info.component';
+import { RqthInfoComponent } from './survey-page/question-step/stepper-overview/rqth-info/rqth-info.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { SurveyPageComponent } from './survey-page/survey-page.component';
     JobEsatComponent,
     JobIaeComponent,
     JobPublicComponent,
-    FormationComponent
+    FormationComponent,
+    SickInfoComponent,
+    RqthInfoComponent
   ],
   imports: [
     CommonModule,

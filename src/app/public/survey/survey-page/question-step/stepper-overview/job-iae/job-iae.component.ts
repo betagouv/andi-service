@@ -16,12 +16,4 @@ export class JobIaeComponent implements OnInit {
   goToSearch() {
     this.router.navigateByUrl('/summary');
   }
-
-  downloadHelpRqth() {
-    window.open('assets/datas/aide-rqth.pdf', '_blank');
-  }
-
-  goAgefiph() {
-    window.open('https://www.agefiph.fr/', '_blank');
-  }
 }

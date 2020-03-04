@@ -51,6 +51,8 @@
           durant vos congés
         </p>
       </div>
+
+      <andi-sick-info *ngIf="isSick"></andi-sick-info>
     </div>
   </div>
 
@@ -85,19 +87,8 @@
           d’accueil
         </p>
       </div>
+
+      <andi-rqth-info *ngIf="isRqth"></andi-rqth-info>
     </div>
   </div>
 </div>
-
-<a [routerLink]="['/']" (click)="downloadHelpRqth()" class="bold link"
-  >A quelles aides ai-je droit dans le cadre de mon immersion ?</a
->
-
-<a (click)="goToSearch()" [routerLink]="['/']" class="link">
-  Chercher une immersion
-</a>
-
-<span class="bold">L’Agefiph</span><br />
-L’Agefiph peut vous aider à obtenir une aide au transport ou à l’aménagement de
-votre poste de travail. Contactez la au 0800 11 10 09 ou connectez-vous sur le
-<a (click)="goAgefiph()" [routerLink]="['/']">site</a><br />
