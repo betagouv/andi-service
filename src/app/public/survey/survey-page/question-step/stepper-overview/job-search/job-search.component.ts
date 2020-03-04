@@ -17,6 +17,14 @@ export class JobSearchComponent implements OnInit {
     this.router.navigateByUrl('/summary');
   }
 
+  goAmeli() {
+    window.open('https://www.ameli.fr/', '_blank');
+  }
+
+  goMsa() {
+    window.open('https://www.msa.fr/', '_blank');
+  }
+
   downloadHelpRqth() {
     window.open('assets/datas/aide-rqth.pdf', '_blank');
   }

@@ -11,6 +11,7 @@ $bold: 700;
 
 html {
   height: 100%;
+  min-height: 100%;
 }
 body {
   font-family: $primary_font;
@@ -30,6 +31,10 @@ body::after {
 
 label {
   font-family: Dosis, "Helvetica Neue", sans-serif;
+}
+
+.phone-number {
+  color: #006be6;
 }
 
 /* Disable underline */

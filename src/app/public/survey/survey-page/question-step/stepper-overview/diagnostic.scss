@@ -1,4 +1,6 @@
 .overview-comp {
+  height: 100%;
+  min-height: 100%;
   margin-bottom: 30px;
   padding-top: 40px;
   padding-right: 30px;
@@ -6,60 +8,125 @@
   padding-bottom: 40px;
   background-color: #ffffff;
 
+  & .comp-title {
+    font-weight: bold;
+    font-size: 30px;
+    color: #26353f;
+    margin-bottom: 0;
+  }
+
+  & .comp-subtitle {
+    font-size: 20px;
+  }
+
   & .bold {
     font-weight: bold;
   }
 
-  & .comp-title {
-    font-style: normal;
-    font-size: 24px;
-    line-height: 32px;
-    letter-spacing: 0.01em;
+  & .separator {
+    margin-top: 1px;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid black;
   }
 
-  & .title {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 28px;
-    letter-spacing: 0.01em;
-  }
-
-  & .description {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: 0.01em;
-  }
-
-  & .macro {
-    margin-left: 25px;
-  }
-
-  & .demarche-steps li {
-    font-style: normal;
+  & h2 {
     font-size: 18px;
-    line-height: 150%;
-    letter-spacing: 0.01em;
+    font-weight: bold;
+    margin-bottom: 0;
   }
 
-  & .info {
-    margin-left: 25px;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 139.8%;
-    letter-spacing: 0.01em;
+  & .demarche {
+    height: 100%;
+    min-height: 100%;
+    margin-bottom: 20px;
+
+    display: flex;
+    & .column {
+      height: 100%;
+      min-height: 100%;
+      width: 50px;
+      margin-right: 15px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & .circle {
+        &.small {
+          border: 1px solid #c9d3df;
+          border-radius: 50%;
+          width: 35px;
+          height: 35px;
+          z-index: 86;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        & .icon {
+          font-family: Times, serif;
+          font-weight: 800;
+          font-size: 38px;
+          color: #222222;
+          text-decoration: none;
+
+          & i {
+            font-size: 22px;
+          }
+        }
+      }
+
+      & .v-separator {
+        border-left: 1px solid #c9d3df;
+        height: 100%;
+        margin-top: 15px;
+      }
+    }
+
+    & .contenu {
+      padding-top: 7px;
+      
+      & h3 {
+        font-size: 17px;
+        font-weight: bold;
+      }
+
+      & .detail {
+        padding-left: 20px;
+        & span {
+          font-size: 16px;
+        }
+  
+        & p {
+          font-size: 15px;
+        }
+      }
+
+    }
   }
 
   & .link {
     cursor: pointer;
-    font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 139.8%;
-    letter-spacing: 0.01em;
+    font-size: 15px;
     text-decoration-line: underline;
     color: #006be6;
   }
+
+  & .legend {
+    font-size: 12px;
+    font-style: italic;
+  }
+}
+
+/* RQTH AND SICK */
+
+.sick, .rqth {
+  border: 1px solid #C9D3DF;
+  border-radius: 6px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
 }

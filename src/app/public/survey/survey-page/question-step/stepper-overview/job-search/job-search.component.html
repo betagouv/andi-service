@@ -1,143 +1,144 @@
 <div class="overview-comp">
-  <h1 class="comp-title">
-    <span class="bold">Vous pouvez faire une immersion !</span> Pour cela, vous
-    avez quelques démarches à faire.
-  </h1>
-  <p class="description">
-    Vous voulez savoir si un métier vous convient ? Vous pouvez faire une
-    immersion en entreprise pour valider votre projet auprès d’un professionnel
-    en activité.
+  <h1 class="comp-title">Oui, vous pouvez faire une immersion !</h1>
+  <p class="comp-subtitle">
+    Vous pouvez commencer à chercher une structure dès maintenant
   </p>
 
-  <h1 class="title">Quelles sont les démarches ?</h1>
+  <h2>Les démarches</h2>
+  <hr class="separator" />
 
-  <ol class="demarche-steps">
-    <li>
-      <span class="bold">Contactez</span> rapidement
-      <span class="bold">votre conseiller emploi</span>.
-      <p class="info">
-        <span class="bold"
-          >De quoi allez-vous parler avec votre conseiller ?</span
-        ><br />
-        Vous l’informez de votre souhait de faire une immersion professionnelle
-        et du métier que vous voulez essayer. Posez-lui toutes les questions que
-        vous voulez.
-      </p>
-
-      <p *ngIf="isSick" class="info">
-        <span class="bold">A noter :</span> si vous êtes en arrêt maladie, vous
-        devez avoir également l’accord de votre médecin traitant et de la
-        Cellule de Prévention de la Désinsertion Professionnelle (CPDP) de votre
-        département.
-        <br />
-        <br />
-        Attention, les délais pour compléter le dossier à transmettre à la CPDP
-        peuvent être longs (entre 4 et 6 semaines).
-      </p>
-    </li>
-
-    <li>
-      <span class="bold">Contactez les entreprises</span> prêtes à vous faire
-      découvrir leurs métiers
-      <div class="info">
-        <span class="bold">Comment chercher une immersion ?</span><br />
-        ANDi référence les entreprises proches de chez vous qui correspondent à
-        votre projet professionnel. Trouvez-les grâce à notre moteur de
-        recherche et nos conseils !
-        <br />
-        <br />
-
-        <a (click)="goToSearch()" class="link" [routerLink]="['/']">
-          Chercher une immersion
-        </a>
-        <br />
-        <br />
-
+  <!-- DEMARCHE INTERLOCUTEUR -->
+  <div class="demarche">
+    <div class="column" aria-hidden="true">
+      <div class="circle small">
+        <span class="icon"
+          ><i class="material-icons">
+            call
+          </i></span
+        >
       </div>
-    </li>
-
-    <li>
-      <span class="bold">Faites signer votre convention</span>
-      <div class="info">
-        <span class="bold">Quelle est cette convention ?</span><br />
-        Pour débuter votre immersion, vous devez faire signer votre convention
-        par l’employeur qui vous accueillera, par l’organisme qui vous
-        accompagne et par vous-même.
-
-       <!-- <a (click)="goToSearch()" class="link" [routerLink]="['/']">
-          Accéder à l’ensemble de la démarche
-        </a> -->
-      </div>
-
-      <p class="info">
-        <span class="bold">Délais indicatifs :</span> Prévoyez environ 2
-        semaines pour faire signer et valider votre convention.
-      </p>
-
-      <p *ngIf="isRqth" class="info">
-        <span class="bold">A noter :</span> Si vous avez une RQTH, vous pouvez
-        bénéficier d’aides pour financer l’aménagement de votre poste de travail
-        ou votre transport. Vous pouvez faire la demande auprès de l’Agefiph
-        avant de commencer l’immersion dans le secteur privé. Pour une immersion
-        dans la fonction publique, c’est l’employeur qui vous accueille qui doit
-        faire la demande d’aménagement au FIPHFP.
-      </p>
-    </li>
-  </ol>
-
-  <h1 class="title">Qui peut me renseigner ?</h1>
-
-  <div class="description macro">
-    <span class="bold"
-      >Votre conseiller emploi (Pôle emploi, Cap Emploi, Mission Locale ou Apec,
-      selon votre situation)</span
-    ><br />
-    Il vous accompagne dans votre projet d’évolution professionnelle et vous
-    aide dans vos démarches administratives. Son rôle est de vous conseiller et
-    de vous informer.
-    <br />
-    <br />
-
-    <div *ngIf="isSick">
-      <span class="bold">Votre médecin traitant</span><br />
-      Il estime si vous êtes en capacité de faire une immersion et vous délivre
-      un certificat.
-      <br />
-      <br />
-
-      <span class="bold"
-        >La Cellule de Prévention de Désinsertion Professionnelle (CPDP) de
-        votre département</span
-      ><br />
-      Elle prend en compte l’avis de votre médecin traitant, les conditions de
-      l’immersion et votre projet professionnel pour donner son autorisation.
-      <br />
-      <br />
-
-      Vous pouvez la contacter par téléphone au 36 46 (CNAM), sur www.ameli.fr
-      si vous relevez de la Sécurité sociale ou sur www.msa.fr si vous relevez
-      de la MSA.
-      <br />
-      <br />
+      <div class="v-separator"></div>
     </div>
 
-    <div *ngIf="isRqth">
-      <span class="bold">L’Agefiph</span><br />
-      L’Agefiph peut vous aider à obtenir une aide au transport ou à
-      l’aménagement de votre poste de travail. Contactez la au 0800 11 10 09 ou
-      connectez-vous sur le <a (click)="goAgefiph()" [routerLink]="['/']">site</a><br />
-      Tout savoir sur les aides auxquelles vous avez droit :
-      <a [routerLink]="['/']" (click)="downloadHelpRqth()"
-        class="bold link"
-        >A quelles aides ai-je droit dans le cadre de mon immersion ?</a
-      >
-      <br />
-      <br />
+    <div class="contenu">
+      <h3>Contacter votre conseiller emploi</h3>
 
-      <span class="bold">Le FIPHFP</span><br />
-      Pour une immersion dans la fonction publique, contactez le référent
-      handicap de l’employeur, qui fera la demande d’aménagement auprès du
-      FIPHFP.
+      <div class="detail">
+        <span class="bold"
+          >De quoi allez-vous parler avec votre conseiller ?</span
+        >
+        <p>
+          Vous l’informez de votre souhait de faire une immersion
+          professionnelle et du métier que vous voulez essayer. Il vous
+          accompagne dans votre projet d’évolution professionnelle et vous aide
+          dans vos démarches administratives
+        </p>
+      </div>
+
+      <div class="sick">
+        <span class="bold">En cas d’arrêt maladie</span>
+        <p>
+          Vous devez avoir également l’accord de votre médecin traitant et de la
+          Cellule de Prévention de la Désinsertion Professionnelle (CPDP) de
+          votre département
+        </p>
+        <p>
+          Attention, les délais pour compléter le dossier à transmettre à la
+          CPDP peuvent être longs (entre 4 et 6 semaines)
+        </p>
+        <p>Vous pouvez contacter la CPDP :</p>
+        <ul>
+          <li>
+            Par téléphone au
+            <a
+              href="tel:3646"
+              class="phone-number"
+              aria-label="Numéro de téléphone d'Ameli 36 46"
+              >36 46</a
+            >
+            (CNAM)
+          </li>
+          <li>
+            Si vous relevez de la sécurité sociale,
+            <a
+              (click)="goAmeli()"
+              href="javascript:void(0)"
+              class="link"
+              aria-label="Accéder au site d’Ameli (Nouvel onglet)"
+              >accéder au site d’Ameli</a
+            >
+          </li>
+          <li>
+            Si vous relevez de la MSA,
+            <a
+              (click)="goMsa()"
+              href="javascript:void(0)"
+              class="link"
+              aria-label="Accéder au site de la MSA (Nouvel onglet)"
+              >accéder au site de la MSA</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEMARCHE RECHERCHE -->
+  <div class="demarche">
+    <div class="column" aria-hidden="true">
+      <div class="circle small">
+        <span class="icon"
+          ><i class="material-icons">
+            search
+          </i></span
+        >
+      </div>
+      <div class="v-separator"></div>
+    </div>
+
+    <div class="contenu">
+      <h3>
+        Chercher une structure d’accueil qui correspond à votre projet
+        professionnel
+      </h3>
+
+      <div class="detail">
+        <span class="bold">Comment chercher une immersion ?</span>
+        <p>
+          ANDi référence les entreprises proches de chez vous qui correspondent
+          à votre projet professionnel. Trouvez-les grâce à notre moteur de
+          recherche et nos conseils !
+        </p>
+        <p>
+          À noter : votre conseiller peut vous aider à trouver une structure
+          d’accueil
+        </p>
+      </div>
+
+      <div class="rqth">
+        <span class="bold">En cas de RQTH</span>
+        <p>
+          L’AGEFIPH peut vous aidez à financer l’aménagement de votre poste de
+          travail ou/et de votre transport.<a
+            (click)="downloadHelpRqth()"
+            href="javascript:void(0)"
+            class="link"
+            aria-label="En savoir plus sur les aides
+          auxquelles vous avez droit (Nouvel onglet - Ficher PDF)"
+            >En savoir plus sur les aides auxquelles vous avez droit</a
+          >
+        </p>
+        <p>
+          Vous pouver
+          <a
+            (click)="goAgefiph()"
+            href="javascript:void(0)"
+            class="link"
+            aria-label="Consulter le site internet de l'AGEFIPH (Nouvel onglet)"
+            >consulter le site internet de l'AGEFIPH</a
+          >
+        </p>
+      </div>
     </div>
   </div>
 </div>
