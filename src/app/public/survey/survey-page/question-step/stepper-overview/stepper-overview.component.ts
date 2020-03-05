@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { SurveyStepperSharedService } from "src/app/core/services/survey-stepper.shared.service";
-import { TrackingService } from "src/app/core/services/tracking.service";
-import { StepContext } from "src/models/tracking-request.model";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
+import { TrackingService } from 'src/app/core/services/tracking.service';
+import { StepContext } from 'src/models/tracking-request.model';
 
 @Component({
-  selector: "andi-stepper-overview",
-  templateUrl: "./stepper-overview.component.html",
-  styleUrls: ["./stepper-overview.component.scss"]
+  selector: 'andi-stepper-overview',
+  templateUrl: './stepper-overview.component.html',
+  styleUrls: ['./stepper-overview.component.scss']
 })
 export class StepperOverviewComponent implements OnInit {
   isJobSearch = false;
@@ -27,7 +27,7 @@ export class StepperOverviewComponent implements OnInit {
 
   ngOnInit() {
     this.loadDiagnosticDatas();
-    this.trackingService.track("pasapas", StepContext.BILAN, {
+    this.trackingService.track('pasapas', StepContext.BILAN, {
       job_search: this.isJobSearch,
       prive: this.isJobPrivate,
       publique: this.isJobPublic,
@@ -41,35 +41,35 @@ export class StepperOverviewComponent implements OnInit {
 
   private loadDiagnosticDatas() {
     this.isJobSearch = this.surveyStepperSharedService.stateStepper.includes(
-      "job_search"
+      'job_search'
     );
     this.isJobPrivate = this.surveyStepperSharedService.stateStepper.includes(
-      "prive"
+      'prive'
     );
     this.isJobPublic = this.surveyStepperSharedService.stateStepper.includes(
-      "publique"
+      'publique'
     );
     this.isJobEsat = this.surveyStepperSharedService.stateStepper.includes(
-      "esat"
+      'esat'
     );
     this.isJobIae = this.surveyStepperSharedService.stateStepper.includes(
-      "iae"
+      'iae'
     );
     this.isFormation = this.surveyStepperSharedService.stateStepper.includes(
-      "formation"
+      'formation'
     );
-    this.isSick = this.surveyStepperSharedService.stateStepper.includes("sick");
+    this.isSick = this.surveyStepperSharedService.stateStepper.includes('sick');
     this.isRqth =
-      this.surveyStepperSharedService.stateStepper.includes("rqth") ||
-      this.surveyStepperSharedService.stateStepper.includes("rqth_pending");
+      this.surveyStepperSharedService.stateStepper.includes('rqth') ||
+      this.surveyStepperSharedService.stateStepper.includes('rqth_pending');
   }
 
   nextQuestion() {
-    this.trackingService.track("pasapas", StepContext.TO_MATCHING);
-    this.surveyStepperSharedService.goToNextStep("C1");
+    this.trackingService.track('pasapas', StepContext.TO_MATCHING);
+    this.surveyStepperSharedService.goToNextStep('C1');
   }
 
   goToSearch() {
-    this.router.navigateByUrl("/summary");
+    this.router.navigateByUrl('/summary');
   }
 }
