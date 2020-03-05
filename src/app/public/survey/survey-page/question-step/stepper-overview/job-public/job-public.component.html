@@ -1,153 +1,138 @@
 <div class="overview-comp">
   <h1 class="comp-title">
-    <span class="bold">Vous pouvez faire une immersion !</span> Pour cela, vous
-    avez quelques démarches à faire.
+    Si vous êtes contractuel : Oui, vous pouvez faire une immersion !
   </h1>
-  <p class="description">
-    Vous voulez savoir si un métier vous convient ? Vous pouvez faire une
-    immersion dans une autre administration ou fonction publique, voire dans le
-    secteur privé pour valider votre projet auprès d’un professionnel en
-    activité.
+  <p class="comp-subtitle">
+    Pour cela, vous avez quelques démarches à faire
   </p>
 
-  <div class="description">
-    <span class="bold">A noter : Attention ! Si vous êtes fonctionnaire,</span>
-    vous devrez vous mettre en disponibilité pour pouvoir faire une immersion
-    professionnelle (PMSMP). Vous pouvez faire une immersion au sein de la
-    fonction publique dans le cadre de la Période préparatoire au reclassement
-    (PPR). Renseignez-vous auprès de votre conseiller mobilité ou référent
-    handicap.
-    <br />
-    <br />
+  <h2>Les démarches</h2>
+  <hr class="separator" />
 
-    <span class="bold">Si vous êtes contractuel</span> de la fonction publique,
-    vous pouvez faire une immersion dans une entreprise pour valider votre
-    projet auprès d’un professionnel en activité.
-  </div>
-
-  <h1 class="title">Quelles sont les démarches ?</h1>
-
-  <ol class="demarche-steps">
-    <li>
-      <span class="bold">Contactez</span> rapidement
-      <span class="bold">votre conseiller mobilité carrière</span>.
-      <p class="info">
-        <span class="bold"
-          >De quoi allez-vous parler avec votre conseiller ?</span
-        ><br />
-        Vous l’informez de votre souhait de faire une immersion professionnelle
-        et du métier que vous voulez essayer. Posez-lui toutes les questions que
-        vous voulez.
-      </p>
-
-      <p *ngIf="isSick" class="info">
-        <span class="bold">A noter :</span> si vous êtes en arrêt maladie, vous
-        devez avoir également l’accord de votre médecin traitant et de la
-        Cellule de Prévention de la Désinsertion Professionnelle (CPDP) de votre
-        département.
-        <br />
-        <br />
-        Attention, les délais pour compléter le dossier à transmettre à la CPDP
-        peuvent être longs (entre 4 et 6 semaines).
-      </p>
-    </li>
-
-    <li>
-      <span class="bold">Contactez les employeurs</span> prêts à vous faire
-      découvrir leurs métiers
-      <div class="info">
-        <span class="bold">Comment chercher une immersion ?</span><br />
-        ANDi référence les entreprises proches de chez vous qui correspondent à
-        votre projet professionnel. Trouvez-les grâce à notre moteur de
-        recherche et nos conseils !
-        <br />
-        <br />
-
-        <a [routerLink] = "['/']" (click)="goToSearch()" class="link">
-          Chercher une immersion
-        </a>
-        <br />
-        <br />
-
+  <!-- DEMARCHE INTERLOCUTEUR -->
+  <div class="demarche">
+    <div class="column" aria-hidden="true">
+      <div class="circle small">
+        <span class="icon"
+          ><i class="material-icons">
+            call
+          </i></span
+        >
       </div>
-    </li>
-
-    <li>
-      <span class="bold">Faites signer votre convention</span>
-      <div class="info">
-        <span class="bold">Quelle est cette convention ?</span><br />
-        Pour débuter votre immersion, vous devez faire signer votre convention
-        ou les documents relatifs à la PPR par votre employeur actuel, par
-        l’employeur qui vous accueillera et par vous-même.
-
-       <!-- <a (click)="goToSearch()"  [routerLink]="['/']" class="link">
-          Accéder à l’ensemble de la démarche
-        </a> -->
-      </div>
-
-      <p *ngIf="isRqth" class="info">
-        <span class="bold">A noter :</span> Si vous avez une RQTH, vous pouvez
-        bénéficier d’aides pour financer l’aménagement de votre poste de travail
-        ou votre transport. Vous pouvez faire la demande auprès de l’Agefiph
-        avant de commencer l’immersion dans le secteur privé. Pour une immersion
-        dans la fonction publique, c’est l’employeur qui vous accueille qui doit
-        faire la demande d’aménagement au FIPHFP.
-      </p>
-    </li>
-  </ol>
-
-  <h1 class="title">Qui peut me renseigner ?</h1>
-
-  <div class="description macro">
-    <span class="bold"
-      >Votre conseiller mobilité carrière ou votre référent handicap</span
-    ><br />
-    Il vous accompagne dans votre projet d’évolution professionnelle et vous
-    aide dans vos démarches administratives. Son rôle est de vous conseiller et
-    de vous informer.
-    <br />
-    <br />
-
-    <div *ngIf="isSick">
-      <span class="bold">Votre médecin traitant</span><br />
-      Il estime si vous êtes en capacité de faire une immersion et vous délivre
-      un certificat.
-      <br />
-      <br />
-
-      <span class="bold"
-        >La Cellule de Prévention de Désinsertion Professionnelle (CPDP) de
-        votre département</span
-      ><br />
-      Elle prend en compte l’avis de votre médecin traitant, les conditions de
-      l’immersion et votre projet professionnel pour donner son autorisation.
-      <br />
-      <br />
-
-      Vous pouvez la contacter par téléphone au 36 46 (CNAM), sur www.ameli.fr
-      si vous relevez de la Sécurité sociale ou sur www.msa.fr si vous relevez
-      de la MSA.
-      <br />
-      <br />
+      <div class="v-separator"></div>
     </div>
 
-    <div *ngIf="isRqth">
-      <span class="bold">L’Agefiph</span><br />
-      L’Agefiph peut vous aider à obtenir une aide au transport ou à
-      l’aménagement de votre poste de travail. Contactez la au 0800 11 10 09 ou
-      connectez-vous sur le <a (click)="goAgefiph()" [routerLink]="['/']">site</a><br />
-      Tout savoir sur les aides auxquelles vous avez droit :
-      <a [routerLink]="['/']" (click)="downloadHelpRqth()"
-        class="bold link"
-        >A quelles aides ai-je droit dans le cadre de mon immersion ?</a
-      >
-      <br />
-      <br />
+    <div class="contenu">
+      <h3>
+        Contacter le conseiller mobilité, référent handicap ou service ressource
+        humaine de votre employeur
+      </h3>
 
-      <span class="bold">Le FIPHFP</span><br />
-      Pour une immersion dans la fonction publique, contactez le référent
-      handicap de l’employeur, qui fera la demande d’aménagement auprès du
-      FIPHFP.
+      <div class="detail">
+        <span class="bold"
+          >De quoi allez-vous parler avec votre conseiller ?</span
+        >
+        <p>
+          Il vous accompagne dans votre projet d’évolution professionnelle et
+          vous aide dans vos démarches administratives. Son rôle est de vous
+          conseiller et de vous informer
+        </p>
+        <p>
+          A noter : si vous voulez faire une immersion pendant votre temps de
+          travail, vous devez avoir l’accord de votre employeur. En cas de refus
+          ou si vous souhaitez être discret, vous pouvez faire une immersion
+          durant vos congés
+        </p>
+      </div>
+
+      <andi-sick-info *ngIf="isSick"></andi-sick-info>
+    </div>
+  </div>
+
+  <!-- DEMARCHE RECHERCHE -->
+  <div class="demarche">
+    <div class="column" aria-hidden="true">
+      <div class="circle small">
+        <span class="icon"
+          ><i class="material-icons">
+            search
+          </i></span
+        >
+      </div>
+      <div class="v-separator"></div>
+    </div>
+
+    <div class="contenu">
+      <h3>
+        Chercher une structure d’accueil qui correspond à votre projet
+        professionnel
+      </h3>
+
+      <div class="detail">
+        <span class="bold">Comment chercher une immersion ?</span>
+        <p>
+          ANDi référence les entreprises proches de chez vous qui correspondent
+          à votre projet professionnel. Trouvez-les grâce à notre moteur de
+          recherche et nos conseils !
+        </p>
+        <p>À noter : votre conseiller peut vous donner des conseils</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ********************************************************************************************* -->
+
+  <h1 class="comp-title">
+    Si vous êtes fonctionnaire : Le dispositif de la PMSMP n’est pas adapté à
+    votre situation
+  </h1>
+  <p class="comp-subtitle">
+    Il existe d’autres dispositifs d’immersion professionnelle
+  </p>
+
+  <h2>Les démarches</h2>
+  <hr class="separator" />
+
+  <!-- DEMARCHE INTERLOCUTEUR -->
+  <div class="demarche">
+    <div class="column" aria-hidden="true">
+      <div class="circle small">
+        <span class="icon"
+          ><i class="material-icons">
+            call
+          </i></span
+        >
+      </div>
+      <div class="v-separator"></div>
+    </div>
+
+    <div class="contenu">
+      <p>
+        Il existe d’autres dispositifs d’immersion professionnelle pour vous
+        permettre d’anticiper un reclassement ou de tester un nouveau métier
+        dans la fonction publique (Période préparatoire au reclassement,
+        convention de mise à disposition entre deux employeurs etc)
+      </p>
+
+      <div class="detail">
+        <span class="bold">Renseignez-vous auprès :</span>
+
+        <ul>
+          <li>
+            de votre conseiller mobilité, référent handicap ou service ressource
+            humaine de votre employeur
+          </li>
+          <li>
+            ou de la plateforme RH du Secrétariat général aux affaires
+            régionales (SGAR) de votre région
+          </li>
+          <li>
+            ou pour les fonctionnaires territoriaux : du référent handicap ou du
+            service santé au travail du Centre de gestion de la fonction
+            publique territoriale (CDG) de votre département
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

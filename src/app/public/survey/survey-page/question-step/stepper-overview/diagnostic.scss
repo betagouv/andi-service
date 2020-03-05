@@ -87,7 +87,7 @@
 
     & .contenu {
       padding-top: 7px;
-      
+
       & h3 {
         font-size: 17px;
         font-weight: bold;
@@ -98,21 +98,12 @@
         & span {
           font-size: 16px;
         }
-  
+
         & p {
           font-size: 15px;
         }
       }
-
     }
-  }
-
-  & .link {
-    cursor: pointer;
-    font-weight: normal;
-    font-size: 15px;
-    text-decoration-line: underline;
-    color: #006be6;
   }
 
   & .legend {
@@ -121,10 +112,19 @@
   }
 }
 
+.link {
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 15px;
+  text-decoration-line: underline;
+  color: #006be6;
+}
+
 /* RQTH AND SICK */
 
-.sick, .rqth {
-  border: 1px solid #C9D3DF;
+.sick,
+.rqth {
+  border: 1px solid #c9d3df;
   border-radius: 6px;
   padding-right: 20px;
   padding-left: 20px;
