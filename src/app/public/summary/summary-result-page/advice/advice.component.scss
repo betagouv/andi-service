@@ -10,13 +10,20 @@
     margin-bottom: 25px;
   }
 
-  & h2 {
-    cursor: pointer;
-    font-size: 18px;
+  & .subtitle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     border-bottom: 2px solid #8B939E;
-    padding-bottom: 10px;
-    margin-top: 10px;
-    margin-bottom: 0;
+    cursor: pointer;
+
+    & h2 {
+      font-weight: bold;
+      font-size: 18px;
+      padding-bottom: 10px;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
   }
 
   & .contenu {
@@ -28,87 +35,3 @@
     font-size: 18px;
   }
 }
-
-/*
-.advice-toggle {
-  display: flex;
-  justify-content: space-between;
-
-  cursor: pointer;
-  background: #FFFFFF;
-  padding-top: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 20px;
-  & .title {
-    display: inline;
-    color: #000000;
-    text-decoration: none;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 28px;
-    letter-spacing: 0.01em;
-
-    & i {
-      font-size: 18px;
-      line-height: 28px;
-    }
-  }
-}
-
-.advice-comp {
-  background: #ffffff;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 25px;
-
-  & li {
-    margin-bottom: 10px;
-  }
-
-  & .bold {
-    font-weight: bold;
-  }
-  & .italic {
-    font-style: italic;
-  }
-
-  & .title {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 28px;
-    letter-spacing: 0.01em;
-
-    & i {
-      font-size: 18px;
-      line-height: 28px;
-    }
-  }
-
-  & .content {
-    padding-left: 20px;
-    padding-right: 20px;
-
-    & .subtitle {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 25px;
-      letter-spacing: 0.01em;
-      text-decoration-line: underline;
-      margin-bottom: 10px;
-    }
-
-    & .sub-content {
-      margin-left: 40px;
-      margin-right: 40px;
-    }
-
-    & .sub-content-ul {
-      margin-right: 40px;
-    }
-  }
-}
-*/
