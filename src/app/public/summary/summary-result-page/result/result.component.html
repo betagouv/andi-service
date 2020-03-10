@@ -37,7 +37,7 @@
     *ngIf="!hasErrorResult && pmsmpDatas.length > 3"
     class="result-item-collapse"
   >
-    <a [routerLink]="['/summary']" 
+    <a [routerLink]="['/summary']"
       *ngIf="showMoreResultsBtn"
       (click)="toggleButton()"
       class="more-result-btn"
@@ -55,5 +55,4 @@
       </div>
     </div>
   </div>
-  <andi-advice *ngIf="!hasErrorResult && pmsmpDatas.length > 0"></andi-advice>
 </div>

@@ -9,20 +9,34 @@ import { StepContext } from 'src/models/tracking-request.model';
 })
 export class AdviceComponent implements OnInit {
 
-  showAdvice = false;
+  showFirst = false;
+  showSecond = false;
+  showThird = false;
   constructor(
     private trackingService: TrackingService,
   ) {}
 
   ngOnInit() {}
 
+  // TODO  QUID?
   openCerfa() {
     this.trackingService.track('matching', StepContext.LINKTO, {link: 'cerfa'});
     window.open('../../../../../assets/datas/convention-cerfa.pdf', '_blank');
   }
 
-  toggleAdvice() {
+
+  toggleFirst() {
     this.trackingService.track('matching', StepContext.GUIDANCE_CLICK);
-    this.showAdvice = !this.showAdvice;
+    this.showFirst = !this.showFirst;
+  }
+
+  toggleSecond() {
+    this.trackingService.track('matching', StepContext.GUIDANCE_CLICK);
+    this.showSecond = !this.showSecond;
+  }
+
+  toggleThird() {
+    this.trackingService.track('matching', StepContext.GUIDANCE_CLICK);
+    this.showThird = !this.showThird;
   }
 }

@@ -1,13 +1,95 @@
-<div (click)="toggleAdvice()" class="advice-toggle">
+<div class="advice-comp">
+  <h1 class="main-title">
+    Nos conseils pour trouver une immersion
+  </h1>
+
+  <dl>
+    <dt (click)="toggleFirst()">Comment contacter un employeur pour faire une immersion ?
+    </dt>
+
+    <dd *ngIf="showFirst">
+      <p>Au-delà de 15 salariés : Prenez contact par téléphone et demandez à parler à la mission handicap ou s’il n’y en
+        a pas, au responsable des ressources humaines.</p>
+      <p>Moins de 15 salariés (un artisan ou un commerce) : Contactez-la par téléphone ou rendez-vous sur place si vous
+        le pouvez. Demandez le responsable.</p>
+      <p>Avant de prendre contact, renseignez-vous sur l’entreprise et préparez vos questions. Vos questions peuvent
+        porter sur le métier que vous voulez essayer ou sur la façon dont le travail est organisé dans
+        l’entreprise.</p>
+    </dd>
+
+
+    <dt (click)="toggleSecond()">Comment expliquer l’immersion à un employeur ?</dt>
+
+    <dd *ngIf="showSecond">
+      <p>Vous pouvez lui expliquer que l’immersion ressemble à un stage d’observation, encadré par une convention.
+        L’immersion permet de savoir si un métier vous convient grâce à une mise en situation réelle. Elle permet aussi
+        de vérifier que ce métier est compatible avec votre situation de handicap.</p>
+      <p>Exemple d’une prise de contact téléphonique avec un électricien
+        Vous : “Bonjour, je m’appelle Dominique Durand.
+        Je vous appelle car j’ai un nouveau projet professionnel.
+        Je voudrais me former en électricité et je voudrais passer un peu de temps avec un électricien pour vérifier que
+        ce métier me convient vraiment.
+        Est-ce que vous pourriez m’accueillir dans votre entreprise pendant une ou deux semaines environ ? Je voudrais
+        juste passer quelques jours avec un électricien pour découvrir le métier “pour de vrai”. C’est important avant
+        de commencer une formation qui va durer plusieurs mois.”
+        NB : Si vous souhaitez parler de votre handicap ou des aménagements de poste nécessaires, vous pouvez le faire
+
+        Réponse de l’interlocuteur : “je ne suis pas en mesure de vous donner une réponse car il faut voir cela avec
+        M/Mme Untel qui dirige la société.”
+        Vous : “Pouvez-vous faire part de ma demande à Mme/ M. untel, à votre directeur… ?
+        Puis-je le rappeler ou prendre un rendez-vous pour le rencontrer ?”
+
+        Réponse de l’interlocuteur : “je ne comprends pas bien. Vous voulez accompagner un électricien quelques jours ?
+        Mais dans quel cadre ? “ :
+        Vous : “C’est comme un stage d’observation qui peut durer d’une semaine à un mois pour découvrir un métier et
+        participer à l’activité dans la mesure de mes possibilités.
+        Je peux comme ça vérifier que ce métier me convient tout en vous rendant des services.
+        Une convention est signée avec Cap Emploi (ou Pôle emploi, ou l’organisme qui vous suit), l’entreprise et
+        moi-même. Je suis couvert(e) par XXX (l’organisme qui vous suit).
+
+        Réponse de l’interlocuteur : “Doit-on vous rémunérer ?”
+        Vous :
+        “Non, je conserve mon statut initial et touche mon indemnité habituelle.”
+
+        Votre interlocuteur montre son intérêt.
+        Vous : “Merci beaucoup pour votre accueil. Quand puis-je venir vous rencontrer ? Je vous apporterai la
+        convention. “
+
+        Votre interlocuteur vous répond que ce n’est pas possible :
+        Vous “Je comprends. Merci en tout cas pour votre accueil.
+        Peut-être pourriez-vous me conseiller des entreprises (des confrères si vous vous adressez à un artisan) qui
+        pourrait m’accueillir ?”
+      </p>
+
+
+    </dd>
+
+
+    <dt (click)="toggleThird()">Dois-je parler à l’employeur de mon handicap ?</dt>
+
+    <dd *ngIf="showThird">
+      <p>A vous de décider. Sachez que vous n’avez aucune obligation d’en parler car cela relève de votre vie
+        privée.<br/>
+        Si vous le souhaitez, vous pouvez parler des aménagements de poste dont vous avez besoin pour l’immersion
+        (fauteuil ergonomique, logiciel pour handicap visuel, besoin d’un environnement calme, etc.).
+      </p>
+    </dd>
+  </dl>
+
+</div>
+
+
+<!--
+<div (clictoggleFirstvice()" class="advice-toggle">
   <a [routerLink]="['/summary']">
     <h1 class="title">
-      <i class="material-icons" aria-hidden="true">forum</i>Les conseils d'ANDi
+      <i class="material-icons" aria-hidden="true">foshowFirst conseils pour trouver une immersion
     </h1>
   </a>
-  <i *ngIf="!showAdvice" class="material-icons" aria-hidden="true">
+  <i *ngIf="!showAdvice" class="mashowFirstns" aria-hidden="true">
     keyboard_arrow_down
   </i>
-  <i *ngIf="showAdvice" class="material-icons" aria-hidden="true">
+  <i *ngIf="showAdvice" class="materialshowFirstia-hidden="true">
     keyboard_arrow_up
   </i>
 </div>
@@ -144,3 +226,4 @@
     </div>
   </div>
 </div>
+-->
