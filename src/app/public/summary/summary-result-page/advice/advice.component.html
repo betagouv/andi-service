@@ -3,11 +3,11 @@
     Nos conseils pour trouver une immersion
   </h1>
 
-  <dl>
-    <dt (click)="toggleFirst()">Comment contacter un employeur pour faire une immersion ?
-    </dt>
+  <div>
+    <h2 (click)="toggleFirst()">Comment contacter un employeur pour faire une immersion ?
+    </h2>
 
-    <dd *ngIf="showFirst">
+    <div class="contenu" *ngIf="showFirst">
       <p>Au-delà de 15 salariés : Prenez contact par téléphone et demandez à parler à la mission handicap ou s’il n’y en
         a pas, au responsable des ressources humaines.</p>
       <p>Moins de 15 salariés (un artisan ou un commerce) : Contactez-la par téléphone ou rendez-vous sur place si vous
@@ -15,12 +15,12 @@
       <p>Avant de prendre contact, renseignez-vous sur l’entreprise et préparez vos questions. Vos questions peuvent
         porter sur le métier que vous voulez essayer ou sur la façon dont le travail est organisé dans
         l’entreprise.</p>
-    </dd>
+    </div>
 
 
-    <dt (click)="toggleSecond()">Comment expliquer l’immersion à un employeur ?</dt>
+    <h2 (click)="toggleSecond()">Comment expliquer l’immersion à un employeur ?</h2>
 
-    <dd *ngIf="showSecond">
+    <div class="contenu" *ngIf="showSecond">
       <p>Vous pouvez lui expliquer que l’immersion ressemble à un stage d’observation, encadré par une convention.
         L’immersion permet de savoir si un métier vous convient grâce à une mise en situation réelle. Elle permet aussi
         de vérifier que ce métier est compatible avec votre situation de handicap.</p>
@@ -62,19 +62,19 @@
       </p>
 
 
-    </dd>
+    </div>
 
 
-    <dt (click)="toggleThird()">Dois-je parler à l’employeur de mon handicap ?</dt>
+    <h2 (click)="toggleThird()">Dois-je parler à l’employeur de mon handicap ?</h2>
 
-    <dd *ngIf="showThird">
+    <div class="contenu" *ngIf="showThird">
       <p>A vous de décider. Sachez que vous n’avez aucune obligation d’en parler car cela relève de votre vie
         privée.<br/>
         Si vous le souhaitez, vous pouvez parler des aménagements de poste dont vous avez besoin pour l’immersion
         (fauteuil ergonomique, logiciel pour handicap visuel, besoin d’un environnement calme, etc.).
       </p>
-    </dd>
-  </dl>
+    </div>
+  </div>
 
 </div>
 
