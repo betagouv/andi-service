@@ -29,7 +29,6 @@ import { RqthInfoComponent } from './survey-page/question-step/stepper-overview/
     ProposalComponent,
     NavigationStepComponent,
     CriterionComponent,
-    SomeHelpComponent,
     StepperOverviewComponent,
     JobSearchComponent,
     JobPrivateComponent,

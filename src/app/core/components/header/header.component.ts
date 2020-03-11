@@ -19,10 +19,6 @@ export class HeaderComponent implements OnInit {
     this.trackingService.track('header', StepContext.LINKTO, {link: description});
   }
 
-  trackMailto(description): void {
-    this.trackingService.track('header', StepContext.MAILTO, {link: description});
-  }
-
   goToHome() {
     this.trackingService.track('header', StepContext.LINKTO, {link: 'home'});
     window.open('https://andi.beta.gouv.fr', '_self');

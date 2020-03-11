@@ -4,16 +4,17 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
+import { RouterModule } from '@angular/router';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { routes } from '../app-routing.module';
 import { ProtectedModule } from '../protected/protected.module';
 import { PublicModule } from '../public/public.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
-import { RouterModule } from '@angular/router';
-import { routes } from '../app-routing.module';
+import { SomeHelpComponent } from './components/some-help/some-help.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, SomeHelpComponent],
   imports: [
     CommonModule,
     PublicModule,
@@ -26,7 +27,7 @@ import { routes } from '../app-routing.module';
     NgxUiLoaderModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [HeaderComponent, FooterComponent]
+  exports: [HeaderComponent, FooterComponent, SomeHelpComponent]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
