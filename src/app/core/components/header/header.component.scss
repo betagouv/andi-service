@@ -16,7 +16,6 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    flex-wrap: wrap;
     width: 425px;
 
     & .bloc-marque {
@@ -41,4 +40,17 @@
 
 span {
   cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+  .site-header .container_logo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 425px;
+
+    & .bloc-marque {
+      margin-left: 10px;
+    }
+  }
 }
