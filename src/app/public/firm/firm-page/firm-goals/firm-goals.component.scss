@@ -1,0 +1,38 @@
+.firm-goals-comp {
+  padding-top: 40px;
+
+  & h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+  & .definition {
+    margin-bottom: 35px;
+  }
+
+  & .goal {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+
+    & h2 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    & .goal-list {
+      & li {
+        font-size: 15px;
+        list-style-type: circle;
+      }
+    }
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+img {
+  width: 50px;
+  margin-right: 40px;
+}
