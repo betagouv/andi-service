@@ -1,0 +1,25 @@
+.capsule {
+  width: 100%;
+  background-color: #F2F2F2;
+
+  & .partners-comp {
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    & h1 {
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    & .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      & img {
+        width: 120px;
+        height: 35px;
+      }
+    }
+  }
+}
+
