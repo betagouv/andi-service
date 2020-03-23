@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { SomeHelpComponent } from '../core/components/some-help/some-help.component';
+import { FirmModule } from './firm/firm.module';
 
 @NgModule({
   declarations: [],
@@ -17,7 +18,8 @@ import { SomeHelpComponent } from '../core/components/some-help/some-help.compon
     SummaryModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    FirmModule
   ],
   exports: []
 })

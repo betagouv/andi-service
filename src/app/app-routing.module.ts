@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SummaryResultPageComponent } from './public/summary/summary-result-page/summary-result-page.component';
 import { SurveyPageComponent } from './public/survey/survey-page/survey-page.component';
+import {FirmPageComponent} from "./public/firm/firm-page/firm-page.component";
 
 export const routes: Routes = [
   {
@@ -18,6 +19,11 @@ export const routes: Routes = [
     path: 'summary',
     component: SummaryResultPageComponent,
     data: {title: 'ANDi - Recherche Immersion'}
+  },
+  {
+    path: 'firm',
+    component: FirmPageComponent,
+    data: {title: 'ANDi - Emmployeurs, découvrez ANDi'}
   },
   { path: '**', redirectTo: '/survey' }
 ];
