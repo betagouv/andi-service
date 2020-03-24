@@ -18,13 +18,6 @@ export class AdviceComponent implements OnInit {
 
   ngOnInit() {}
 
-  // TODO  QUID?
-  openCerfa() {
-    this.trackingService.track('matching', StepContext.LINKTO, {link: 'cerfa'});
-    window.open('../../../../../assets/datas/convention-cerfa.pdf', '_blank');
-  }
-
-
   toggleFirst() {
     this.trackingService.track('matching', StepContext.GUIDANCE_CLICK);
     this.showFirst = !this.showFirst;
