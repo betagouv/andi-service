@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TrackingService } from 'src/app/core/services/tracking.service';
 
 @Component({
   selector: 'andi-firm-page',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirmPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private trackingService: TrackingService
+  ) {}
 
   ngOnInit() {
+    this.trackingService.track('employeurs', StepContext.ARRIVAL);
   }
 
 }
