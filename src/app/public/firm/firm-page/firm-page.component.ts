@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { TrackingService } from 'src/app/core/services/tracking.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { TrackingService } from 'src/app/core/services/tracking.service';
   templateUrl: './firm-page.component.html',
   styleUrls: ['./firm-page.component.scss']
 })
-export class FirmPageComponent implements OnInit {
+export class FirmPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private trackingService: TrackingService
@@ -15,5 +15,13 @@ export class FirmPageComponent implements OnInit {
   ngOnInit() {
     this.trackingService.track('employeurs', StepContext.ARRIVAL);
   }
+
+  @HostListener('window:beforeunload')
+  ngOnDestroy(): void {
+    this.trackingService.track('employeurs', StepContext.DEPART, {
+      reason: 'destroy'
+    });
+  }
+
 
 }
