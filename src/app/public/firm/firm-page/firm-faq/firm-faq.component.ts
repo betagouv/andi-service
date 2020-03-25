@@ -9,15 +9,26 @@ import {TrackingService} from '../../../../core/services/tracking.service';
 })
 export class FirmFaqComponent implements OnInit {
 
-  constructor(private trackingService: TrackingService) { }
+  constructor(
+    private trackingService: TrackingService
+  ) { }
 
   ngOnInit() {
   }
 
   // TODO  QUID?
   openCerfa() {
-    this.trackingService.track('matching', StepContext.LINKTO, {link: 'cerfa'});
+    this.trackingService.track('employeurs', StepContext.LINKTO, {link: 'cerfa'});
     window.open('../../../../../assets/datas/convention-cerfa.pdf', '_blank');
   }
+
+  trackClick(description): void {
+    this.trackingService.track('employeurs', StepContext.LINKTO, {link: description});
+  }
+
+  trackMailto(description): void {
+    this.trackingService.track('employeurs', StepContext.MAILTO, {link: description});
+  }
+
 
 }
