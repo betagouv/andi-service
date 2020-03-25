@@ -23,7 +23,7 @@ export const routes: Routes = [
   {
     path: 'firm',
     component: FirmPageComponent,
-    data: {title: 'ANDi - Emmployeurs, découvrez ANDi'}
+    data: {title: 'ANDi - Employeurs, découvrez ANDi'}
   },
   {path: '**', redirectTo: '/survey'}
 ];
