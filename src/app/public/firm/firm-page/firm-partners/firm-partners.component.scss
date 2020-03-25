@@ -16,7 +16,9 @@
       flex-wrap: wrap;
       justify-content: space-between;
       & img {
-        width: 120px;
+        /* allow logo proportions to be respected */
+        /* width: 120px; */
+        width: auto;
         height: 35px;
       }
     }
