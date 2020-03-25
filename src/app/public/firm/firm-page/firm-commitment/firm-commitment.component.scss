@@ -10,17 +10,18 @@
 .commitment {
   display: flex;
   flex-wrap: wrap;
+  margin-left:9px;
 
   & .cta-block {
     max-width: 560px;
 
     & h1 {
-      font-size: 24px;
+      font-size: 28px;
       margin-bottom: 30px;
     }
 
     & .cta-text {
-      font-size: 16px;
+      font-size: 18px;
       margin-left: 25px;
       margin-bottom: 30px;
     }
@@ -44,7 +45,7 @@
       text-align: center !important;
       color: #fff;
       font-weight: 600;
-      font-size: 18px;
+      font-size: 22px;
       line-height: 28px;
       cursor: pointer;
       text-align: left;
