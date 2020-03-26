@@ -1,11 +1,11 @@
 <div class="result-item">
   <div class="result-header">
     <h3 class="name">{{ pmsmpItem.name }}</h3>
-    <h3 class="activity">{{ pmsmpItem.activity }}</h3>
+    <p class="activity">{{ pmsmpItem.activity }}</p>
   </div>
 
   <div class="result-body">
-    <h4 class="corp-name">
+    <p class="corp-name">
       <i class="material-icons" aria-hidden="true">near_me</i>
       <span class="bold"
         >{{ pmsmpItem.distance }} kilomètre<span *ngIf="pmsmpItem.distance >= 2"
@@ -13,8 +13,8 @@
         >
       </span>
       de votre adresse
-    </h4>
-    <h5>{{ pmsmpItem.size }} salariés</h5>
+    </p>
+    <p *ngIf="pmsmpItem.size != null" class="crew">{{ pmsmpItem.size }} salariés</p>
   </div>
 
   <div class="separator"></div>
