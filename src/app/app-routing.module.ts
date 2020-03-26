@@ -21,11 +21,11 @@ export const routes: Routes = [
     data: {title: 'ANDi - Recherche Immersion'}
   },
   {
-    path: 'firm',
+    path: 'service/employeurs',
     component: FirmPageComponent,
     data: {title: 'ANDi - Employeurs, découvrez ANDi'}
   },
-  {path: '**', redirectTo: '/'}
+  {path: '**', redirectTo: '/survey'}
 ];
 
 @NgModule({
