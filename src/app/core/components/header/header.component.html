@@ -1,13 +1,16 @@
-<div class="site-header">
-  <div class="container_logo">
-    <img alt="Logo de la Caisse des dépôts" src="assets/images/logo-cdc.svg" />
+<div class="capsule">
+  <div class="site-header">
+    <div class="container_logo">
+      <img class="logo-cdc" alt="Logo de la Caisse des dépôts" src="assets/images/logo-cdc.svg"/>
 
-    <div (click)="goToHome()" class="bloc-marque">
-      <img alt="ANDi Logo" class="andi-logo" src="assets/logo-marianne.svg" />
-      <span class="website-title" aria-hidden="true">
+      <div (click)="goToHome()" class="bloc-marque">
+        <img alt="Cliquer pour retourner à l'accueil" class="andi-logo" src="assets/logo-marianne.svg"/>
+        <span class="website-title" aria-hidden="true">
         andi<b>.beta.gouv.</b><em>fr</em></span
-      >
+        >
+      </div>
     </div>
+    <andi-some-help></andi-some-help>
   </div>
-  <andi-some-help></andi-some-help>
 </div>
+

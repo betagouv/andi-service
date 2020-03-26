@@ -1,5 +1,13 @@
+.capsule {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
 .site-header {
   width: 100%;
+  max-width: 1200px;
   min-height: 100px;
   margin-right: 0px;
   margin-left: 0px;
@@ -16,7 +24,12 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    width: 425px;
+    width: 300px;
+
+    & .logo-cdc {
+      width: 50px;
+      height: 50px;
+    }
 
     & .bloc-marque {
       // display: flex;
@@ -24,11 +37,14 @@
       flex-wrap: wrap;
 
       & .andi-logo {
-        margin-right: 35px;
+        width: 86px;
+        height: 50px;
+        margin-right: 10px;
       }
 
       & .website-title {
-        font-size: 28px;
+        font-size: 16px;
+        letter-spacing: 0.01em;
         font-family: Evolventa, "Helvetica Neue", sans-serif;
       }
     }
