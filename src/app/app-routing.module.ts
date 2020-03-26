@@ -21,7 +21,7 @@ export const routes: Routes = [
     data: {title: 'ANDi - Recherche Immersion'}
   },
   {
-    path: 'service/employeurs',
+    path: 'employeurs',
     component: FirmPageComponent,
     data: {title: 'ANDi - Employeurs, découvrez ANDi'}
   },
