@@ -7,59 +7,60 @@
 
     <!-- CHAMP METIER -->
     <div>
-        <label for="job">Je cherche une immersion en tant que :</label>
-        <input
-          id="job"
-          class="criterion-field form-control form-control-lg"
-          placeholder="Exemples: vente, poissonnier, magasinier"
-          [matAutocomplete]="jobAuto"
-          [formControl]="jobCtrl"
-        />
-        <mat-autocomplete #jobAuto="matAutocomplete">
-          <ng-container >
-            <mat-option
-              *ngFor="let jobSuggest of jobSuggestions"
-              [value]="jobSuggest.value"
-            >
-              <span>{{ jobSuggest.value }}</span>
-            </mat-option>
-          </ng-container>
-        </mat-autocomplete>
+      <label for="job">Je cherche une immersion en tant que :</label>
+      <input
+        id="job"
+        class="criterion-field form-control form-control-lg"
+        placeholder="Exemples: vente, poissonnier, magasinier"
+        [matAutocomplete]="jobAuto"
+        [formControl]="jobCtrl"
+      />
+      <mat-autocomplete #jobAuto="matAutocomplete">
+        <ng-container>
+          <mat-option
+            *ngFor="let jobSuggest of jobSuggestions"
+            [value]="jobSuggest.value"
+          >
+            <span>{{ jobSuggest.value }}</span>
+          </mat-option>
+        </ng-container>
+      </mat-autocomplete>
 
     </div>
 
-    
+
     <!-- CHAMP ADRESSE -->
     <div>
-        <label for="adress">Proche de chez moi (adresse postale) :</label>
-        <input
-          id="adress"
-          class="criterion-field form-control form-control-lg"
-          placeholder="Exemple : 17 Avenue Pierre Mendès-France, 75013 Paris"
-          [matAutocomplete]="adrAuto"
-          [formControl]="addressCtrl"
-        />
-        <mat-autocomplete #adrAuto="matAutocomplete">
-          <ng-container>
-            <mat-option
-              *ngFor="let adrSuggest of adrSuggestions"
-              [value]="adrSuggest.properties.label"
-            >
-              <span>{{ adrSuggest.properties.label }}</span>
-            </mat-option>
-          </ng-container>
-        </mat-autocomplete>
+      <label for="adress">Proche de chez moi (adresse postale) :</label>
+      <input
+        id="adress"
+        class="criterion-field form-control form-control-lg"
+        placeholder="Exemple : 17 Avenue Pierre Mendès-France, 75013 Paris"
+        [matAutocomplete]="adrAuto"
+        [formControl]="addressCtrl"
+      />
+      <mat-autocomplete #adrAuto="matAutocomplete">
+        <ng-container>
+          <mat-option
+            *ngFor="let adrSuggest of adrSuggestions"
+            [value]="adrSuggest.properties.label"
+          >
+            <span>{{ adrSuggest.properties.label }}</span>
+          </mat-option>
+        </ng-container>
+      </mat-autocomplete>
 
       <ng-container *ngIf="errorMsg; else elseTemplate">
         {{ errorMsg }}
       </ng-container>
-      <ng-template #elseTemplate> </ng-template>
+      <ng-template #elseTemplate></ng-template>
     </div>
 
     <!-- CHAMP DISTANCE -->
     <label for="range">À une distance maximale de mon domicile de (distance en kilomètre) :</label>
     <input
       type="text"
+      autocomplete="off"
       class="criterion-field form-control form-control-lg"
       placeholder="Exemple : 3"
       id="range"
