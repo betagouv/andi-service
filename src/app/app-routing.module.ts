@@ -25,7 +25,7 @@ export const routes: Routes = [
     component: FirmPageComponent,
     data: {title: 'ANDi - Employeurs, découvrez ANDi'}
   },
-  {path: '**', redirectTo: '/survey'}
+  {path: '**', redirectTo: '/'}
 ];
 
 @NgModule({
