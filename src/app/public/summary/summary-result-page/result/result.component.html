@@ -12,19 +12,19 @@
   </p>
 </div>
 
-<h2 *ngIf="!hasErrorResult && pmsmpDatas.length > 0" class="result-title">
+<h1 *ngIf="!hasErrorResult && pmsmpDatas.length > 0" class="result-title">
   Résultats de votre recherche
-</h2>
+</h1>
 
 <div class="result-comp">
   <div
     *ngIf="!hasErrorResult && pmsmpDatas.length > 0"
     class="result-item-wrapper"
   >
-    <h3 class="result-subtitle">
+    <h2 class="result-subtitle">
       <i class="material-icons" aria-hidden="true">business_center</i>Les entreprises proches de
       chez vous
-    </h3>
+    </h2>
     <andi-result-item
       role="listitem"
       *ngFor="let pmsmp of pmsmpDatas | slice: 0:3; index as i"

@@ -23,6 +23,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 8px;
 
     & .name {
       font-style: normal;
@@ -30,6 +31,7 @@
       font-size: 18px;
       line-height: 28px;
       letter-spacing: 0.01em;
+      margin-bottom: 0;
     }
     & .activity {
       font-style: normal;
@@ -37,9 +39,12 @@
       font-size: 16px;
       line-height: 28px;
       letter-spacing: 0.01em;
+      margin-bottom: 0;
     }
   }
   & .result-body {
+    margin-bottom: 8px;
+
     & i {
       font-size: 20px;
     }
@@ -50,7 +55,14 @@
     justify-content: space-between;
 
     & .corp-name {
+      font-size: 20px;
       margin-right: 30px;
+      margin-bottom: 0;
+    }
+
+    & .crew {
+      font-size: 16px;
+      margin-bottom: 0;
     }
   }
   & .result-footer {
