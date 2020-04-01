@@ -14,10 +14,11 @@
     & .logos {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      // TODO à remettre quand logos validés
+      //justify-content: space-between;
       & img {
-        /* allow logo proportions to be respected */
-        /* width: 120px; */
+        // TODO à supprimer quand logos validés
+        margin-right: 50px;
         width: auto;
         height: 35px;
       }
