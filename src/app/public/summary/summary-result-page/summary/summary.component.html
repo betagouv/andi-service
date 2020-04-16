@@ -7,7 +7,7 @@
 
     <!-- CHAMP METIER -->
     <div>
-      <label for="job">Je cherche une immersion en tant que :</label>
+      <label for="job">Quel est le métier que vous voulez essayer en immersion ?</label>
       <input
         id="job"
         class="criterion-field form-control form-control-lg"
@@ -31,11 +31,11 @@
 
     <!-- CHAMP ADRESSE -->
     <div>
-      <label for="adress">Proche de chez moi (adresse postale) :</label>
+      <label for="adress">Près de quel endroit recherchez-vous une immersion ?</label>
       <input
         id="adress"
         class="criterion-field form-control form-control-lg"
-        placeholder="Exemple : 17 Avenue Pierre Mendès-France, 75013 Paris"
+        placeholder="Exemples : Varzy ou 17 Avenue Pierre Mendès-France, 75013 Paris"
         [matAutocomplete]="adrAuto"
         [formControl]="addressCtrl"
       />
@@ -57,7 +57,7 @@
     </div>
 
     <!-- CHAMP DISTANCE -->
-    <label>À une distance kilométrique de chez vous (km) :</label>
+    <label>Jusqu'à quelle distance maximale rechercher ?</label>
 
     <div class="radio-group">
       <div class="radio-option">
