@@ -15,16 +15,22 @@ button {
   height: 38px;
 }
 
-.radio-option {
+.radio-group {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
 
-  & .radio {
-    margin-bottom: 0;
-    margin-right: 10px;
-  }
-  & .radio-label {
-    margin-bottom: 0;
+  & .radio-option {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+
+    & .radio {
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+    & .radio-label {
+      margin-bottom: 0;
+    }
   }
 }
 
