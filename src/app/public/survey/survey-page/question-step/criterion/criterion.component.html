@@ -5,7 +5,7 @@
     <div *ngIf="proposal.id != 'range'">
       <label *ngIf="proposal.label != undefined" for="adress">{{
         proposal.label
-      }}</label>
+        }}</label>
       <input
         id="adress"
         placeholder="{{ proposal.placeholder }}"
@@ -26,12 +26,12 @@
       <ng-container *ngIf="errorMsg; else elseTemplate">
         {{ errorMsg }}
       </ng-container>
-      <ng-template #elseTemplate> </ng-template>
+      <ng-template #elseTemplate></ng-template>
     </div>
 
     <label *ngIf="proposal.id == 'range'" for="{{ proposal.id }}">{{
       proposal.label
-    }}</label>
+      }}</label>
     <input
       *ngIf="proposal.id == 'range'"
       type="text"

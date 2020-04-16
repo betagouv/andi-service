@@ -57,18 +57,26 @@
     </div>
 
     <!-- CHAMP DISTANCE -->
-    <label for="range">À une distance maximale de mon domicile de (distance en kilomètre) :</label>
-    <input
-      type="text"
-      autocomplete="off"
-      class="criterion-field form-control form-control-lg"
-      placeholder="Exemple : 3"
-      id="range"
-      name="range"
-      [(ngModel)]="currentStateForm.range"
-    />
+    <label>À une distance kilométrique de chez vous (km) :</label>
+    <div class="radio-option">
+      <input class="radio" type="radio" id="five" name="range" value="5" [(ngModel)]="currentStateForm.range"
+             checked>
+      <label class="radio-label" for="five">5 km</label>
+    </div>
+
+    <div class="radio-option">
+      <input class="radio" type="radio" id="ten" name="range" value="10" [(ngModel)]="currentStateForm.range">
+      <label class="radio-label" for="ten">10 km</label>
+    </div>
+
+    <div class="radio-option">
+      <input class="radio" type="radio" id="thirty" name="range" value="50" [(ngModel)]="currentStateForm.range">
+      <label class="radio-label" for="thirty">30 km et plus</label>
+    </div>
+
     <button type="submit" class="bouton" aria-controls="andi-result">
       Rechercher
     </button>
   </form>
 </div>
+

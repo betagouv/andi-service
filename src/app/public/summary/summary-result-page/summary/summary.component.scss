@@ -15,6 +15,21 @@ button {
   height: 38px;
 }
 
+.radio-option {
+  display: flex;
+  align-items: center;
+
+  & .radio {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+  & .radio-label {
+    margin-bottom: 0;
+
+  }
+
+}
+
 .bouton {
   width: 170px;
   min-height: 40px;
