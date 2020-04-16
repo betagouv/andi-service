@@ -30,6 +30,20 @@ button {
   font-weight: bold;
 }
 
+.radio-option {
+  display: flex;
+  align-items: center;
+
+  & .radio {
+    width: inherit;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+  & .radio-label {
+    margin-bottom: 0;
+  }
+}
+
 .bouton {
   width: 170px;
   min-height: 40px;
@@ -54,7 +68,7 @@ button {
     }
 }
 
-input, #range, #adress, #job {
+input, #adress, #job {
   width: 100%;
   border: 1px solid #8393a7;
   box-sizing: border-box;

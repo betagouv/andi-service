@@ -29,19 +29,28 @@
       <ng-template #elseTemplate></ng-template>
     </div>
 
-    <label *ngIf="proposal.id == 'range'" for="{{ proposal.id }}">{{
-      proposal.label
-      }}</label>
-    <input
-      *ngIf="proposal.id == 'range'"
-      type="text"
-      class=""
-      id="{{ proposal.id }}"
-      placeholder="{{ proposal.placeholder }}"
-      name="{{ proposal.id }}"
-      required
-      [(ngModel)]="inputState"
-    />
+    <div *ngIf="proposal.id == 'range'">
+      <div class="radio-option">
+        <input class="radio" type="radio" id="five" name="{{ proposal.id }}" value="5"
+               [(ngModel)]="currentStateForm.range"
+               checked>
+        <label class="radio-label" for="five">5 km</label>
+      </div>
+
+      <div class="radio-option">
+        <input class="radio" type="radio" id="ten" name="{{ proposal.id }}" value="10"
+               [(ngModel)]="currentStateForm.range">
+        <label class="radio-label" for="ten">10 km</label>
+      </div>
+
+      <div class="radio-option">
+        <input class="radio" type="radio" id="thirty" name="{{ proposal.id }}" value="50"
+               [(ngModel)]="currentStateForm.range">
+        <label class="radio-label" for="thirty">30 km et plus</label>
+      </div>
+    </div>
+
+
     <button type="submit" class="bouton" *ngIf="proposal.aim != ''">
       Valider
     </button>
