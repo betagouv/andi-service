@@ -268,7 +268,7 @@ const F_FORMATION = new QuestionStep(
 /* CRITERES DE RECHERCHE */
 
 const C1 = new QuestionStep(
-  'Je cherche une immersion en tant que\u00A0:',
+  'Quel est le métier que vous voulez essayer en immersion ?\u00A0:',
   '',
   QuestionType.CRITERIA,
   [
@@ -284,7 +284,7 @@ const C1 = new QuestionStep(
 );
 
 const C2 = new QuestionStep(
-  'Proche de chez moi\u00A0:',
+  'Près de quel endroit recherchez-vous une immersion ?\u00A0:',
   'Nos recherches vont porter sur la proximité d\'une immersion avec cette adresse',
   QuestionType.CRITERIA,
   [
@@ -300,7 +300,7 @@ const C2 = new QuestionStep(
 );
 
 const C3 = new QuestionStep(
-  'À une distance maximale de mon domicile de\u00A0:',
+  'Jusqu’à quelle distance maximale rechercher ?\u00A0:',
   'Distance en kilomètre(s)',
   QuestionType.CRITERIA,
   [new ResponseProposal('', 'Exemple : 3', 'range', '')],
