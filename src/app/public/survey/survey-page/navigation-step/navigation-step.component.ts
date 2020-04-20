@@ -23,11 +23,11 @@ export class NavigationStepComponent implements OnInit {
     this.surveyStepperApiService.stepperCursor.subscribe((index) => {
       this.indexCursor = index;
     });
-
     this.route.paramMap.subscribe((params: ParamMap) => {
       const stepId = params.get('stepId');
-      this.enablePrev = stepId === 'Q1' ? false : true;
+      this.enablePrev = stepId !== 'Q1';
     });
+
   }
 
   previousQuestion() {

@@ -46,7 +46,7 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
 
   resetStates() {
     this.surveyStepperSharedService.stateForm = {};
-    this.surveyStepperSharedService.pathHistory = [];
+    this.surveyStepperSharedService.pathHistory = ['Q1'];
     this.surveyStepperSharedService.stateStepper = [];
   }
 
@@ -59,6 +59,7 @@ export class SurveyPageComponent implements OnInit, OnDestroy {
 
           this.route.paramMap.subscribe((params: ParamMap) => {
             const stepId = params.get('stepId');
+
             if (stepId == null) {
               this.surveyStepperSharedService.goToNextStep('Q1');
             }

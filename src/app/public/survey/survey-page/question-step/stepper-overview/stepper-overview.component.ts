@@ -26,6 +26,7 @@ export class StepperOverviewComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    console.log('INIT !!!')
     this.loadDiagnosticDatas();
     this.trackingService.track('pasapas', StepContext.BILAN, {
       job_search: this.isJobSearch,

@@ -22,6 +22,7 @@ export class SurveyStepperSharedService {
     this.stateStepper.splice(-1, 1);
     this.pathHistory.splice(-1, 1);
     const lastStepId = this.pathHistory[this.pathHistory.length - 1];
+    console.log('CLICK > ',this.pathHistory)
     this.route.navigate(['/survey', lastStepId]);
   }
 }

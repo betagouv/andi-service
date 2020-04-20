@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { MatomoTracker, MatomoInjector } from 'ngx-matomo';
 import * as globals from './globals';
+import {SurveyStepperSharedService} from "./core/services/survey-stepper.shared.service";
 
 @Component({
   selector: 'andi-root',
@@ -13,8 +14,14 @@ import * as globals from './globals';
 export class AppComponent implements OnInit {
   title = 'andi-service';
 
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event) {
+    this.surveyStepperSharedService.pathHistory[this.surveyStepperSharedService.pathHistory.length - 1];
+  }
+
   constructor(
     private router: Router,
+    private surveyStepperSharedService: SurveyStepperSharedService,
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
     private meta: Meta,
