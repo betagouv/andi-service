@@ -37,6 +37,7 @@
         ></andi-criterion>
       </div>
     </div>
+    <andi-navigation-step *ngIf="questionStep != undefined && questionStep.type != 'disclaimer'"></andi-navigation-step>
   </div>
 </nav>
 <andi-stepper-overview

@@ -39,7 +39,6 @@ export class CriterionComponent implements OnInit, OnDestroy {
   }
 
   private loadInputState() {
-    console.log('STATE STEPPER >>>> ', this.surveyStepperSharedService.stateStepper)
     this.currentStateForm = this.surveyStepperSharedService.stateForm;
     this.formCtrl.setValue(this.surveyStepperSharedService.stateForm[this.proposal.id]);
   }
