@@ -5,7 +5,6 @@ import { MatomoTracker } from 'ngx-matomo';
 import { TrackingRequest, StepContext } from 'src/models/tracking-request.model';
 import { isDevMode } from '@angular/core';
 import { NgxHotjarService } from 'ngx-hotjar';
-import { StepContext } from 'src/models/tracking-request.model';
 import * as moment from 'moment';
 
 import * as globals from '../../globals';
@@ -35,7 +34,7 @@ export class TrackingService {
       console.log(page, action, smeta);
     }
 
-    if (action == StepContext.arrival || action == StepContext.QUESTION_ARRIVAL)
+    if (action == StepContext.ARRIVAL || action == StepContext.QUESTION_ARRIVAL)
         {
         this.hotjar.virtualPageView(page)
         }
