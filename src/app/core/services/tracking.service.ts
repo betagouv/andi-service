@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { MatomoTracker } from 'ngx-matomo';
 import { TrackingRequest, StepContext } from 'src/models/tracking-request.model';
 import { isDevMode } from '@angular/core';
+import { NgxHotjarService } from 'ngx-hotjar';
+import { StepContext } from 'src/models/tracking-request.model';
 import * as moment from 'moment';
 
 import * as globals from '../../globals';
@@ -16,7 +18,8 @@ export class TrackingService {
 
   constructor(
     private http: HttpClient,
-    private matomoTracker: MatomoTracker
+    private matomoTracker: MatomoTracker,
+    private hotjar: NgxHotjarService,
     ) {}
 
   track(page: string, action: StepContext, meta: any= {}) {
@@ -31,6 +34,11 @@ export class TrackingService {
     if (isDevMode()) {
       console.log(page, action, smeta);
     }
+
+    if (action == StepContext.arrival || action == StepContext.QUESTION_ARRIVAL)
+        {
+        this.hotjar.virtualPageView(page)
+        }
 
     this.http.post(
       'https://andi.beta.gouv.fr/api/track',
