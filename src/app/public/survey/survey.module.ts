@@ -21,6 +21,7 @@ import { StepperOverviewComponent } from './survey-page/question-step/stepper-ov
 import { SurveyPageComponent } from './survey-page/survey-page.component';
 import { SickInfoComponent } from './survey-page/question-step/stepper-overview/sick-info/sick-info.component';
 import { RqthInfoComponent } from './survey-page/question-step/stepper-overview/rqth-info/rqth-info.component';
+import { UnfollowedComponent } from './survey-page/question-step/stepper-overview/unfollowed/unfollowed.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RqthInfoComponent } from './survey-page/question-step/stepper-overview/
     JobPublicComponent,
     FormationComponent,
     SickInfoComponent,
-    RqthInfoComponent
+    RqthInfoComponent,
+    UnfollowedComponent
   ],
   imports: [
     CommonModule,

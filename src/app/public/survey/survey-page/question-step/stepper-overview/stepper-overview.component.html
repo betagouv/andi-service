@@ -35,6 +35,12 @@
     [isRqth]="isRqth"
   ></andi-formation>
 
+  <andi-unfollowed
+    *ngIf="isUnfollowed"
+    [isSick]="isSick"
+    [isRqth]="isRqth"
+  ></andi-unfollowed>
+
   <a href="javascript:void(0)"
      (click)="nextQuestion()"
      class="proposal-btn btn"

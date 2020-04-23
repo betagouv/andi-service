@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { SurveyStepperSharedService } from 'src/app/core/services/survey-stepper.shared.service';
-import { TrackingService } from 'src/app/core/services/tracking.service';
-import { StepContext } from 'src/models/tracking-request.model';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {SurveyStepperSharedService} from 'src/app/core/services/survey-stepper.shared.service';
+import {TrackingService} from 'src/app/core/services/tracking.service';
+import {StepContext} from 'src/models/tracking-request.model';
 
 @Component({
   selector: 'andi-stepper-overview',
@@ -16,14 +16,14 @@ export class StepperOverviewComponent implements OnInit {
   isJobEsat = false;
   isJobIae = false;
   isFormation = false;
+  isUnfollowed = false;
   isSick = false;
   isRqth = false;
 
-  constructor(
-    private surveyStepperSharedService: SurveyStepperSharedService,
-    private router: Router,
-    private trackingService: TrackingService
-  ) {}
+  constructor(private surveyStepperSharedService: SurveyStepperSharedService,
+              private router: Router,
+              private trackingService: TrackingService) {
+  }
 
   ngOnInit() {
     this.loadDiagnosticDatas();
@@ -40,9 +40,11 @@ export class StepperOverviewComponent implements OnInit {
   }
 
   private loadDiagnosticDatas() {
-    this.isJobSearch = this.surveyStepperSharedService.stateStepper.includes(
-      'job_search'
-    );
+    this.isJobSearch = (this.surveyStepperSharedService.stateStepper.includes(
+        'job_search'
+      )) && !(this.surveyStepperSharedService.stateStepper.includes(
+        'unfollowed'
+      ));
     this.isJobPrivate = this.surveyStepperSharedService.stateStepper.includes(
       'prive'
     );
@@ -57,6 +59,9 @@ export class StepperOverviewComponent implements OnInit {
     );
     this.isFormation = this.surveyStepperSharedService.stateStepper.includes(
       'formation'
+    );
+    this.isUnfollowed = this.surveyStepperSharedService.stateStepper.includes(
+      'unfollowed'
     );
     this.isSick = this.surveyStepperSharedService.stateStepper.includes('sick');
     this.isRqth =

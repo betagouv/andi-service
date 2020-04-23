@@ -31,7 +31,7 @@ const Q2A = new QuestionStep(
       'other',
       'Q3A'
     ),
-    new ResponseProposal('Je ne suis pas accompagné', '', 'not_helped', 'Q3A')
+    new ResponseProposal('Je ne suis pas accompagné', '', 'unfollowed', 'F_UNFOLLOWED')
   ],
   '',
   'accompagnement_structure'
@@ -265,6 +265,15 @@ const F_FORMATION = new QuestionStep(
   'en_formation'
 );
 
+const F_UNFOLLOWED = new QuestionStep(
+  'Vous êtes actuellement en formation',
+  'Texte spécifique en formation',
+  QuestionType.DISCLAIMER,
+  [new ResponseProposal('', '', '', 'C1')],
+  '',
+  'formation_non_accompagne'
+);
+
 /* CRITERES DE RECHERCHE */
 
 const C1 = new QuestionStep(
@@ -327,6 +336,7 @@ stepItems['F_JOB_PUBLIC'] = F_JOB_PUBLIC;
 stepItems['F_JOB_ESAT'] = F_JOB_ESAT;
 stepItems['F_JOB_IAE'] = F_JOB_IAE;
 stepItems['F_FORMATION'] = F_FORMATION;
+stepItems['F_UNFOLLOWED'] = F_UNFOLLOWED;
 stepItems['C1'] = C1;
 stepItems['C2'] = C2;
 stepItems['C3'] = C3;
