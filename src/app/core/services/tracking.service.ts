@@ -41,7 +41,7 @@ export class TrackingService {
 
     // Test hotjar tracking, log potential errors to console
     // FIXME: Remove logging to console once functionality has been tested
-    try { this.hotjar_actions(page, action); } catch (err) { console.log(error); }
+    try { this.hotjar_actions(page, action); } catch (error) { console.log(error); }
   }
 
   private computeRequestBody(page: string, action: StepContext, meta: any) {
