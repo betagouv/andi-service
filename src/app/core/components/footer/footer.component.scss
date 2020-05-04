@@ -33,15 +33,10 @@
         text-decoration-line: none;
         color: #FFFFFF;
         margin-right: 30px;
-
       }
 
       & .logos img {
         height: 31px;
-
-        &.twitter {
-          fill: #FFFFFF;
-        }
       }
     }
   }
@@ -54,8 +49,23 @@
     justify-content: center;
 
     & .legal {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
       min-height: 50px;
       width: 100%;
+
+      max-width: 1200px;
+
+      & a {
+        cursor: pointer;
+        font-weight: normal;
+        font-size: 14px;
+        text-decoration-line: none;
+        color: #FFFFFF;
+        margin-right: 20px;
+      }
     }
   }
 }
