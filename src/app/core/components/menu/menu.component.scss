@@ -1,0 +1,31 @@
+.capsule {
+  width: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+
+  & .menus {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #F2F2F2;
+  }
+}
+
+button {
+  background-color: #FFFFFF;
+  border: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 16px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.selected {
+  background-color: #F2F2F2;
+}
