@@ -3,12 +3,18 @@ import {RouterModule, Routes} from '@angular/router';
 import {SummaryResultPageComponent} from './public/summary/summary-result-page/summary-result-page.component';
 import {SurveyPageComponent} from './public/survey/survey-page/survey-page.component';
 import {FirmPageComponent} from './public/firm/firm-page/firm-page.component';
+import {HomePageComponent} from './public/home/home-page/home-page.component';
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: '/survey',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomePageComponent,
+    data: {title: 'ANDi - Accueil'}
   },
   {
     path: 'survey/:stepId',
