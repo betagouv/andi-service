@@ -19,7 +19,8 @@ export class MenuComponent implements OnInit {
 
   goToHome() {
     this.trackingService.track('header', StepContext.LINKTO, {link: 'home'});
-    window.open('https://andi.beta.gouv.fr', '_self');
+    //window.open('https://andi.beta.gouv.fr', '_self');
+    this.router.navigateByUrl('/home');
   }
 
   goToSearch() {
