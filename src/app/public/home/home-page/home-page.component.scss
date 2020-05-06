@@ -174,10 +174,37 @@
   justify-content: center;
   background-color: #FFFFFF;
 
+
   & .partners {
     width: 100%;
     max-width: 1200px;
+    margin-bottom: 50px;
 
+    & .title-partners {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    & .logos {
+      display: flex;
+      flex-wrap: wrap;
+      & img {
+        margin-right: 50px;
+        width: auto;
+        height: 60px;
+
+        &.cap-emploi {
+          margin-left: 30px;
+          margin-right: 100px;
+        }
+        &.pole-emploi {
+          margin-right: 100px;
+        }
+        &.agefiph {
+          margin-right: 80px;
+        }
+      }
+    }
   }
 
 }
