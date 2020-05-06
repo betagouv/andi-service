@@ -8,8 +8,8 @@ import {HomePageComponent} from './public/home/home-page/home-page.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
+    component: HomePageComponent,
+    data: {title: 'ANDi - Accueil'}
   },
   {
     path: 'home',
