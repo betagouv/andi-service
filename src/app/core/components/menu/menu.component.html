@@ -1,8 +1,8 @@
 <div class="capsule">
   <div class="menus">
     <nav class="menu">
-      <button (click)="goToHome()" class="selected">Accueil</button>
-      <button (click)="goToSearch()">Chercher une immersion</button>
+      <button (click)="goToHome()"  [ngClass]="{'selected':isSelected('home')}">Accueil</button>
+      <button (click)="goToSearch()" [ngClass]="{'selected':isSelected('summary')}">Chercher une immersion</button>
       <button hidden>Documents essentiels</button>
       <button hidden>Qui sommes-nous</button>
     </nav>

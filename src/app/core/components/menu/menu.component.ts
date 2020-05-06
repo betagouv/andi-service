@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TrackingService} from '../../services/tracking.service';
 import {StepContext} from '../../../../models/tracking-request.model';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'andi-menu',
@@ -10,10 +10,15 @@ import {Router} from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
+
   constructor(private trackingService: TrackingService, private router: Router) {
   }
 
   ngOnInit() {
+  }
+
+  isSelected(url: string): boolean {
+    return window.location.href.includes(url);
   }
 
   goToHome() {

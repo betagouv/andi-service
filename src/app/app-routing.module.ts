@@ -8,13 +8,18 @@ import {HomePageComponent} from './public/home/home-page/home-page.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/survey',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
     path: 'home',
     component: HomePageComponent,
     data: {title: 'ANDi - Accueil'}
+  },
+  {
+    path: 'survey',
+    component: SurveyPageComponent,
+    data: {title: 'ANDi - Questionnaire'}
   },
   {
     path: 'survey/:stepId',
@@ -31,7 +36,7 @@ export const routes: Routes = [
     component: FirmPageComponent,
     data: {title: 'ANDi - Employeurs, découvrez ANDi'}
   },
-  {path: '**', redirectTo: '/survey'}
+  {path: '**', redirectTo: '/home'}
 ];
 
 @NgModule({
