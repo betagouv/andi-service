@@ -31,9 +31,10 @@
 
       & button {
         font-size: 18px;
-        width: 240px;
-        height: 50px;
+        min-width: 240px;
+        min-height: 50px;
         color: #FFFFFF;
+        font-weight: bold;
         background-color: #006BE6;
         transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 
@@ -52,7 +53,7 @@
   }
 }
 
-.capsule {
+.capsule-faq {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -61,6 +62,7 @@
   & .faq {
     width: 100%;
     max-width: 1200px;
+    margin-bottom: 50px;
 
     & .title {
       font-family: 'Public Sans', sans-serif;
@@ -109,6 +111,7 @@
           cursor: pointer;
           margin-bottom: 0;
           padding: 10px;
+          padding-left: 0;
           border-bottom: 1px solid #000000;
           /* Icon */
           &:hover {
@@ -138,7 +141,40 @@
 
 
 
+.capsule-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
 
+  & .links {
+    width: 100%;
+    max-width: 1200px;
+
+    & .title {
+      font-family: 'Public Sans', sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 35px;
+    }
+
+  }
+
+}
+
+.capsule-partners {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+
+  & .partners {
+    width: 100%;
+    max-width: 1200px;
+
+  }
+
+}
 
 
 
