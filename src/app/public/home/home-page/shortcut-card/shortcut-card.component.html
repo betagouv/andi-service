@@ -1,1 +1,9 @@
-<p>shortcut-card works!</p>
+<div *ngIf="image && label" class="comp">
+  <img
+    class="icon"
+    src="assets/icons/homepage/{{image}}.svg"
+    alt=""
+    aria-hidden="true"
+  />
+  <p>{{label}}</p>
+</div>

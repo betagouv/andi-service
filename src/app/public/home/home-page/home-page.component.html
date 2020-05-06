@@ -64,9 +64,17 @@
 <div class="capsule-links">
   <div class="links">
     <h1 class="title">Démarrez votre projet d’immersion avec ANDi</h1>
-
-
-    <andi-shortcut-card></andi-shortcut-card>
+    <div class="links-container">
+      <andi-shortcut-card (click)="goToStepper()"
+                          [image]="'coche'"
+                          [label]="'Vérifiez si vous pouvez faire un immersion et voir les démarches'"></andi-shortcut-card>
+      <andi-shortcut-card (click)="goToSearch()"
+                          [image]="'loupe'"
+                          [label]="'Accédez aux coordonnées des entreprises près de chez vous'"></andi-shortcut-card>
+      <andi-shortcut-card hidden
+                          [image]="'message'"
+                          [label]="'Accédez a des ressouces pour vous guidez dans vos démarches administrative'"></andi-shortcut-card>
+    </div>
   </div>
 </div>
 

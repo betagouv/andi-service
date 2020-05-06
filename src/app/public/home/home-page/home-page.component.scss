@@ -139,8 +139,6 @@
   }
 }
 
-
-
 .capsule-links {
   width: 100%;
   display: flex;
@@ -150,6 +148,7 @@
   & .links {
     width: 100%;
     max-width: 1200px;
+    margin-bottom: 50px;
 
     & .title {
       font-family: 'Public Sans', sans-serif;
@@ -158,8 +157,15 @@
       margin-bottom: 35px;
     }
 
-  }
+    & .links-container {
+      display: flex;
+      flex-wrap: wrap;
 
+      & andi-shortcut-card {
+        margin-right: 55px;
+      }
+    }
+  }
 }
 
 .capsule-partners {
