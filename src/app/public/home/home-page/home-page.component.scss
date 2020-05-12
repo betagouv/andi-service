@@ -102,6 +102,8 @@
         }
 
         & .tab-label {
+          border: none;
+          width: 100%;
           font-family: Raleway, sans-serif;
           display: flex;
           justify-content: space-between;
@@ -174,7 +176,6 @@
   justify-content: center;
   background-color: #FFFFFF;
 
-
   & .partners {
     width: 100%;
     max-width: 1200px;
@@ -206,8 +207,11 @@
       }
     }
   }
-
 }
 
-
-
+@media screen and (max-width: 1200px) {
+  .capsule-cta, .capsule-faq, .capsule-links, .capsule-partners {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
