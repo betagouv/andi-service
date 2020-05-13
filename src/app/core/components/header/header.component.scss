@@ -69,3 +69,21 @@ span {
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .site-header {
+    display: flex;
+    justify-content: center;
+
+    & .container_logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+
+    & andi-some-help {
+      margin-bottom: 15px;
+    }
+  }
+}

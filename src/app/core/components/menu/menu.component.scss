@@ -29,3 +29,23 @@ button {
 .selected {
   background-color: #F2F2F2;
 }
+
+@media screen and (max-width: 375px) {
+  .capsule {
+    & .menus {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+
+      & .menu {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+
+        & button {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
