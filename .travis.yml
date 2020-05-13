@@ -33,8 +33,7 @@ jobs:
         --build-arg BASE_HREF=$BASE_HREF
         -t andi_service ./'
     - docker images
-    - docker tag andi_service $DOCKER_USER/service:$TRAVIS_COMMIT
-    - docker tag andi_service $DOCKER_USER/service:latest
+    - docker tag andi_service $DOCKER_USER/service $DOCKER_USER/service:$TRAVIS_COMMIT 
     - docker push $DOCKER_USER/service:$TRAVIS_COMMIT
   - stage: deploy
     name: Deploy docker service
