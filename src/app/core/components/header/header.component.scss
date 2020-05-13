@@ -4,16 +4,15 @@
   justify-content: center;
   background-color: #ffffff;
   min-height: 100px;
-  margin-bottom: 70px;
+  //margin-bottom: 70px;
 }
 
 .site-header {
   width: 100%;
   max-width: 1200px;
-  margin-right: 0px;
-  margin-left: 0px;
-  padding-left: 30px;
-  padding-right: 30px;
+  margin-right: 0;
+  margin-left: 0;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -67,6 +66,24 @@ span {
 
     & .bloc-marque {
       margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .site-header {
+    display: flex;
+    justify-content: center;
+
+    & .container_logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+
+    & andi-some-help {
+      margin-bottom: 15px;
     }
   }
 }

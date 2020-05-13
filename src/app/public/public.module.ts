@@ -1,13 +1,13 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { PublicRoutingModule } from './public-routing.module';
-import { SummaryModule } from './summary/summary.module';
-import { SurveyModule } from './survey/survey.module';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { SomeHelpComponent } from '../core/components/some-help/some-help.component';
-import { FirmModule } from './firm/firm.module';
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {PublicRoutingModule} from './public-routing.module';
+import {SummaryModule} from './summary/summary.module';
+import {SurveyModule} from './survey/survey.module';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {FirmModule} from './firm/firm.module';
+import {HomeModule} from './home/home.module';
 
 @NgModule({
   declarations: [],
@@ -16,6 +16,7 @@ import { FirmModule } from './firm/firm.module';
     PublicRoutingModule,
     SurveyModule,
     SummaryModule,
+    HomeModule,
     ReactiveFormsModule,
     MatInputModule,
     MatAutocompleteModule,
@@ -23,4 +24,5 @@ import { FirmModule } from './firm/firm.module';
   ],
   exports: []
 })
-export class PublicModule {}
+export class PublicModule {
+}

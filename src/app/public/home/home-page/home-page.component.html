@@ -1,0 +1,128 @@
+<div class="capsule-cta">
+
+  <!-- CLICK TO CALL -->
+  <div class="cta-block">
+    <div class="content">
+      <h1 class="title">Essayez un métier simplement</h1>
+      <p>Vous êtes en situation de handicap et vous avez un projet professionnel ? Faites une immersion
+        professionnelle pour vérifier que ce métier vous correspond.</p>
+      <button (click)="goToStepper()">Commencer</button>
+    </div>
+    <div class="illustration">
+      <img hidden alt="" aria-hidden="true" src="assets/images/img-observer.svg"/>
+    </div>
+  </div>
+</div>
+
+
+<!-- SHORT FAQ -->
+<div class="capsule-faq">
+  <div class="faq">
+    <h1 class="title">L'immersion professionnelle</h1>
+    <div class="tabs">
+      <div class="tab">
+        <input class="tab-input" type="checkbox" id="tab1">
+        <label class="tab-label" for="tab1">Pourquoi faire une immersion professionnelle ?</label>
+        <div class="tab-content">
+          Une immersion professionnelle, notamment une Période de mise en situation en milieu professionnel (PMSMP)
+          permet de vérifier qu’un métier vous plaît et qu’il est compatible avec votre situation de handicap. C’est
+          aussi un moyen de prendre ou reprendre contact avec la vie active ou de préparer une formation.
+        </div>
+      </div>
+
+      <div class="tab">
+        <input class="tab-input" type="checkbox" id="tab2">
+        <label class="tab-label" for="tab2">Combien de temps dure une immersion ?</label>
+        <div class="tab-content">
+          Entre une journée et 30 jours. La moyenne est de 15 jours. Cela dépend du métier que vous voulez essayer et de
+          la disponibilité de l’employeur. Cela est à définir avec l’employeur chez qui vous faites une immersion.
+        </div>
+      </div>
+
+      <div class="tab">
+        <input class="tab-input" type="checkbox" id="tab3">
+        <label class="tab-label" for="tab3">Est-on rémunéré durant cette période ?</label>
+        <div class="tab-content">
+          Non, l’immersion (PMSMP) n’est pas rémunérée. Cependant vous conservez votre statut (demandeur d’emploi,
+          salarié ou travailleur d’ESAT par exemple) et donc vos droits.
+        </div>
+      </div>
+
+      <div class="tab">
+        <input class="tab-input" type="checkbox" id="tab4">
+        <label class="tab-label" for="tab4">Peut-on être embauché après une immersion ?</label>
+        <div class="tab-content">
+          L’objectif de l’immersion est avant tout de découvrir un métier auprès d’un professionnel en activité.
+          L’employeur qui vous accueille n’a donc aucune obligation de vous embaucher, même si cela peut arriver. Si
+          cette question est importante pour vous, vous pouvez en parler directement avec l’employeur.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BUTTONS ACTION -->
+<div class="capsule-links">
+  <div class="links">
+    <h1 class="title">Démarrez votre projet d’immersion avec ANDi</h1>
+    <div class="links-container">
+      <andi-shortcut-card (click)="goToStepper()"
+                          [image]="'coche'"
+                          [label]="'Vérifiez si vous pouvez faire un immersion et voir les démarches'"></andi-shortcut-card>
+      <andi-shortcut-card (click)="goToSearch()"
+                          [image]="'loupe'"
+                          [label]="'Accédez aux coordonnées des entreprises près de chez vous'"></andi-shortcut-card>
+      <andi-shortcut-card hidden
+                          [image]="'message'"
+                          [label]="'Accédez a des ressouces pour vous guidez dans vos démarches administrative'">
+      </andi-shortcut-card>
+    </div>
+  </div>
+</div>
+
+
+<!-- PARTNERS -->
+<div class="capsule-partners">
+  <div class="partners">
+    <h1 class="title-partners">Ils nous font confiance</h1>
+    <div class="logos">
+
+      <a href="https://www.cheops-ops.org/" target="_blank" aria-label="Logo de Cap Emploi - Nouvel onglet">
+        <img
+          class="cap-emploi"
+          src="assets/logos/partners/logo-cap-emploi.png"
+          alt="Logo de Cap Emploi"
+        />
+      </a>
+
+      <a
+        href="https://www.pole-emploi.fr/accueil/"
+        target="_blank" aria-label="Logo de Pôle Emploi - Nouvel onglet"
+      >
+        <img
+          class="pole-emploi"
+          src="assets/logos/partners/logo-pole-emploi.png"
+          alt="Logo de Pôle Emploi"
+        />
+      </a>
+
+      <a href="https://www.agefiph.fr/" target="_blank" aria-label="Logo agefiph - Nouvel onglet">
+        <img
+          class="agefiph"
+          src="assets/logos/partners/logo-agefiph.png"
+          alt="Logo agefiph"
+        />
+      </a>
+
+      <a href="http://www.fiphfp.fr/" target="_blank" aria-label="Logo fiphfp - Nouvel onglet">
+        <img
+          class="fiphfp"
+          src="assets/logos/partners/logo-fiphfp.png"
+          alt="Logo fiphfp"
+        />
+      </a>
+    </div>
+
+
+  </div>
+</div>

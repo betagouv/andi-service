@@ -12,9 +12,10 @@ import { PublicModule } from '../public/public.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SomeHelpComponent } from './components/some-help/some-help.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SomeHelpComponent],
+  declarations: [HeaderComponent, FooterComponent, SomeHelpComponent, MenuComponent],
   imports: [
     CommonModule,
     PublicModule,
@@ -27,7 +28,7 @@ import { SomeHelpComponent } from './components/some-help/some-help.component';
     NgxUiLoaderModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [HeaderComponent, FooterComponent, SomeHelpComponent]
+  exports: [HeaderComponent, FooterComponent, SomeHelpComponent, MenuComponent]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

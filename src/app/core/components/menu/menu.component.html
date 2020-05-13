@@ -1,0 +1,14 @@
+<div class="capsule">
+  <div class="menus">
+    <div class="menu">
+      <button (click)="goToHome()"  [ngClass]="{'selected':isSelected('home')}">Accueil</button>
+      <button (click)="goToSearch()" [ngClass]="{'selected':isSelected('summary')}">Chercher une immersion</button>
+      <button hidden>Documents essentiels</button>
+      <button hidden>Qui sommes-nous</button>
+    </div>
+
+    <div class="firm">
+      <button (click)="goToFirm()">Espace employeur</button>
+    </div>
+  </div>
+</div>
