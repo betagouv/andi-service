@@ -8,9 +8,12 @@ import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {FirmModule} from './firm/firm.module';
 import {HomeModule} from './home/home.module';
+import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
+import { CGUComponent } from './cgu/cgu.component';
+import { PersonalDatasComponent } from './personal-datas/personal-datas.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [LegalNoticeComponent, CGUComponent, PersonalDatasComponent],
   imports: [
     CommonModule,
     PublicRoutingModule,
