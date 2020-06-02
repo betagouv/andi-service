@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TrackingService } from 'src/app/core/services/tracking.service';
 import { StepContext } from 'src/models/tracking-request.model';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'andi-footer',
