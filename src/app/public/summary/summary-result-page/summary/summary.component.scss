@@ -88,6 +88,7 @@ input, #range, #adress, #job {
   & .info-icon {
     color:#8393A7;
     margin-right: 5px;
+    font-size: 36px; 
   }
 
   & .bold {
@@ -95,5 +96,11 @@ input, #range, #adress, #job {
   }
   & .info-text {
     align-items: center;
+    font-size: 15px; 
+    border: 1px solid #c9d3df;
+    border-radius: 6px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
   }
 }
