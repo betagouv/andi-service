@@ -1,0 +1,20 @@
+.info-group-home {
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    background: #E0EEFF;
+    font-size: 14px;
+    line-height: 19px;
+    /* or 136% */
+    color: #0053B3;
+    justify-content: center;
+     & .info-icon {
+        margin-right: 5px;
+        }
+        & .info-text {
+            max-width: 1170px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+}
