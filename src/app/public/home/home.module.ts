@@ -4,10 +4,11 @@ import {HomePageComponent} from './home-page/home-page.component';
 import {routes} from '../../app-routing.module';
 import {RouterModule} from '@angular/router';
 import { ShortcutCardComponent } from './home-page/shortcut-card/shortcut-card.component';
+import { InfoBandComponent } from './home-page/info-band/info-band.component';
 
 
 @NgModule({
-  declarations: [HomePageComponent, ShortcutCardComponent],
+  declarations: [HomePageComponent, ShortcutCardComponent, InfoBandComponent],
   imports: [
     CommonModule,
     RouterModule.forRoot(routes)
