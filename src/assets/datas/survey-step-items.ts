@@ -277,7 +277,7 @@ const F_UNFOLLOWED = new QuestionStep(
 /* CRITERES DE RECHERCHE */
 
 const C1 = new QuestionStep(
-  'Quel est le métier que vous voulez essayer en immersion ?\u00A0:',
+  'Quel est le métier que vous voulez essayer en immersion\u00A0?',
   '',
   QuestionType.CRITERIA,
   [
@@ -293,13 +293,13 @@ const C1 = new QuestionStep(
 );
 
 const C2 = new QuestionStep(
-  'Près de quel endroit recherchez-vous une immersion ?\u00A0:',
+  'Près de quel endroit recherchez-vous une immersion\u00A0?',
   'Nos recherches vont porter sur la proximité d\'une immersion avec cette adresse',
   QuestionType.CRITERIA,
   [
     new ResponseProposal(
       '',
-      'Exemple : 17 Avenue Pierre Mendès-France, 75013 Paris',
+      'Exemple : Varzy ou 17 Avenue Pierre Mendès-France, 75013 Paris',
       'address',
       'C3'
     )
@@ -309,7 +309,7 @@ const C2 = new QuestionStep(
 );
 
 const C3 = new QuestionStep(
-  'Jusqu’à quelle distance maximale rechercher ?\u00A0:',
+  'Jusqu’à quelle distance maximale rechercher\u00A0?',
   'Distance en kilomètre(s)',
   QuestionType.CRITERIA,
   [new ResponseProposal('', 'Exemple : 3', 'range', '')],
