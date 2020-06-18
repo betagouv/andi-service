@@ -15,25 +15,25 @@
 //   height: 38px;
 // }
 
-// .radio-group {
-//   display: flex;
-//   flex-wrap: wrap;
-//   margin-bottom: 20px;
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 
-//   & .radio-option {
-//     display: flex;
-//     align-items: center;
-//     margin-right: 30px;
+  & .radio-option {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
 
-//     & .radio {
-//       margin-bottom: 0;
-//       margin-right: 10px;
-//     }
-//     & .radio-label {
-//       margin-bottom: 0;
-//     }
-//   }
-// }
+    & .radio {
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+    & .radio-label {
+      margin-bottom: 0;
+    }
+  }
+}
 
 // .bouton {
 //   width: 170px;
