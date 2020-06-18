@@ -1,58 +1,58 @@
-.result-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  margin-left: 30px;
-  line-height: 28px;
-  letter-spacing: 0.06em;
-}
+// .result-title {
+//   font-size: 24px;
+//   font-weight: bold;
+//   margin-bottom: 20px;
+//   margin-left: 30px;
+//   line-height: 28px;
+//   letter-spacing: 0.06em;
+// }
 
-.result-comp {
-  background: #ffffff;
+// .result-comp {
+//   background: #ffffff;
 
-  & .result-item-wrapper {
-    background: #ffffff;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 20px;
-    padding-bottom: 1px;
+//   & .result-item-wrapper {
+//     background: #ffffff;
+//     padding-left: 30px;
+//     padding-right: 30px;
+//     padding-top: 20px;
+//     padding-bottom: 1px;
 
-    & .result-subtitle {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 22px;
-      line-height: 28px;
-      letter-spacing: 0.01em;
+//     & .result-subtitle {
+//       font-style: normal;
+//       font-weight: bold;
+//       font-size: 22px;
+//       line-height: 28px;
+//       letter-spacing: 0.01em;
 
-      & i {
-        font-size: 22px;
-        line-height: 28px;
-      }
-    }
-  }
+//       & i {
+//         font-size: 22px;
+//         line-height: 28px;
+//       }
+//     }
+//   }
 
-  & .result-item-collapse {
-    background: #ffffff;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 1px;
+//   & .result-item-collapse {
+//     background: #ffffff;
+//     padding-left: 30px;
+//     padding-right: 30px;
+//     padding-bottom: 1px;
 
-    & .more-result-btn {
-      display: block;
-      text-decoration: none;
-      border: 1px solid #c9d3df;
-      font-weight: bold;
-      font-size: 1.2rem;
-      text-align: center;
-      padding: 1rem;
-      color: #000000;
-      background: #f2f2f2;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+//     & .more-result-btn {
+//       display: block;
+//       text-decoration: none;
+//       border: 1px solid #c9d3df;
+//       font-weight: bold;
+//       font-size: 1.2rem;
+//       text-align: center;
+//       padding: 1rem;
+//       color: #000000;
+//       background: #f2f2f2;
+//       cursor: pointer;
+//       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
-      &:hover {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
-      }
-    }
-  }
-}
+//       &:hover {
+//         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+//       }
+//     }
+//   }
+// }

@@ -1,12 +1,118 @@
 <ngx-ui-loader
-  text="Recherche en cours... En fonction du périmètre de votre recherche, celle-ci peut nécessiter un certain temps de traitement..."
-></ngx-ui-loader>
+  text="Recherche en cours... En fonction du périmètre de votre recherche, celle-ci peut nécessiter un certain temps de traitement...">
+</ngx-ui-loader>
 
-<div class="form-container">
+<div class="form-group">
+  <div class="bloc-andi bloc-andi-gray">
+  <h2>Votre projet d'immersion</h2>
   <form (ngSubmit)="loadPmsmpList(userForm.value)" #userForm="ngForm">
+    <!-- LIGNE 1 -->
+    <div class="row flex-column-reverse flex-md-row">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <!-- CHAMP METIER -->
+        <div class="form-item">
+          <label for="job">
+            <p><b>Je cherche une immersion en tant que</b></p>
+          </label>
+          <input id="job" class="form-control" placeholder="Exemples: vente, poissonnier, magasinier"
+            [matAutocomplete]="jobAuto" [formControl]="jobCtrl" aria-label="todo" aria-describedby="todo" />
+          <mat-autocomplete #jobAuto="matAutocomplete">
+            <ng-container>
+              <mat-option *ngFor="let jobSuggest of jobSuggestions" [value]="jobSuggest.value">
+                <span>{{ jobSuggest.value }}</span>
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </div>
+      </div>
+      <!-- CHAMP ADRESSE -->
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="form-item">
+          <label for="adress">
+            <p><b>Proche de chez moi</b></p>
+          </label>
+          <input id="adress" class="form-control"
+            placeholder="Exemples : Varzy ou 17 Avenue Pierre Mendès-France, 75013 Paris" [matAutocomplete]="adrAuto"
+            [formControl]="addressCtrl" />
+          <mat-autocomplete #adrAuto="matAutocomplete">
+            <ng-container>
+              <mat-option *ngFor="let adrSuggest of adrSuggestions" [value]="adrSuggest.properties.label">
+                <span>{{ adrSuggest.properties.label }}</span>
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
 
-    <!-- CHAMP METIER -->
-    <div>
+          <ng-container *ngIf="errorMsg; else elseTemplate">
+            {{ errorMsg }}
+          </ng-container>
+          <ng-template #elseTemplate></ng-template>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIGNE 2 -->
+    <!-- CHAMP DISTANCE -->
+    <div class="row flex-column-reverse flex-md-row">
+      <div class="col-lg-8 col-md-12 col-sm-12 ">
+        <p><b>A une distance kilométrique de</b></p>
+      </div>
+    </div>
+    <div class="row flex-column-reverse flex-md-row">
+      <div class="col-lg-3">
+        <input type="radio" id="five" name="range" value="5" [(ngModel)]="currentStateForm.range" checked>
+        <label for="five">
+          <p> 5 kilomètres</p>
+        </label>
+      </div>
+ 
+      <div class="col-lg-3">
+        <input type="radio" id="ten" name="range" value="10" [(ngModel)]="currentStateForm.range">
+        <label for="ten">
+          <p> 10 kilomètres</p>
+        </label>
+      </div>
+
+      <div class="col-lg-3">
+        <input type="radio" id="thirty" name="range" value="50" [(ngModel)]="currentStateForm.range">
+        <label for="thirty">
+          <p> 30 kilomètres et plus</p>
+        </label>
+      </div>
+    </div>
+    <!-- CHAMP BOUTONS -->
+    <div class="form-item">
+    <div class="row flex-column-reverse flex-md-row">
+      <div class="col-lg-6 col-md-6 col-sm-12 ">
+        <button type="submit" class="btn btn-teal-solid btn-medium" aria-controls="andi-result">
+          Lancer une recherche
+        </button>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <button type="cancel" class="btn btn-black-solid btn-medium btn-icon-left btn-icon-recommencer"
+          aria-controls="andi-cancel">
+          Réinitialiser mes critères
+        </button>
+      </div>
+    </div>
+  </div>
+  </form>
+  <!-- CHAMP ALERT INFO -->
+  <div class="info-group">
+    <span class="info-icon">
+      <i class="material-icons info-icon" aria-hidden="true">info</i></span>
+    <span class="info-text">
+      <p><span class="bold">Cette liste d’établissements </span>est issue de la base INSEE. Elle est enrichie par les
+        établissements qui se référencent comme “ANDi-accueillants” et par des données Pôle emploi (La Bonne Boite).
+      </p>
+    </span>
+  </div>
+</div>
+</div>
+<!-- <div class="form-container">
+  <form (ngSubmit)="loadPmsmpList(userForm.value)" #userForm="ngForm"> -->
+
+<!-- CHAMP METIER -->
+<!-- <div>
       <label for="job">Quel est le métier que vous voulez essayer en immersion ?</label>
       <input
         id="job"
@@ -26,11 +132,11 @@
         </ng-container>
       </mat-autocomplete>
 
-    </div>
+    </div> -->
 
 
-    <!-- CHAMP ADRESSE -->
-    <div>
+<!-- CHAMP ADRESSE -->
+<!-- <div>
       <label for="adress">Près de quel endroit recherchez-vous une immersion ?</label>
       <input
         id="adress"
@@ -54,10 +160,10 @@
         {{ errorMsg }}
       </ng-container>
       <ng-template #elseTemplate></ng-template>
-    </div>
+    </div> -->
 
-    <!-- CHAMP DISTANCE -->
-    <label>Jusqu'à quelle distance maximale rechercher ?</label>
+<!-- CHAMP DISTANCE -->
+<!-- <label>Jusqu'à quelle distance maximale rechercher ?</label>
 
     <div class="radio-group">
       <div class="radio-option">
@@ -90,5 +196,4 @@
     </div>
   </form>
 
-</div>
-
+</div> -->

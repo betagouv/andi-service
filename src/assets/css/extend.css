@@ -1,0 +1,85 @@
+@import './style.css';
+
+a {
+  padding: max(0.7rem, 20px) 1rem;
+}
+
+.asterisque::after {
+    content: "*";
+    color: #ff0000;
+    font-weight: bold;
+    margin-left: 0.35rem;
+}
+
+.champs_obligatoire {
+  color: #00234c;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 21px;
+}
+
+form select, form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="tel"], form input[type="number"], form input[type="range"], form input[type="date"], form input[type="search"] {
+  max-width: 100%; 
+} 
+
+/* classes to make an element invisible but still accessible to screen readers
+   from : https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034#file-style-css-L32
+   mentionned in : https://access42.net/accessibilite-rechargement-page-single-page-applications */
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+	clip: auto !important;
+	-webkit-clip-path: none !important;
+		clip-path: none !important;
+	height: auto !important;
+	margin: auto !important;
+	overflow: visible !important;
+	width: auto !important;
+	white-space: normal !important;
+}
+/* Ajout bouton noir*/
+.btn.btn-black-solid {
+	background: #333333;;
+	color: #fff;
+  }
+  
+  .btn.btn-black-solid:not([disabled]):not(.disabled):focus, .btn.btn-black-solid:not([disabled]):not(.disabled):hover, .btn.btn-black-solid:not([disabled]):not(.disabled):active {
+	color: #333333;;
+	background-color: #fff;
+	border-color: #333333;;
+  }
+ /* fond degrade */
+.body-andi {
+  background: linear-gradient(0deg, #FFFFFF 0%, #EBEFF3 100%);
+} 
+.bloc-andi {
+	padding: 24px;
+}
+.bloc-andi-white {
+	/* Blanc */
+	background: #FFFFFF;
+}
+.bloc-andi-gray {
+
+	/* Gris */
+	background: #EBEFF3;
+}
+.bloc-item-andi-white {
+	/* Blanc */
+	background: #FFFFFF;
+	/* Gris3 */
+	border: 1px solid #6B7B8A;
+}

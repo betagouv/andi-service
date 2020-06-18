@@ -1,17 +1,76 @@
-<div *ngIf="hasErrorResult">
-  <h3 class="results-error">
-    Erreur : Une erreur est survenue. Veuilllez réessayer ultérieurement.
-  </h3>
+<div id="block-icdcalert" class="icdc_alert">
+<div *ngIf="hasErrorResult" id="contentErrorSaisie" class="content__message_alert">
+  <div class="alert-popup alert alert-danger" id="alert-bloc-6" role="alert" >
+    <div class="row alert-content">
+      <div class="col-10">
+        <h2 get-focus="true" class="sr-only">Une erreur est survenue. Veuilllez réessayer ultérieurement.</h2>
+        <span class="alert-icon"></span>
+        <div class="alert-text" get-focus="true">
+        Une erreur est survenue. Veuilllez réessayer ultérieurement.
+
+      </div>
+    </div>
+
+  </div>
+  </div>
 </div>
 
-<div *ngIf="!hasErrorResult && notFound">
-  <h3 class="results-error">Aucun résultat n'a été trouvé.</h3>
-  <p>
-    Nous vous conseillons d'élargir la zone de recherche en indiquant une
-    distance supérieure
-  </p>
-</div>
 
+<div *ngIf="!hasErrorResult && notFound" id="contentErrorSaisie" class="content__message_alert">
+  <div class="messages messages--error">
+  </div> <div class="text--info" roles="info">
+      <h2 get-focus="true" class="message__title--error">
+        Aucun résultat n'a été trouvé.
+      </h2>
+      <p>
+        Nous vous conseillons d'élargir la zone de recherche en indiquant une
+        distance supérieure
+      </p>
+    </div>
+  </div>
+</div>
+<div class="form-container">
+    <div class="result-comp">
+      <div
+        *ngIf="!hasErrorResult && pmsmpDatas.length > 0"
+        class="result-item-wrapper"
+      >
+      <div class="bloc-andi bloc-andi-white">
+      <h2>Les entreprises proches de chez vous</h2>
+        <andi-result-item
+          role="listitem"
+          *ngFor="let pmsmp of pmsmpDatas | slice: 0:3; index as i"
+          [pmsmpItem]="pmsmp"
+          [pmsmpOrder]="i + 1"
+        ></andi-result-item>
+      </div>
+    
+      <div
+        *ngIf="!hasErrorResult && pmsmpDatas.length > 3"
+        class="result-item-collapse"
+      >
+        <a href="javascript:void(0)"
+           *ngIf="showMoreResultsBtn"
+           (click)="toggleButton()"
+           class="more-result-btn"
+        >Afficher plus de résultats</a
+        >
+        <div *ngIf="!showMoreResultsBtn" class="collapsible-content">
+          <div class="content-inner">
+            <andi-result-item
+              role="listitem"
+              *ngFor="let pmsmp of pmsmpDatas | slice: 3; index as i"
+              [pmsmpItem]="pmsmp"
+              [pmsmpOrder]="i + 4"
+            >
+            </andi-result-item>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
 <h1 *ngIf="!hasErrorResult && pmsmpDatas.length > 0" class="result-title">
   Résultats de votre recherche
 </h1>
@@ -55,4 +114,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
